@@ -1,0 +1,10 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <id>com.github.catppuccin.jetbrains</id>
+    <name>Catppuccin Theme</name>
+    <vendor url="https://github.com/catppuccin">Catppuccin</vendor>
+    <depends>com.intellij.modules.platform</depends>
+    <extensions defaultExtensionNs="com.intellij">
+        <themeProvider id="com.github.catppuccin.jetbrains" path="/themes/Catppuccin.theme.json"  />
+    </extensions>
+</idea-plugin>
