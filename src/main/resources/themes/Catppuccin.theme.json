@@ -110,7 +110,7 @@
         "disabledIconColor": "lavender0",
         "iconColor": "accentColor"
       },
-      "selectionBackground": "secondaryAccentColor",
+      "selectionBackground": "selectionBackground",
       "nonEditableBackground": "secondaryBackground"
     },
     "CompletionPopup": {
