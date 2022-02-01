@@ -32,7 +32,7 @@
     "primaryBackground": "#1E1E2E",
     "secondaryBackground": "#302D41",
     "hoverBackground": "#575268",
-    "selectionBackground": "#6E6C7E",
+    "selectionBackground": "#575268",
     "selectionInactiveBackground": "#302D41",
     "borderColor": "#575268",
     "separatorColor": "#575268"
@@ -114,9 +114,9 @@
       "nonEditableBackground": "secondaryBackground"
     },
     "CompletionPopup": {
-      "selectionBackground": "selectionInactiveBackground",
+      "selectionBackground": "selectionBackground",
       "selectionInactiveBackground": "selectionInactiveBackground",
-      "matchForeground": "accentColor"
+      "matchForeground": "flamingo0"
     },
     "Component": {
       "focusColor": "secondaryAccentColor",
@@ -144,15 +144,12 @@
       "inactiveUnderlineColor": "accentColor"
     },
     "FileColor": {
-      "Blue": "#96CDFB",
-      "Green": "#ABE9B3",
-      "Orange": "#F8BD96",
-      "Yellow": "#31263d",
-      "Rose": "#F5E0DC",
-      "Violet": "#DDB6F2"
-    },
-    "Label": {
-      "errorForeground": "red0"
+      "Blue": "#143f64",
+      "Green": "#095414",
+      "Orange": "#7e431c",
+      "Yellow": "#462b08",
+      "Rose": "#573b35",
+      "Violet": "#432950"
     },
     "Link": {
       "activeForeground": "accentColor",
@@ -160,7 +157,6 @@
       "visitedForeground": "secondaryAccentColor",
       "pressedForeground": "secondaryAccentColor"
     },
-
     "Notification": {
       "background": "black1",
       "errorBorderColor": "red0",
@@ -272,6 +268,9 @@
     "TextField": {
       "background": "secondaryBackground"
     },
+      "TextArea": {
+          "background": "black1"
+      },
     "ToggleButton": {
       "onBackground": "green0",
       "onForeground": "hoverBackground",
@@ -286,14 +285,14 @@
       "Header": {
         "background": "primaryBackground",
         "inactiveBackground": "primaryBackground",
-        "borderColor": "primaryBackground"
+        "borderColor": "secondaryBackground"
       },
       "HeaderTab": {
-        "underlineColor": "secondaryAccentColor",
-        "inactiveUnderlineColor": "accentColor",
+        "underlineColor": "pink0",
+        "inactiveUnderlineColor": "white",
         "underlineHeight": 1,
-        "underlinedTabBackground": "secondaryBackground",
-        "selectedInactiveBackground": "secondaryBackground",
+        "underlinedTabBackground": "black4",
+        "selectedInactiveBackground": "black2",
         "hoverBackground": "hoverBackground"
       }
     },
@@ -305,8 +304,10 @@
       "selectionInactiveBackground": "selectionInactiveBackground"
     },
     "ValidationTooltip": {
-      "errorBackground": "red0",
-      "warningBackground": "yellow0"
+      "errorBackground": "black1",
+        "errorBorderColor": "red0",
+      "warningBackground": "black1",
+      "warningBorderColor": "yellow0"
     },
     "VersionControl": {
       "FileHistory": {
