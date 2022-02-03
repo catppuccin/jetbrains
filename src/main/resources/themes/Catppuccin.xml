@@ -21,10 +21,10 @@
     <option name="DIAGRAM_NOTE_BACKGROUND" value="414855" />
     <option name="DIAGRAM_NOTE_BORDER" value="6e6c7e" />
     <option name="DIAGRAM_REALIZATION_EDGE" value="abe9b3" />
-    <option name="DIFF_SEPARATORS_BACKGROUND" value="21252b" />
+    <option name="DIFF_SEPARATORS_BACKGROUND" value="988ba2" />
     <option name="DOCUMENTATION_COLOR" value="302d41" />
     <option name="DOC_COMMENT_LINK" value="96cdfb" />
-    <option name="ERROR_HINT" value="572736" />
+    <option name="ERROR_HINT" value="832133" />
     <option name="FILESTATUS_IDEA_FILESTATUS_IGNORED" value="4f575f" />
     <option name="FOLDED_TEXT_BORDER_COLOR" value="" />
     <option name="GUTTER_BACKGROUND" value="1e1e2e" />
@@ -54,11 +54,12 @@
     <option name="MODIFIED_TAB_ICON" value="96cdfb" />
     <option name="NOTIFICATION_BACKGROUND" value="1a1826" />
     <option name="PROMOTION_PANE" value="312c3f" />
-    <option name="QUESTION_HINT" value="312c3f" />
+    <option name="QUESTION_HINT" value="2213c" />
     <option name="RECENT_LOCATIONS_SELECTION" value="302d41" />
     <option name="RIGHT_MARGIN_COLOR" value="302d41" />
     <option name="SELECTED_INDENT_GUIDE" value="575268" />
     <option name="SELECTED_TEARLINE_COLOR" value="575268" />
+    <option name="SELECTION_BACKGROUND" value="988ba2" />
     <option name="SELECTION_FOREGROUND" value="d9e0ee" />
     <option name="SEPARATOR_BELOW_COLOR" value="" />
     <option name="ScrollBar.hoverThumbColor" value="988ba266" />
@@ -72,7 +73,6 @@
     <option name="VISUAL_INDENT_GUIDE" value="302d41" />
     <option name="WHITESPACES" value="302d41" />
     <option name="WHITESPACES_MODIFIED_LINES_COLOR" value="6e6c7e" />
-    <option name="SELECTION_BACKGROUND" value="988ba2" />
   </colors>
   <attributes>
     <option name="ABSTRACT_METHOD_ATTRIBUTES">
@@ -165,6 +165,7 @@
     <option name="BREAKPOINT_ATTRIBUTES">
       <value>
         <option name="BACKGROUND" value="e8a2af" />
+        <option name="EFFECT_COLOR" value="f28fad" />
       </value>
     </option>
     <option name="BUILDOUT.KEY">
@@ -200,6 +201,7 @@
     </option>
     <option name="CODE_LENS_BORDER_COLOR">
       <value>
+        <option name="BACKGROUND" value="302d41" />
         <option name="EFFECT_COLOR" value="c9cbff" />
       </value>
     </option>
@@ -477,7 +479,7 @@
     </option>
     <option name="CONSOLE_RANGE_TO_EXECUTE">
       <value>
-        <option name="EFFECT_COLOR" value="abe9b3" />
+        <option name="EFFECT_COLOR" value="ddb6f2" />
       </value>
     </option>
     <option name="CONSOLE_RED_BRIGHT_OUTPUT">
@@ -967,6 +969,7 @@
     </option>
     <option name="DELETED_TEXT_ATTRIBUTES">
       <value>
+        <option name="FOREGROUND" value="312c3f" />
         <option name="BACKGROUND" value="f28fad" />
       </value>
     </option>
@@ -978,26 +981,30 @@
     </option>
     <option name="DIFF_CONFLICT">
       <value>
-        <option name="BACKGROUND" value="5b2332" />
+        <option name="FOREGROUND" value="734b61" />
+        <option name="BACKGROUND" value="e8a2af" />
         <option name="ERROR_STRIPE_COLOR" value="e8a2af" />
       </value>
     </option>
     <option name="DIFF_DELETED">
       <value>
-        <option name="BACKGROUND" value="302d41" />
-        <option name="ERROR_STRIPE_COLOR" value="6e6c7e" />
+        <option name="FOREGROUND" value="353345" />
+        <option name="BACKGROUND" value="575268" />
+        <option name="ERROR_STRIPE_COLOR" value="575268" />
       </value>
     </option>
     <option name="DIFF_INSERTED">
       <value>
-        <option name="BACKGROUND" value="274d29" />
-        <option name="ERROR_STRIPE_COLOR" value="abe9b3" />
+        <option name="FOREGROUND" value="27403b" />
+        <option name="BACKGROUND" value="158472" />
+        <option name="ERROR_STRIPE_COLOR" value="158472" />
       </value>
     </option>
     <option name="DIFF_MODIFIED">
       <value>
-        <option name="BACKGROUND" value="396872" />
-        <option name="ERROR_STRIPE_COLOR" value="89dceb" />
+        <option name="FOREGROUND" value="243a5e" />
+        <option name="BACKGROUND" value="395f8f" />
+        <option name="ERROR_STRIPE_COLOR" value="395f8f" />
       </value>
     </option>
     <option name="DJANGO_TAG_NAME">
@@ -1293,8 +1300,8 @@
     </option>
     <option name="IDENTIFIER_UNDER_CARET_ATTRIBUTES">
       <value>
-        <option name="BACKGROUND" value="302d41" />
-        <option name="ERROR_STRIPE_COLOR" value="302d41" />
+        <option name="BACKGROUND" value="575268" />
+        <option name="ERROR_STRIPE_COLOR" value="575268" />
       </value>
     </option>
     <option name="IMPLICIT_ANONYMOUS_CLASS_PARAMETER_ATTRIBUTES">
@@ -1462,6 +1469,11 @@
         <option name="FOREGROUND" value="e8a2af" />
       </value>
     </option>
+    <option name="KOTLIN_CONSTRUCTOR">
+      <value>
+        <option name="FOREGROUND" value="f8bd96" />
+      </value>
+    </option>
     <option name="KOTLIN_DYNAMIC_FUNCTION_CALL">
       <value>
         <option name="FOREGROUND" value="89dceb" />
@@ -1486,7 +1498,7 @@
     </option>
     <option name="KOTLIN_FUNCTION_LITERAL_BRACES_AND_ARROW">
       <value>
-        <option name="FOREGROUND" value="89dceb" />
+        <option name="FOREGROUND" value="f28fad" />
       </value>
     </option>
     <option name="KOTLIN_LABEL" baseAttributes="DEFAULT_LABEL" />
@@ -1520,12 +1532,12 @@
     <option name="KOTLIN_TYPE_PARAMETER" baseAttributes="TYPE_PARAMETER_NAME_ATTRIBUTES" />
     <option name="KOTLIN_VARIABLE_AS_FUNCTION">
       <value>
-        <option name="FOREGROUND" value="89dceb" />
+        <option name="FOREGROUND" value="96cdfb" />
       </value>
     </option>
     <option name="KOTLIN_VARIABLE_AS_FUNCTION_LIKE">
       <value>
-        <option name="FOREGROUND" value="89dceb" />
+        <option name="FOREGROUND" value="96cdfb" />
       </value>
     </option>
     <option name="LABEL">
@@ -2597,8 +2609,8 @@
     </option>
     <option name="SEARCH_RESULT_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="1e1e2e" />
-        <option name="BACKGROUND" value="f5e0dc" />
+        <option name="FOREGROUND" value="575268" />
+        <option name="BACKGROUND" value="96cdfb" />
       </value>
     </option>
     <option name="SLIM_BAD_CHARACTER">
@@ -2699,7 +2711,17 @@
       </value>
     </option>
     <option name="SPY-JS.VALUE_HINT" baseAttributes="" />
+    <option name="SQL_DATABASE_OBJECT">
+      <value>
+        <option name="FOREGROUND" value="ddb6f2" />
+      </value>
+    </option>
     <option name="SQL_OUTER_QUERY_COLUMN" baseAttributes="SQL_COLUMN" />
+    <option name="SQL_PARAMETER">
+      <value>
+        <option name="FOREGROUND" value="ddb6f2" />
+      </value>
+    </option>
     <option name="SQL_SYNTHETIC_ENTITY" baseAttributes="DEFAULT_PREDEFINED_SYMBOL" />
     <option name="STATIC_METHOD_ATTRIBUTES" baseAttributes="DEFAULT_STATIC_METHOD" />
     <option name="STYLUS_VARIABLE">
@@ -2768,9 +2790,9 @@
     </option>
     <option name="TEXT_SEARCH_RESULT_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="1e1e2e" />
-        <option name="BACKGROUND" value="f5e0dc" />
-        <option name="ERROR_STRIPE_COLOR" value="f5e0dc" />
+        <option name="FOREGROUND" value="575268" />
+        <option name="BACKGROUND" value="96cdfb" />
+        <option name="ERROR_STRIPE_COLOR" value="96cdfb" />
       </value>
     </option>
     <option name="TODO_DEFAULT_ATTRIBUTES">
@@ -2847,11 +2869,12 @@
     </option>
     <option name="WARNING_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="1e1e2e" />
-        <option name="BACKGROUND" value="fae3b0" />
+        <option name="EFFECT_TYPE" value="2" />
+        <option name="FOREGROUND" value="d9e0ee" />
+        <option name="BACKGROUND" value="1e1e2e" />
+        <option name="FONT_TYPE" value="1" />
         <option name="EFFECT_COLOR" value="f8bd96" />
         <option name="ERROR_STRIPE_COLOR" value="f8bd96" />
-        <option name="EFFECT_TYPE" value="2" />
       </value>
     </option>
     <option name="WRITE_IDENTIFIER_UNDER_CARET_ATTRIBUTES">
@@ -2863,7 +2886,7 @@
     <option name="WRITE_SEARCH_RESULT_ATTRIBUTES">
       <value>
         <option name="FOREGROUND" value="1e1e2e" />
-        <option name="BACKGROUND" value="f5e0dc" />
+        <option name="BACKGROUND" value="96cdfb" />
       </value>
     </option>
     <option name="WRONG_REFERENCES_ATTRIBUTES">

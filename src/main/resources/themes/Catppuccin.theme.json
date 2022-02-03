@@ -89,13 +89,13 @@
       "focusedBorderColor": "accentColor",
       "disabledBorderColor": "primaryBackground",
       "default": {
-        "foreground": "primaryForeground",
-        "startBackground": "selectionBackground",
-        "endBackground": "selectionBackground",
+        "foreground": "black4",
+        "startBackground": "accentColor",
+        "endBackground": "accentColor",
         "startBorderColor": "accentColor",
         "endBorderColor": "accentColor",
         "focusColor": "accentColor",
-        "focusedBorderColor": "accentColor"
+        "focusedBorderColor": "black4"
       }
     },
     "Counter": {
@@ -119,7 +119,7 @@
       "matchForeground": "flamingo0"
     },
     "Component": {
-      "focusColor": "secondaryAccentColor",
+      "focusColor": "accentColor",
       "borderColor": "primaryBackground",
       "focusedBorderColor": "selectionBackground",
       "disabledBorderColor": "selectionBackground",
@@ -138,18 +138,18 @@
     "EditorTabs": {
       "background": "primaryBackground",
       "underlinedTabBackground": "secondaryBackground",
-      "underlineColor": "secondaryAccentColor",
+      "underlineColor": "accentColor",
       "underlineHeight": 1,
       "hoverBackground": "black1",
       "inactiveUnderlineColor": "accentColor"
     },
     "FileColor": {
-      "Blue": "#143f64",
-      "Green": "#095414",
-      "Orange": "#7e431c",
-      "Yellow": "#462b08",
-      "Rose": "#573b35",
-      "Violet": "#432950"
+      "Blue": "#96CDFB50",
+      "Green": "#27403B50",
+      "Orange": "#F8BD9650",
+      "Yellow": "#fae3b050",
+      "Rose": "#F5E0DC50",
+      "Violet": "#DDB6F250"
     },
     "Link": {
       "activeForeground": "accentColor",
@@ -171,7 +171,7 @@
         "errorBackground": "primaryBackground",
         "informativeForeground": "primaryForeground",
         "informativeBackground": "primaryBackground",
-        "informativeBorderColor": "sky0"
+        "informativeBorderColor": "secondaryAccentColor"
       }
     },
     "PasswordField": {
@@ -204,14 +204,14 @@
       }
     },
     "ProgressBar": {
+      "failedEndColor": "maroon0",
       "failedColor": "red0",
-      "failedEndColor": "red0",
       "trackColor": "selectionBackground",
       "progressColor": "accentColor",
-      "indeterminateStartColor": "teal0",
+      "indeterminateStartColor": "accentColor",
       "indeterminateEndColor": "secondaryAccentColor",
-      "passedColor": "green0",
-      "passedEndColor": "green0"
+      "passedEndColor": "teal0",
+      "passedColor": "green0"
     },
     "Popup": {
       "Header": {
@@ -248,14 +248,14 @@
       "background": "black1"
     },
     "StatusBar": {
-      "borderColor": "primaryBackground",
+      "borderColor": "borderColor",
       "hoverBackground": "hoverBackground"
     },
     "TabbedPane": {
       "tabSelectionHeight": 1,
       "focusColor": "hoverBackground",
       "hoverColor": "hoverBackground",
-      "underlineColor": "secondaryAccentColor",
+      "underlineColor": "accentColor",
       "contentAreaColor": "primaryBackground"
     },
     "Table": {
@@ -263,7 +263,7 @@
       "hoverBackground": "selectionBackground"
     },
     "TableHeader": {
-      "bottomSeparatorColor": "background"
+      "bottomSeparatorColor": "prmaryBackground"
     },
     "TextField": {
       "background": "secondaryBackground"
@@ -278,6 +278,10 @@
       "offForeground": "hoverBackground",
       "buttonColor": "primaryForeground"
     },
+      "ToolBar": {
+          "background": "primaryBackground",
+          "borderHandleColor": "secondaryAccentColor"
+      },
     "ToolWindow": {
       "Button": {
         "hoverBackground": "hoverBackground"
