@@ -1699,7 +1699,14 @@
     </option>
     <option name="MARKDOWN_BOLD">
       <value>
+        <option name="FOREGROUND" value="96cdfb" />
         <option name="FONT_TYPE" value="1" />
+      </value>
+    </option>
+    <option name="MARKDOWN_CODE_FENCE">
+      <value>
+        <option name="FOREGROUND" value="f28fad" />
+        <option name="FONT_TYPE" value="2" />
       </value>
     </option>
     <option name="MARKDOWN_CODE_SPAN">
@@ -1713,6 +1720,11 @@
         <option name="FOREGROUND" value="e8a2af" />
       </value>
     </option>
+    <option name="MARKDOWN_HTML_BLOCK">
+      <value>
+        <option name="FOREGROUND" value="f28fad" />
+      </value>
+    </option>
     <option name="MARKDOWN_INLINE_HTML">
       <value>
         <option name="FOREGROUND" value="e8a2af" />
@@ -1721,6 +1733,7 @@
     </option>
     <option name="MARKDOWN_ITALIC">
       <value>
+        <option name="FOREGROUND" value="ddb6f2" />
         <option name="FONT_TYPE" value="2" />
       </value>
     </option>
@@ -2869,12 +2882,12 @@
     </option>
     <option name="WARNING_ATTRIBUTES">
       <value>
-        <option name="EFFECT_TYPE" value="2" />
         <option name="FOREGROUND" value="d9e0ee" />
         <option name="BACKGROUND" value="1e1e2e" />
         <option name="FONT_TYPE" value="1" />
         <option name="EFFECT_COLOR" value="f8bd96" />
         <option name="ERROR_STRIPE_COLOR" value="f8bd96" />
+        <option name="EFFECT_TYPE" value="2" />
       </value>
     </option>
     <option name="WRITE_IDENTIFIER_UNDER_CARET_ATTRIBUTES">
