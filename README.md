@@ -7,7 +7,7 @@
 </h3>
 <!-- Plugin description end -->
 <p align="center">
-    <a href="https://github.com/catppuccin/jetbrains/stargazers"><img src="https://img.shields.io/github/stars/catppuccin/jetbrains?colorA=1e1e28&colorB=c9cbff&style=for-the-badge&logo=starship style=for-the-badge"></a>
+    <a href="https://github.com/catppuccin/jetbrains/stargazers"><img src="https://img.shields.io/github/stars/catppuccin/jetbrains?colorA=1e1e28&colorB=c9cbff&style=for-the-badge"></a>
     <a href="https://github.com/catppuccin/jetbrains/issues"><img src="https://img.shields.io/github/issues/catppuccin/jetbrains?colorA=1e1e28&colorB=f7be95&style=for-the-badge"></a>
     <a href="https://github.com/catppuccin/jetbrains/contributors"><img src="https://img.shields.io/github/contributors/catppuccin/jetbrains?colorA=1e1e28&colorB=b1e1a6&style=for-the-badge"></a>
 </p>
