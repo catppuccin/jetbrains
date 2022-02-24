@@ -2,7 +2,12 @@
 
 # Catppuccin Theme Changelog
 
-## [Unreleased]
+## [1.0.3] - 24.02.2022
+
+First Marketplace release 🎉
+
+### Changed
+- Fixed low contrast issues in various spots
 
 ## [1.0.1] - 30.01.2022
 ### Changed
