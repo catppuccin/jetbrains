@@ -37,7 +37,7 @@
     <option name="INDENT_GUIDE" value="302d41" />
     <option name="INFORMATION_HINT" value="312c3f" />
     <option name="INLINE_REFACTORING_SETTINGS_DEFAULT" value="575268a3" />
-    <option name="INLINE_REFACTORING_SETTINGS_FOCUSED" value="575268a3" />
+    <option name="INLINE_REFACTORING_SETTINGS_FOCUSED" value="6e6c7e89" />
     <option name="INLINE_REFACTORING_SETTINGS_HOVERED" value="6e6c7e89" />
     <option name="JUPYTER.CELL_UNDER_CARET_COMMAND_MODE_STRIPE_COLOR" value="96cdfb" />
     <option name="JUPYTER.CELL_UNDER_CARET_EDITOR_MODE_STRIPE_COLOR" value="abe9b3" />
@@ -164,7 +164,7 @@
     </option>
     <option name="BREAKPOINT_ATTRIBUTES">
       <value>
-        <option name="BACKGROUND" value="e8a2af" />
+        <option name="BACKGROUND" value="1a1826" />
         <option name="EFFECT_COLOR" value="f28fad" />
       </value>
     </option>
@@ -660,7 +660,7 @@
     </option>
     <option name="CUSTOM_STRING_ATTRIBUTES" baseAttributes="DEFAULT_STRING" />
     <option name="CUSTOM_VALID_STRING_ESCAPE_ATTRIBUTES" baseAttributes="DEFAULT_VALID_STRING_ESCAPE" />
-    <option name="Class" baseAttributes="" />
+    <option name="Class" baseAttributes="CLASS_NAME_ATTRIBUTES" />
     <option name="Clojure Atom">
       <value>
         <option name="FOREGROUND" value="ddb6f2" />
@@ -705,7 +705,7 @@
     </option>
     <option name="DART_CONSTRUCTOR">
       <value>
-        <option name="FOREGROUND" value="c9cbff" />
+        <option name="FOREGROUND" value="e8a2af" />
         <option name="FONT_TYPE" value="2" />
       </value>
     </option>
@@ -732,6 +732,12 @@
     <option name="DART_LOCAL_FUNCTION_REFERENCE">
       <value>
         <option name="FOREGROUND" value="96cdfb" />
+      </value>
+    </option>
+    <option name="DART_TOP_LEVEL_GETTER_DECLARATION">
+      <value>
+        <option name="FOREGROUND" value="e8a2af" />
+        <option name="FONT_TYPE" value="2" />
       </value>
     </option>
     <option name="DART_TYPE_NAME_DYNAMIC">
@@ -1068,8 +1074,8 @@
     </option>
     <option name="EXECUTIONPOINT_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="1e1e2e" />
-        <option name="BACKGROUND" value="c9cbff" />
+        <option name="BACKGROUND" value="1a1826" />
+        <option name="EFFECT_COLOR" value="96cdfb" />
       </value>
     </option>
     <option name="FIRST SYMBOL IN LIST">
@@ -1300,7 +1306,8 @@
     </option>
     <option name="IDENTIFIER_UNDER_CARET_ATTRIBUTES">
       <value>
-        <option name="BACKGROUND" value="575268" />
+        <option name="FOREGROUND" value="96cdfb" />
+        <option name="BACKGROUND" value="6e6c7e" />
         <option name="ERROR_STRIPE_COLOR" value="575268" />
       </value>
     </option>
@@ -1756,9 +1763,9 @@
     </option>
     <option name="MATCHED_BRACE_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="d9e0ee" />
+        <option name="FOREGROUND" value="f5c2e7" />
+        <option name="BACKGROUND" value="575268" />
         <option name="FONT_TYPE" value="1" />
-        <option name="EFFECT_COLOR" value="d9e0ee" />
       </value>
     </option>
     <option name="MATCHED_TAG_NAME">
@@ -2762,7 +2769,7 @@
         <option name="FONT_TYPE" value="2" />
       </value>
     </option>
-    <option name="Static method access" baseAttributes="" />
+    <option name="Static method access" baseAttributes="STATIC_METHOD_ATTRIBUTES" />
     <option name="Static property reference ID">
       <value>
         <option name="FOREGROUND" value="f8bd96" />
