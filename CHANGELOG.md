@@ -2,6 +2,10 @@
 
 # Catppuccin Theme Changelog
 
+## [1.0.4] - 27.02.2022
+
+Added missing description in plugin.xml
+
 ## [1.0.3] - 24.02.2022
 
 First Marketplace release 🎉

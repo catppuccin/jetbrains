@@ -3,6 +3,9 @@
     <id>com.github.catppuccin.jetbrains</id>
     <name>Catppuccin Theme</name>
     <vendor url="https://github.com/catppuccin">Catppuccin</vendor>
+    <description>
+        <![CDATA[🧠 Soothing pastel theme for JetBrains IDEs]]>
+    </description>
     <depends>com.intellij.modules.platform</depends>
     <extensions defaultExtensionNs="com.intellij">
         <themeProvider id="com.github.catppuccin.jetbrains" path="/themes/Catppuccin.theme.json"  />
