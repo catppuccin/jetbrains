@@ -2,6 +2,10 @@
 
 # Catppuccin Theme Changelog
 
+## [1.0.5] - 07.04.2022
+
+Compatibility with 2022.1
+
 ## [1.0.4] - 27.02.2022
 
 Added missing description in plugin.xml
