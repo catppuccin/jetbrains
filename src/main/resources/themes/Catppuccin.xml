@@ -2817,9 +2817,9 @@
     </option>
     <option name="TODO_DEFAULT_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="575268" />
+        <option name="FOREGROUND" value="fae3b0" />
         <option name="FONT_TYPE" value="2" />
-        <option name="ERROR_STRIPE_COLOR" value="fae3b0" />
+        <option name="ERROR_STRIPE_COLOR" value="f8bd96" />
       </value>
     </option>
     <option name="TS.MODULE_NAME">
