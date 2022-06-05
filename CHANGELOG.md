@@ -2,6 +2,10 @@
 
 # Catppuccin Theme Changelog
 
+## [1.0.7] - 03.06.2022
+
+Compatibility with 2022.2
+
 ## [1.0.6] - 30.04.2022
 
 Make TODO and FIXME comments more visible
