@@ -33,7 +33,7 @@
     "secondaryBackground": "#302D41",
     "hoverBackground": "#575268",
     "selectionBackground": "#575268",
-    "selectionInactiveBackground": "#302D41",
+    "selectionInactiveBackground": "#1E1E2E",
     "borderColor": "#575268",
     "separatorColor": "#575268"
   },
