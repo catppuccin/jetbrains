@@ -2,6 +2,11 @@
 
 # Catppuccin Theme Changelog
 
+## [1.0.8] - 20.06.2022
+
+- XAML support
+- selectionInactiveBackground visibility fix
+
 ## [1.0.7] - 03.06.2022
 
 Compatibility with 2022.2
