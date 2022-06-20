@@ -874,7 +874,11 @@
         <option name="FOREGROUND" value="f8bd96" />
       </value>
     </option>
-    <option name="DEFAULT_INSTANCE_FIELD" baseAttributes="DEFAULT_IDENTIFIER" />
+    <option name="DEFAULT_INSTANCE_FIELD">
+      <value>
+        <option name="FOREGROUND" value="d9e0ee" />
+      </value>
+    </option>
     <option name="DEFAULT_INTERFACE_NAME">
       <value>
         <option name="FOREGROUND" value="f8bd96" />
@@ -2501,6 +2505,11 @@
     <option name="ReSharper.BRACE_OUTLINE">
       <value>
         <option name="EFFECT_COLOR" value="d9e0ee" />
+      </value>
+    </option>
+    <option name="ReShaper.ENUM_IDENTIFIER">
+      <value>
+        <option name="FOREGROUND" value="89dceb" />
       </value>
     </option>
     <option name="ReSharper.FORMAT_STRING_ITEM">
