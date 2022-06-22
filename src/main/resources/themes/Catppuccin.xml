@@ -95,8 +95,8 @@
     </option>
     <option name="BAD_CHARACTER">
       <value>
-        <option name="FOREGROUND" value="1e1e2e" />
-        <option name="BACKGROUND" value="f28fad" />
+        <option name="FOREGROUND" value="d9e0ee" />
+        <option name="EFFECT_COLOR" value="f8bd96" />
         <option name="ERROR_STRIPE_COLOR" value="f28fad" />
       </value>
     </option>
