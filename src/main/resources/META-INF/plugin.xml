@@ -9,5 +9,6 @@
     <depends>com.intellij.modules.platform</depends>
     <extensions defaultExtensionNs="com.intellij">
         <themeProvider id="com.github.catppuccin.jetbrains" path="/themes/Catppuccin.theme.json"  />
+        <themeProvider id="com.github.catppuccin.jetbrains.latte" path="/themes/CatppuccinLatte.theme.json"/>
     </extensions>
 </idea-plugin>
