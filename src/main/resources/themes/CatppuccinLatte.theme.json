@@ -33,7 +33,8 @@
     },
     "ui": {
         "*": {
-            "background": "base"
+            "background": "base",
+            "foreground": "text"
         },
         "ActionButton": {
             "hoverBackground": "#dce0e8",
@@ -47,7 +48,6 @@
         "Button": {
             "default.startBackground": "lavender",
             "default.endBackground": "lavender",
-            "foreground": "text",
             "default.foreground": "base"
         },
         "Editor": {
@@ -80,7 +80,6 @@
         "Tree": {
             "rowHeight": 24,
             "selectionForeground": "text",
-            "foreground": "text",
             "selectionBackground": "surface1",
             "selectionInactiveBackground": "surface0"
         }
