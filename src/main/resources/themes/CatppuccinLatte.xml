@@ -352,7 +352,7 @@
     </option>
     <option name="DEFAULT_CONSTANT">
       <value>
-        <option name="FOREGROUND" value="fe640b" />
+        <option name="FOREGROUND" value="4a5e5" />
         <option name="FONT_TYPE" value="2" />
       </value>
     </option>
@@ -413,7 +413,7 @@
     </option>
     <option name="DEFAULT_KEYWORD">
       <value>
-        <option name="FOREGROUND" value="7287fd" />
+        <option name="FOREGROUND" value="df8e1d" />
       </value>
     </option>
     <option name="DEFAULT_LABEL">
@@ -435,7 +435,7 @@
     </option>
     <option name="DEFAULT_NUMBER">
       <value>
-        <option name="FOREGROUND" value="fe640b" />
+        <option name="FOREGROUND" value="4a5e5" />
       </value>
     </option>
     <option name="DEFAULT_REASSIGNED_LOCAL_VARIABLE">
