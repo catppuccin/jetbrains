@@ -386,7 +386,7 @@
     </option>
     <option name="DEFAULT_FUNCTION_CALL">
       <value>
-        <option name="FOREGROUND" value="df8e1d" />
+        <option name="FOREGROUND" value="dd7878" />
       </value>
     </option>
     <option name="DEFAULT_FUNCTION_DECLARATION">
@@ -714,6 +714,11 @@
         <option name="FOREGROUND" value="830091" />
       </value>
     </option>
+    <option name="JS.INSTANCE_MEMBER_FUNCTION">
+      <value>
+        <option name="FOREGROUND" value="179299" />
+      </value>
+    </option>
     <option name="JS.LOCAL_VARIABLE">
       <value>
         <option name="FOREGROUND" value="248f8f" />
@@ -722,6 +727,17 @@
     <option name="JS.REGEXP">
       <value>
         <option name="FOREGROUND" value="264eff" />
+      </value>
+    </option>
+    <option name="KOTLIN_SMART_CAST_RECEIVER">
+      <value />
+    </option>
+    <option name="KOTLIN_SMART_CAST_VALUE">
+      <value />
+    </option>
+    <option name="KOTLIN_SMART_CONSTANT">
+      <value>
+        <option name="FOREGROUND" value="dc8a78" />
       </value>
     </option>
     <option name="LINE_FULL_COVERAGE">
@@ -811,6 +827,11 @@
     <option name="PROPERTIES.KEY">
       <value>
         <option name="FOREGROUND" value="83080" />
+      </value>
+    </option>
+    <option name="PY.KEYWORD_ARGUMENT">
+      <value>
+        <option name="FOREGROUND" value="7287fd" />
       </value>
     </option>
     <option name="RUNTIME_ERROR">
@@ -947,5 +968,7 @@
         <option name="FOREGROUND" value="e6" />
       </value>
     </option>
+    <option name="KOTLIN_KEYWORD_VAL" baseAttributes="KOTLIN_KEYWORD" />
+    <option name="KOTLIN_KEYWORD_VAR" baseAttributes="KOTLIN_KEYWORD" />
   </attributes>
 </scheme>
