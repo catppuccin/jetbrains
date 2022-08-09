@@ -2,6 +2,10 @@
 
 # Catppuccin Theme Changelog
 
+## [1.0.9] - 09.08.2022
+
+row tree height fix
+
 ## [1.0.8] - 20.06.2022
 
 - XAML support
