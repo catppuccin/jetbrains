@@ -1,41 +1,45 @@
 {
-  "name": "Catppuccin",
+  "name": "Catppuccin Macchiato",
   "dark": true,
-  "author": "Timo Epp <epptimo@gmail.com>",
-  "editorScheme": "/themes/Catppuccin.xml",
+  "author": "Catppuccin Org <releases@catppucin.com>",
+  "editorScheme": "/themes/Catppuccin-Macchiato.xml",
   "colors": {
-    "rosewater0": "#F5E0DC",
-    "flamingo0":  "#F2CDCD",
-    "mauve0":     "#DDB6F2",
-    "pink0":      "#F5C2E7",
-    "maroon0":    "#E8A2AF",
-    "red0":       "#F28FAD",
-    "peach0":     "#F8BD96",
-    "yellow0":    "#FAE3B0",
-    "green0":     "#ABE9B3",
-    "teal0":      "#B5E8E0",
-    "blue0":      "#96CDFB",
-    "sky0":       "#89DCEB",
-    "lavender0":  "#C9CBFF",
-    "black0":    "#161320",
-    "black1":    "#1A1826",
-    "black2":    "#1E1E2E",
-    "black3":    "#302D41",
-    "black4":    "#575268",
-    "gray0":     "#6E6C7E",
-    "gray1":     "#988BA2",
-    "gray2":     "#C3BAC6",
-    "white":     "#D9E0EE",
-    "accentColor": "#96CDFB",
-    "secondaryAccentColor": "#FAE3B0",
-    "primaryForeground": "#D9E0EE",
-    "primaryBackground": "#1E1E2E",
-    "secondaryBackground": "#302D41",
-    "hoverBackground": "#575268",
-    "selectionBackground": "#575268",
-    "selectionInactiveBackground": "#1E1E2E",
-    "borderColor": "#575268",
-    "separatorColor": "#575268"
+    "rosewater": "#f4dbd6",
+    "flamingo": "#f0c6c6",
+    "mauve": "#c6a0f6",
+    "pink": "#f5bde6",
+    "maroon": "#ee99a0",
+    "red": "#ed8796",
+    "peach": "#f5a97f",
+    "yellow": "#eed49f",
+    "green": "#a6da95",
+    "teal": "#8bd5ca",
+    "blue": "#8aadf4",
+    "sky": "#91d7e3",
+    "sapphire": "#7dc4e4",
+    "lavender": "#b7bdf8",
+    "crust": "#181926",
+    "mantle": "#1e2030",
+    "base": "#24273a",
+    "surface0": "#363a4f",
+    "surface1": "#494d64",
+    "surface2": "#5b6078",
+    "overlay0": "#6e738d",
+    "overlay1": "#8087a2",
+    "overlay2": "#939ab7",
+    "text": "#cad3f5",
+    "subtext0": "#a5adcb",
+    "subtext1": "#b8c0e0",
+    "accentColor": "#c6a0f6",
+    "secondaryAccentColor": "#eed49f",
+    "primaryForeground": "#cad3f5",
+    "primaryBackground": "#24273a",
+    "secondaryBackground": "#363a4f",
+    "hoverBackground": "#494d64",
+    "selectionBackground": "#494d64",
+    "selectionInactiveBackground": "#24273a",
+    "borderColor": "#494d64",
+    "separatorColor": "#494d64"
   },
   "ui": {
     "*": {
@@ -73,8 +77,7 @@
       "background": "secondaryBackground",
       "borderColor": "secondaryAccentColor"
     },
-    "BookmarkMnemonicAvailable": {
-    },
+    "BookmarkMnemonicAvailable": {},
     "BookmarkMnemonicCurrent": {
       "foreground": "primaryForeground",
       "background": "selectionBackground",
@@ -89,13 +92,13 @@
       "focusedBorderColor": "accentColor",
       "disabledBorderColor": "primaryBackground",
       "default": {
-        "foreground": "black4",
+        "foreground": "surface1",
         "startBackground": "accentColor",
         "endBackground": "accentColor",
         "startBorderColor": "accentColor",
         "endBorderColor": "accentColor",
         "focusColor": "accentColor",
-        "focusedBorderColor": "black4"
+        "focusedBorderColor": "surface1"
       }
     },
     "Counter": {
@@ -107,7 +110,7 @@
       "ArrowButton": {
         "background": "secondaryBackground",
         "nonEditableBackground": "secondaryBackground",
-        "disabledIconColor": "lavender0",
+        "disabledIconColor": "lavender",
         "iconColor": "accentColor"
       },
       "selectionBackground": "selectionBackground",
@@ -116,17 +119,17 @@
     "CompletionPopup": {
       "selectionBackground": "selectionBackground",
       "selectionInactiveBackground": "selectionInactiveBackground",
-      "matchForeground": "flamingo0"
+      "matchForeground": "flamingo"
     },
     "Component": {
       "focusColor": "accentColor",
       "borderColor": "primaryBackground",
       "focusedBorderColor": "selectionBackground",
       "disabledBorderColor": "selectionBackground",
-      "errorFocusColor": "red0",
-      "inactiveErrorFocusColor": "red0",
-      "warningFocusColor": "yellow0",
-      "inactiveWarningFocusColor": "yellow0"
+      "errorFocusColor": "red",
+      "inactiveErrorFocusColor": "red",
+      "warningFocusColor": "yellow",
+      "inactiveWarningFocusColor": "yellow"
     },
     "DragAndDrop": {
       "borderColor": "selectionBackground"
@@ -140,7 +143,7 @@
       "underlinedTabBackground": "secondaryBackground",
       "underlineColor": "accentColor",
       "underlineHeight": 1,
-      "hoverBackground": "black1",
+      "hoverBackground": "mantle",
       "inactiveUnderlineColor": "accentColor"
     },
     "FileColor": {
@@ -158,16 +161,16 @@
       "pressedForeground": "secondaryAccentColor"
     },
     "Notification": {
-      "background": "black1",
-      "errorBorderColor": "red0",
+      "background": "mantle",
+      "errorBorderColor": "red",
       "errorBackground": "primaryBackground",
       "errorForeground": "primaryForeground",
       "ToolWindow": {
         "warningForeground": "primaryForeground",
         "warningBackground": "primaryBackground",
-        "warningBorderColor": "peach0",
+        "warningBorderColor": "peach",
         "errorForeground": "primaryForeground",
-        "errorBorderColor": "red0",
+        "errorBorderColor": "red",
         "errorBackground": "primaryBackground",
         "informativeForeground": "primaryForeground",
         "informativeBackground": "primaryBackground",
@@ -204,14 +207,14 @@
       }
     },
     "ProgressBar": {
-      "failedEndColor": "maroon0",
-      "failedColor": "red0",
+      "failedEndColor": "maroon",
+      "failedColor": "red",
       "trackColor": "selectionBackground",
       "progressColor": "accentColor",
       "indeterminateStartColor": "accentColor",
       "indeterminateEndColor": "secondaryAccentColor",
-      "passedEndColor": "teal0",
-      "passedColor": "green0"
+      "passedEndColor": "teal",
+      "passedColor": "green"
     },
     "Popup": {
       "Header": {
@@ -245,7 +248,7 @@
       "separatorColor": "separatorColor"
     },
     "SidePanel": {
-      "background": "black1"
+      "background": "mantle"
     },
     "StatusBar": {
       "borderColor": "borderColor",
@@ -268,20 +271,20 @@
     "TextField": {
       "background": "secondaryBackground"
     },
-      "TextArea": {
-          "background": "black1"
-      },
+    "TextArea": {
+      "background": "mantle"
+    },
     "ToggleButton": {
-      "onBackground": "green0",
+      "onBackground": "green",
       "onForeground": "hoverBackground",
       "offBackground": "selectionBackground",
       "offForeground": "hoverBackground",
       "buttonColor": "primaryForeground"
     },
-      "ToolBar": {
-          "background": "primaryBackground",
-          "borderHandleColor": "secondaryAccentColor"
-      },
+    "ToolBar": {
+      "background": "primaryBackground",
+      "borderHandleColor": "secondaryAccentColor"
+    },
     "ToolWindow": {
       "Button": {
         "hoverBackground": "hoverBackground"
@@ -292,27 +295,27 @@
         "borderColor": "secondaryBackground"
       },
       "HeaderTab": {
-        "underlineColor": "pink0",
-        "inactiveUnderlineColor": "white",
+        "underlineColor": "pink",
+        "inactiveUnderlineColor": "text",
         "underlineHeight": 1,
-        "underlinedTabBackground": "black4",
-        "selectedInactiveBackground": "black2",
+        "underlinedTabBackground": "surface1",
+        "selectedInactiveBackground": "base",
         "hoverBackground": "hoverBackground"
       }
     },
     "Tree": {
       "rowHeight": 24,
-      "background": "black1",
+      "background": "mantle",
       "modifiedItemForeground": "accentColor",
       "hoverBackground": "secondaryBackground",
       "selectionBackground": "selectionBackground",
       "selectionInactiveBackground": "selectionInactiveBackground"
     },
     "ValidationTooltip": {
-      "errorBackground": "black1",
-        "errorBorderColor": "red0",
-      "warningBackground": "black1",
-      "warningBorderColor": "yellow0"
+      "errorBackground": "mantle",
+      "errorBorderColor": "red",
+      "warningBackground": "mantle",
+      "warningBorderColor": "yellow"
     },
     "VersionControl": {
       "FileHistory": {
@@ -321,11 +324,11 @@
         }
       },
       "GitLog": {
-        "headIconColor": "yellow0",
-        "localBranchIconColor": "green0",
+        "headIconColor": "yellow",
+        "localBranchIconColor": "green",
         "remoteBranchIconColor": "secondaryAccentColor",
         "tagIconColor": "accentColor",
-        "otherIconColor": "teal0"
+        "otherIconColor": "teal"
       },
       "Log": {
         "Commit": {
@@ -381,25 +384,3 @@
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
