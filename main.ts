@@ -1,3 +1,4 @@
+#!/usr/bin/env deno run --allow-write
 import {variants, JetBrains} from "./deps.ts"
 
 const opacity = (color: string, opacity: number): string => {
@@ -44,16 +45,16 @@ Object.entries(variants).forEach(([key, value]) => {
         text: value.text.hex,
         subtext0: value.subtext0.hex,
         subtext1: value.subtext1.hex,
-        accentColor: "#96CDFB",
-        secondaryAccentColor: "#FAE3B0",
-        primaryForeground: "#D9E0EE",
-        primaryBackground: "#1E1E2E",
-        secondaryBackground: "#302D41",
-        hoverBackground: "#575268",
-        selectionBackground: "#575268",
-        selectionInactiveBackground: "#1E1E2E",
-        borderColor: "#575268",
-        separatorColor: "#575268",
+        accentColor: value.mauve.hex,
+        secondaryAccentColor: value.yellow.hex,
+        primaryForeground: value.text.hex,
+        primaryBackground: value.base.hex,
+        secondaryBackground: value.surface0.hex,
+        hoverBackground: value.surface1.hex,
+        selectionBackground: value.surface1.hex,
+        selectionInactiveBackground: value.base.hex,
+        borderColor: value.surface1.hex,
+        separatorColor: value.surface1.hex,
       },
       ui: {
         "*": {

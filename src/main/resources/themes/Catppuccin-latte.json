@@ -30,16 +30,16 @@
     "text": "#4c4f69",
     "subtext0": "#6c6f85",
     "subtext1": "#5c5f77",
-    "accentColor": "#96CDFB",
-    "secondaryAccentColor": "#FAE3B0",
-    "primaryForeground": "#D9E0EE",
-    "primaryBackground": "#1E1E2E",
-    "secondaryBackground": "#302D41",
-    "hoverBackground": "#575268",
-    "selectionBackground": "#575268",
-    "selectionInactiveBackground": "#1E1E2E",
-    "borderColor": "#575268",
-    "separatorColor": "#575268"
+    "accentColor": "#8839ef",
+    "secondaryAccentColor": "#df8e1d",
+    "primaryForeground": "#4c4f69",
+    "primaryBackground": "#eff1f5",
+    "secondaryBackground": "#ccd0da",
+    "hoverBackground": "#bcc0cc",
+    "selectionBackground": "#bcc0cc",
+    "selectionInactiveBackground": "#eff1f5",
+    "borderColor": "#bcc0cc",
+    "separatorColor": "#bcc0cc"
   },
   "ui": {
     "*": {
