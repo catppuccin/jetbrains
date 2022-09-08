@@ -8,7 +8,9 @@
     </description>
     <depends>com.intellij.modules.platform</depends>
     <extensions defaultExtensionNs="com.intellij">
-        <themeProvider id="com.github.catppuccin.jetbrains" path="/themes/Catppuccin.theme.json"  />
-        <themeProvider id="com.github.catppuccin.jetbrains.latte" path="/themes/CatppuccinLatte.theme.json"/>
+        <themeProvider id="com.github.catppuccin.latte.jetbrains" path="/themes/Catppuccin-Latte.json"  />
+        <themeProvider id="com.github.catppuccin.frappe.jetbrains" path="/themes/Catppuccin-Frappe.json"  />
+        <themeProvider id="com.github.catppuccin.macchiato.jetbrains" path="/themes/Catppuccin-Macchiato.json"  />
+        <themeProvider id="com.github.catppuccin.mocha.jetbrains" path="/themes/Catppuccin-Mocha.json"  />
     </extensions>
 </idea-plugin>
