@@ -1,17 +1,26 @@
 #!/usr/bin/env deno run --allow-write --allow-read --allow-env
-import { Handlebars, JetBrains, labels, variants } from "./deps.ts";
+import { Handlebars, JetBrains, path, variants } from "./deps.ts";
 
 const opacity = (color: string, opacity: number): string => {
   const opacityHex = Math.floor(255 * opacity);
-  return `${color}${opacityHex.toString(16)}`;
+  return (color + opacityHex.toString(16)).toUpperCase();
 };
 
 const capitalize = (str: string): string => {
   return str.charAt(0).toUpperCase() + str.slice(1);
 };
 
+const basePath = "../src/main/resources/themes/";
+
 Object.entries(variants).forEach(([key, value]) => {
   const isLatte = key === "latte";
+
+  const colors = Object.entries(value).map(([key, value]) => {
+    const hex = value.hex.toUpperCase();
+    return {
+      [key]: hex,
+    };
+  }).reduce((acc, curr) => ({ ...acc, ...curr }), {});
 
   const theme: JetBrains = {
     name: `Catppuccin ${capitalize(key)}`,
@@ -19,42 +28,42 @@ Object.entries(variants).forEach(([key, value]) => {
     author: "Catppuccin Org <releases@catppucin.com>",
     editorScheme: `/themes/Catppuccin-${capitalize(key)}.xml`,
     colors: {
-      rosewater: value.rosewater.hex,
-      flamingo: value.flamingo.hex,
-      mauve: value.mauve.hex,
-      pink: value.pink.hex,
-      maroon: value.maroon.hex,
-      red: value.red.hex,
-      peach: value.peach.hex,
-      yellow: value.yellow.hex,
-      green: value.green.hex,
-      teal: value.teal.hex,
-      blue: value.blue.hex,
-      sky: value.sky.hex,
-      sapphire: value.sapphire.hex,
-      lavender: value.lavender.hex,
-      crust: value.crust.hex,
-      mantle: value.mantle.hex,
-      base: value.base.hex,
-      surface0: value.surface0.hex,
-      surface1: value.surface1.hex,
-      surface2: value.surface2.hex,
-      overlay0: value.overlay0.hex,
-      overlay1: value.overlay1.hex,
-      overlay2: value.overlay2.hex,
-      text: value.text.hex,
-      subtext0: value.subtext0.hex,
-      subtext1: value.subtext1.hex,
-      accentColor: value.mauve.hex,
-      secondaryAccentColor: value.yellow.hex,
-      primaryForeground: value.text.hex,
-      primaryBackground: value.base.hex,
-      secondaryBackground: value.surface0.hex,
-      hoverBackground: value.surface1.hex,
-      selectionBackground: value.surface1.hex,
-      selectionInactiveBackground: value.base.hex,
-      borderColor: value.surface1.hex,
-      separatorColor: value.surface1.hex,
+      rosewater: colors.rosewater,
+      flamingo: colors.flamingo,
+      mauve: colors.mauve,
+      pink: colors.pink,
+      maroon: colors.maroon,
+      red: colors.red,
+      peach: colors.peach,
+      yellow: colors.yellow,
+      green: colors.green,
+      teal: colors.teal,
+      blue: colors.blue,
+      sky: colors.sky,
+      sapphire: colors.sapphire,
+      lavender: colors.lavender,
+      crust: colors.crust,
+      mantle: colors.mantle,
+      base: colors.base,
+      surface0: colors.surface0,
+      surface1: colors.surface1,
+      surface2: colors.surface2,
+      overlay0: colors.overlay0,
+      overlay1: colors.overlay1,
+      overlay2: colors.overlay2,
+      text: colors.text,
+      subtext0: colors.subtext0,
+      subtext1: colors.subtext1,
+      accentColor: colors.mauve,
+      secondaryAccentColor: colors.yellow,
+      primaryForeground: colors.text,
+      primaryBackground: colors.base,
+      secondaryBackground: colors.surface0,
+      hoverBackground: colors.surface1,
+      selectionBackground: colors.surface1,
+      selectionInactiveBackground: colors.base,
+      borderColor: colors.surface1,
+      separatorColor: colors.surface1,
     },
     ui: {
       "*": {
@@ -401,33 +410,45 @@ Object.entries(variants).forEach(([key, value]) => {
   };
 
   Deno.writeTextFileSync(
-    `./src/main/resources/themes/Catppuccin-${capitalize(key)}.json`,
+    path.join(Deno.cwd(), basePath, `Catppuccin-${capitalize(key)}.json`),
     JSON.stringify(theme, null, 2),
   );
 });
 
+// adds the opacity function to Handlebars.js
+// USAGE:
+// {{opacity color opacity}}
+// EXAMPLE:
+// {{opacity rosewater 0.5}}
 Handlebars.registerHelper("opacity", opacity);
 
-Deno.readTextFile("./src/main/resources/themes/Catppuccin.template.xml").then(
-  (data) => {
-    Object.entries(variants).forEach(([key, value]) => {
-      const isLatte = key === "latte";
+const templatePath = path.join(Deno.cwd(), basePath, "Catppuccin.template.xml");
 
-      const hexValues = Object.entries(value).map(([key, value]) => {
-        return {
-          [key]: value.hex,
-        };
-      }).reduce((acc, curr) => ({ ...acc, ...curr }), {});
+Deno.readTextFile(templatePath).then((data) => {
+  Object.entries(variants).forEach(([key, value]) => {
+    const isLatte = key === "latte";
+    const italicsVersions = [true, false];
 
-      const output = Handlebars.compile(data)({
-        name: `Catppuccin ${capitalize(key)}`,
+    const hexValues = Object.entries(value).map(([key, value]) => {
+      const hex = value.hex.replace("#", "").toUpperCase();
+      return {
+        [key]: hex,
+      };
+    }).reduce((acc, curr) => ({ ...acc, ...curr }), {});
+
+    italicsVersions.forEach((italics) => {
+      const options = {
+        name: `Catppuccin ${capitalize(key)}${!italics ? " (no italics)" : ""}`,
+        italics: italics,
+        isLatte: isLatte,
         parent_scheme: isLatte ? "Default" : "Darcula",
         ...hexValues,
-      });
-      Deno.writeTextFileSync(
-        `./src/main/resources/themes/Catppuccin-${capitalize(key)}.xml`,
-        output,
-      );
+      };
+      const output = Handlebars.compile(data)(options);
+
+      const suffix = italics ? "" : "-no-italics";
+      const fileName = `Catppuccin-${capitalize(key)}${suffix}.xml`;
+      Deno.writeTextFileSync(path.join(Deno.cwd(), basePath, fileName), output);
     });
-  },
-);
+  });
+});

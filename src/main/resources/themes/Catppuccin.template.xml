@@ -78,13 +78,17 @@
     <option name="ABSTRACT_METHOD_ATTRIBUTES">
       <value>
         <option name="FOREGROUND" value="{{blue}}" />
+        {{#if italics}}
         <option name="FONT_TYPE" value="2" />
+        {{/if}}
       </value>
     </option>
     <option name="ANNOTATION_ATTRIBUTE_NAME_ATTRIBUTES">
       <value>
         <option name="FOREGROUND" value="{{yellow}}" />
+        {{#if italics}}
         <option name="FONT_TYPE" value="2" />
+        {{/if}}
       </value>
     </option>
     <option name="ANNOTATION_NAME_ATTRIBUTES" baseAttributes="DEFAULT_METADATA" />
@@ -181,7 +185,9 @@
     <option name="BUILDOUT.LINE_COMMENT">
       <value>
         <option name="FOREGROUND" value="{{surface2}}" />
+        {{#if italics}}
         <option name="FONT_TYPE" value="2" />
+        {{/if}}
       </value>
     </option>
     <option name="BUILDOUT.SECTION_NAME">
@@ -213,13 +219,17 @@
     <option name="COFFEESCRIPT.BLOCK_COMMENT">
       <value>
         <option name="FOREGROUND" value="{{surface2}}" />
+        {{#if italics}}
         <option name="FONT_TYPE" value="2" />
+        {{/if}}
       </value>
     </option>
     <option name="COFFEESCRIPT.BOOLEAN">
       <value>
         <option name="FOREGROUND" value="{{peach}}" />
+        {{#if italics}}
         <option name="FONT_TYPE" value="2" />
+        {{/if}}
       </value>
     </option>
     <option name="COFFEESCRIPT.BRACE">
@@ -235,7 +245,9 @@
     <option name="COFFEESCRIPT.CLASS_NAME">
       <value>
         <option name="FOREGROUND" value="{{yellow}}" />
+        {{#if italics}}
         <option name="FONT_TYPE" value="2" />
+        {{/if}}
       </value>
     </option>
     <option name="COFFEESCRIPT.COLON">
