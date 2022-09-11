@@ -1,4 +1,4 @@
-<scheme name="Catppuccin Macchiato" version="142" parent_scheme="Darcula">
+<scheme name="Catppuccin Macchiato (no italics)" version="142" parent_scheme="Darcula">
   <colors>
     <option name="ADDED_LINES_COLOR" value="A6DA95" />
     <option name="ANNOTATIONS_COLOR" value="a0a7b4" />
@@ -78,13 +78,11 @@
     <option name="ABSTRACT_METHOD_ATTRIBUTES">
       <value>
         <option name="FOREGROUND" value="8AADF4" />
-        <option name="FONT_TYPE" value="2" />
       </value>
     </option>
     <option name="ANNOTATION_ATTRIBUTE_NAME_ATTRIBUTES">
       <value>
         <option name="FOREGROUND" value="EED49F" />
-        <option name="FONT_TYPE" value="2" />
       </value>
     </option>
     <option name="ANNOTATION_NAME_ATTRIBUTES" baseAttributes="DEFAULT_METADATA" />
@@ -180,7 +178,6 @@
     <option name="BUILDOUT.LINE_COMMENT">
       <value>
         <option name="FOREGROUND" value="5B6078" />
-        <option name="FONT_TYPE" value="2" />
       </value>
     </option>
     <option name="BUILDOUT.SECTION_NAME">
@@ -212,13 +209,11 @@
     <option name="COFFEESCRIPT.BLOCK_COMMENT">
       <value>
         <option name="FOREGROUND" value="5B6078" />
-        <option name="FONT_TYPE" value="2" />
       </value>
     </option>
     <option name="COFFEESCRIPT.BOOLEAN">
       <value>
         <option name="FOREGROUND" value="F5A97F" />
-        <option name="FONT_TYPE" value="2" />
       </value>
     </option>
     <option name="COFFEESCRIPT.BRACE">
@@ -234,7 +229,6 @@
     <option name="COFFEESCRIPT.CLASS_NAME">
       <value>
         <option name="FOREGROUND" value="EED49F" />
-        <option name="FONT_TYPE" value="2" />
       </value>
     </option>
     <option name="COFFEESCRIPT.COLON">

@@ -25,7 +25,7 @@ Object.entries(variants).forEach(([key, value]) => {
   const theme: JetBrains = {
     name: `Catppuccin ${capitalize(key)}`,
     dark: !isLatte,
-    author: "Catppuccin Org <releases@catppucin.com>",
+    author: "Catppuccin Org <releases@catppuccin.com>",
     editorScheme: `/themes/Catppuccin-${capitalize(key)}.xml`,
     colors: {
       rosewater: colors.rosewater,
@@ -174,7 +174,7 @@ Object.entries(variants).forEach(([key, value]) => {
         Blue: "#96CDFB50",
         Green: "#27403B50",
         Orange: "#F8BD9650",
-        Yellow: "#243944ff",
+        Yellow: opacity(value.surface0.hex, 0.5),
         Rose: "#F5E0DC50",
         Violet: "#DDB6F250",
       },
@@ -425,16 +425,16 @@ Handlebars.registerHelper("opacity", opacity);
 const templatePath = path.join(Deno.cwd(), basePath, "Catppuccin.template.xml");
 
 Deno.readTextFile(templatePath).then((data) => {
-  Object.entries(variants).forEach(([key, value]) => {
-    const isLatte = key === "latte";
+    Object.entries(variants).forEach(([key, value]) => {
+      const isLatte = key === "latte";
     const italicsVersions = [true, false];
 
-    const hexValues = Object.entries(value).map(([key, value]) => {
+      const hexValues = Object.entries(value).map(([key, value]) => {
       const hex = value.hex.replace("#", "").toUpperCase();
-      return {
+        return {
         [key]: hex,
-      };
-    }).reduce((acc, curr) => ({ ...acc, ...curr }), {});
+        };
+      }).reduce((acc, curr) => ({...acc, ...curr}), {});
 
     italicsVersions.forEach((italics) => {
       const options = {
@@ -449,6 +449,6 @@ Deno.readTextFile(templatePath).then((data) => {
       const suffix = italics ? "" : "-no-italics";
       const fileName = `Catppuccin-${capitalize(key)}${suffix}.xml`;
       Deno.writeTextFileSync(path.join(Deno.cwd(), basePath, fileName), output);
+      });
     });
-  });
 });

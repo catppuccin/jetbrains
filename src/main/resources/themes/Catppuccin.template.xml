@@ -10,7 +10,7 @@
     <option name="BookmarkMnemonicIcon.foreground" value="a0a7b4" />
     <option name="CARET_COLOR" value="{{rosewater}}" />
     <option name="CARET_ROW_COLOR" value="{{surface0}}" />
-    <option name="CONSOLE_BACKGROUND_KEY" value="1a1826" />
+    <option name="CONSOLE_BACKGROUND_KEY" value="{{base}}" />
     <option name="DELETED_LINES_COLOR" value="{{maroon}}" />
     <option name="DIAGRAM_ANNOTATION_EDGE" value="{{yellow}}" />
     <option name="DIAGRAM_DEFAULT_EDGE" value="a0a7b4" />
@@ -52,15 +52,15 @@
     <option name="METHOD_SEPARATORS_COLOR" value="{{surface0}}" />
     <option name="MODIFIED_LINES_COLOR" value="{{peach}}" />
     <option name="MODIFIED_TAB_ICON" value="{{blue}}" />
-    <option name="NOTIFICATION_BACKGROUND" value="1a1826" />
+    <option name="NOTIFICATION_BACKGROUND" value="{{base}}" />
     <option name="PROMOTION_PANE" value="312c3f" />
     <option name="QUESTION_HINT" value="2213c" />
     <option name="RECENT_LOCATIONS_SELECTION" value="{{surface0}}" />
     <option name="RIGHT_MARGIN_COLOR" value="{{surface0}}" />
     <option name="SELECTED_INDENT_GUIDE" value="{{surface1}}" />
     <option name="SELECTED_TEARLINE_COLOR" value="{{surface1}}" />
-    <option name="SELECTION_BACKGROUND" value="{{overlay0}}" />
-    <option name="SELECTION_FOREGROUND" value="{{text}}" />
+    <option name="SELECTION_FOREGROUND" value="" />
+    <option name="SELECTION_BACKGROUND" value="{{opacity overlay2 0.25}}" />
     <option name="SEPARATOR_BELOW_COLOR" value="" />
     <option name="ScrollBar.hoverThumbColor" value="{{opacity overlay0 0.4}}" />
     <option name="ScrollBar.thumbColor" value="{{opacity surface1 0.45}}" />
@@ -168,8 +168,7 @@
     </option>
     <option name="BREAKPOINT_ATTRIBUTES">
       <value>
-        <option name="BACKGROUND" value="1a1826" />
-        <option name="EFFECT_COLOR" value="{{red}}" />
+        <option name="BACKGROUND" value="{{opacity red 0.3}}" />
       </value>
     </option>
     <option name="BUILDOUT.KEY">
@@ -421,7 +420,7 @@
     </option>
     <option name="CONSOLE_BLACK_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="1a1826" />
+        <option name="FOREGROUND" value="{{base}}" />
       </value>
     </option>
     <option name="CONSOLE_BLUE_BRIGHT_OUTPUT">
@@ -1090,7 +1089,7 @@
     </option>
     <option name="EXECUTIONPOINT_ATTRIBUTES">
       <value>
-        <option name="BACKGROUND" value="1a1826" />
+        <option name="BACKGROUND" value="{{base}}" />
         <option name="EFFECT_COLOR" value="{{blue}}" />
       </value>
     </option>
@@ -1359,7 +1358,7 @@
     <option name="INLAY_DEFAULT">
       <value>
         <option name="FOREGROUND" value="{{overlay1}}" />
-        <option name="BACKGROUND" value="1a1826" />
+        <option name="BACKGROUND" value="{{base}}" />
       </value>
     </option>
     <option name="INLAY_TEXT_WITHOUT_BACKGROUND">
