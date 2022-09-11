@@ -10,7 +10,7 @@ const capitalize = (str: string): string => {
   return str.charAt(0).toUpperCase() + str.slice(1);
 };
 
-const basePath = "../src/main/resources/themes/";
+const basePath = "src/main/resources/themes/";
 
 Object.entries(variants).forEach(([key, value]) => {
   const isLatte = key === "latte";
@@ -26,7 +26,7 @@ Object.entries(variants).forEach(([key, value]) => {
     name: `Catppuccin ${capitalize(key)}`,
     dark: !isLatte,
     author: "Catppuccin Org <releases@catppuccin.com>",
-    editorScheme: `/themes/Catppuccin-${capitalize(key)}.xml`,
+    editorScheme: `/themes/${key}.xml`,
     colors: {
       rosewater: colors.rosewater,
       flamingo: colors.flamingo,
@@ -290,7 +290,7 @@ Object.entries(variants).forEach(([key, value]) => {
         hoverBackground: "selectionBackground",
       },
       TableHeader: {
-        bottomSeparatorColor: "prmaryBackground",
+        bottomSeparatorColor: "primaryBackground",
       },
       TextField: {
         background: "secondaryBackground",
@@ -379,6 +379,7 @@ Object.entries(variants).forEach(([key, value]) => {
         },
       },
     },
+    // TODO: MAKE THESE COLOURS THE SAME AS THE V2 PALETTE
     icons: {
       ColorPalette: {
         "Actions.Blue": "#96CDFB",
@@ -410,7 +411,7 @@ Object.entries(variants).forEach(([key, value]) => {
   };
 
   Deno.writeTextFileSync(
-    path.join(Deno.cwd(), basePath, `Catppuccin-${capitalize(key)}.json`),
+    path.join(Deno.cwd(), basePath, `${key}.json`),
     JSON.stringify(theme, null, 2),
   );
 });
@@ -422,7 +423,7 @@ Object.entries(variants).forEach(([key, value]) => {
 // {{opacity rosewater 0.5}}
 Handlebars.registerHelper("opacity", opacity);
 
-const templatePath = path.join(Deno.cwd(), basePath, "Catppuccin.template.xml");
+const templatePath = path.join(Deno.cwd(), "generateScheme", "template.xml");
 
 Deno.readTextFile(templatePath).then((data) => {
     Object.entries(variants).forEach(([key, value]) => {
@@ -447,7 +448,7 @@ Deno.readTextFile(templatePath).then((data) => {
       const output = Handlebars.compile(data)(options);
 
       const suffix = italics ? "" : "-no-italics";
-      const fileName = `Catppuccin-${capitalize(key)}${suffix}.xml`;
+      const fileName = `${key}${suffix}.xml`;
       Deno.writeTextFileSync(path.join(Deno.cwd(), basePath, fileName), output);
       });
     });

@@ -2,7 +2,7 @@
   "name": "Catppuccin Mocha",
   "dark": true,
   "author": "Catppuccin Org <releases@catppuccin.com>",
-  "editorScheme": "/themes/Catppuccin-Mocha.xml",
+  "editorScheme": "/themes/mocha.xml",
   "colors": {
     "rosewater": "#F5E0DC",
     "flamingo": "#F2CDCD",
@@ -266,7 +266,7 @@
       "hoverBackground": "selectionBackground"
     },
     "TableHeader": {
-      "bottomSeparatorColor": "prmaryBackground"
+      "bottomSeparatorColor": "primaryBackground"
     },
     "TextField": {
       "background": "secondaryBackground"
