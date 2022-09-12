@@ -22,7 +22,7 @@
     <option name="DIAGRAM_NOTE_BORDER" value="626880" />
     <option name="DIAGRAM_REALIZATION_EDGE" value="A6D189" />
     <option name="DIFF_SEPARATORS_BACKGROUND" value="737994" />
-    <option name="DOCUMENTATION_COLOR" value="414559" />
+    <option name="DOCUMENTATION_COLOR" value="292C3C" />
     <option name="DOC_COMMENT_LINK" value="8CAAEE" />
     <option name="ERROR_HINT" value="832133" />
     <option name="FILESTATUS_IDEA_FILESTATUS_IGNORED" value="4f575f" />
@@ -867,7 +867,6 @@
         <option name="FONT_TYPE" value="2" />
       </value>
     </option>
-    <option name="DEFAULT_HIGHLIGHTED_REFERENCE" baseAttributes="DEFAULT_STRING" />
     <option name="DEFAULT_IDENTIFIER">
       <value>
         <option name="FOREGROUND" value="EF9F76" />
@@ -990,30 +989,27 @@
     </option>
     <option name="DIFF_CONFLICT">
       <value>
-        <option name="FOREGROUND" value="734b61" />
+<!--        TODO: PUT SOME OPACITY ON THIS-->
         <option name="BACKGROUND" value="EA999C" />
         <option name="ERROR_STRIPE_COLOR" value="EA999C" />
       </value>
     </option>
     <option name="DIFF_DELETED">
       <value>
-        <option name="FOREGROUND" value="353345" />
         <option name="BACKGROUND" value="51576D" />
         <option name="ERROR_STRIPE_COLOR" value="51576D" />
       </value>
     </option>
     <option name="DIFF_INSERTED">
       <value>
-        <option name="FOREGROUND" value="27403b" />
-        <option name="BACKGROUND" value="158472" />
-        <option name="ERROR_STRIPE_COLOR" value="158472" />
+        <option name="BACKGROUND" value="A6D18926" />
+        <option name="ERROR_STRIPE_COLOR" value="A6D18926" />
       </value>
     </option>
     <option name="DIFF_MODIFIED">
       <value>
-        <option name="FOREGROUND" value="243a5e" />
-        <option name="BACKGROUND" value="395f8f" />
-        <option name="ERROR_STRIPE_COLOR" value="395f8f" />
+        <option name="BACKGROUND" value="8CAAEE33" />
+        <option name="ERROR_STRIPE_COLOR" value="8CAAEE33" />
       </value>
     </option>
     <option name="DJANGO_TAG_NAME">
@@ -1309,8 +1305,7 @@
     </option>
     <option name="IDENTIFIER_UNDER_CARET_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="8CAAEE" />
-        <option name="BACKGROUND" value="626880" />
+        <option name="EFFECT_COLOR" value="626880" />
         <option name="ERROR_STRIPE_COLOR" value="51576D" />
       </value>
     </option>
@@ -1383,6 +1378,30 @@
         <option name="FONT_TYPE" value="2" />
       </value>
     </option>
+    <option name="JAVA.IMPORT_PACKAGE">
+      <value>
+        <option name="FOREGROUND" value="C6D0F5"/>
+        <option name="FONT_TYPE" value="2"/>
+      </value>
+    </option>
+<!--    <option name="JAVA.STATIC_FINAL">-->
+<!--      <value>-->
+<!--        <option name="FOREGROUND" value=""/>-->
+<!--        <option name="FONT_TYPE" value="2"/>-->
+<!--      </value>-->
+<!--    </option>-->
+<!--    <option name="JAVA.THIS_SUPER">-->
+<!--      <value>-->
+<!--        <option name="FOREGROUND" value="c1c0c0"/>-->
+<!--        <option name="FONT_TYPE" value="2"/>-->
+<!--      </value>-->
+<!--    </option>-->
+<!--    <option name="JAVA_KEYWORD" baseAttributes="DEFAULT_KEYWORD"/>-->
+<!--    <option name="JAVA_VALID_STRING_ESCAPE">-->
+<!--      <value>-->
+<!--        <option name="FOREGROUND" value=""/>-->
+<!--      </value>-->
+<!--    </option>-->
     <option name="JADE_FILE_PATH">
       <value>
         <option name="FOREGROUND" value="A6D189" />
