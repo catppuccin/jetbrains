@@ -1390,12 +1390,12 @@
         <option name="FONT_TYPE" value="2" />
       </value>
     </option>
-    <option name="JAVA.IMPORT_PACKAGE">
-      <value>
-        <option name="FOREGROUND" value="{{text}}"/>
-        <option name="FONT_TYPE" value="2"/>
-      </value>
-    </option>
+<!--    <option name="JAVA.IMPORT_PACKAGE">-->
+<!--      <value>-->
+<!--        <option name="FOREGROUND" value="{{text}}"/>-->
+<!--        <option name="FONT_TYPE" value="2"/>-->
+<!--      </value>-->
+<!--    </option>-->
 <!--    <option name="JAVA.STATIC_FINAL">-->
 <!--      <value>-->
 <!--        <option name="FOREGROUND" value="{{theme.colors.blue}}"/>-->
@@ -2816,13 +2816,11 @@
     </option>
     <option name="TAB_SELECTED">
       <value>
-        <option name="FOREGROUND" value="{{pink}}" />
         <option name="BACKGROUND" value="{{surface1}}" />
       </value>
     </option>
     <option name="TAB_SELECTED_INACTIVE">
       <value>
-        <option name="FOREGROUND" value="{{pink}}" />
         <option name="BACKGROUND" value="{{surface0}}" />
       </value>
     </option>
