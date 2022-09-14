@@ -118,7 +118,7 @@
     },
     "CompletionPopup": {
       "selectionBackground": "selectionBackground",
-      "selectionInactiveBackground": "selectionInactiveBackground",
+      "selectionInactiveBackground": "selectionBackground",
       "matchForeground": "flamingo"
     },
     "Component": {
@@ -357,30 +357,30 @@
   },
   "icons": {
     "ColorPalette": {
-      "Actions.Blue": "#96CDFB",
-      "Actions.Green": "#ABE9B3",
-      "Actions.Orange": "#F8BD96",
-      "Actions.Purple": "#DDB6F2",
-      "Actions.Red": "#F28FAD",
-      "Actions.Yellow": "#FAE3B0",
-      "Actions.Gray": "#6E6C7E",
-      "Actions.White": "#D9E0EE",
-      "Actions.Black": "#161320",
-      "Actions.Grey": "#6E6C7E",
-      "Actions.GreyInline.Dark": "#96CDFB",
-      "Actions.GreyInline": "#96CDFB",
-      "Objects.Blue": "#96CDFB",
-      "Objects.Green": "#ABE9B3",
-      "Objects.GreenAndroid": "#ABE9B3",
-      "Objects.Grey": "#6E6C7E",
-      "Objects.Pink": "#F5C2E7",
-      "Objects.Purple": "#DDB6F2",
-      "Objects.Red": "#F28FAD",
-      "Objects.RedStatus": "#F28FAD",
-      "Objects.Yellow": "#FAE3B0",
-      "Objects.YellowDark": "#F8BD96",
-      "Objects.BlackText": "#302D41",
-      "Tree.iconColor": "#96CDFB"
+      "Actions.Blue": "blue",
+      "Actions.Green": "green",
+      "Actions.Orange": "peach",
+      "Actions.Purple": "mauve",
+      "Actions.Red": "red",
+      "Actions.Yellow": "yellow",
+      "Actions.Gray": "overlay0",
+      "Actions.White": "text",
+      "Actions.Black": "crust",
+      "Actions.Grey": "overlay0",
+      "Actions.GreyInline.Dark": "blue",
+      "Actions.GreyInline": "blue",
+      "Objects.Blue": "blue",
+      "Objects.Green": "green",
+      "Objects.GreenAndroid": "#A6D189CC",
+      "Objects.Grey": "overlay0",
+      "Objects.Pink": "pink",
+      "Objects.Purple": "mauve",
+      "Objects.Red": "red",
+      "Objects.RedStatus": "red",
+      "Objects.Yellow": "yellow",
+      "Objects.YellowDark": "flamingo",
+      "Objects.BlackText": "surface0",
+      "Tree.iconColor": "blue"
     }
   }
 }

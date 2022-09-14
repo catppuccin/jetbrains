@@ -1378,12 +1378,12 @@
         <option name="FONT_TYPE" value="2" />
       </value>
     </option>
-    <option name="JAVA.IMPORT_PACKAGE">
-      <value>
-        <option name="FOREGROUND" value="CDD6F4"/>
-        <option name="FONT_TYPE" value="2"/>
-      </value>
-    </option>
+<!--    <option name="JAVA.IMPORT_PACKAGE">-->
+<!--      <value>-->
+<!--        <option name="FOREGROUND" value="CDD6F4"/>-->
+<!--        <option name="FONT_TYPE" value="2"/>-->
+<!--      </value>-->
+<!--    </option>-->
 <!--    <option name="JAVA.STATIC_FINAL">-->
 <!--      <value>-->
 <!--        <option name="FOREGROUND" value=""/>-->
@@ -2804,13 +2804,11 @@
     </option>
     <option name="TAB_SELECTED">
       <value>
-        <option name="FOREGROUND" value="F5C2E7" />
         <option name="BACKGROUND" value="45475A" />
       </value>
     </option>
     <option name="TAB_SELECTED_INACTIVE">
       <value>
-        <option name="FOREGROUND" value="F5C2E7" />
         <option name="BACKGROUND" value="313244" />
       </value>
     </option>
