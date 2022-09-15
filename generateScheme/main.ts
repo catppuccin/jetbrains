@@ -167,7 +167,7 @@ Object.entries(variants).forEach(([key, value]) => {
         underlinedTabBackground: "secondaryBackground",
         underlineColor: "accentColor",
         underlineHeight: 1,
-        hoverBackground: "mantle",
+        hoverBackground: "surface0",
         inactiveUnderlineColor: "accentColor",
       },
       FileColor: {
