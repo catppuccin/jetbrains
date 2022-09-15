@@ -1,13 +1,7 @@
 <scheme name="{{name}}" version="142" parent_scheme="{{parent_scheme}}">
   <colors>
     <option name="ADDED_LINES_COLOR" value="{{green}}" />
-    <option name="ANNOTATIONS_COLOR" value="a0a7b4" />
-    <option name="Bookmark.Mnemonic.iconBackground" value="3d424b" />
-    <option name="Bookmark.Mnemonic.iconBorderColor" value="568af2" />
-    <option name="Bookmark.Mnemonic.iconForeground" value="a0a7b4" />
-    <option name="BookmarkMnemonicIcon.background" value="3d424b" />
-    <option name="BookmarkMnemonicIcon.borderColor" value="568af2" />
-    <option name="BookmarkMnemonicIcon.foreground" value="a0a7b4" />
+    <option name="ANNOTATIONS_COLOR" value="{{text}}" />
     <option name="CARET_COLOR" value="{{rosewater}}" />
     <option name="CARET_ROW_COLOR" value="{{surface0}}" />
     <option name="CONSOLE_BACKGROUND_KEY" value="{{base}}" />
@@ -67,9 +61,11 @@
     <option name="TAB_UNDERLINE" value="{{pink}}" />
     <option name="TAB_UNDERLINE_INACTIVE" value="{{text}}" />
     <option name="TEARLINE_COLOR" value="{{surface0}}" />
-    <option name="VCS_ANNOTATIONS_COLOR_1" value="335027" />
-    <option name="VCS_ANNOTATIONS_COLOR_2" value="3e443c" />
-    <option name="VCS_ANNOTATIONS_COLOR_5" value="46333c" />
+    <option name="VCS_ANNOTATIONS_COLOR_1" value="{{opacity mauve 0.6}}" />
+    <option name="VCS_ANNOTATIONS_COLOR_2" value="{{opacity red 0.4}}" />
+    <option name="VCS_ANNOTATIONS_COLOR_3" value="{{opacity green 0.7}}" />
+    <option name="VCS_ANNOTATIONS_COLOR_4" value="{{opacity sapphire 0.3}}" />
+    <option name="VCS_ANNOTATIONS_COLOR_5" value="{{opacity blue 0.6}}" />
     <option name="VISUAL_INDENT_GUIDE" value="{{surface0}}" />
     <option name="WHITESPACES" value="{{surface0}}" />
     <option name="WHITESPACES_MODIFIED_LINES_COLOR" value="{{surface2}}" />
@@ -2816,11 +2812,13 @@
     </option>
     <option name="TAB_SELECTED">
       <value>
-        <option name="BACKGROUND" value="{{surface1}}" />
+        <option name="FOREGROUND" value="{{pink}}" />
+        <option name="BACKGROUND" value="{{surface0}}" />
       </value>
     </option>
     <option name="TAB_SELECTED_INACTIVE">
       <value>
+        <option name="FOREGROUND" value="{{pink}}" />
         <option name="BACKGROUND" value="{{surface0}}" />
       </value>
     </option>

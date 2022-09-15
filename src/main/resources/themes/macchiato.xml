@@ -1,13 +1,7 @@
 <scheme name="Catppuccin Macchiato" version="142" parent_scheme="Darcula">
   <colors>
     <option name="ADDED_LINES_COLOR" value="A6DA95" />
-    <option name="ANNOTATIONS_COLOR" value="a0a7b4" />
-    <option name="Bookmark.Mnemonic.iconBackground" value="3d424b" />
-    <option name="Bookmark.Mnemonic.iconBorderColor" value="568af2" />
-    <option name="Bookmark.Mnemonic.iconForeground" value="a0a7b4" />
-    <option name="BookmarkMnemonicIcon.background" value="3d424b" />
-    <option name="BookmarkMnemonicIcon.borderColor" value="568af2" />
-    <option name="BookmarkMnemonicIcon.foreground" value="a0a7b4" />
+    <option name="ANNOTATIONS_COLOR" value="CAD3F5" />
     <option name="CARET_COLOR" value="F4DBD6" />
     <option name="CARET_ROW_COLOR" value="363A4F" />
     <option name="CONSOLE_BACKGROUND_KEY" value="24273A" />
@@ -67,9 +61,11 @@
     <option name="TAB_UNDERLINE" value="F5BDE6" />
     <option name="TAB_UNDERLINE_INACTIVE" value="CAD3F5" />
     <option name="TEARLINE_COLOR" value="363A4F" />
-    <option name="VCS_ANNOTATIONS_COLOR_1" value="335027" />
-    <option name="VCS_ANNOTATIONS_COLOR_2" value="3e443c" />
-    <option name="VCS_ANNOTATIONS_COLOR_5" value="46333c" />
+    <option name="VCS_ANNOTATIONS_COLOR_1" value="C6A0F699" />
+    <option name="VCS_ANNOTATIONS_COLOR_2" value="ED879666" />
+    <option name="VCS_ANNOTATIONS_COLOR_3" value="A6DA95B2" />
+    <option name="VCS_ANNOTATIONS_COLOR_4" value="7DC4E44C" />
+    <option name="VCS_ANNOTATIONS_COLOR_5" value="8AADF499" />
     <option name="VISUAL_INDENT_GUIDE" value="363A4F" />
     <option name="WHITESPACES" value="363A4F" />
     <option name="WHITESPACES_MODIFIED_LINES_COLOR" value="5B6078" />
@@ -2804,11 +2800,13 @@
     </option>
     <option name="TAB_SELECTED">
       <value>
-        <option name="BACKGROUND" value="494D64" />
+        <option name="FOREGROUND" value="F5BDE6" />
+        <option name="BACKGROUND" value="363A4F" />
       </value>
     </option>
     <option name="TAB_SELECTED_INACTIVE">
       <value>
+        <option name="FOREGROUND" value="F5BDE6" />
         <option name="BACKGROUND" value="363A4F" />
       </value>
     </option>

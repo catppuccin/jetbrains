@@ -1,13 +1,7 @@
 <scheme name="Catppuccin Latte (no italics)" version="142" parent_scheme="Default">
   <colors>
     <option name="ADDED_LINES_COLOR" value="40A02B" />
-    <option name="ANNOTATIONS_COLOR" value="a0a7b4" />
-    <option name="Bookmark.Mnemonic.iconBackground" value="3d424b" />
-    <option name="Bookmark.Mnemonic.iconBorderColor" value="568af2" />
-    <option name="Bookmark.Mnemonic.iconForeground" value="a0a7b4" />
-    <option name="BookmarkMnemonicIcon.background" value="3d424b" />
-    <option name="BookmarkMnemonicIcon.borderColor" value="568af2" />
-    <option name="BookmarkMnemonicIcon.foreground" value="a0a7b4" />
+    <option name="ANNOTATIONS_COLOR" value="4C4F69" />
     <option name="CARET_COLOR" value="DC8A78" />
     <option name="CARET_ROW_COLOR" value="CCD0DA" />
     <option name="CONSOLE_BACKGROUND_KEY" value="EFF1F5" />
@@ -67,9 +61,11 @@
     <option name="TAB_UNDERLINE" value="EA76CB" />
     <option name="TAB_UNDERLINE_INACTIVE" value="4C4F69" />
     <option name="TEARLINE_COLOR" value="CCD0DA" />
-    <option name="VCS_ANNOTATIONS_COLOR_1" value="335027" />
-    <option name="VCS_ANNOTATIONS_COLOR_2" value="3e443c" />
-    <option name="VCS_ANNOTATIONS_COLOR_5" value="46333c" />
+    <option name="VCS_ANNOTATIONS_COLOR_1" value="8839EF99" />
+    <option name="VCS_ANNOTATIONS_COLOR_2" value="D20F3966" />
+    <option name="VCS_ANNOTATIONS_COLOR_3" value="40A02BB2" />
+    <option name="VCS_ANNOTATIONS_COLOR_4" value="209FB54C" />
+    <option name="VCS_ANNOTATIONS_COLOR_5" value="1E66F599" />
     <option name="VISUAL_INDENT_GUIDE" value="CCD0DA" />
     <option name="WHITESPACES" value="CCD0DA" />
     <option name="WHITESPACES_MODIFIED_LINES_COLOR" value="ACB0BE" />
@@ -2798,11 +2794,13 @@
     </option>
     <option name="TAB_SELECTED">
       <value>
-        <option name="BACKGROUND" value="BCC0CC" />
+        <option name="FOREGROUND" value="EA76CB" />
+        <option name="BACKGROUND" value="CCD0DA" />
       </value>
     </option>
     <option name="TAB_SELECTED_INACTIVE">
       <value>
+        <option name="FOREGROUND" value="EA76CB" />
         <option name="BACKGROUND" value="CCD0DA" />
       </value>
     </option>

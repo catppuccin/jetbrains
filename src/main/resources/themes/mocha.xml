@@ -1,13 +1,7 @@
 <scheme name="Catppuccin Mocha" version="142" parent_scheme="Darcula">
   <colors>
     <option name="ADDED_LINES_COLOR" value="A6E3A1" />
-    <option name="ANNOTATIONS_COLOR" value="a0a7b4" />
-    <option name="Bookmark.Mnemonic.iconBackground" value="3d424b" />
-    <option name="Bookmark.Mnemonic.iconBorderColor" value="568af2" />
-    <option name="Bookmark.Mnemonic.iconForeground" value="a0a7b4" />
-    <option name="BookmarkMnemonicIcon.background" value="3d424b" />
-    <option name="BookmarkMnemonicIcon.borderColor" value="568af2" />
-    <option name="BookmarkMnemonicIcon.foreground" value="a0a7b4" />
+    <option name="ANNOTATIONS_COLOR" value="CDD6F4" />
     <option name="CARET_COLOR" value="F5E0DC" />
     <option name="CARET_ROW_COLOR" value="313244" />
     <option name="CONSOLE_BACKGROUND_KEY" value="1E1E2E" />
@@ -67,9 +61,11 @@
     <option name="TAB_UNDERLINE" value="F5C2E7" />
     <option name="TAB_UNDERLINE_INACTIVE" value="CDD6F4" />
     <option name="TEARLINE_COLOR" value="313244" />
-    <option name="VCS_ANNOTATIONS_COLOR_1" value="335027" />
-    <option name="VCS_ANNOTATIONS_COLOR_2" value="3e443c" />
-    <option name="VCS_ANNOTATIONS_COLOR_5" value="46333c" />
+    <option name="VCS_ANNOTATIONS_COLOR_1" value="CBA6F799" />
+    <option name="VCS_ANNOTATIONS_COLOR_2" value="F38BA866" />
+    <option name="VCS_ANNOTATIONS_COLOR_3" value="A6E3A1B2" />
+    <option name="VCS_ANNOTATIONS_COLOR_4" value="74C7EC4C" />
+    <option name="VCS_ANNOTATIONS_COLOR_5" value="89B4FA99" />
     <option name="VISUAL_INDENT_GUIDE" value="313244" />
     <option name="WHITESPACES" value="313244" />
     <option name="WHITESPACES_MODIFIED_LINES_COLOR" value="585B70" />
@@ -2804,11 +2800,13 @@
     </option>
     <option name="TAB_SELECTED">
       <value>
-        <option name="BACKGROUND" value="45475A" />
+        <option name="FOREGROUND" value="F5C2E7" />
+        <option name="BACKGROUND" value="313244" />
       </value>
     </option>
     <option name="TAB_SELECTED_INACTIVE">
       <value>
+        <option name="FOREGROUND" value="F5C2E7" />
         <option name="BACKGROUND" value="313244" />
       </value>
     </option>
