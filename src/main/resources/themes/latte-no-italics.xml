@@ -6,20 +6,31 @@
     <option name="CARET_ROW_COLOR" value="CCD0DA" />
     <option name="CONSOLE_BACKGROUND_KEY" value="EFF1F5" />
     <option name="DELETED_LINES_COLOR" value="E64553" />
-    <option name="DIAGRAM_ANNOTATION_EDGE" value="DF8E1D" />
-    <option name="DIAGRAM_DEFAULT_EDGE" value="a0a7b4" />
-    <option name="DIAGRAM_GENERALIZATION_EDGE" value="04A5E5" />
-    <option name="DIAGRAM_INNER_EDGE" value="E64553" />
-    <option name="DIAGRAM_NODE_BACKGROUND" value="323844" />
-    <option name="DIAGRAM_NODE_HEADER" value="414855" />
-    <option name="DIAGRAM_NOTE_BACKGROUND" value="414855" />
-    <option name="DIAGRAM_NOTE_BORDER" value="ACB0BE" />
-    <option name="DIAGRAM_REALIZATION_EDGE" value="40A02B" />
     <option name="DIFF_SEPARATORS_BACKGROUND" value="9CA0B0" />
     <option name="DOCUMENTATION_COLOR" value="E6E9EF" />
     <option name="DOC_COMMENT_LINK" value="1E66F5" />
-    <option name="ERROR_HINT" value="832133" />
-    <option name="FILESTATUS_IDEA_FILESTATUS_IGNORED" value="4f575f" />
+    <option name="ERROR_HINT" value="D20F39" />
+    <option name="FILESTATUS_ADDED" value="40A02B" />
+    <option name="FILESTATUS_COPIED" value="40A02B" />
+    <option name="FILESTATUS_DELETED" value="ACB0BE" />
+    <option name="FILESTATUS_HIJACKED" value="DF8E1D" />
+    <option name="FILESTATUS_IDEA_FILESTATUS_DELETED_FROM_FILE_SYSTEM" value="ACB0BE" />
+    <option name="FILESTATUS_IDEA_FILESTATUS_IGNORED" value="ACB0BE" />
+    <option name="FILESTATUS_IDEA_FILESTATUS_MERGED_WITH_BOTH_CONFLICTS" value="FE640B" />
+    <option name="FILESTATUS_IDEA_FILESTATUS_MERGED_WITH_CONFLICTS" value="FE640B" />
+    <option name="FILESTATUS_IDEA_FILESTATUS_MERGED_WITH_PROPERTY_CONFLICTS" value="FE640B" />
+    <option name="FILESTATUS_IDEA_SVN_FILESTATUS_EXTERNAL" value="40A02B" />
+    <option name="FILESTATUS_IGNORE.PROJECT_VIEW.IGNORED" value="9CA0B0" />
+    <option name="FILESTATUS_MERGED" value="8839EF" />
+    <option name="FILESTATUS_MODIFIED" value="1E66F5" />
+    <option name="FILESTATUS_NOT_CHANGED_IMMEDIATE" value="1E66F5" />
+    <option name="FILESTATUS_NOT_CHANGED_RECURSIVE" value="1E66F5" />
+    <option name="FILESTATUS_SUPPRESSED" value="BCC0CC" />
+    <option name="FILESTATUS_SWITCHED" value="7287FD" />
+    <option name="FILESTATUS_UNKNOWN" value="FE640BE5" />
+    <option name="FILESTATUS_addedOutside" value="40A02B" />
+    <option name="FILESTATUS_changelistConflict" value="D20F39E5" />
+    <option name="FILESTATUS_modifiedOutside" value="1E66F5" />
     <option name="FOLDED_TEXT_BORDER_COLOR" value="" />
     <option name="GUTTER_BACKGROUND" value="EFF1F5" />
     <option name="HTML_TAG_TREE_LEVEL0" value="D20F39" />
@@ -29,7 +40,7 @@
     <option name="HTML_TAG_TREE_LEVEL4" value="04A5E5" />
     <option name="HTML_TAG_TREE_LEVEL5" value="8839EF" />
     <option name="INDENT_GUIDE" value="CCD0DA" />
-    <option name="INFORMATION_HINT" value="312c3f" />
+    <option name="INFORMATION_HINT" value="CCD0DA" />
     <option name="INLINE_REFACTORING_SETTINGS_DEFAULT" value="BCC0CCA5" />
     <option name="INLINE_REFACTORING_SETTINGS_FOCUSED" value="ACB0BE8C" />
     <option name="INLINE_REFACTORING_SETTINGS_HOVERED" value="ACB0BE8C" />
@@ -47,8 +58,8 @@
     <option name="MODIFIED_LINES_COLOR" value="FE640B" />
     <option name="MODIFIED_TAB_ICON" value="1E66F5" />
     <option name="NOTIFICATION_BACKGROUND" value="EFF1F5" />
-    <option name="PROMOTION_PANE" value="312c3f" />
-    <option name="QUESTION_HINT" value="2213c" />
+    <option name="PROMOTION_PANE" value="CCD0DA" />
+    <option name="QUESTION_HINT" value="CCD0DA" />
     <option name="RECENT_LOCATIONS_SELECTION" value="CCD0DA" />
     <option name="RIGHT_MARGIN_COLOR" value="CCD0DA" />
     <option name="SELECTED_INDENT_GUIDE" value="BCC0CC" />

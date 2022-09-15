@@ -6,20 +6,31 @@
     <option name="CARET_ROW_COLOR" value="{{surface0}}" />
     <option name="CONSOLE_BACKGROUND_KEY" value="{{base}}" />
     <option name="DELETED_LINES_COLOR" value="{{maroon}}" />
-    <option name="DIAGRAM_ANNOTATION_EDGE" value="{{yellow}}" />
-    <option name="DIAGRAM_DEFAULT_EDGE" value="a0a7b4" />
-    <option name="DIAGRAM_GENERALIZATION_EDGE" value="{{sky}}" />
-    <option name="DIAGRAM_INNER_EDGE" value="{{maroon}}" />
-    <option name="DIAGRAM_NODE_BACKGROUND" value="323844" />
-    <option name="DIAGRAM_NODE_HEADER" value="414855" />
-    <option name="DIAGRAM_NOTE_BACKGROUND" value="414855" />
-    <option name="DIAGRAM_NOTE_BORDER" value="{{surface2}}" />
-    <option name="DIAGRAM_REALIZATION_EDGE" value="{{green}}" />
     <option name="DIFF_SEPARATORS_BACKGROUND" value="{{overlay0}}" />
     <option name="DOCUMENTATION_COLOR" value="{{mantle}}" />
     <option name="DOC_COMMENT_LINK" value="{{blue}}" />
-    <option name="ERROR_HINT" value="832133" />
-    <option name="FILESTATUS_IDEA_FILESTATUS_IGNORED" value="4f575f" />
+    <option name="ERROR_HINT" value="{{red}}" />
+    <option name="FILESTATUS_ADDED" value="{{green}}" />
+    <option name="FILESTATUS_COPIED" value="{{green}}" />
+    <option name="FILESTATUS_DELETED" value="{{surface2}}" />
+    <option name="FILESTATUS_HIJACKED" value="{{yellow}}" />
+    <option name="FILESTATUS_IDEA_FILESTATUS_DELETED_FROM_FILE_SYSTEM" value="{{surface2}}" />
+    <option name="FILESTATUS_IDEA_FILESTATUS_IGNORED" value="{{surface2}}" />
+    <option name="FILESTATUS_IDEA_FILESTATUS_MERGED_WITH_BOTH_CONFLICTS" value="{{peach}}" />
+    <option name="FILESTATUS_IDEA_FILESTATUS_MERGED_WITH_CONFLICTS" value="{{peach}}" />
+    <option name="FILESTATUS_IDEA_FILESTATUS_MERGED_WITH_PROPERTY_CONFLICTS" value="{{peach}}" />
+    <option name="FILESTATUS_IDEA_SVN_FILESTATUS_EXTERNAL" value="{{green}}" />
+    <option name="FILESTATUS_IGNORE.PROJECT_VIEW.IGNORED" value="{{overlay0}}" />
+    <option name="FILESTATUS_MERGED" value="{{mauve}}" />
+    <option name="FILESTATUS_MODIFIED" value="{{blue}}" />
+    <option name="FILESTATUS_NOT_CHANGED_IMMEDIATE" value="{{blue}}" />
+    <option name="FILESTATUS_NOT_CHANGED_RECURSIVE" value="{{blue}}" />
+    <option name="FILESTATUS_SUPPRESSED" value="{{surface1}}" />
+    <option name="FILESTATUS_SWITCHED" value="{{lavender}}" />
+    <option name="FILESTATUS_UNKNOWN" value="{{opacity peach 0.9}}" />
+    <option name="FILESTATUS_addedOutside" value="{{green}}" />
+    <option name="FILESTATUS_changelistConflict" value="{{opacity red 0.9}}" />
+    <option name="FILESTATUS_modifiedOutside" value="{{blue}}" />
     <option name="FOLDED_TEXT_BORDER_COLOR" value="" />
     <option name="GUTTER_BACKGROUND" value="{{base}}" />
     <option name="HTML_TAG_TREE_LEVEL0" value="{{red}}" />
@@ -29,7 +40,7 @@
     <option name="HTML_TAG_TREE_LEVEL4" value="{{sky}}" />
     <option name="HTML_TAG_TREE_LEVEL5" value="{{mauve}}" />
     <option name="INDENT_GUIDE" value="{{surface0}}" />
-    <option name="INFORMATION_HINT" value="312c3f" />
+    <option name="INFORMATION_HINT" value="{{surface0}}" />
     <option name="INLINE_REFACTORING_SETTINGS_DEFAULT" value="{{opacity surface1 0.65}}" />
     <option name="INLINE_REFACTORING_SETTINGS_FOCUSED" value="{{opacity surface2 0.55}}" />
     <option name="INLINE_REFACTORING_SETTINGS_HOVERED" value="{{opacity surface2 0.55}}" />
@@ -47,8 +58,8 @@
     <option name="MODIFIED_LINES_COLOR" value="{{peach}}" />
     <option name="MODIFIED_TAB_ICON" value="{{blue}}" />
     <option name="NOTIFICATION_BACKGROUND" value="{{base}}" />
-    <option name="PROMOTION_PANE" value="312c3f" />
-    <option name="QUESTION_HINT" value="2213c" />
+    <option name="PROMOTION_PANE" value="{{surface0}}" />
+    <option name="QUESTION_HINT" value="{{surface0}}" />
     <option name="RECENT_LOCATIONS_SELECTION" value="{{surface0}}" />
     <option name="RIGHT_MARGIN_COLOR" value="{{surface0}}" />
     <option name="SELECTED_INDENT_GUIDE" value="{{surface1}}" />
