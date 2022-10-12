@@ -8,10 +8,10 @@
     </description>
     <depends>com.intellij.modules.platform</depends>
     <extensions defaultExtensionNs="com.intellij">
-        <themeProvider id="com.github.catppuccin.latte.jetbrains" path="/themes/latte.json"  />
-        <themeProvider id="com.github.catppuccin.frappe.jetbrains" path="/themes/frappe.json"  />
-        <themeProvider id="com.github.catppuccin.macchiato.jetbrains" path="/themes/macchiato.json"  />
-        <themeProvider id="com.github.catppuccin.mocha.jetbrains" path="/themes/mocha.json"  />
+        <themeProvider id="com.github.catppuccin.latte.jetbrains" path="/themes/latte.theme.json"  />
+        <themeProvider id="com.github.catppuccin.frappe.jetbrains" path="/themes/frappe.theme.json"  />
+        <themeProvider id="com.github.catppuccin.macchiato.jetbrains" path="/themes/macchiato.theme.json"  />
+        <themeProvider id="com.github.catppuccin.mocha.jetbrains" path="/themes/mocha.theme.json"  />
 
         <bundledColorScheme path="/themes/latte-no-italics"/>
         <bundledColorScheme path="/themes/frappe-no-italics"/>

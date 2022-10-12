@@ -1,5 +1,5 @@
 #!/usr/bin/env deno run --allow-write --allow-read --allow-env
-import { Handlebars, JetBrains, path, variants } from "./deps.ts";
+import {Handlebars, JetBrains, path, variants} from "./deps.ts";
 
 const opacity = (color: string, opacity: number): string => {
   const opacityHex = Math.floor(255 * opacity);
@@ -20,7 +20,7 @@ Object.entries(variants).forEach(([key, value]) => {
     return {
       [key]: hex,
     };
-  }).reduce((acc, curr) => ({ ...acc, ...curr }), {});
+  }).reduce((acc, curr) => ({...acc, ...curr}), {});
 
   const theme: JetBrains = {
     name: `Catppuccin ${capitalize(key)}`,
@@ -381,36 +381,36 @@ Object.entries(variants).forEach(([key, value]) => {
     },
     icons: {
       ColorPalette: {
-        "Actions.Blue": "blue",
-        "Actions.Green": "green",
-        "Actions.Orange": "peach",
-        "Actions.Purple": "mauve",
-        "Actions.Red": "red",
-        "Actions.Yellow": "yellow",
-        "Actions.Gray": "overlay0",
-        "Actions.White": "text",
-        "Actions.Black": "crust",
-        "Actions.Grey": "overlay0",
-        "Actions.GreyInline.Dark": "blue",
-        "Actions.GreyInline": "blue",
-        "Objects.Blue": "blue",
-        "Objects.Green": "green",
+        "Actions.Blue": colors.blue,
+        "Actions.Green": colors.green,
+        "Actions.Orange": colors.peach,
+        "Actions.Purple": colors.mauve,
+        "Actions.Red": colors.red,
+        "Actions.Yellow": colors.yellow,
+        "Actions.Gray": colors.overlay0,
+        "Actions.White": colors.text,
+        "Actions.Black": colors.crust,
+        "Actions.Grey": colors.overlay0,
+        "Actions.GreyInline.Dark": colors.blue,
+        "Actions.GreyInline": colors.blue,
+        "Objects.Blue": colors.blue,
+        "Objects.Green": colors.green,
         "Objects.GreenAndroid": opacity(value.green.hex, 0.8),
-        "Objects.Grey": "overlay0",
-        "Objects.Pink": "pink",
-        "Objects.Purple": "mauve",
-        "Objects.Red": "red",
-        "Objects.RedStatus": "red",
-        "Objects.Yellow": "yellow",
-        "Objects.YellowDark": "flamingo",
-        "Objects.BlackText": "surface0",
-        "Tree.iconColor": "blue",
+        "Objects.Grey": colors.overlay0,
+        "Objects.Pink": colors.pink,
+        "Objects.Purple": colors.mauve,
+        "Objects.Red": colors.red,
+        "Objects.RedStatus": colors.red,
+        "Objects.Yellow": colors.yellow,
+        "Objects.YellowDark": colors.flamingo,
+        "Objects.BlackText": colors.surface0,
+        "Tree.iconColor": colors.blue,
       },
     },
   };
 
   Deno.writeTextFileSync(
-    path.join(Deno.cwd(), basePath, `${key}.json`),
+    path.join(Deno.cwd(), basePath, `${key}.theme.json`),
     JSON.stringify(theme, null, 2),
   );
 });
@@ -425,16 +425,16 @@ Handlebars.registerHelper("opacity", opacity);
 const templatePath = path.join(Deno.cwd(), "generateScheme", "template.xml");
 
 Deno.readTextFile(templatePath).then((data) => {
-    Object.entries(variants).forEach(([key, value]) => {
-      const isLatte = key === "latte";
+  Object.entries(variants).forEach(([key, value]) => {
+    const isLatte = key === "latte";
     const italicsVersions = [true, false];
 
-      const hexValues = Object.entries(value).map(([key, value]) => {
+    const hexValues = Object.entries(value).map(([key, value]) => {
       const hex = value.hex.replace("#", "").toUpperCase();
-        return {
+      return {
         [key]: hex,
-        };
-      }).reduce((acc, curr) => ({...acc, ...curr}), {});
+      };
+    }).reduce((acc, curr) => ({...acc, ...curr}), {});
 
     italicsVersions.forEach((italics) => {
       const options = {
@@ -449,6 +449,6 @@ Deno.readTextFile(templatePath).then((data) => {
       const suffix = italics ? "" : "-no-italics";
       const fileName = `${key}${suffix}.xml`;
       Deno.writeTextFileSync(path.join(Deno.cwd(), basePath, fileName), output);
-      });
     });
+  });
 });
