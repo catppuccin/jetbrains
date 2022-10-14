@@ -618,8 +618,8 @@
     </option>
     <option name="CTRL_CLICKABLE">
       <value>
-        <option name="FOREGROUND" value="F5E0DC"/>
-        <option name="EFFECT_COLOR" value="F5E0DC"/>
+        <option name="FOREGROUND" value="A6E3A1"/>
+        <option name="EFFECT_COLOR" value="A6E3A1"/>
         <option name="EFFECT_TYPE" value="1"/>
       </value>
     </option>
@@ -846,7 +846,7 @@
     </option>
     <option name="DEFAULT_INTERFACE_NAME">
       <value>
-        <option name="FOREGROUND" value="FAB387"/>
+        <option name="FOREGROUND" value="F9E2AF"/>
       </value>
     </option>
     <option name="DEFAULT_INVALID_STRING_ESCAPE">
@@ -873,7 +873,7 @@
     </option>
     <option name="DEFAULT_LOCAL_VARIABLE">
       <value>
-        <option name="FOREGROUND" value="CDD6F4"/>
+        <option name="FOREGROUND" value="F9E2AF"/>
       </value>
     </option>
     <option name="DEFAULT_METADATA">
@@ -915,7 +915,7 @@
     </option>
     <option name="DEFAULT_STATIC_FIELD">
       <value>
-        <option name="FOREGROUND" value="FAB387"/>
+        <option name="FOREGROUND" value="94E2D5"/>
       </value>
     </option>
     <option name="DEFAULT_STATIC_METHOD" baseAttributes="DEFAULT_FUNCTION_DECLARATION"/>
@@ -953,9 +953,8 @@
     </option>
     <option name="DIFF_CONFLICT">
       <value>
-        <!--        TODO: PUT SOME OPACITY ON THIS-->
-        <option name="BACKGROUND" value="EBA0AC"/>
-        <option name="ERROR_STRIPE_COLOR" value="EBA0AC"/>
+        <option name="BACKGROUND" value="EBA0AC3F"/>
+        <option name="ERROR_STRIPE_COLOR" value="EBA0AC3F"/>
       </value>
     </option>
     <option name="DIFF_DELETED">
@@ -1054,8 +1053,8 @@
     </option>
     <option name="FOLLOWED_HYPERLINK_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="F5E0DC"/>
-        <option name="EFFECT_COLOR" value="F5E0DC"/>
+        <option name="FOREGROUND" value="CBA6F7"/>
+        <option name="EFFECT_COLOR" value="CBA6F7"/>
         <option name="EFFECT_TYPE" value="1"/>
       </value>
     </option>
@@ -1271,8 +1270,8 @@
     </option>
     <option name="INACTIVE_HYPERLINK_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="F5E0DC"/>
-        <option name="EFFECT_COLOR" value="CDD6F4"/>
+        <option name="FOREGROUND" value="A6E3A1"/>
+        <option name="EFFECT_COLOR" value="A6E3A1"/>
         <option name="EFFECT_TYPE" value="1"/>
       </value>
     </option>
@@ -1332,12 +1331,12 @@
         <option name="FOREGROUND" value="CDD6F4"/>
       </value>
     </option>
-    <!--    <option name="JAVA.IMPORT_PACKAGE">-->
-    <!--      <value>-->
-    <!--        <option name="FOREGROUND" value="CDD6F4"/>-->
-    <!--        <option name="FONT_TYPE" value="2"/>-->
-    <!--      </value>-->
-    <!--    </option>-->
+<!--    <option name="JAVA.IMPORT_PACKAGE">-->
+<!--      <value>-->
+<!--        <option name="FOREGROUND" value="CDD6F4"/>-->
+<!--        -->
+<!--      </value>-->
+<!--    </option>-->
     <!--    <option name="JAVA.STATIC_FINAL">-->
     <!--      <value>-->
     <!--        <option name="FOREGROUND" value=""/>-->
@@ -1351,11 +1350,11 @@
     <!--      </value>-->
     <!--    </option>-->
     <!--    <option name="JAVA_KEYWORD" baseAttributes="DEFAULT_KEYWORD"/>-->
-    <!--    <option name="JAVA_VALID_STRING_ESCAPE">-->
-    <!--      <value>-->
-    <!--        <option name="FOREGROUND" value=""/>-->
-    <!--      </value>-->
-    <!--    </option>-->
+    <option name="JAVA_VALID_STRING_ESCAPE">
+      <value>
+        <option name="FOREGROUND" value=""/>
+      </value>
+    </option>
     <option name="JADE_FILE_PATH">
       <value>
         <option name="FOREGROUND" value="A6E3A1"/>
@@ -2050,6 +2049,17 @@
     <option name="PUPPET_VARIABLE_INTERPOLATION">
       <value>
         <option name="FOREGROUND" value="A6E3A1"/>
+      </value>
+    </option>
+    <option name="PY.DECORATOR">
+      <value>
+        <option name="FOREGROUND" value="A6E3A1" />
+      </value>
+    </option>
+    <option name="PY.KEYWORD">
+      <value>
+        <option name="FOREGROUND" value="F38BA8" />
+        <option name="FONT_TYPE" value="0" />
       </value>
     </option>
     <option name="PY.PREDEFINED_DEFINITION">
@@ -2789,6 +2799,13 @@
       <value>
         <option name="EFFECT_COLOR" value="A6E3A1"/>
         <option name="EFFECT_TYPE" value="2"/>
+      </value>
+    </option>
+    <option name="UNFOLLOWED_HYPERLINK_ATTRIBUTES">
+      <value>
+        <option name="FOREGROUND" value="89B4FA" />
+        <option name="EFFECT_COLOR" value="89B4FA" />
+        <option name="EFFECT_TYPE" value="1" />
       </value>
     </option>
     <option name="UNMATCHED_BRACE_ATTRIBUTES">

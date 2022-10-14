@@ -1,7 +1,7 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.catppuccin.jetbrains</id>
-    <name>Catppuccin Theme</name>
+    <name>Catppuccin Theme Alpha</name>
     <vendor url="https://github.com/catppuccin">Catppuccin</vendor>
     <description>
         <![CDATA[🧠 Soothing pastel theme for JetBrains IDEs]]>
