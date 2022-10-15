@@ -57,7 +57,7 @@
     <option name="METHOD_SEPARATORS_COLOR" value="313244"/>
     <option name="MODIFIED_LINES_COLOR" value="fab387"/>
     <option name="MODIFIED_TAB_ICON" value="89b4fa"/>
-    <option name="NOTIFICATION_BACKGROUND" value="1e1e2e"/>
+    <option name="NOTIFICATION_BACKGROUND" value="181825"/>
     <option name="PROMOTION_PANE" value="313244"/>
     <option name="QUESTION_HINT" value="313244"/>
     <option name="RECENT_LOCATIONS_SELECTION" value="313244"/>
@@ -102,9 +102,8 @@
     </option>
     <option name="BAD_CHARACTER">
       <value>
-        <option name="FOREGROUND" value="cdd6f4"/>
-        <option name="EFFECT_COLOR" value="fab387"/>
-        <option name="ERROR_STRIPE_COLOR" value="f38ba8"/>
+        <option name="EFFECT_COLOR" value="f38ba8"/>
+        <option name="EFFECT_TYPE" value="2"/>
       </value>
     </option>
     <option name="BASH.BINARY_DATA">
@@ -442,7 +441,7 @@
     </option>
     <option name="CONSOLE_DARKGRAY_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="45475a"/>
+        <option name="FOREGROUND" value="a6adc8"/>
       </value>
     </option>
     <option name="CONSOLE_ERROR_OUTPUT">
@@ -452,8 +451,7 @@
     </option>
     <option name="CONSOLE_GRAY_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="6c7086"/>
-        <option name="ERROR_STRIPE_COLOR" value="21252b"/>
+        <option name="FOREGROUND" value="bac2de"/>
       </value>
     </option>
     <option name="CONSOLE_GREEN_BRIGHT_OUTPUT">
@@ -1721,9 +1719,20 @@
         <option name="FOREGROUND" value="f9e2af"/>
       </value>
     </option>
+    <option name="MARKDOWN_BLOCK_QUOTE_MARKER">
+      <value>
+        <option name="FOREGROUND" value="94e2d5" />
+      </value>
+    </option>
     <option name="MARKDOWN_BOLD">
       <value>
-        <option name="FOREGROUND" value="89b4fa"/>
+        <option name="FOREGROUND" value="f38ba8"/>
+        <option name="FONT_TYPE" value="1"/>
+      </value>
+    </option>
+    <option name="MARKDOWN_BOLD_MARKER">
+      <value>
+        <option name="FOREGROUND" value="a6adc8"/>
         <option name="FONT_TYPE" value="1"/>
       </value>
     </option>
@@ -1757,8 +1766,14 @@
     </option>
     <option name="MARKDOWN_ITALIC">
       <value>
-        <option name="FOREGROUND" value="cba6f7"/>
+        <option name="FOREGROUND" value="f38ba8"/>
         <option name="FONT_TYPE" value="2"/>
+      </value>
+    </option>
+    <option name="MARKDOWN_ITALIC_MARKER">
+      <value>
+        <option name="FOREGROUND" value="a6adc8"/>
+        <option name="FONT_TYPE" value="1"/>
       </value>
     </option>
     <option name="MARKDOWN_LINK_TITLE">
@@ -1770,6 +1785,71 @@
     <option name="MARKDOWN_TABLE_SEPARATOR">
       <value>
         <option name="FOREGROUND" value="585b70"/>
+      </value>
+    </option>
+    <option name="MARKDOWN_HEADER_LEVEL_1">
+      <value>
+        <option name="FOREGROUND" value="89b4fa" />
+      </value>
+    </option>
+    <option name="MARKDOWN_HEADER_LEVEL_2">
+      <value>
+        <option name="FOREGROUND" value="89b4fa" />
+      </value>
+    </option>
+    <option name="MARKDOWN_HEADER_LEVEL_3">
+      <value>
+        <option name="FOREGROUND" value="89b4fa" />
+      </value>
+    </option>
+    <option name="MARKDOWN_HEADER_LEVEL_4">
+      <value>
+        <option name="FOREGROUND" value="89b4fa" />
+      </value>
+    </option>
+    <option name="MARKDOWN_HEADER_LEVEL_5">
+      <value>
+        <option name="FOREGROUND" value="89b4fa" />
+      </value>
+    </option>
+    <option name="MARKDOWN_HEADER_LEVEL_6">
+      <value>
+        <option name="FOREGROUND" value="89b4fa" />
+      </value>
+    </option>
+    <option name="MARKDOWN_HRULE">
+      <value>
+        <option name="FOREGROUND" value="94e2d5" />
+        <option name="FONT_TYPE" value="2"/>
+      </value>
+    </option>
+    <option name="MARKDOWN_LINK_DESTINATION">
+      <value>
+        <option name="FOREGROUND" value="f5e0dc" />
+        <option name="FONT_TYPE" value="2"/>
+      </value>
+    </option>
+    <option name="MARKDOWN_LINK_LABEL">
+      <value>
+        <option name="FOREGROUND" value="b4befe" />
+        <option name="FONT_TYPE" value="2"/>
+      </value>
+    </option>
+    <option name="MARKDOWN_LINK_TEXT">
+      <value>
+        <option name="FOREGROUND" value="b4befe" />
+        <option name="FONT_TYPE" value="2"/>
+        <option name="EFFECT_TYPE" value="1" />
+      </value>
+    </option>
+    <option name="MARKDOWN_ORDERED_LIST">
+      <value>
+        <option name="FOREGROUND" value="94e2d5" />
+      </value>
+    </option>
+    <option name="MARKDOWN_UNORDERED_LIST">
+      <value>
+        <option name="FOREGROUND" value="94e2d5" />
       </value>
     </option>
     <option name="MARKED_FOR_REMOVAL_ATTRIBUTES">
@@ -2021,7 +2101,7 @@
     </option>
     <option name="PUPPET_BAD_CHARACTER">
       <value>
-        <option name="BACKGROUND" value="6e3b3b"/>
+        <option name="BACKGROUND" value="eba0ac"/>
       </value>
     </option>
     <option name="PUPPET_BLOCK_COMMENT">
@@ -2676,14 +2756,13 @@
     </option>
     <option name="SEARCH_RESULT_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="45475a"/>
-        <option name="BACKGROUND" value="89b4fa"/>
+        <option name="BACKGROUND" value="1e1e2e"/>
       </value>
     </option>
     <option name="SLIM_BAD_CHARACTER">
       <value>
-        <option name="FOREGROUND" value="272b33"/>
-        <option name="BACKGROUND" value="f2777a"/>
+        <option name="FOREGROUND" value="cdd6f4"/>
+        <option name="BACKGROUND" value="f5c2e7"/>
       </value>
     </option>
     <option name="SLIM_CLASS">
@@ -2857,9 +2936,8 @@
     </option>
     <option name="TEXT_SEARCH_RESULT_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="45475a"/>
-        <option name="BACKGROUND" value="89b4fa"/>
-        <option name="ERROR_STRIPE_COLOR" value="89b4fa"/>
+        <option name="FOREGROUND" value="cdd6f4"/>
+        <option name="BACKGROUND" value="3e4b6b"/>
       </value>
     </option>
     <option name="TODO_DEFAULT_ATTRIBUTES">
@@ -2898,14 +2976,6 @@
       <value>
         <option name="EFFECT_COLOR" value="a6e3a1"/>
         <option name="EFFECT_TYPE" value="2"/>
-      </value>
-    </option>
-    <option name="UNFOLLOWED_HYPERLINK_ATTRIBUTES">
-      <value>
-        <option name="FOREGROUND" value="89b4fa" />
-        <option name="FONT_TYPE" value="2"/>
-        <option name="EFFECT_COLOR" value="89b4fa" />
-        <option name="EFFECT_TYPE" value="1" />
       </value>
     </option>
     <option name="UNMATCHED_BRACE_ATTRIBUTES">
@@ -2960,8 +3030,7 @@
     </option>
     <option name="WRITE_SEARCH_RESULT_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="1e1e2e"/>
-        <option name="BACKGROUND" value="89b4fa"/>
+        <option name="BACKGROUND" value="1e1e2e"/>
       </value>
     </option>
     <option name="WRONG_REFERENCES_ATTRIBUTES">

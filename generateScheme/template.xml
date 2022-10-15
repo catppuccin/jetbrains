@@ -3,7 +3,11 @@
     <option name="ADDED_LINES_COLOR" value="{{green}}"/>
     <option name="ANNOTATIONS_COLOR" value="{{text}}"/>
     <option name="CARET_COLOR" value="{{rosewater}}"/>
+    {{#if isLatte}}
+    <option name="CARET_ROW_COLOR" value="{{opacity surface1 0.25}}"/>
+    {{else}}
     <option name="CARET_ROW_COLOR" value="{{surface0}}"/>
+    {{/if}}
     <option name="CONSOLE_BACKGROUND_KEY" value="{{base}}"/>
     <option name="DELETED_LINES_COLOR" value="{{maroon}}"/>
     <option name="DIFF_SEPARATORS_BACKGROUND" value="{{overlay0}}"/>
@@ -57,7 +61,7 @@
     <option name="METHOD_SEPARATORS_COLOR" value="{{surface0}}"/>
     <option name="MODIFIED_LINES_COLOR" value="{{peach}}"/>
     <option name="MODIFIED_TAB_ICON" value="{{blue}}"/>
-    <option name="NOTIFICATION_BACKGROUND" value="{{base}}"/>
+    <option name="NOTIFICATION_BACKGROUND" value="{{mantle}}"/>
     <option name="PROMOTION_PANE" value="{{surface0}}"/>
     <option name="QUESTION_HINT" value="{{surface0}}"/>
     <option name="RECENT_LOCATIONS_SELECTION" value="{{surface0}}"/>
@@ -65,7 +69,11 @@
     <option name="SELECTED_INDENT_GUIDE" value="{{surface1}}"/>
     <option name="SELECTED_TEARLINE_COLOR" value="{{surface1}}"/>
     <option name="SELECTION_FOREGROUND" value=""/>
+    {{#if isLatte}}
+    <option name="SELECTION_BACKGROUND" value="{{surface0}}"/>
+    {{else}}
     <option name="SELECTION_BACKGROUND" value="{{opacity overlay2 0.25}}"/>
+    {{/if}}
     <option name="SEPARATOR_BELOW_COLOR" value=""/>
     <option name="ScrollBar.hoverThumbColor" value="{{opacity overlay0 0.4}}"/>
     <option name="ScrollBar.thumbColor" value="{{opacity surface1 0.45}}"/>
@@ -106,9 +114,8 @@
     </option>
     <option name="BAD_CHARACTER">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
-        <option name="EFFECT_COLOR" value="{{peach}}"/>
-        <option name="ERROR_STRIPE_COLOR" value="{{red}}"/>
+        <option name="EFFECT_COLOR" value="{{red}}"/>
+        <option name="EFFECT_TYPE" value="2"/>
       </value>
     </option>
     <option name="BASH.BINARY_DATA">
@@ -468,7 +475,7 @@
     </option>
     <option name="CONSOLE_DARKGRAY_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="{{surface1}}"/>
+        <option name="FOREGROUND" value="{{subtext0}}"/>
       </value>
     </option>
     <option name="CONSOLE_ERROR_OUTPUT">
@@ -478,8 +485,7 @@
     </option>
     <option name="CONSOLE_GRAY_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="{{overlay0}}"/>
-        <option name="ERROR_STRIPE_COLOR" value="21252b"/>
+        <option name="FOREGROUND" value="{{subtext1}}"/>
       </value>
     </option>
     <option name="CONSOLE_GREEN_BRIGHT_OUTPUT">
@@ -1847,9 +1853,20 @@
         <option name="FOREGROUND" value="{{yellow}}"/>
       </value>
     </option>
+    <option name="MARKDOWN_BLOCK_QUOTE_MARKER">
+      <value>
+        <option name="FOREGROUND" value="{{teal}}" />
+      </value>
+    </option>
     <option name="MARKDOWN_BOLD">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{red}}"/>
+        <option name="FONT_TYPE" value="1"/>
+      </value>
+    </option>
+    <option name="MARKDOWN_BOLD_MARKER">
+      <value>
+        <option name="FOREGROUND" value="{{subtext0}}"/>
         <option name="FONT_TYPE" value="1"/>
       </value>
     </option>
@@ -1887,10 +1904,14 @@
     </option>
     <option name="MARKDOWN_ITALIC">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{red}}"/>
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+      </value>
+    </option>
+    <option name="MARKDOWN_ITALIC_MARKER">
+      <value>
+        <option name="FOREGROUND" value="{{subtext0}}"/>
+        <option name="FONT_TYPE" value="1"/>
       </value>
     </option>
     <option name="MARKDOWN_LINK_TITLE">
@@ -1904,6 +1925,79 @@
     <option name="MARKDOWN_TABLE_SEPARATOR">
       <value>
         <option name="FOREGROUND" value="{{surface2}}"/>
+      </value>
+    </option>
+    <option name="MARKDOWN_HEADER_LEVEL_1">
+      <value>
+        <option name="FOREGROUND" value="{{blue}}" />
+      </value>
+    </option>
+    <option name="MARKDOWN_HEADER_LEVEL_2">
+      <value>
+        <option name="FOREGROUND" value="{{blue}}" />
+      </value>
+    </option>
+    <option name="MARKDOWN_HEADER_LEVEL_3">
+      <value>
+        <option name="FOREGROUND" value="{{blue}}" />
+      </value>
+    </option>
+    <option name="MARKDOWN_HEADER_LEVEL_4">
+      <value>
+        <option name="FOREGROUND" value="{{blue}}" />
+      </value>
+    </option>
+    <option name="MARKDOWN_HEADER_LEVEL_5">
+      <value>
+        <option name="FOREGROUND" value="{{blue}}" />
+      </value>
+    </option>
+    <option name="MARKDOWN_HEADER_LEVEL_6">
+      <value>
+        <option name="FOREGROUND" value="{{blue}}" />
+      </value>
+    </option>
+    <option name="MARKDOWN_HRULE">
+      <value>
+        <option name="FOREGROUND" value="{{teal}}" />
+        {{#if italics}}
+        <option name="FONT_TYPE" value="2"/>
+        {{/if}}
+      </value>
+    </option>
+    <option name="MARKDOWN_LINK_DESTINATION">
+      <value>
+        <option name="FOREGROUND" value="{{rosewater}}" />
+        {{#if italics}}
+        <option name="FONT_TYPE" value="2"/>
+        {{/if}}
+      </value>
+    </option>
+    <option name="MARKDOWN_LINK_LABEL">
+      <value>
+        <option name="FOREGROUND" value="{{lavender}}" />
+        {{#if italics}}
+        <option name="FONT_TYPE" value="2"/>
+        {{/if}}
+      </value>
+    </option>
+    <option name="MARKDOWN_LINK_TEXT">
+      <value>
+        <option name="FOREGROUND" value="{{lavender}}" />
+        {{#if italics}}
+        <option name="FONT_TYPE" value="2"/>
+        {{/if}}
+        <option name="EFFECT_TYPE" value="1" />
+      </value>
+    </option>
+    <option name="MARKDOWN_ORDERED_LIST">
+      <value>
+        <option name="FOREGROUND" value="{{teal}}" />
+      </value>
+    </option>
+    <option name="MARKDOWN_UNORDERED_LIST">
+      <value>
+        <option name="FOREGROUND" value="{{teal}}" />
       </value>
     </option>
     <option name="MARKED_FOR_REMOVAL_ATTRIBUTES">
@@ -2181,7 +2275,7 @@
     </option>
     <option name="PUPPET_BAD_CHARACTER">
       <value>
-        <option name="BACKGROUND" value="6e3b3b"/>
+        <option name="BACKGROUND" value="{{maroon}}"/>
       </value>
     </option>
     <option name="PUPPET_BLOCK_COMMENT">
@@ -2868,14 +2962,13 @@
     </option>
     <option name="SEARCH_RESULT_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="{{surface1}}"/>
-        <option name="BACKGROUND" value="{{blue}}"/>
+        <option name="BACKGROUND" value="{{base}}"/>
       </value>
     </option>
     <option name="SLIM_BAD_CHARACTER">
       <value>
-        <option name="FOREGROUND" value="272b33"/>
-        <option name="BACKGROUND" value="f2777a"/>
+        <option name="FOREGROUND" value="{{text}}"/>
+        <option name="BACKGROUND" value="{{pink}}"/>
       </value>
     </option>
     <option name="SLIM_CLASS">
@@ -3055,9 +3148,8 @@
     </option>
     <option name="TEXT_SEARCH_RESULT_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="{{surface1}}"/>
-        <option name="BACKGROUND" value="{{blue}}"/>
-        <option name="ERROR_STRIPE_COLOR" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{text}}"/>
+        <option name="BACKGROUND" value="{{opacity blue 0.3}}"/>
       </value>
     </option>
     <option name="TODO_DEFAULT_ATTRIBUTES">
@@ -3098,16 +3190,6 @@
       <value>
         <option name="EFFECT_COLOR" value="{{green}}"/>
         <option name="EFFECT_TYPE" value="2"/>
-      </value>
-    </option>
-    <option name="UNFOLLOWED_HYPERLINK_ATTRIBUTES">
-      <value>
-        <option name="FOREGROUND" value="{{blue}}" />
-        {{#if italics}}
-        <option name="FONT_TYPE" value="2"/>
-        {{/if}}
-        <option name="EFFECT_COLOR" value="{{blue}}" />
-        <option name="EFFECT_TYPE" value="1" />
       </value>
     </option>
     <option name="UNMATCHED_BRACE_ATTRIBUTES">
@@ -3164,8 +3246,7 @@
     </option>
     <option name="WRITE_SEARCH_RESULT_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="{{base}}"/>
-        <option name="BACKGROUND" value="{{blue}}"/>
+        <option name="BACKGROUND" value="{{base}}"/>
       </value>
     </option>
     <option name="WRONG_REFERENCES_ATTRIBUTES">

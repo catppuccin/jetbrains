@@ -196,6 +196,11 @@ Object.entries(variants).forEach(([key, value]) => {
         visitedForeground: "secondaryAccentColor",
         pressedForeground: "secondaryAccentColor",
       },
+      NotificationsToolwindow: {
+        newNotification: {
+          background: "mantle"
+        }
+      },
       Notification: {
         background: "mantle",
         errorBorderColor: "red",

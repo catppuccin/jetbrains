@@ -255,6 +255,14 @@ export interface Link {
     pressedForeground: string;
 }
 
+export interface NewNotification {
+  background: string
+}
+
+export interface NotificationsToolwindow {
+  newNotification: NewNotification
+}
+
 export interface Notification {
     background:       string;
     errorBorderColor: string;
