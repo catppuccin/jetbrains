@@ -996,7 +996,7 @@
     </option>
     <option name="DEFAULT_LOCAL_VARIABLE">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{text}}"/>
       </value>
     </option>
     <option name="DEFAULT_METADATA">
@@ -1068,7 +1068,7 @@
     </option>
     <option name="DEFAULT_VALID_STRING_ESCAPE">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{pink}}"/>
       </value>
     </option>
     <option name="DELETED_TEXT_ATTRIBUTES">
@@ -1514,11 +1514,6 @@
     <!--      </value>-->
     <!--    </option>-->
     <!--    <option name="JAVA_KEYWORD" baseAttributes="DEFAULT_KEYWORD"/>-->
-    <option name="JAVA_VALID_STRING_ESCAPE">
-      <value>
-        <option name="FOREGROUND" value="{{theme.colors.blue}}"/>
-      </value>
-    </option>
     <option name="JADE_FILE_PATH">
       <value>
         <option name="FOREGROUND" value="{{green}}"/>
@@ -2299,33 +2294,60 @@
         <option name="FOREGROUND" value="{{green}}"/>
       </value>
     </option>
-    <option name="PY.DECORATOR">
+    <option name="PY.ANNOTATION">
       <value>
-        <option name="FOREGROUND" value="{{green}}" />
+        <option name="FOREGROUND" value="{{yellow}}"/>
       </value>
     </option>
-    <option name="PY.KEYWORD">
+    <option name="PY.DECORATOR">
       <value>
-        <option name="FOREGROUND" value="{{red}}" />
-        <option name="FONT_TYPE" value="0" />
+        <option name="FOREGROUND" value="{{peach}}" />
+      </value>
+    </option>
+    <option name="PY.BUILTIN_NAME">
+      <value>
+        <option name="FOREGROUND" value="{{peach}}" />
+        {% if italics %}
+        <option name="FONT_TYPE" value="2" />
+        {% endif %}
+      </value>
+    </option>
+    <option name="PY.KEYWORD" baseAttributes="DEFAULT_KEYWORD"/>
+    <option name="PY.KEYWORD_ARGUMENT">
+      <value>
+        <option name="FOREGROUND" value="{{maroon}}" />
+        {{#if italics}}
+        <option name="FONT_TYPE" value="2"/>
+        {{/if}}
       </value>
     </option>
     <option name="PY.PREDEFINED_DEFINITION">
       <value>
-        <option name="FOREGROUND" value="{{flamingo}}"/>
+        <option name="FOREGROUND" value="{{sapphire}}"/>
+        {{#if italics}}
+        <option name="FONT_TYPE" value="2"/>
+        {{/if}}
       </value>
     </option>
     <option name="PY.PREDEFINED_USAGE">
       <value>
-        <option name="FOREGROUND" value="{{flamingo}}"/>
+        <option name="FOREGROUND" value="{{teal}}"/>
+        {{#if italics}}
+        <option name="FONT_TYPE" value="2"/>
+        {{/if}}
       </value>
     </option>
     <option name="PY.SELF_PARAMETER">
       <value>
-        <option name="FOREGROUND" value="{{lavender}}"/>
+        <option name="FOREGROUND" value="{{red}}"/>
         {{#if italics}}
         <option name="FONT_TYPE" value="2"/>
         {{/if}}
+      </value>
+    </option>
+    <option name="PY.DOC_COMMENT">
+      <value>
+        <option name="FOREGROUND" value="{{green}}" />
       </value>
     </option>
     <option name="PY.STRING">

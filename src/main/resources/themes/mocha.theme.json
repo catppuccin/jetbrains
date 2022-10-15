@@ -89,7 +89,7 @@
       "endBorderColor": "secondaryBackground",
       "startBackground": "secondaryBackground",
       "endBackground": "secondaryBackground",
-      "focusedBorderColor": "accentColor",
+      "focusedBorderColor": "secondaryBackground",
       "disabledBorderColor": "primaryBackground",
       "default": {
         "foreground": "surface1",
@@ -98,7 +98,7 @@
         "startBorderColor": "accentColor",
         "endBorderColor": "accentColor",
         "focusColor": "accentColor",
-        "focusedBorderColor": "surface1"
+        "focusedBorderColor": "accentColor"
       }
     },
     "Counter": {
@@ -150,7 +150,7 @@
       "Blue": "#96CDFB50",
       "Green": "#27403B50",
       "Orange": "#F8BD9650",
-      "Yellow": "#3132447F",
+      "Yellow": "191922",
       "Rose": "#F5E0DC50",
       "Violet": "#DDB6F250"
     },
@@ -371,7 +371,7 @@
       "Actions.GreyInline": "#89B4FA",
       "Objects.Blue": "#89B4FA",
       "Objects.Green": "#A6E3A1",
-      "Objects.GreenAndroid": "#A6E3A1CC",
+      "Objects.GreenAndroid": "85b681",
       "Objects.Grey": "#6C7086",
       "Objects.Pink": "#F5C2E7",
       "Objects.Purple": "#CBA6F7",
