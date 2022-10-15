@@ -98,7 +98,7 @@
         "startBorderColor": "accentColor",
         "endBorderColor": "accentColor",
         "focusColor": "accentColor",
-        "focusedBorderColor": "accentColor"
+        "focusedBorderColor": "surface1"
       }
     },
     "Counter": {
@@ -147,12 +147,12 @@
       "inactiveUnderlineColor": "accentColor"
     },
     "FileColor": {
-      "Blue": "#96CDFB50",
-      "Green": "#27403B50",
-      "Orange": "#F8BD9650",
-      "Yellow": "1b1d28",
-      "Rose": "#F5E0DC50",
-      "Violet": "#DDB6F250"
+      "Blue": "232b3d",
+      "Green": "2a3725",
+      "Orange": "3d2a20",
+      "Yellow": "3c3528",
+      "Rose": "3b2226",
+      "Violet": "2e2f3e"
     },
     "Link": {
       "activeForeground": "accentColor",

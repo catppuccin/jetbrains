@@ -1366,7 +1366,7 @@
     <option name="HAML_XHTML" baseAttributes=""/>
     <option name="HTML_ATTRIBUTE_NAME">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{blue}}"/>
       </value>
     </option>
     <option name="HTML_ATTRIBUTE_VALUE" baseAttributes="DEFAULT_STRING"/>
@@ -1376,11 +1376,7 @@
         <option name="FOREGROUND" value="{{text}}"/>
       </value>
     </option>
-    <option name="HTML_TAG_NAME">
-      <value>
-        <option name="FOREGROUND" value="{{teal}}"/>
-      </value>
-    </option>
+    <option name="HTML_TAG_NAME" baseAttributes="DEFAULT_KEYWORD" />
     <option name="HTTP_REQUEST_INPUT_FILE">
       <value>
         <option name="FOREGROUND" value="{{yellow}}"/>
@@ -1583,17 +1579,10 @@
         <option name="FOREGROUND" value="{{blue}}"/>
       </value>
     </option>
-    <option name="JSON.KEYWORD">
-      <value>
-        <option name="FOREGROUND" value="{{lavender}}"/>
-        {{#if italics}}
-        <option name="FONT_TYPE" value="2"/>
-        {{/if}}
-      </value>
-    </option>
+    <option name="JSON.KEYWORD" baseAttributes="DEFAULT_KEYWORD"/>
     <option name="JSON.PROPERTY_KEY">
       <value>
-        <option name="FOREGROUND" value="{{teal}}"/>
+        <option name="FOREGROUND" value="{{blue}}"/>
       </value>
     </option>
     <option name="JSP_DIRECTIVE_NAME">
@@ -1930,12 +1919,7 @@
         <option name="FONT_TYPE" value="1"/>
       </value>
     </option>
-    <option name="MATCHED_TAG_NAME">
-      <value>
-        <option name="FOREGROUND" value="{{teal}}"/>
-        <option name="EFFECT_COLOR" value="{{text}}"/>
-      </value>
-    </option>
+    <option name="MATCHED_TAG_NAME" baseAttributes="MATCHED_BRACE_ATTRIBUTES"/>
     <option name="MESSAGE_ARGUMENT">
       <value>
         <option name="FOREGROUND" value="{{sky}}"/>
@@ -2307,9 +2291,9 @@
     <option name="PY.BUILTIN_NAME">
       <value>
         <option name="FOREGROUND" value="{{peach}}" />
-        {% if italics %}
-        <option name="FONT_TYPE" value="2" />
-        {% endif %}
+        {{#if italics}}
+        <option name="FONT_TYPE" value="2"/>
+        {{/if}}
       </value>
     </option>
     <option name="PY.KEYWORD" baseAttributes="DEFAULT_KEYWORD"/>
@@ -3191,24 +3175,17 @@
         <option name="EFFECT_TYPE" value="2"/>
       </value>
     </option>
-    <option name="XML_ATTRIBUTE_NAME" baseAttributes="DEFAULT_ATTRIBUTE"/>
-    <option name="XML_ENTITY_REFERENCE" baseAttributes="DEFAULT_ENTITY"/>
+    <option name="XML_ATTRIBUTE_NAME" baseAttributes="DEFAULT_ATTRIBUTE" />
+    <option name="XML_ENTITY_REFERENCE" baseAttributes="DEFAULT_ENTITY" />
     <option name="XML_NS_PREFIX">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{peach}}" />
       </value>
     </option>
-    <option name="XML_PROLOGUE" baseAttributes="TEXT"/>
-    <option name="XML_TAG" baseAttributes="DEFAULT_TAG"/>
-    <option name="XML_TAG_DATA">
-      <value>
-        <option name="FOREGROUND" value="{{text}}"/>
-        <option name="BACKGROUND" value="{{base}}"/>
-      </value>
-    </option>
+    <option name="XML_TAG_DATA" baseAttributes="TEXT" />
     <option name="XML_TAG_NAME">
       <value>
-        <option name="FOREGROUND" value="{{teal}}"/>
+        <option name="FOREGROUND" value="{{blue}}" />
       </value>
     </option>
     <option name="XPATH.KEYWORD">
@@ -3228,7 +3205,7 @@
     <option name="YAML_ANCHOR" baseAttributes="DEFAULT_IDENTIFIER"/>
     <option name="YAML_SCALAR_KEY">
       <value>
-        <option name="FOREGROUND" value="{{teal}}"/>
+        <option name="FOREGROUND" value="{{blue}}"/>
       </value>
     </option>
     <option name="YAML_SCALAR_LIST">
@@ -3239,16 +3216,6 @@
     <option name="YAML_SCALAR_VALUE">
       <value>
         <option name="FOREGROUND" value="{{green}}"/>
-      </value>
-    </option>
-    <option name="YAML_SIGN">
-      <value>
-        <option name="FOREGROUND" value="{{text}}"/>
-      </value>
-    </option>
-    <option name="YAML_TEXT">
-      <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
       </value>
     </option>
     <option name="com.plan9.IDENTIFIER">
@@ -3283,14 +3250,11 @@
         <option name="FOREGROUND" value="{{maroon}}"/>
       </value>
     </option>
+    <option name="org.rust.FUNCTION_CALL" baseAttributes="DEFAULT_FUNCTION_CALL" />
+    <option name="org.rust.METHOD_CALL" baseAttributes="DEFAULT_FUNCTION_CALL" />
     <option name="org.rust.DOC_LINK">
       <value>
         <option name="FOREGROUND" value="{{sky}}"/>
-      </value>
-    </option>
-    <option name="org.rust.ENUM_VARIANT">
-      <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
       </value>
     </option>
     <option name="org.rust.LIFETIME">
@@ -3311,11 +3275,6 @@
         <option name="FOREGROUND" value="{{peach}}"/>
       </value>
     </option>
-    <option name="org.rust.PRIMITIVE_TYPE">
-      <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
-      </value>
-    </option>
     <option name="org.rust.Q_OPERATOR">
       <value/>
     </option>
@@ -3327,11 +3286,7 @@
         {{/if}}
       </value>
     </option>
-    <option name="org.rust.TYPE_PARAMETER">
-      <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
-      </value>
-    </option>
+    <option name="org.rust.TYPE_PARAMETER" baseAttributes="DEFAULT_IDENTIFIER" />
     <option name="org.rust.UNSAFE_CODE">
       <value/>
     </option>

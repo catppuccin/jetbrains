@@ -1262,7 +1262,7 @@
     <option name="HAML_XHTML" baseAttributes=""/>
     <option name="HTML_ATTRIBUTE_NAME">
       <value>
-        <option name="FOREGROUND" value="e5c890"/>
+        <option name="FOREGROUND" value="8caaee"/>
       </value>
     </option>
     <option name="HTML_ATTRIBUTE_VALUE" baseAttributes="DEFAULT_STRING"/>
@@ -1272,11 +1272,7 @@
         <option name="FOREGROUND" value="c6d0f5"/>
       </value>
     </option>
-    <option name="HTML_TAG_NAME">
-      <value>
-        <option name="FOREGROUND" value="81c8be"/>
-      </value>
-    </option>
+    <option name="HTML_TAG_NAME" baseAttributes="DEFAULT_KEYWORD" />
     <option name="HTTP_REQUEST_INPUT_FILE">
       <value>
         <option name="FOREGROUND" value="e5c890"/>
@@ -1467,15 +1463,10 @@
         <option name="FOREGROUND" value="8caaee"/>
       </value>
     </option>
-    <option name="JSON.KEYWORD">
-      <value>
-        <option name="FOREGROUND" value="babbf1"/>
-        <option name="FONT_TYPE" value="2"/>
-      </value>
-    </option>
+    <option name="JSON.KEYWORD" baseAttributes="DEFAULT_KEYWORD"/>
     <option name="JSON.PROPERTY_KEY">
       <value>
-        <option name="FOREGROUND" value="81c8be"/>
+        <option name="FOREGROUND" value="8caaee"/>
       </value>
     </option>
     <option name="JSP_DIRECTIVE_NAME">
@@ -1794,12 +1785,7 @@
         <option name="FONT_TYPE" value="1"/>
       </value>
     </option>
-    <option name="MATCHED_TAG_NAME">
-      <value>
-        <option name="FOREGROUND" value="81c8be"/>
-        <option name="EFFECT_COLOR" value="c6d0f5"/>
-      </value>
-    </option>
+    <option name="MATCHED_TAG_NAME" baseAttributes="MATCHED_BRACE_ATTRIBUTES"/>
     <option name="MESSAGE_ARGUMENT">
       <value>
         <option name="FOREGROUND" value="99d1db"/>
@@ -2143,9 +2129,7 @@
     <option name="PY.BUILTIN_NAME">
       <value>
         <option name="FOREGROUND" value="ef9f76" />
-        {% if italics %}
-        <option name="FONT_TYPE" value="2" />
-        {% endif %}
+        <option name="FONT_TYPE" value="2"/>
       </value>
     </option>
     <option name="PY.KEYWORD" baseAttributes="DEFAULT_KEYWORD"/>
@@ -2987,24 +2971,17 @@
         <option name="EFFECT_TYPE" value="2"/>
       </value>
     </option>
-    <option name="XML_ATTRIBUTE_NAME" baseAttributes="DEFAULT_ATTRIBUTE"/>
-    <option name="XML_ENTITY_REFERENCE" baseAttributes="DEFAULT_ENTITY"/>
+    <option name="XML_ATTRIBUTE_NAME" baseAttributes="DEFAULT_ATTRIBUTE" />
+    <option name="XML_ENTITY_REFERENCE" baseAttributes="DEFAULT_ENTITY" />
     <option name="XML_NS_PREFIX">
       <value>
-        <option name="FOREGROUND" value="ef9f76"/>
+        <option name="FOREGROUND" value="ef9f76" />
       </value>
     </option>
-    <option name="XML_PROLOGUE" baseAttributes="TEXT"/>
-    <option name="XML_TAG" baseAttributes="DEFAULT_TAG"/>
-    <option name="XML_TAG_DATA">
-      <value>
-        <option name="FOREGROUND" value="c6d0f5"/>
-        <option name="BACKGROUND" value="303446"/>
-      </value>
-    </option>
+    <option name="XML_TAG_DATA" baseAttributes="TEXT" />
     <option name="XML_TAG_NAME">
       <value>
-        <option name="FOREGROUND" value="81c8be"/>
+        <option name="FOREGROUND" value="8caaee" />
       </value>
     </option>
     <option name="XPATH.KEYWORD">
@@ -3022,7 +2999,7 @@
     <option name="YAML_ANCHOR" baseAttributes="DEFAULT_IDENTIFIER"/>
     <option name="YAML_SCALAR_KEY">
       <value>
-        <option name="FOREGROUND" value="81c8be"/>
+        <option name="FOREGROUND" value="8caaee"/>
       </value>
     </option>
     <option name="YAML_SCALAR_LIST">
@@ -3033,16 +3010,6 @@
     <option name="YAML_SCALAR_VALUE">
       <value>
         <option name="FOREGROUND" value="a6d189"/>
-      </value>
-    </option>
-    <option name="YAML_SIGN">
-      <value>
-        <option name="FOREGROUND" value="c6d0f5"/>
-      </value>
-    </option>
-    <option name="YAML_TEXT">
-      <value>
-        <option name="FOREGROUND" value="ef9f76"/>
       </value>
     </option>
     <option name="com.plan9.IDENTIFIER">
@@ -3075,14 +3042,11 @@
         <option name="FOREGROUND" value="ea999c"/>
       </value>
     </option>
+    <option name="org.rust.FUNCTION_CALL" baseAttributes="DEFAULT_FUNCTION_CALL" />
+    <option name="org.rust.METHOD_CALL" baseAttributes="DEFAULT_FUNCTION_CALL" />
     <option name="org.rust.DOC_LINK">
       <value>
         <option name="FOREGROUND" value="99d1db"/>
-      </value>
-    </option>
-    <option name="org.rust.ENUM_VARIANT">
-      <value>
-        <option name="FOREGROUND" value="ef9f76"/>
       </value>
     </option>
     <option name="org.rust.LIFETIME">
@@ -3101,11 +3065,6 @@
         <option name="FOREGROUND" value="ef9f76"/>
       </value>
     </option>
-    <option name="org.rust.PRIMITIVE_TYPE">
-      <value>
-        <option name="FOREGROUND" value="e5c890"/>
-      </value>
-    </option>
     <option name="org.rust.Q_OPERATOR">
       <value/>
     </option>
@@ -3115,11 +3074,7 @@
         <option name="FONT_TYPE" value="2"/>
       </value>
     </option>
-    <option name="org.rust.TYPE_PARAMETER">
-      <value>
-        <option name="FOREGROUND" value="e5c890"/>
-      </value>
-    </option>
+    <option name="org.rust.TYPE_PARAMETER" baseAttributes="DEFAULT_IDENTIFIER" />
     <option name="org.rust.UNSAFE_CODE">
       <value/>
     </option>
