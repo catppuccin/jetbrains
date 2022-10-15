@@ -134,7 +134,7 @@ Object.entries(variants).forEach(([key, value]) => {
           startBorderColor: "accentColor",
           endBorderColor: "accentColor",
           focusColor: "accentColor",
-          focusedBorderColor: "accentColor",
+          focusedBorderColor: "surface1",
         },
       },
       Counter: {
@@ -183,12 +183,12 @@ Object.entries(variants).forEach(([key, value]) => {
         inactiveUnderlineColor: "accentColor",
       },
       FileColor: {
-        Blue: "#96CDFB50",
-        Green: "#27403B50",
-        Orange: "#F8BD9650",
-        Yellow: opacity(value.surface0.hex, 0.5),
-        Rose: "#F5E0DC50",
-        Violet: "#DDB6F250",
+        Blue: opacity(value.blue.hex, 0.25),
+        Green: opacity(value.green.hex, 0.25),
+        Orange: opacity(value.peach.hex, 0.25),
+        Yellow: opacity(value.yellow.hex, 0.25),
+        Rose: opacity(value.red.hex, 0.25),
+        Violet: opacity(value.lavender.hex, 0.25),
       },
       Link: {
         activeForeground: "accentColor",
