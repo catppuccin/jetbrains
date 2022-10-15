@@ -1,9 +1,19 @@
 #!/usr/bin/env deno run --allow-write --allow-read --allow-env
-import {Handlebars, JetBrains, path, variants} from "./deps.ts";
+import {Handlebars, JetBrains, path, variants, colormath} from "./deps.ts";
 
-const opacity = (color: string, opacity: number): string => {
-  const opacityHex = Math.floor(255 * opacity);
-  return (color + opacityHex.toString(16)).toUpperCase();
+const opacity = (color: string, opacity: number, base: string = "base"): string => {
+  if(typeof(base) === "object") {
+    base = base.data.root.base;
+  }
+  console.log("base", base)
+  console.log("color", color)
+  return (
+    colormath.mixColor(
+      colormath.hex.toRgb(color),
+      colormath.hex.toRgb(base),
+      opacity,
+    )
+  ).hex.toUpperCase().replace("#", "");
 };
 
 const capitalize = (str: string): string => {
