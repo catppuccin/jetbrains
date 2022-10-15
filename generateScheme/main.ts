@@ -1,19 +1,21 @@
 #!/usr/bin/env deno run --allow-write --allow-read --allow-env
 import {Handlebars, JetBrains, path, variants, colormath} from "./deps.ts";
 
+const latteTernary = (lightCol: string, darkCol: string, base: Object): string => {
+  return base.data.root.isLatte ? lightCol : darkCol;
+}
 const opacity = (color: string, opacity: number, base: string = "base"): string => {
   if(typeof(base) === "object") {
     base = base.data.root.base;
   }
-  console.log("base", base)
-  console.log("color", color)
+
   return (
     colormath.mixColor(
       colormath.hex.toRgb(color),
       colormath.hex.toRgb(base),
       opacity,
     )
-  ).hex.toUpperCase().replace("#", "");
+  ).hex.toLowerCase().replace("#", "");
 };
 
 const capitalize = (str: string): string => {
@@ -123,7 +125,7 @@ Object.entries(variants).forEach(([key, value]) => {
         endBorderColor: "secondaryBackground",
         startBackground: "secondaryBackground",
         endBackground: "secondaryBackground",
-        focusedBorderColor: "accentColor",
+        focusedBorderColor: "secondaryBackground",
         disabledBorderColor: "primaryBackground",
         default: {
           foreground: "surface1",
@@ -132,7 +134,7 @@ Object.entries(variants).forEach(([key, value]) => {
           startBorderColor: "accentColor",
           endBorderColor: "accentColor",
           focusColor: "accentColor",
-          focusedBorderColor: "surface1",
+          focusedBorderColor: "accentColor",
         },
       },
       Counter: {
@@ -430,6 +432,7 @@ Object.entries(variants).forEach(([key, value]) => {
 // {{opacity color opacity}}
 // EXAMPLE:
 // {{opacity rosewater 0.5}}
+Handlebars.registerHelper("latte", latteTernary);
 Handlebars.registerHelper("opacity", opacity);
 
 const templatePath = path.join(Deno.cwd(), "generateScheme", "template.xml");
@@ -440,7 +443,7 @@ Deno.readTextFile(templatePath).then((data) => {
     const italicsVersions = [true, false];
 
     const hexValues = Object.entries(value).map(([key, value]) => {
-      const hex = value.hex.replace("#", "").toUpperCase();
+      const hex = value.hex.replace("#", "").toLowerCase();
       return {
         [key]: hex,
       };
