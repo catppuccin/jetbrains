@@ -2142,17 +2142,17 @@
     </option>
     <option name="REGEXP.PARENTHS">
       <value>
-        <option name="FOREGROUND" value="{[blue}}" />
+        <option name="FOREGROUND" value="1e66f5" />
       </value>
     </option>
     <option name="REGEXP.QUANTIFIER">
       <value>
-        <option name="FOREGROUND" value="{[blue}}" />
+        <option name="FOREGROUND" value="1e66f5" />
       </value>
     </option>
     <option name="REGEXP.QUOTE_CHARACTER">
       <value>
-        <option name="FOREGROUND" value="{[blue}}" />
+        <option name="FOREGROUND" value="1e66f5" />
       </value>
     </option>
     <option name="REGEXP.REDUNDANT_ESCAPE" baseAttributes="DEFAULT_VALID_STRING_ESCAPE" />
