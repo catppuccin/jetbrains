@@ -44,13 +44,6 @@
     <option name="INLINE_REFACTORING_SETTINGS_DEFAULT" value="3c4055"/>
     <option name="INLINE_REFACTORING_SETTINGS_FOCUSED" value="42465c"/>
     <option name="INLINE_REFACTORING_SETTINGS_HOVERED" value="42465c"/>
-    <option name="JUPYTER.CELL_UNDER_CARET_COMMAND_MODE_STRIPE_COLOR" value="8aadf4"/>
-    <option name="JUPYTER.CELL_UNDER_CARET_EDITOR_MODE_STRIPE_COLOR" value="a6da95"/>
-    <option name="JUPYTER.CODE_CELL_BACKGROUND" value="2d3139"/>
-    <option name="JUPYTER.GUTTER_INPUT_EXECUTION_COUNT" value="8aadf4"/>
-    <option name="JUPYTER.GUTTER_OUTPUT_EXECUTION_COUNT" value="d7783b"/>
-    <option name="JUPYTER.SAUSAGE_BUTTON_BORDER_COLOR" value="333841"/>
-    <option name="JUPYTER.SAUSAGE_BUTTON_SHORTCUT_COLOR" value="8aadf4"/>
     <option name="LINE_NUMBERS_COLOR" value="6e738d"/>
     <option name="LINE_NUMBER_ON_CARET_ROW_COLOR" value="8087a2"/>
     <option name="LOOKUP_COLOR" value="363a4f"/>
@@ -64,7 +57,6 @@
     <option name="RIGHT_MARGIN_COLOR" value="363a4f"/>
     <option name="SELECTED_INDENT_GUIDE" value="494d64"/>
     <option name="SELECTED_TEARLINE_COLOR" value="494d64"/>
-    <option name="SELECTION_FOREGROUND" value=""/>
     <option name="SELECTION_BACKGROUND" value="404459"/>
     <option name="SEPARATOR_BELOW_COLOR" value=""/>
     <option name="ScrollBar.hoverThumbColor" value="42455b"/>
@@ -92,7 +84,7 @@
         <option name="FOREGROUND" value="eed49f"/>
       </value>
     </option>
-    <option name="ANNOTATION_NAME_ATTRIBUTES" baseAttributes="DEFAULT_METADATA"/>
+    <option name="ANNOTATION_NAME_ATTRIBUTES" baseAttributes=""/>
     <option name="APACHE_CONFIG.IDENTIFIER">
       <value>
         <option name="FOREGROUND" value="c6a0f6"/>
@@ -105,37 +97,22 @@
       </value>
     </option>
     <option name="BASH.BINARY_DATA">
-      <value/>
+      <value />
     </option>
     <option name="BASH.CONDITIONAL">
       <value>
-        <option name="FOREGROUND" value="91d7e3"/>
+        <option name="FOREGROUND" value="8bd5ca" />
       </value>
     </option>
-    <option name="BASH.EXTERNAL_COMMAND" baseAttributes="DEFAULT_IDENTIFIER"/>
+    <option name="BASH.EXTERNAL_COMMAND" baseAttributes="DEFAULT_IDENTIFIER" />
     <option name="BASH.FUNCTION_CALL">
       <value>
-        <option name="FOREGROUND" value="91d7e3"/>
+        <option name="FOREGROUND" value="91d7e3" />
       </value>
     </option>
-    <option name="BASH.HERE_DOC">
-      <value>
-        <option name="FOREGROUND" value="a6da95"/>
-      </value>
-    </option>
-    <option name="BASH.HERE_DOC_END">
-      <value>
-        <option name="FOREGROUND" value="ed8796"/>
-        <option name="FONT_TYPE" value="1"/>
-      </value>
-    </option>
-    <option name="BASH.HERE_DOC_START">
-      <value>
-        <option name="FOREGROUND" value="ed8796"/>
-        <option name="FONT_TYPE" value="1"/>
-      </value>
-    </option>
-    <option name="BASH.SHEBANG" baseAttributes="BASH.LINE_COMMENT"/>
+    <option name="BASH.HERE_DOC_END" baseAttributes="DEFAULT_KEYWORD" />
+    <option name="BASH.HERE_DOC_START" baseAttributes="DEFAULT_KEYWORD" />
+    <option name="BASH.SHEBANG" baseAttributes="BASH.LINE_COMMENT" />
     <option name="BLADE_DIRECTIVE">
       <value>
         <option name="FOREGROUND" value="c6a0f6"/>
@@ -207,193 +184,25 @@
         <option name="EFFECT_COLOR" value="b7bdf8"/>
       </value>
     </option>
-    <option name="COFFEESCRIPT.BAD_CHARACTER">
-      <value>
-        <option name="BACKGROUND" value="6e3b3b"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.BLOCK_COMMENT">
-      <value>
-        <option name="FOREGROUND" value="5b6078"/>
-      </value>
-    </option>
     <option name="COFFEESCRIPT.BOOLEAN">
       <value>
-        <option name="FOREGROUND" value="f5a97f"/>
+        <option name="FOREGROUND" value="f5a97f" />
       </value>
     </option>
     <option name="COFFEESCRIPT.BRACE">
       <value>
-        <option name="FOREGROUND" value="8bd5ca"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.BRACKET">
-      <value>
-        <option name="FOREGROUND" value="cad3f5"/>
+        <option name="FOREGROUND" value="8bd5ca" />
       </value>
     </option>
     <option name="COFFEESCRIPT.CLASS_NAME">
       <value>
-        <option name="FOREGROUND" value="eed49f"/>
+        <option name="FOREGROUND" value="f5a97f" />
       </value>
     </option>
-    <option name="COFFEESCRIPT.COLON">
-      <value>
-        <option name="FOREGROUND" value="91d7e3"/>
-        <option name="FONT_TYPE" value="1"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.COMMA">
-      <value>
-        <option name="FOREGROUND" value="8bd5ca"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.DOT">
-      <value>
-        <option name="FOREGROUND" value="8bd5ca"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.ESCAPE_SEQUENCE">
-      <value>
-        <option name="FOREGROUND" value="91d7e3"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.EXISTENTIAL">
-      <value>
-        <option name="FOREGROUND" value="91d7e3"/>
-        <option name="FONT_TYPE" value="1"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.EXPRESSIONS_SUBSTITUTION_MARK">
-      <value>
-        <option name="FOREGROUND" value="ee99a0"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.FUNCTION">
-      <value>
-        <option name="FOREGROUND" value="c6a0f6"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.FUNCTION_BINDING">
-      <value>
-        <option name="FOREGROUND" value="c6a0f6"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.FUNCTION_NAME">
-      <value>
-        <option name="FOREGROUND" value="8aadf4"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.GLOBAL_VARIABLE">
-      <value>
-        <option name="FOREGROUND" value="cad3f5"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.HEREDOC_CONTENT">
-      <value>
-        <option name="FOREGROUND" value="a6da95"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.HEREDOC_ID">
-      <value>
-        <option name="FOREGROUND" value="a6da95"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.HEREGEX_CONTENT">
-      <value>
-        <option name="FOREGROUND" value="f5a97f"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.HEREGEX_ID">
-      <value>
-        <option name="FOREGROUND" value="8aadf4"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.JAVASCRIPT_ID">
-      <value>
-        <option name="FOREGROUND" value="a6da95"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.KEYWORD">
-      <value>
-        <option name="FOREGROUND" value="c6a0f6"/>
-        <option name="FONT_TYPE" value="1"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.LINE_COMMENT">
-      <value>
-        <option name="FOREGROUND" value="5b6078"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.NUMBER">
-      <value>
-        <option name="FOREGROUND" value="f5a97f"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.OBJECT_KEY">
-      <value>
-        <option name="FOREGROUND" value="cad3f5"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.OPERATIONS">
-      <value>
-        <option name="FOREGROUND" value="91d7e3"/>
-        <option name="FONT_TYPE" value="1"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.PARENTHESIS">
-      <value>
-        <option name="FOREGROUND" value="8bd5ca"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.PROTOTYPE">
-      <value>
-        <option name="FOREGROUND" value="8aadf4"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.RANGE">
-      <value>
-        <option name="FOREGROUND" value="8bd5ca"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.REGULAR_EXPRESSION_CONTENT">
-      <value>
-        <option name="FOREGROUND" value="f5a97f"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.REGULAR_EXPRESSION_FLAG">
-      <value>
-        <option name="FOREGROUND" value="8aadf4"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.REGULAR_EXPRESSION_ID">
-      <value>
-        <option name="FOREGROUND" value="8aadf4"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.SEMICOLON">
-      <value>
-        <option name="FOREGROUND" value="cad3f5"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.SPLAT">
-      <value>
-        <option name="FOREGROUND" value="8bd5ca"/>
-      </value>
-    </option>
+    <option name="COFFEESCRIPT.GLOBAL_VARIABLE" baseAttributes="JS.GLOBAL_VARIABLE" />
     <option name="COFFEESCRIPT.STRING">
       <value>
-        <option name="FOREGROUND" value="a6da95"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.STRING_LITERAL">
-      <value>
-        <option name="FOREGROUND" value="a6da95"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.THIS">
-      <value>
-        <option name="FOREGROUND" value="cad3f5"/>
+        <option name="FOREGROUND" value="a6da95" />
       </value>
     </option>
     <option name="CONDITIONALLY_NOT_COMPILED">
@@ -523,23 +332,18 @@
     </option>
     <option name="CSS.CLASS_NAME">
       <value>
-        <option name="FOREGROUND" value="eed49f"/>
+        <option name="FOREGROUND" value="8bd5ca"/>
       </value>
     </option>
     <option name="CSS.COLOR" baseAttributes="CSS.IDENT"/>
     <option name="CSS.FUNCTION">
       <value>
-        <option name="FOREGROUND" value="8aadf4"/>
+        <option name="FOREGROUND" value="91d7e3"/>
       </value>
     </option>
     <option name="CSS.HASH">
       <value>
         <option name="FOREGROUND" value="8aadf4"/>
-      </value>
-    </option>
-    <option name="CSS.IDENT">
-      <value>
-        <option name="FOREGROUND" value="d39a63"/>
       </value>
     </option>
     <option name="CSS.IMPORTANT">
@@ -550,12 +354,17 @@
     <option name="CSS.KEYWORD">
       <value>
         <option name="FOREGROUND" value="ed8796"/>
-        <option name="FONT_TYPE" value="1"/>
+        <option name="FONT_TYPE" value="3"/>
+      </value>
+    </option>
+    <option name="CSS.OPERATORS">
+      <value>
+        <option name="FOREGROUND" value="cad3f5" />
       </value>
     </option>
     <option name="CSS.PROPERTY_NAME">
       <value>
-        <option name="FOREGROUND" value="cad3f5"/>
+        <option name="FOREGROUND" value="8aadf4"/>
       </value>
     </option>
     <option name="CSS.PROPERTY_VALUE">
@@ -568,7 +377,16 @@
         <option name="FOREGROUND" value="8bd5ca"/>
       </value>
     </option>
-    <option name="CSS.URL" baseAttributes="HTML_ATTRIBUTE_VALUE"/>
+    <option name="CSS.TAG_NAME">
+      <value>
+        <option name="FOREGROUND" value="eed49f" />
+      </value>
+    </option>
+    <option name="CSS.URL">
+      <value>
+        <option name="FOREGROUND" value="a6da95" />
+      </value>
+    </option>
     <option name="CSV_PLUGIN_COLUMN_COLORING_ATTRIBUTE_1">
       <value>
         <option name="FOREGROUND" value="ed8796"/>
@@ -973,9 +791,14 @@
         <option name="ERROR_STRIPE_COLOR" value="38425f"/>
       </value>
     </option>
+    <option name="DJANGO_STRING_LITERAL">
+      <value>
+        <option name="FOREGROUND" value="a6da95" />
+      </value>
+    </option>
     <option name="DJANGO_TAG_NAME">
       <value>
-        <option name="FOREGROUND" value="ee99a0"/>
+        <option name="FOREGROUND" value="8aadf4"/>
       </value>
     </option>
     <option name="DUPLICATE_FROM_SERVER">
@@ -1282,9 +1105,7 @@
       </value>
     </option>
     <option name="INJECTED_LANGUAGE_FRAGMENT">
-      <value>
-        <option name="BACKGROUND" value="363a4f"/>
-      </value>
+      <value/>
     </option>
     <option name="INLAY_DEFAULT">
       <value>
@@ -1412,15 +1233,10 @@
         <option name="FOREGROUND" value="c6a0f6"/>
       </value>
     </option>
-    <option name="JUPYTER.SAUSAGE_BUTTON_APPEARANCE">
-      <value>
-        <option name="FOREGROUND" value="a0a7b4"/>
-        <option name="BACKGROUND" value="3d424b"/>
-      </value>
-    </option>
     <option name="JUPYTER_SELECTED_CELL">
       <value>
         <option name="FOREGROUND" value="91d7e3"/>
+        <option name="BACKGROUND" value="24273a"/>
       </value>
     </option>
     <option name="KOTLIN_BACKING_FIELD_VARIABLE">
@@ -1511,12 +1327,12 @@
     </option>
     <option name="LINE_FULL_COVERAGE">
       <value>
-        <option name="FOREGROUND" value="354a3d"/>
+        <option name="FOREGROUND" value="a6da95"/>
       </value>
     </option>
     <option name="LINE_NONE_COVERAGE">
       <value>
-        <option name="FOREGROUND" value="5e3a24"/>
+        <option name="FOREGROUND" value="ed8796"/>
       </value>
     </option>
     <option name="LINE_PARTIAL_COVERAGE">
@@ -1562,7 +1378,7 @@
     <option name="LOGCAT_ASSERT_OUTPUT">
       <value>
         <option name="FOREGROUND" value="ee99a0"/>
-        <option name="EFFECT_COLOR" value="ffffff"/>
+        <option name="EFFECT_COLOR" value="ee99a0"/>
         <option name="EFFECT_TYPE" value="1"/>
       </value>
     </option>
@@ -1673,7 +1489,7 @@
     </option>
     <option name="MARKDOWN_CODE_FENCE">
       <value>
-        <option name="FOREGROUND" value="ed8796"/>
+        <option name="FOREGROUND" value="cad3f5"/>
       </value>
     </option>
     <option name="MARKDOWN_CODE_SPAN">
@@ -1995,20 +1811,10 @@
         <option name="FOREGROUND" value="cad3f5"/>
       </value>
     </option>
-    <option name="PROPERTIES.INVALID_STRING_ESCAPE">
-      <value>
-        <option name="FOREGROUND" value="8aadf4"/>
-        <option name="EFFECT_COLOR" value="ed8796"/>
-        <option name="EFFECT_TYPE" value="2"/>
-      </value>
-    </option>
-    <option name="PROPERTIES.KEY" baseAttributes="DEFAULT_KEYWORD"/>
-    <option name="PROPERTIES.KEY_VALUE_SEPARATOR" baseAttributes="DEFAULT_OPERATION_SIGN"/>
-    <option name="PROPERTIES.VALID_STRING_ESCAPE">
-      <value>
-        <option name="FOREGROUND" value="8aadf4"/>
-      </value>
-    </option>
+    <option name="PROPERTIES.INVALID_STRING_ESCAPE" baseAttributes="DEFAULT_INVALID_STRING_ESCAPE" />
+    <option name="PROPERTIES.KEY" baseAttributes="DEFAULT_KEYWORD" />
+    <option name="PROPERTIES.KEY_VALUE_SEPARATOR" baseAttributes="DEFAULT_OPERATION_SIGN" />
+    <option name="PROPERTIES.VALID_STRING_ESCAPE" baseAttributes="DEFAULT_VALID_STRING_ESCAPE" />
     <option name="PROTOCOL_REFERENCE">
       <value>
         <option name="FOREGROUND" value="eed49f"/>
@@ -2213,91 +2019,83 @@
     </option>
     <option name="REGEXP.BRACES">
       <value>
-        <option name="FOREGROUND" value="f5a97f"/>
+        <option name="FOREGROUND" value="f5a97f" />
       </value>
     </option>
     <option name="REGEXP.BRACKETS">
       <value>
-        <option name="FOREGROUND" value="f5a97f"/>
+        <option name="FOREGROUND" value="f5a97f" />
+      </value>
+    </option>
+    <option name="REGEXP.CHARACTER">
+      <value>
+        <option name="FOREGROUND" value="cad3f5" />
       </value>
     </option>
     <option name="REGEXP.CHAR_CLASS">
       <value>
-        <option name="FOREGROUND" value="8aadf4"/>
+        <option name="FOREGROUND" value="8aadf4" />
       </value>
     </option>
     <option name="REGEXP.ESC_CHARACTER">
       <value>
-        <option name="FOREGROUND" value="8aadf4"/>
+        <option name="FOREGROUND" value="8aadf4" />
       </value>
     </option>
     <option name="REGEXP.META">
       <value>
-        <option name="FOREGROUND" value="c6a0f6"/>
+        <option name="FOREGROUND" value="c6a0f6" />
       </value>
     </option>
     <option name="REGEXP.PARENTHS">
       <value>
-        <option name="FOREGROUND" value="8aadf4"/>
+        <option name="FOREGROUND" value="{[blue}}" />
+      </value>
+    </option>
+    <option name="REGEXP.QUANTIFIER">
+      <value>
+        <option name="FOREGROUND" value="{[blue}}" />
       </value>
     </option>
     <option name="REGEXP.QUOTE_CHARACTER">
       <value>
-        <option name="FOREGROUND" value="8aadf4"/>
+        <option name="FOREGROUND" value="{[blue}}" />
       </value>
     </option>
-    <option name="REGEXP.REDUNDANT_ESCAPE">
-      <value>
-        <option name="FOREGROUND" value="8aadf4"/>
-      </value>
-    </option>
+    <option name="REGEXP.REDUNDANT_ESCAPE" baseAttributes="DEFAULT_VALID_STRING_ESCAPE" />
     <option name="REST.BOLD">
       <value>
-        <option name="FONT_TYPE" value="1"/>
+        <option name="FOREGROUND" value="f5a97f" />
+        <option name="FONT_TYPE" value="1" />
       </value>
     </option>
     <option name="REST.EXPLICIT">
       <value>
-        <option name="FOREGROUND" value="c6a0f6"/>
+        <option name="FOREGROUND" value="c6a0f6" />
       </value>
     </option>
     <option name="REST.FIELD">
       <value>
-        <option name="FOREGROUND" value="c6a0f6"/>
+        <option name="FOREGROUND" value="c6a0f6" />
       </value>
     </option>
-    <option name="REST.FIXED">
-      <value>
-        <option name="BACKGROUND" value="3d424b"/>
-      </value>
-    </option>
-    <option name="REST.INLINE">
-      <value>
-        <option name="BACKGROUND" value="273627"/>
-      </value>
-    </option>
-    <option name="REST.INTERPRETED">
-      <value>
-        <option name="BACKGROUND" value="3c4b33"/>
-      </value>
-    </option>
+    <option name="REST.FIXED" baseAttributes="DEFAULT_IDENTIFIER" />
+    <option name="REST.INLINE" baseAttributes="DEFAULT_IDENTIFIER" />
+    <option name="REST.INTERPRETED" baseAttributes="DEFAULT_IDENTIFIER" />
     <option name="REST.ITALIC">
       <value>
+        <option name="FOREGROUND" value="f5a97f" />
+        <option name="FONT_TYPE" value="2" />
       </value>
     </option>
     <option name="REST.LINE_COMMENT">
       <value>
-        <option name="FOREGROUND" value="5b6078"/>
+        <option name="FOREGROUND" value="5b6078" />
       </value>
     </option>
     <option name="REST.REF.NAME">
       <value>
-        <option name="FOREGROUND" value="a6da95"/>
-      </value>
-    </option>
-    <option name="REST.SECTION.HEADER">
-      <value>
-        <option name="FOREGROUND" value="8aadf4"/>
+        <option name="FOREGROUND" value="a6da95" />
       </value>
     </option>
     <option name="RHTML_COMMENT_ID">
@@ -2575,84 +2373,13 @@
         <option name="FOREGROUND" value="8aadf4"/>
       </value>
     </option>
-    <option name="SASS_COMMENT">
-      <value>
-        <option name="FOREGROUND" value="5b6078"/>
-      </value>
-    </option>
-    <option name="SASS_DEFAULT">
-      <value>
-        <option name="FOREGROUND" value="c6a0f6"/>
-        <option name="FONT_TYPE" value="1"/>
-      </value>
-    </option>
-    <option name="SASS_EXTEND">
-      <value>
-        <option name="FOREGROUND" value="c6a0f6"/>
-        <option name="FONT_TYPE" value="1"/>
-      </value>
-    </option>
-    <option name="SASS_FUNCTION">
-      <value>
-        <option name="FOREGROUND" value="eed49f"/>
-      </value>
-    </option>
-    <option name="SASS_IDENTIFIER">
-      <value>
-        <option name="FOREGROUND" value="eed49f"/>
-      </value>
-    </option>
-    <option name="SASS_IMPORTANT">
-      <value>
-        <option name="FOREGROUND" value="c6a0f6"/>
-        <option name="FONT_TYPE" value="1"/>
-      </value>
-    </option>
-    <option name="SASS_KEYWORD">
-      <value>
-        <option name="FOREGROUND" value="c6a0f6"/>
-        <option name="FONT_TYPE" value="1"/>
-      </value>
-    </option>
+    <option name="SASS_COMMENT" baseAttributes="CSS.COMMENT" />
     <option name="SASS_MIXIN">
       <value>
-        <option name="FOREGROUND" value="f5a97f"/>
+        <option name="FOREGROUND" value="f0c6c6" />
       </value>
     </option>
-    <option name="SASS_NUMBER">
-      <value>
-        <option name="FOREGROUND" value="f5a97f"/>
-      </value>
-    </option>
-    <option name="SASS_PROPERTY_NAME">
-      <value>
-        <option name="FOREGROUND" value="cad3f5"/>
-      </value>
-    </option>
-    <option name="SASS_PROPERTY_VALUE">
-      <value>
-        <option name="FOREGROUND" value="eed49f"/>
-      </value>
-    </option>
-    <option name="SASS_STRING">
-      <value>
-        <option name="FOREGROUND" value="a6da95"/>
-      </value>
-    </option>
-    <option name="SASS_TAG_NAME">
-      <value>
-        <option name="FOREGROUND" value="ed8796"/>
-      </value>
-    </option>
-    <option name="SASS_URL">
-      <value>
-        <option name="FOREGROUND" value="eed49f"/>
-      </value>
-    </option>
-    <option name="SASS_VARIABLE">
-      <value>
-      </value>
-    </option>
+    <option name="SASS_VARIABLE" baseAttributes="DEFAULT_INSTANCE_FIELD" />
     <option name="SEARCH_RESULT_ATTRIBUTES">
       <value>
         <option name="BACKGROUND" value="24273a"/>
@@ -2760,6 +2487,11 @@
       </value>
     </option>
     <option name="SQL_OUTER_QUERY_COLUMN" baseAttributes="SQL_COLUMN"/>
+    <option name="SQL_PROCEDURE">
+      <value>
+        <option name="FOREGROUND" value="8aadf4" />
+      </value>
+    </option>
     <option name="SQL_PARAMETER">
       <value>
         <option name="FOREGROUND" value="c6a0f6"/>

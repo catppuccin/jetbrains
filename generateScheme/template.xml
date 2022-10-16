@@ -48,13 +48,6 @@
     <option name="INLINE_REFACTORING_SETTINGS_DEFAULT" value="{{opacity surface1 0.65}}"/>
     <option name="INLINE_REFACTORING_SETTINGS_FOCUSED" value="{{opacity surface2 0.55}}"/>
     <option name="INLINE_REFACTORING_SETTINGS_HOVERED" value="{{opacity surface2 0.55}}"/>
-    <option name="JUPYTER.CELL_UNDER_CARET_COMMAND_MODE_STRIPE_COLOR" value="{{blue}}"/>
-    <option name="JUPYTER.CELL_UNDER_CARET_EDITOR_MODE_STRIPE_COLOR" value="{{green}}"/>
-    <option name="JUPYTER.CODE_CELL_BACKGROUND" value="2d3139"/>
-    <option name="JUPYTER.GUTTER_INPUT_EXECUTION_COUNT" value="{{blue}}"/>
-    <option name="JUPYTER.GUTTER_OUTPUT_EXECUTION_COUNT" value="d7783b"/>
-    <option name="JUPYTER.SAUSAGE_BUTTON_BORDER_COLOR" value="333841"/>
-    <option name="JUPYTER.SAUSAGE_BUTTON_SHORTCUT_COLOR" value="{{blue}}"/>
     <option name="LINE_NUMBERS_COLOR" value="{{overlay0}}"/>
     <option name="LINE_NUMBER_ON_CARET_ROW_COLOR" value="{{overlay1}}"/>
     <option name="LOOKUP_COLOR" value="{{surface0}}"/>
@@ -68,7 +61,6 @@
     <option name="RIGHT_MARGIN_COLOR" value="{{surface0}}"/>
     <option name="SELECTED_INDENT_GUIDE" value="{{surface1}}"/>
     <option name="SELECTED_TEARLINE_COLOR" value="{{surface1}}"/>
-    <option name="SELECTION_FOREGROUND" value=""/>
     {{#if isLatte}}
     <option name="SELECTION_BACKGROUND" value="{{surface0}}"/>
     {{else}}
@@ -106,7 +98,7 @@
         {{/if}}
       </value>
     </option>
-    <option name="ANNOTATION_NAME_ATTRIBUTES" baseAttributes="DEFAULT_METADATA"/>
+    <option name="ANNOTATION_NAME_ATTRIBUTES" baseAttributes=""/>
     <option name="APACHE_CONFIG.IDENTIFIER">
       <value>
         <option name="FOREGROUND" value="{{mauve}}"/>
@@ -119,37 +111,22 @@
       </value>
     </option>
     <option name="BASH.BINARY_DATA">
-      <value/>
+      <value />
     </option>
     <option name="BASH.CONDITIONAL">
       <value>
-        <option name="FOREGROUND" value="{{sky}}"/>
+        <option name="FOREGROUND" value="{{teal}}" />
       </value>
     </option>
-    <option name="BASH.EXTERNAL_COMMAND" baseAttributes="DEFAULT_IDENTIFIER"/>
+    <option name="BASH.EXTERNAL_COMMAND" baseAttributes="DEFAULT_IDENTIFIER" />
     <option name="BASH.FUNCTION_CALL">
       <value>
-        <option name="FOREGROUND" value="{{sky}}"/>
+        <option name="FOREGROUND" value="{{sky}}" />
       </value>
     </option>
-    <option name="BASH.HERE_DOC">
-      <value>
-        <option name="FOREGROUND" value="{{green}}"/>
-      </value>
-    </option>
-    <option name="BASH.HERE_DOC_END">
-      <value>
-        <option name="FOREGROUND" value="{{red}}"/>
-        <option name="FONT_TYPE" value="1"/>
-      </value>
-    </option>
-    <option name="BASH.HERE_DOC_START">
-      <value>
-        <option name="FOREGROUND" value="{{red}}"/>
-        <option name="FONT_TYPE" value="1"/>
-      </value>
-    </option>
-    <option name="BASH.SHEBANG" baseAttributes="BASH.LINE_COMMENT"/>
+    <option name="BASH.HERE_DOC_END" baseAttributes="DEFAULT_KEYWORD" />
+    <option name="BASH.HERE_DOC_START" baseAttributes="DEFAULT_KEYWORD" />
+    <option name="BASH.SHEBANG" baseAttributes="BASH.LINE_COMMENT" />
     <option name="BLADE_DIRECTIVE">
       <value>
         <option name="FOREGROUND" value="{{mauve}}"/>
@@ -224,22 +201,9 @@
         <option name="EFFECT_COLOR" value="{{lavender}}"/>
       </value>
     </option>
-    <option name="COFFEESCRIPT.BAD_CHARACTER">
-      <value>
-        <option name="BACKGROUND" value="6e3b3b"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.BLOCK_COMMENT">
-      <value>
-        <option name="FOREGROUND" value="{{surface2}}"/>
-        {{#if italics}}
-        <option name="FONT_TYPE" value="2"/>
-        {{/if}}
-      </value>
-    </option>
     <option name="COFFEESCRIPT.BOOLEAN">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{peach}}" />
         {{#if italics}}
         <option name="FONT_TYPE" value="2"/>
         {{/if}}
@@ -247,191 +211,21 @@
     </option>
     <option name="COFFEESCRIPT.BRACE">
       <value>
-        <option name="FOREGROUND" value="{{teal}}"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.BRACKET">
-      <value>
-        <option name="FOREGROUND" value="{{text}}"/>
+        <option name="FOREGROUND" value="{{teal}}" />
       </value>
     </option>
     <option name="COFFEESCRIPT.CLASS_NAME">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{peach}}" />
         {{#if italics}}
         <option name="FONT_TYPE" value="2"/>
         {{/if}}
       </value>
     </option>
-    <option name="COFFEESCRIPT.COLON">
-      <value>
-        <option name="FOREGROUND" value="{{sky}}"/>
-        <option name="FONT_TYPE" value="1"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.COMMA">
-      <value>
-        <option name="FOREGROUND" value="{{teal}}"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.DOT">
-      <value>
-        <option name="FOREGROUND" value="{{teal}}"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.ESCAPE_SEQUENCE">
-      <value>
-        <option name="FOREGROUND" value="{{sky}}"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.EXISTENTIAL">
-      <value>
-        <option name="FOREGROUND" value="{{sky}}"/>
-        <option name="FONT_TYPE" value="1"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.EXPRESSIONS_SUBSTITUTION_MARK">
-      <value>
-        <option name="FOREGROUND" value="{{maroon}}"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.FUNCTION">
-      <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.FUNCTION_BINDING">
-      <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.FUNCTION_NAME">
-      <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
-        {{#if italics}}
-        <option name="FONT_TYPE" value="2"/>
-        {{/if}}
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.GLOBAL_VARIABLE">
-      <value>
-        <option name="FOREGROUND" value="{{text}}"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.HEREDOC_CONTENT">
-      <value>
-        <option name="FOREGROUND" value="{{green}}"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.HEREDOC_ID">
-      <value>
-        <option name="FOREGROUND" value="{{green}}"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.HEREGEX_CONTENT">
-      <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.HEREGEX_ID">
-      <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.JAVASCRIPT_ID">
-      <value>
-        <option name="FOREGROUND" value="{{green}}"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.KEYWORD">
-      <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
-        <option name="FONT_TYPE" value="1"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.LINE_COMMENT">
-      <value>
-        <option name="FOREGROUND" value="{{surface2}}"/>
-        {{#if italics}}
-        <option name="FONT_TYPE" value="2"/>
-        {{/if}}
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.NUMBER">
-      <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.OBJECT_KEY">
-      <value>
-        <option name="FOREGROUND" value="{{text}}"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.OPERATIONS">
-      <value>
-        <option name="FOREGROUND" value="{{sky}}"/>
-        <option name="FONT_TYPE" value="1"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.PARENTHESIS">
-      <value>
-        <option name="FOREGROUND" value="{{teal}}"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.PROTOTYPE">
-      <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
-        {{#if italics}}
-        <option name="FONT_TYPE" value="2"/>
-        {{/if}}
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.RANGE">
-      <value>
-        <option name="FOREGROUND" value="{{teal}}"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.REGULAR_EXPRESSION_CONTENT">
-      <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.REGULAR_EXPRESSION_FLAG">
-      <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.REGULAR_EXPRESSION_ID">
-      <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.SEMICOLON">
-      <value>
-        <option name="FOREGROUND" value="{{text}}"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.SPLAT">
-      <value>
-        <option name="FOREGROUND" value="{{teal}}"/>
-      </value>
-    </option>
+    <option name="COFFEESCRIPT.GLOBAL_VARIABLE" baseAttributes="JS.GLOBAL_VARIABLE" />
     <option name="COFFEESCRIPT.STRING">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.STRING_LITERAL">
-      <value>
-        <option name="FOREGROUND" value="{{green}}"/>
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.THIS">
-      <value>
-        <option name="FOREGROUND" value="{{text}}"/>
-        {{#if italics}}
-        <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        <option name="FOREGROUND" value="{{green}}" />
       </value>
     </option>
     <option name="CONDITIONALLY_NOT_COMPILED">
@@ -591,13 +385,13 @@
     </option>
     <option name="CSS.CLASS_NAME">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{teal}}"/>
       </value>
     </option>
     <option name="CSS.COLOR" baseAttributes="CSS.IDENT"/>
     <option name="CSS.FUNCTION">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{sky}}"/>
         {{#if italics}}
         <option name="FONT_TYPE" value="2"/>
         {{/if}}
@@ -606,11 +400,6 @@
     <option name="CSS.HASH">
       <value>
         <option name="FOREGROUND" value="{{blue}}"/>
-      </value>
-    </option>
-    <option name="CSS.IDENT">
-      <value>
-        <option name="FOREGROUND" value="d39a63"/>
       </value>
     </option>
     <option name="CSS.IMPORTANT">
@@ -624,12 +413,20 @@
     <option name="CSS.KEYWORD">
       <value>
         <option name="FOREGROUND" value="{{red}}"/>
-        <option name="FONT_TYPE" value="1"/>
+        <option name="FONT_TYPE" value="3"/>
+      </value>
+    </option>
+    <option name="CSS.OPERATORS">
+      <value>
+        <option name="FOREGROUND" value="{{text}}" />
       </value>
     </option>
     <option name="CSS.PROPERTY_NAME">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
+        <option name="FOREGROUND" value="{{blue}}"/>
+        {{#if italics}}
+        <option name="FONT_TYPE" value="2"/>
+        {{/if}}
       </value>
     </option>
     <option name="CSS.PROPERTY_VALUE">
@@ -642,7 +439,19 @@
         <option name="FOREGROUND" value="{{teal}}"/>
       </value>
     </option>
-    <option name="CSS.URL" baseAttributes="HTML_ATTRIBUTE_VALUE"/>
+    <option name="CSS.TAG_NAME">
+      <value>
+        <option name="FOREGROUND" value="{{yellow}}" />
+      </value>
+    </option>
+    <option name="CSS.URL">
+      <value>
+        <option name="FOREGROUND" value="{{green}}" />
+        {{#if italics}}
+        <option name="FONT_TYPE" value="2"/>
+        {{/if}}
+      </value>
+    </option>
     <option name="CSV_PLUGIN_COLUMN_COLORING_ATTRIBUTE_1">
       <value>
         <option name="FOREGROUND" value="{{red}}"/>
@@ -1113,9 +922,17 @@
         <option name="ERROR_STRIPE_COLOR" value="{{opacity blue 0.2}}"/>
       </value>
     </option>
+    <option name="DJANGO_STRING_LITERAL">
+      <value>
+        <option name="FOREGROUND" value="{{green}}" />
+        {{#if italics}}
+        <option name="FONT_TYPE" value="2"/>
+        {{/if}}
+      </value>
+    </option>
     <option name="DJANGO_TAG_NAME">
       <value>
-        <option name="FOREGROUND" value="{{maroon}}"/>
+        <option name="FOREGROUND" value="{{blue}}"/>
         {{#if italics}}
         <option name="FONT_TYPE" value="2"/>
         {{/if}}
@@ -1449,9 +1266,7 @@
       </value>
     </option>
     <option name="INJECTED_LANGUAGE_FRAGMENT">
-      <value>
-        <option name="BACKGROUND" value="{{surface0}}"/>
-      </value>
+      <value/>
     </option>
     <option name="INLAY_DEFAULT">
       <value>
@@ -1596,15 +1411,10 @@
         <option name="FOREGROUND" value="{{mauve}}"/>
       </value>
     </option>
-    <option name="JUPYTER.SAUSAGE_BUTTON_APPEARANCE">
-      <value>
-        <option name="FOREGROUND" value="a0a7b4"/>
-        <option name="BACKGROUND" value="3d424b"/>
-      </value>
-    </option>
     <option name="JUPYTER_SELECTED_CELL">
       <value>
         <option name="FOREGROUND" value="{{sky}}"/>
+        <option name="BACKGROUND" value="{{base}}"/>
       </value>
     </option>
     <option name="KOTLIN_BACKING_FIELD_VARIABLE">
@@ -1707,12 +1517,12 @@
     </option>
     <option name="LINE_FULL_COVERAGE">
       <value>
-        <option name="FOREGROUND" value="354a3d"/>
+        <option name="FOREGROUND" value="{{green}}"/>
       </value>
     </option>
     <option name="LINE_NONE_COVERAGE">
       <value>
-        <option name="FOREGROUND" value="5e3a24"/>
+        <option name="FOREGROUND" value="{{red}}"/>
       </value>
     </option>
     <option name="LINE_PARTIAL_COVERAGE">
@@ -1758,7 +1568,7 @@
     <option name="LOGCAT_ASSERT_OUTPUT">
       <value>
         <option name="FOREGROUND" value="{{maroon}}"/>
-        <option name="EFFECT_COLOR" value="ffffff"/>
+        <option name="EFFECT_COLOR" value="{{maroon}}"/>
         <option name="EFFECT_TYPE" value="1"/>
       </value>
     </option>
@@ -1872,7 +1682,7 @@
     </option>
     <option name="MARKDOWN_CODE_FENCE">
       <value>
-        <option name="FOREGROUND" value="{{red}}"/>
+        <option name="FOREGROUND" value="{{text}}"/>
         {{#if italics}}
         <option name="FONT_TYPE" value="2"/>
         {{/if}}
@@ -2254,20 +2064,10 @@
         <option name="FOREGROUND" value="{{text}}"/>
       </value>
     </option>
-    <option name="PROPERTIES.INVALID_STRING_ESCAPE">
-      <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
-        <option name="EFFECT_COLOR" value="{{red}}"/>
-        <option name="EFFECT_TYPE" value="2"/>
-      </value>
-    </option>
-    <option name="PROPERTIES.KEY" baseAttributes="DEFAULT_KEYWORD"/>
-    <option name="PROPERTIES.KEY_VALUE_SEPARATOR" baseAttributes="DEFAULT_OPERATION_SIGN"/>
-    <option name="PROPERTIES.VALID_STRING_ESCAPE">
-      <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
-      </value>
-    </option>
+    <option name="PROPERTIES.INVALID_STRING_ESCAPE" baseAttributes="DEFAULT_INVALID_STRING_ESCAPE" />
+    <option name="PROPERTIES.KEY" baseAttributes="DEFAULT_KEYWORD" />
+    <option name="PROPERTIES.KEY_VALUE_SEPARATOR" baseAttributes="DEFAULT_OPERATION_SIGN" />
+    <option name="PROPERTIES.VALID_STRING_ESCAPE" baseAttributes="DEFAULT_VALID_STRING_ESCAPE" />
     <option name="PROTOCOL_REFERENCE">
       <value>
         <option name="FOREGROUND" value="{{yellow}}"/>
@@ -2490,84 +2290,87 @@
     </option>
     <option name="REGEXP.BRACES">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{peach}}" />
       </value>
     </option>
     <option name="REGEXP.BRACKETS">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{peach}}" />
+      </value>
+    </option>
+    <option name="REGEXP.CHARACTER">
+      <value>
+        <option name="FOREGROUND" value="{{text}}" />
       </value>
     </option>
     <option name="REGEXP.CHAR_CLASS">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{blue}}" />
       </value>
     </option>
     <option name="REGEXP.ESC_CHARACTER">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{blue}}" />
       </value>
     </option>
     <option name="REGEXP.META">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
+        <option name="FOREGROUND" value="{{mauve}}" />
       </value>
     </option>
     <option name="REGEXP.PARENTHS">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{[blue}}" />
+      </value>
+    </option>
+    <option name="REGEXP.QUANTIFIER">
+      <value>
+        <option name="FOREGROUND" value="{[blue}}" />
       </value>
     </option>
     <option name="REGEXP.QUOTE_CHARACTER">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{[blue}}" />
       </value>
     </option>
-    <option name="REGEXP.REDUNDANT_ESCAPE">
-      <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
-      </value>
-    </option>
+    <option name="REGEXP.REDUNDANT_ESCAPE" baseAttributes="DEFAULT_VALID_STRING_ESCAPE" />
     <option name="REST.BOLD">
       <value>
-        <option name="FONT_TYPE" value="1"/>
-      </value>
-    </option>
-    <option name="REST.EXPLICIT">
-      <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
-      </value>
-    </option>
-    <option name="REST.FIELD">
-      <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
-      </value>
-    </option>
-    <option name="REST.FIXED">
-      <value>
-        <option name="BACKGROUND" value="3d424b"/>
-      </value>
-    </option>
-    <option name="REST.INLINE">
-      <value>
-        <option name="BACKGROUND" value="273627"/>
-      </value>
-    </option>
-    <option name="REST.INTERPRETED">
-      <value>
-        <option name="BACKGROUND" value="3c4b33"/>
-      </value>
-    </option>
-    <option name="REST.ITALIC">
-      <value>
+        <option name="FOREGROUND" value="{{peach}}" />
+        <option name="FONT_TYPE" value="1" />
         {{#if italics}}
         <option name="FONT_TYPE" value="2"/>
         {{/if}}
       </value>
     </option>
+    <option name="REST.EXPLICIT">
+      <value>
+        <option name="FOREGROUND" value="{{mauve}}" />
+        {{#if italics}}
+        <option name="FONT_TYPE" value="2"/>
+        {{/if}}
+      </value>
+    </option>
+    <option name="REST.FIELD">
+      <value>
+        <option name="FOREGROUND" value="{{mauve}}" />
+        {{#if italics}}
+        <option name="FONT_TYPE" value="2"/>
+        {{/if}}
+      </value>
+    </option>
+    <option name="REST.FIXED" baseAttributes="DEFAULT_IDENTIFIER" />
+    <option name="REST.INLINE" baseAttributes="DEFAULT_IDENTIFIER" />
+    <option name="REST.INTERPRETED" baseAttributes="DEFAULT_IDENTIFIER" />
+    <option name="REST.ITALIC">
+      <value>
+        <option name="FOREGROUND" value="{{peach}}" />
+        <option name="FONT_TYPE" value="2" />
+      </value>
+    </option>
     <option name="REST.LINE_COMMENT">
       <value>
-        <option name="FOREGROUND" value="{{surface2}}"/>
+        <option name="FOREGROUND" value="{{surface2}}" />
         {{#if italics}}
         <option name="FONT_TYPE" value="2"/>
         {{/if}}
@@ -2575,12 +2378,10 @@
     </option>
     <option name="REST.REF.NAME">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
-      </value>
-    </option>
-    <option name="REST.SECTION.HEADER">
-      <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{green}}" />
+        {{#if italics}}
+        <option name="FONT_TYPE" value="2"/>
+        {{/if}}
       </value>
     </option>
     <option name="RHTML_COMMENT_ID">
@@ -2876,90 +2677,16 @@
         <option name="FOREGROUND" value="{{blue}}"/>
       </value>
     </option>
-    <option name="SASS_COMMENT">
-      <value>
-        <option name="FOREGROUND" value="{{surface2}}"/>
-        {{#if italics}}
-        <option name="FONT_TYPE" value="2"/>
-        {{/if}}
-      </value>
-    </option>
-    <option name="SASS_DEFAULT">
-      <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
-        <option name="FONT_TYPE" value="1"/>
-      </value>
-    </option>
-    <option name="SASS_EXTEND">
-      <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
-        <option name="FONT_TYPE" value="1"/>
-      </value>
-    </option>
-    <option name="SASS_FUNCTION">
-      <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
-      </value>
-    </option>
-    <option name="SASS_IDENTIFIER">
-      <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
-      </value>
-    </option>
-    <option name="SASS_IMPORTANT">
-      <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
-        <option name="FONT_TYPE" value="1"/>
-      </value>
-    </option>
-    <option name="SASS_KEYWORD">
-      <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
-        <option name="FONT_TYPE" value="1"/>
-      </value>
-    </option>
+    <option name="SASS_COMMENT" baseAttributes="CSS.COMMENT" />
     <option name="SASS_MIXIN">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
-      </value>
-    </option>
-    <option name="SASS_NUMBER">
-      <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
-      </value>
-    </option>
-    <option name="SASS_PROPERTY_NAME">
-      <value>
-        <option name="FOREGROUND" value="{{text}}"/>
-      </value>
-    </option>
-    <option name="SASS_PROPERTY_VALUE">
-      <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
-      </value>
-    </option>
-    <option name="SASS_STRING">
-      <value>
-        <option name="FOREGROUND" value="{{green}}"/>
-      </value>
-    </option>
-    <option name="SASS_TAG_NAME">
-      <value>
-        <option name="FOREGROUND" value="{{red}}"/>
-      </value>
-    </option>
-    <option name="SASS_URL">
-      <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
-      </value>
-    </option>
-    <option name="SASS_VARIABLE">
-      <value>
+        <option name="FOREGROUND" value="{{flamingo}}" />
         {{#if italics}}
         <option name="FONT_TYPE" value="2"/>
         {{/if}}
       </value>
     </option>
+    <option name="SASS_VARIABLE" baseAttributes="DEFAULT_INSTANCE_FIELD" />
     <option name="SEARCH_RESULT_ATTRIBUTES">
       <value>
         <option name="BACKGROUND" value="{{base}}"/>
@@ -3073,6 +2800,11 @@
       </value>
     </option>
     <option name="SQL_OUTER_QUERY_COLUMN" baseAttributes="SQL_COLUMN"/>
+    <option name="SQL_PROCEDURE">
+      <value>
+        <option name="FOREGROUND" value="{{blue}}" />
+      </value>
+    </option>
     <option name="SQL_PARAMETER">
       <value>
         <option name="FOREGROUND" value="{{mauve}}"/>
