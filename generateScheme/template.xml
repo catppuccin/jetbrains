@@ -2025,45 +2025,53 @@
         <option name="FOREGROUND" value="{{green}}"/>
       </value>
     </option>
-    <option name="PHP_ALIAS_REFERENCE">
+    <option name="PHP_ALIAS_REFERENCE" baseAttributes="PHP_CLASS" />
+    <option name="PHP_CONSTANT" baseAttributes="DEFAULT_CONSTANT" />
+    <option name="PHP_EXEC_COMMAND_ID" baseAttributes="DEFAULT_STRING" />
+    <option name="PHP_HEREDOC_CONTENT">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{green}}" />
         {{#if italics}}
         <option name="FONT_TYPE" value="2"/>
         {{/if}}
       </value>
     </option>
-    <option name="PHP_CONSTANT">
+    <option name="PHP_IDENTIFIER">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
-      </value>
-    </option>
-    <option name="PHP_EXEC_COMMAND_ID">
-      <value>
-        <option name="FOREGROUND" value="{{green}}"/>
-      </value>
-    </option>
-    <option name="PHP_HEREDOC_ID">
-      <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
-      </value>
-    </option>
-    <option name="PHP_PARAMETER">
-      <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{peach}}" />
         {{#if italics}}
         <option name="FONT_TYPE" value="2"/>
         {{/if}}
       </value>
     </option>
-    <option name="PHP_SCRIPTING_BACKGROUND">
-      <value/>
-    </option>
-    <option name="PHP_VAR">
+    <option name="PHP_INSTANCE_FIELD">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
+        <option name="FOREGROUND" value="flamingo" />
       </value>
     </option>
+    <option name="PHP_INTERFACE">
+      <value>
+        <option name="FOREGROUND" value="{{yellow}}" />
+        {{#if italics}}
+        <option name="FONT_TYPE" value="2"/>
+        {{/if}}
+      </value>
+    </option>
+    <option name="PHP_NAMED_ARGUMENT">
+      <value>
+        <option name="FOREGROUND" value="{{sky}}" />
+      </value>
+    </option>
+    <option name="PHP_PARAMETER" baseAttributes="DEFAULT_PARAMETER" />
+    <option name="PHP_THIS_VAR">
+      <value>
+        <option name="FOREGROUND" value="{{yellow}}" />
+        {{#if italics}}
+        <option name="FONT_TYPE" value="2"/>
+        {{/if}}
+      </value>
+    </option>
+    <option name="PHP_VAR" baseAttributes="DEFAULT_LOCAL_VARIABLE" />
     <option name="PROPERTIES.INVALID_STRING_ESCAPE" baseAttributes="DEFAULT_INVALID_STRING_ESCAPE" />
     <option name="PROPERTIES.KEY" baseAttributes="DEFAULT_KEYWORD" />
     <option name="PROPERTIES.KEY_VALUE_SEPARATOR" baseAttributes="DEFAULT_OPERATION_SIGN" />

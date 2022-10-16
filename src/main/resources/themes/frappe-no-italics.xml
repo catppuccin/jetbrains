@@ -1778,39 +1778,41 @@
         <option name="FOREGROUND" value="a6d189"/>
       </value>
     </option>
-    <option name="PHP_ALIAS_REFERENCE">
+    <option name="PHP_ALIAS_REFERENCE" baseAttributes="PHP_CLASS" />
+    <option name="PHP_CONSTANT" baseAttributes="DEFAULT_CONSTANT" />
+    <option name="PHP_EXEC_COMMAND_ID" baseAttributes="DEFAULT_STRING" />
+    <option name="PHP_HEREDOC_CONTENT">
       <value>
-        <option name="FOREGROUND" value="e5c890"/>
+        <option name="FOREGROUND" value="a6d189" />
       </value>
     </option>
-    <option name="PHP_CONSTANT">
+    <option name="PHP_IDENTIFIER">
       <value>
-        <option name="FOREGROUND" value="ef9f76"/>
+        <option name="FOREGROUND" value="ef9f76" />
       </value>
     </option>
-    <option name="PHP_EXEC_COMMAND_ID">
+    <option name="PHP_INSTANCE_FIELD">
       <value>
-        <option name="FOREGROUND" value="a6d189"/>
+        <option name="FOREGROUND" value="flamingo" />
       </value>
     </option>
-    <option name="PHP_HEREDOC_ID">
+    <option name="PHP_INTERFACE">
       <value>
-        <option name="FOREGROUND" value="ca9ee6"/>
+        <option name="FOREGROUND" value="e5c890" />
       </value>
     </option>
-    <option name="PHP_PARAMETER">
+    <option name="PHP_NAMED_ARGUMENT">
       <value>
-        <option name="FOREGROUND" value="ef9f76"/>
+        <option name="FOREGROUND" value="99d1db" />
       </value>
     </option>
-    <option name="PHP_SCRIPTING_BACKGROUND">
-      <value/>
-    </option>
-    <option name="PHP_VAR">
+    <option name="PHP_PARAMETER" baseAttributes="DEFAULT_PARAMETER" />
+    <option name="PHP_THIS_VAR">
       <value>
-        <option name="FOREGROUND" value="c6d0f5"/>
+        <option name="FOREGROUND" value="e5c890" />
       </value>
     </option>
+    <option name="PHP_VAR" baseAttributes="DEFAULT_LOCAL_VARIABLE" />
     <option name="PROPERTIES.INVALID_STRING_ESCAPE" baseAttributes="DEFAULT_INVALID_STRING_ESCAPE" />
     <option name="PROPERTIES.KEY" baseAttributes="DEFAULT_KEYWORD" />
     <option name="PROPERTIES.KEY_VALUE_SEPARATOR" baseAttributes="DEFAULT_OPERATION_SIGN" />

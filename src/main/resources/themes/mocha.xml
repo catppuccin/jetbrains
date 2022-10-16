@@ -1859,41 +1859,45 @@
         <option name="FOREGROUND" value="a6e3a1"/>
       </value>
     </option>
-    <option name="PHP_ALIAS_REFERENCE">
+    <option name="PHP_ALIAS_REFERENCE" baseAttributes="PHP_CLASS" />
+    <option name="PHP_CONSTANT" baseAttributes="DEFAULT_CONSTANT" />
+    <option name="PHP_EXEC_COMMAND_ID" baseAttributes="DEFAULT_STRING" />
+    <option name="PHP_HEREDOC_CONTENT">
       <value>
-        <option name="FOREGROUND" value="f9e2af"/>
+        <option name="FOREGROUND" value="a6e3a1" />
         <option name="FONT_TYPE" value="2"/>
       </value>
     </option>
-    <option name="PHP_CONSTANT">
+    <option name="PHP_IDENTIFIER">
       <value>
-        <option name="FOREGROUND" value="fab387"/>
-      </value>
-    </option>
-    <option name="PHP_EXEC_COMMAND_ID">
-      <value>
-        <option name="FOREGROUND" value="a6e3a1"/>
-      </value>
-    </option>
-    <option name="PHP_HEREDOC_ID">
-      <value>
-        <option name="FOREGROUND" value="cba6f7"/>
-      </value>
-    </option>
-    <option name="PHP_PARAMETER">
-      <value>
-        <option name="FOREGROUND" value="fab387"/>
+        <option name="FOREGROUND" value="fab387" />
         <option name="FONT_TYPE" value="2"/>
       </value>
     </option>
-    <option name="PHP_SCRIPTING_BACKGROUND">
-      <value/>
-    </option>
-    <option name="PHP_VAR">
+    <option name="PHP_INSTANCE_FIELD">
       <value>
-        <option name="FOREGROUND" value="cdd6f4"/>
+        <option name="FOREGROUND" value="flamingo" />
       </value>
     </option>
+    <option name="PHP_INTERFACE">
+      <value>
+        <option name="FOREGROUND" value="f9e2af" />
+        <option name="FONT_TYPE" value="2"/>
+      </value>
+    </option>
+    <option name="PHP_NAMED_ARGUMENT">
+      <value>
+        <option name="FOREGROUND" value="89dceb" />
+      </value>
+    </option>
+    <option name="PHP_PARAMETER" baseAttributes="DEFAULT_PARAMETER" />
+    <option name="PHP_THIS_VAR">
+      <value>
+        <option name="FOREGROUND" value="f9e2af" />
+        <option name="FONT_TYPE" value="2"/>
+      </value>
+    </option>
+    <option name="PHP_VAR" baseAttributes="DEFAULT_LOCAL_VARIABLE" />
     <option name="PROPERTIES.INVALID_STRING_ESCAPE" baseAttributes="DEFAULT_INVALID_STRING_ESCAPE" />
     <option name="PROPERTIES.KEY" baseAttributes="DEFAULT_KEYWORD" />
     <option name="PROPERTIES.KEY_VALUE_SEPARATOR" baseAttributes="DEFAULT_OPERATION_SIGN" />
