@@ -92,7 +92,7 @@
     </option>
     <option name="ANNOTATION_ATTRIBUTE_NAME_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{maroon}}"/>
         {{#if italics}}
         <option name="FONT_TYPE" value="2"/>
         {{/if}}
@@ -1310,27 +1310,6 @@
         {{/if}}
       </value>
     </option>
-<!--    <option name="JAVA.IMPORT_PACKAGE">-->
-<!--      <value>-->
-<!--        <option name="FOREGROUND" value="{{text}}"/>-->
-<!--        {{#if italics}}-->
-<!--        <option name="FONT_TYPE" value="2"/>-->
-<!--        {{/if}}-->
-<!--      </value>-->
-<!--    </option>-->
-    <!--    <option name="JAVA.STATIC_FINAL">-->
-    <!--      <value>-->
-    <!--        <option name="FOREGROUND" value="{{theme.colors.blue}}"/>-->
-    <!--        <option name="FONT_TYPE" value="2"/>-->
-    <!--      </value>-->
-    <!--    </option>-->
-    <!--    <option name="JAVA.THIS_SUPER">-->
-    <!--      <value>-->
-    <!--        <option name="FOREGROUND" value="c1c0c0"/>-->
-    <!--        <option name="FONT_TYPE" value="2"/>-->
-    <!--      </value>-->
-    <!--    </option>-->
-    <!--    <option name="JAVA_KEYWORD" baseAttributes="DEFAULT_KEYWORD"/>-->
     <option name="JADE_FILE_PATH">
       <value>
         <option name="FOREGROUND" value="{{green}}"/>

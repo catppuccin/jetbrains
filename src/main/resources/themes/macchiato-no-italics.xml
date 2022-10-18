@@ -81,7 +81,7 @@
     </option>
     <option name="ANNOTATION_ATTRIBUTE_NAME_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="eed49f"/>
+        <option name="FOREGROUND" value="ee99a0"/>
       </value>
     </option>
     <option name="ANNOTATION_NAME_ATTRIBUTES" baseAttributes=""/>
@@ -1146,25 +1146,6 @@
         <option name="FOREGROUND" value="cad3f5"/>
       </value>
     </option>
-<!--    <option name="JAVA.IMPORT_PACKAGE">-->
-<!--      <value>-->
-<!--        <option name="FOREGROUND" value="cad3f5"/>-->
-<!--        -->
-<!--      </value>-->
-<!--    </option>-->
-    <!--    <option name="JAVA.STATIC_FINAL">-->
-    <!--      <value>-->
-    <!--        <option name="FOREGROUND" value=""/>-->
-    <!--        <option name="FONT_TYPE" value="2"/>-->
-    <!--      </value>-->
-    <!--    </option>-->
-    <!--    <option name="JAVA.THIS_SUPER">-->
-    <!--      <value>-->
-    <!--        <option name="FOREGROUND" value="c1c0c0"/>-->
-    <!--        <option name="FONT_TYPE" value="2"/>-->
-    <!--      </value>-->
-    <!--    </option>-->
-    <!--    <option name="JAVA_KEYWORD" baseAttributes="DEFAULT_KEYWORD"/>-->
     <option name="JADE_FILE_PATH">
       <value>
         <option name="FOREGROUND" value="a6da95"/>
