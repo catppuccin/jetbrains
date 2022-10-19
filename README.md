@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <img src="./assets/preview.png"/>
+  <img src="./assets/catwalk.webp"/>
 </p>
 
 ## Installation
@@ -32,6 +32,8 @@
 ## 💝 Thanks to
 
 - [tiepp](https://github.com/tiepp)
+- [Hamothy](https://github.com/sgoudham)
+- [winston](https://github.com/nekowinston)
 
 &nbsp;
 
