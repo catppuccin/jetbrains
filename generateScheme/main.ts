@@ -90,6 +90,9 @@ Object.entries(variants).forEach(([key, value]) => {
         borderColor: "primaryBackground",
         separatorColor: "separatorColor",
       },
+      List: {
+        background: "mantle"
+      },
       Borders: {
         color: "primaryBackground",
         ContrastBorderColor: "secondaryBackground",
@@ -198,11 +201,13 @@ Object.entries(variants).forEach(([key, value]) => {
       },
       NotificationsToolwindow: {
         newNotification: {
-          background: "mantle"
-        }
+          background: "primaryBackground",
+          hoverBackground: "hoverBackground",
+        },
       },
       Notification: {
-        background: "mantle",
+        background: "primaryBackground",
+        borderColor: "mauve",
         errorBorderColor: "red",
         errorBackground: "primaryBackground",
         errorForeground: "primaryForeground",

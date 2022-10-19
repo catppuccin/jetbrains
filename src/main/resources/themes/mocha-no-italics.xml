@@ -79,6 +79,31 @@
         <option name="FOREGROUND" value="89b4fa"/>
       </value>
     </option>
+    <option name="ANGLE_BRACKETS_RAINBOW_COLOR0">
+      <value>
+        <option name="FOREGROUND" value="f38ba8" />
+      </value>
+    </option>
+    <option name="ANGLE_BRACKETS_RAINBOW_COLOR1">
+      <value>
+        <option name="FOREGROUND" value="fab387" />
+      </value>
+    </option>
+    <option name="ANGLE_BRACKETS_RAINBOW_COLOR2">
+      <value>
+        <option name="FOREGROUND" value="f9e2af" />
+      </value>
+    </option>
+    <option name="ANGLE_BRACKETS_RAINBOW_COLOR3">
+      <value>
+        <option name="FOREGROUND" value="a6e3a1" />
+      </value>
+    </option>
+    <option name="ANGLE_BRACKETS_RAINBOW_COLOR4">
+      <value>
+        <option name="FOREGROUND" value="74c7ec" />
+      </value>
+    </option>
     <option name="ANNOTATION_ATTRIBUTE_NAME_ATTRIBUTES">
       <value>
         <option name="FOREGROUND" value="eba0ac"/>
@@ -1945,29 +1970,29 @@
         <option name="FOREGROUND" value="a6e3a1"/>
       </value>
     </option>
-    <option name="RAINBOW_COLOR0">
+    <option name="ROUND_BRACKETS_RAINBOW_COLOR0">
       <value>
-        <option name="FOREGROUND" value="a6e3a1"/>
+        <option name="FOREGROUND" value="f38ba8" />
       </value>
     </option>
-    <option name="RAINBOW_COLOR1">
+    <option name="ROUND_BRACKETS_RAINBOW_COLOR1">
       <value>
-        <option name="FOREGROUND" value="f38ba8"/>
+        <option name="FOREGROUND" value="fab387" />
       </value>
     </option>
-    <option name="RAINBOW_COLOR2">
+    <option name="ROUND_BRACKETS_RAINBOW_COLOR2">
       <value>
-        <option name="FOREGROUND" value="89dceb"/>
+        <option name="FOREGROUND" value="f9e2af" />
       </value>
     </option>
-    <option name="RAINBOW_COLOR3">
+    <option name="ROUND_BRACKETS_RAINBOW_COLOR3">
       <value>
-        <option name="FOREGROUND" value="fab387"/>
+        <option name="FOREGROUND" value="a6e3a1" />
       </value>
     </option>
-    <option name="RAINBOW_COLOR4">
+    <option name="ROUND_BRACKETS_RAINBOW_COLOR4">
       <value>
-        <option name="FOREGROUND" value="eba0ac"/>
+        <option name="FOREGROUND" value="74c7ec" />
       </value>
     </option>
     <option name="RDOC_DIRECTIVE">
@@ -2464,6 +2489,56 @@
       </value>
     </option>
     <option name="SPY-JS.VALUE_HINT" baseAttributes=""/>
+    <option name="SQUARE_BRACKETS_RAINBOW_COLOR0">
+      <value>
+        <option name="FOREGROUND" value="f38ba8" />
+      </value>
+    </option>
+    <option name="SQUARE_BRACKETS_RAINBOW_COLOR1">
+      <value>
+        <option name="FOREGROUND" value="fab387" />
+      </value>
+    </option>
+    <option name="SQUARE_BRACKETS_RAINBOW_COLOR2">
+      <value>
+        <option name="FOREGROUND" value="f9e2af" />
+      </value>
+    </option>
+    <option name="SQUARE_BRACKETS_RAINBOW_COLOR3">
+      <value>
+        <option name="FOREGROUND" value="a6e3a1" />
+      </value>
+    </option>
+    <option name="SQUARE_BRACKETS_RAINBOW_COLOR4">
+      <value>
+        <option name="FOREGROUND" value="74c7ec" />
+      </value>
+    </option>
+    <option name="SQUIGGLY_BRACKETS_RAINBOW_COLOR0">
+      <value>
+        <option name="FOREGROUND" value="f38ba8" />
+      </value>
+    </option>
+    <option name="SQUIGGLY_BRACKETS_RAINBOW_COLOR1">
+      <value>
+        <option name="FOREGROUND" value="fab387" />
+      </value>
+    </option>
+    <option name="SQUIGGLY_BRACKETS_RAINBOW_COLOR2">
+      <value>
+        <option name="FOREGROUND" value="f9e2af" />
+      </value>
+    </option>
+    <option name="SQUIGGLY_BRACKETS_RAINBOW_COLOR3">
+      <value>
+        <option name="FOREGROUND" value="a6e3a1" />
+      </value>
+    </option>
+    <option name="SQUIGGLY_BRACKETS_RAINBOW_COLOR4">
+      <value>
+        <option name="FOREGROUND" value="74c7ec" />
+      </value>
+    </option>
     <option name="SQL_DATABASE_OBJECT">
       <value>
         <option name="FOREGROUND" value="cba6f7"/>

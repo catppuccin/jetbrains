@@ -90,6 +90,31 @@
         {{/if}}
       </value>
     </option>
+    <option name="ANGLE_BRACKETS_RAINBOW_COLOR0">
+      <value>
+        <option name="FOREGROUND" value="{{red}}" />
+      </value>
+    </option>
+    <option name="ANGLE_BRACKETS_RAINBOW_COLOR1">
+      <value>
+        <option name="FOREGROUND" value="{{peach}}" />
+      </value>
+    </option>
+    <option name="ANGLE_BRACKETS_RAINBOW_COLOR2">
+      <value>
+        <option name="FOREGROUND" value="{{yellow}}" />
+      </value>
+    </option>
+    <option name="ANGLE_BRACKETS_RAINBOW_COLOR3">
+      <value>
+        <option name="FOREGROUND" value="{{green}}" />
+      </value>
+    </option>
+    <option name="ANGLE_BRACKETS_RAINBOW_COLOR4">
+      <value>
+        <option name="FOREGROUND" value="{{sapphire}}" />
+      </value>
+    </option>
     <option name="ANNOTATION_ATTRIBUTE_NAME_ATTRIBUTES">
       <value>
         <option name="FOREGROUND" value="{{maroon}}"/>
@@ -2220,29 +2245,29 @@
         <option name="FOREGROUND" value="{{green}}"/>
       </value>
     </option>
-    <option name="RAINBOW_COLOR0">
+    <option name="ROUND_BRACKETS_RAINBOW_COLOR0">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{red}}" />
       </value>
     </option>
-    <option name="RAINBOW_COLOR1">
+    <option name="ROUND_BRACKETS_RAINBOW_COLOR1">
       <value>
-        <option name="FOREGROUND" value="{{red}}"/>
+        <option name="FOREGROUND" value="{{peach}}" />
       </value>
     </option>
-    <option name="RAINBOW_COLOR2">
+    <option name="ROUND_BRACKETS_RAINBOW_COLOR2">
       <value>
-        <option name="FOREGROUND" value="{{sky}}"/>
+        <option name="FOREGROUND" value="{{yellow}}" />
       </value>
     </option>
-    <option name="RAINBOW_COLOR3">
+    <option name="ROUND_BRACKETS_RAINBOW_COLOR3">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{green}}" />
       </value>
     </option>
-    <option name="RAINBOW_COLOR4">
+    <option name="ROUND_BRACKETS_RAINBOW_COLOR4">
       <value>
-        <option name="FOREGROUND" value="{{maroon}}"/>
+        <option name="FOREGROUND" value="{{sapphire}}" />
       </value>
     </option>
     <option name="RDOC_DIRECTIVE">
@@ -2781,6 +2806,56 @@
       </value>
     </option>
     <option name="SPY-JS.VALUE_HINT" baseAttributes=""/>
+    <option name="SQUARE_BRACKETS_RAINBOW_COLOR0">
+      <value>
+        <option name="FOREGROUND" value="{{red}}" />
+      </value>
+    </option>
+    <option name="SQUARE_BRACKETS_RAINBOW_COLOR1">
+      <value>
+        <option name="FOREGROUND" value="{{peach}}" />
+      </value>
+    </option>
+    <option name="SQUARE_BRACKETS_RAINBOW_COLOR2">
+      <value>
+        <option name="FOREGROUND" value="{{yellow}}" />
+      </value>
+    </option>
+    <option name="SQUARE_BRACKETS_RAINBOW_COLOR3">
+      <value>
+        <option name="FOREGROUND" value="{{green}}" />
+      </value>
+    </option>
+    <option name="SQUARE_BRACKETS_RAINBOW_COLOR4">
+      <value>
+        <option name="FOREGROUND" value="{{sapphire}}" />
+      </value>
+    </option>
+    <option name="SQUIGGLY_BRACKETS_RAINBOW_COLOR0">
+      <value>
+        <option name="FOREGROUND" value="{{red}}" />
+      </value>
+    </option>
+    <option name="SQUIGGLY_BRACKETS_RAINBOW_COLOR1">
+      <value>
+        <option name="FOREGROUND" value="{{peach}}" />
+      </value>
+    </option>
+    <option name="SQUIGGLY_BRACKETS_RAINBOW_COLOR2">
+      <value>
+        <option name="FOREGROUND" value="{{yellow}}" />
+      </value>
+    </option>
+    <option name="SQUIGGLY_BRACKETS_RAINBOW_COLOR3">
+      <value>
+        <option name="FOREGROUND" value="{{green}}" />
+      </value>
+    </option>
+    <option name="SQUIGGLY_BRACKETS_RAINBOW_COLOR4">
+      <value>
+        <option name="FOREGROUND" value="{{sapphire}}" />
+      </value>
+    </option>
     <option name="SQL_DATABASE_OBJECT">
       <value>
         <option name="FOREGROUND" value="{{mauve}}"/>
