@@ -15,20 +15,19 @@ perfect for coding, designing, and much more!
 <h3>Design Philosophy</h3>
 
 <ul>
-  <li><strong>Colorful is better than colorless</strong>: the colorfulness of something contributes to the distinction amongst the parts of that <em>something<em>, making it marginally easier to understand how things are structured.</li>
+  <li><strong>Colorful is better than colorless</strong>: the colorfulness of something contributes to the distinction amongst the parts of that <em>something</em>, making it marginally easier to understand how things are structured.</li>
   <li><strong>There should be balance</strong>: not too dull, not too bright. Suitability under various light conditions is a must.</li>
   <li><strong>Harmony is superior to dissonance</strong>: vivacious colors must complement each other.</li>
 </ul>
 
 <h3>Usage</h3>
 
-There are 4 lovely flavours for you to choose from, <em>Latte, Frappé, Macchiato and Mocha!</em>
+There are 4 lovely flavours for you to choose from, <em>Latte, Frappé, Macchiato and Mocha!</em> If you are not fond of italics... don't worry! We've got you covered 😎
 <br>
-If you are not fond of italics... don't worry! We've got you covered 😎 Head into <kbd>Settings</kbd> > <kbd>Editor/Color Scheme</kbd> and then pick the non-italic version of your favourite flavour! E.g. Catppuccin Mocha (no italics)
+Head into <kbd>Settings</kbd> > <kbd>Editor/Color Scheme</kbd> and then pick the non-italic version of your favourite flavour! E.g. Catppuccin Mocha (no italics)
 
 <h3>Screenshots</h3>
 
-<br/><br/>
 <img src="https://raw.githubusercontent.com/catppuccin/jetbrains/v0.2.0/assets/png/preview.png" border="0" width="360"/><br/>
 <img src="https://raw.githubusercontent.com/catppuccin/jetbrains/v0.2.0/assets/png/latte.png" border="0" width="360"/><br/>
 <img src="https://raw.githubusercontent.com/catppuccin/jetbrains/v0.2.0/assets/png/frappe.png" border="0" width="360"/><br/>
@@ -50,10 +49,9 @@ If you are not fond of italics... don't worry! We've got you covered 😎 Head i
   <change-notes><![CDATA[
 <h3>[2.0.0] - 22.10.2022</h3>
 
-<ul>
-<li>All four flavours of Catppuccin v2 palette are now available!</li>
-<li>View your IDE in Latte, Frappe, Macchiato or Mocha!</li>
-</ul>
+All four flavours of Catppuccin v2 palette are now available!
+<br>
+View your IDE in Latte, Frappe, Macchiato or Mocha!
 
 <h3>[1.0.9] - 09.08.2022</h3>
 
@@ -61,10 +59,9 @@ row tree height fix
 
 <h3>[1.0.8] - 20.06.2022</h3>
 
-<ul>
-  <li>XAML support</li>
-  <li>selectionInactiveBackground visibility fix</li>
-</ul>
+XAML support
+<br>
+selectionInactiveBackground visibility fix
 
 <h3>[1.0.7] - 03.06.2022</h3>
 
@@ -85,18 +82,13 @@ Added missing description in plugin.xml
 <h3>[1.0.3] - 24.02.2022</h3>
 
 First Marketplace release 🎉
-
-<h4>Changed</h4>
-
+<br>
 Fixed low contrast issues in various spots
 
 <h3>[1.0.1] - 30.01.2022</h3>
 
-<h4>Changed</h4>
-
-<ul>
-  <li>Checkbox readability improved</li>
-  <li>Editor color scheme uses colors from palette</li>
-</ul>
+Checkbox readability improved
+<br>
+Editor color scheme uses colors from palette
 ]]></change-notes>
 </idea-plugin>
