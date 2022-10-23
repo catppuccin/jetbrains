@@ -255,8 +255,22 @@ export interface Link {
     pressedForeground: string;
 }
 
+export interface List {
+  background: string;
+}
+
+export interface NewNotification {
+  background: string
+  hoverBackground: string
+}
+
+export interface NotificationsToolwindow {
+  newNotification: NewNotification
+}
+
 export interface Notification {
     background:       string;
+    borderColor:      string;
     errorBorderColor: string;
     errorBackground:  string;
     errorForeground:  string;
@@ -311,6 +325,7 @@ export interface PluginsTab {
 }
 
 export interface Popup {
+    borderColor: string
     Header: PopupHeader;
 }
 

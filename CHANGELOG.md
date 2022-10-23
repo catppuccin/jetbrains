@@ -2,6 +2,11 @@
 
 # Catppuccin Theme Changelog
 
+## [2.0.0] - 22.10.2022
+
+All four flavours of Catppuccin v2 palette are now available!
+View your IDE in Latte, Frappe, Macchiato or Mocha!
+
 ## [1.0.9] - 09.08.2022
 
 row tree height fix

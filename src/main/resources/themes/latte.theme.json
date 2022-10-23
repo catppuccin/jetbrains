@@ -1,45 +1,45 @@
 {
-  "name": "Catppuccin Frappe",
-  "dark": true,
-  "author": "Catppuccin Org <releases@catppucin.com>",
-  "editorScheme": "/themes/Catppuccin-Frappe.xml",
+  "name": "Catppuccin Latte",
+  "dark": false,
+  "author": "Catppuccin Org <releases@catppuccin.com>",
+  "editorScheme": "/themes/latte.xml",
   "colors": {
-    "rosewater": "#f2d5cf",
-    "flamingo": "#eebebe",
-    "mauve": "#ca9ee6",
-    "pink": "#f4b8e4",
-    "maroon": "#ea999c",
-    "red": "#e78284",
-    "peach": "#ef9f76",
-    "yellow": "#e5c890",
-    "green": "#a6d189",
-    "teal": "#81c8be",
-    "blue": "#8caaee",
-    "sky": "#99d1db",
-    "sapphire": "#85c1dc",
-    "lavender": "#babbf1",
-    "crust": "#232634",
-    "mantle": "#292c3c",
-    "base": "#303446",
-    "surface0": "#414559",
-    "surface1": "#51576d",
-    "surface2": "#626880",
-    "overlay0": "#737994",
-    "overlay1": "#838ba7",
-    "overlay2": "#949cbb",
-    "text": "#c6d0f5",
-    "subtext0": "#a5adce",
-    "subtext1": "#b5bfe2",
-    "accentColor": "#ca9ee6",
-    "secondaryAccentColor": "#e5c890",
-    "primaryForeground": "#c6d0f5",
-    "primaryBackground": "#303446",
-    "secondaryBackground": "#414559",
-    "hoverBackground": "#51576d",
-    "selectionBackground": "#51576d",
-    "selectionInactiveBackground": "#303446",
-    "borderColor": "#51576d",
-    "separatorColor": "#51576d"
+    "rosewater": "#DC8A78",
+    "flamingo": "#DD7878",
+    "mauve": "#8839EF",
+    "pink": "#EA76CB",
+    "maroon": "#E64553",
+    "red": "#D20F39",
+    "peach": "#FE640B",
+    "yellow": "#DF8E1D",
+    "green": "#40A02B",
+    "teal": "#179299",
+    "blue": "#1E66F5",
+    "sky": "#04A5E5",
+    "sapphire": "#209FB5",
+    "lavender": "#7287FD",
+    "crust": "#DCE0E8",
+    "mantle": "#E6E9EF",
+    "base": "#EFF1F5",
+    "surface0": "#CCD0DA",
+    "surface1": "#BCC0CC",
+    "surface2": "#ACB0BE",
+    "overlay0": "#9CA0B0",
+    "overlay1": "#8C8FA1",
+    "overlay2": "#7C7F93",
+    "text": "#4C4F69",
+    "subtext0": "#6C6F85",
+    "subtext1": "#5C5F77",
+    "accentColor": "#8839EF",
+    "secondaryAccentColor": "#DF8E1D",
+    "primaryForeground": "#4C4F69",
+    "primaryBackground": "#EFF1F5",
+    "secondaryBackground": "#CCD0DA",
+    "hoverBackground": "#BCC0CC",
+    "selectionBackground": "#BCC0CC",
+    "selectionInactiveBackground": "#EFF1F5",
+    "borderColor": "#BCC0CC",
+    "separatorColor": "#BCC0CC"
   },
   "ui": {
     "*": {
@@ -53,6 +53,9 @@
       "disabledBackground": "primaryBackground",
       "borderColor": "primaryBackground",
       "separatorColor": "separatorColor"
+    },
+    "List": {
+      "background": "mantle"
     },
     "Borders": {
       "color": "primaryBackground",
@@ -89,7 +92,7 @@
       "endBorderColor": "secondaryBackground",
       "startBackground": "secondaryBackground",
       "endBackground": "secondaryBackground",
-      "focusedBorderColor": "accentColor",
+      "focusedBorderColor": "secondaryBackground",
       "disabledBorderColor": "primaryBackground",
       "default": {
         "foreground": "surface1",
@@ -118,7 +121,7 @@
     },
     "CompletionPopup": {
       "selectionBackground": "selectionBackground",
-      "selectionInactiveBackground": "selectionInactiveBackground",
+      "selectionInactiveBackground": "selectionBackground",
       "matchForeground": "flamingo"
     },
     "Component": {
@@ -143,16 +146,16 @@
       "underlinedTabBackground": "secondaryBackground",
       "underlineColor": "accentColor",
       "underlineHeight": 1,
-      "hoverBackground": "mantle",
+      "hoverBackground": "surface0",
       "inactiveUnderlineColor": "accentColor"
     },
     "FileColor": {
-      "Blue": "#96CDFB50",
-      "Green": "#27403B50",
-      "Orange": "#F8BD9650",
-      "Yellow": "#243944ff",
-      "Rose": "#F5E0DC50",
-      "Violet": "#DDB6F250"
+      "Blue": "081a3d",
+      "Green": "10280b",
+      "Orange": "401903",
+      "Yellow": "382407",
+      "Rose": "35040e",
+      "Violet": "1d223f"
     },
     "Link": {
       "activeForeground": "accentColor",
@@ -160,8 +163,15 @@
       "visitedForeground": "secondaryAccentColor",
       "pressedForeground": "secondaryAccentColor"
     },
+    "NotificationsToolwindow": {
+      "newNotification": {
+        "background": "primaryBackground",
+        "hoverBackground": "hoverBackground"
+      }
+    },
     "Notification": {
-      "background": "mantle",
+      "background": "primaryBackground",
+      "borderColor": "mauve",
       "errorBorderColor": "red",
       "errorBackground": "primaryBackground",
       "errorForeground": "primaryForeground",
@@ -217,6 +227,7 @@
       "passedColor": "green"
     },
     "Popup": {
+      "borderColor": "mauve",
       "Header": {
         "activeBackground": "secondaryBackground",
         "inactiveBackground": "secondaryBackground"
@@ -266,7 +277,7 @@
       "hoverBackground": "selectionBackground"
     },
     "TableHeader": {
-      "bottomSeparatorColor": "prmaryBackground"
+      "bottomSeparatorColor": "primaryBackground"
     },
     "TextField": {
       "background": "secondaryBackground"
@@ -357,30 +368,30 @@
   },
   "icons": {
     "ColorPalette": {
-      "Actions.Blue": "#96CDFB",
-      "Actions.Green": "#ABE9B3",
-      "Actions.Orange": "#F8BD96",
-      "Actions.Purple": "#DDB6F2",
-      "Actions.Red": "#F28FAD",
-      "Actions.Yellow": "#FAE3B0",
-      "Actions.Gray": "#6E6C7E",
-      "Actions.White": "#D9E0EE",
-      "Actions.Black": "#161320",
-      "Actions.Grey": "#6E6C7E",
-      "Actions.GreyInline.Dark": "#96CDFB",
-      "Actions.GreyInline": "#96CDFB",
-      "Objects.Blue": "#96CDFB",
-      "Objects.Green": "#ABE9B3",
-      "Objects.GreenAndroid": "#ABE9B3",
-      "Objects.Grey": "#6E6C7E",
-      "Objects.Pink": "#F5C2E7",
-      "Objects.Purple": "#DDB6F2",
-      "Objects.Red": "#F28FAD",
-      "Objects.RedStatus": "#F28FAD",
-      "Objects.Yellow": "#FAE3B0",
-      "Objects.YellowDark": "#F8BD96",
-      "Objects.BlackText": "#302D41",
-      "Tree.iconColor": "#96CDFB"
+      "Actions.Blue": "#1E66F5",
+      "Actions.Green": "#40A02B",
+      "Actions.Orange": "#FE640B",
+      "Actions.Purple": "#8839EF",
+      "Actions.Red": "#D20F39",
+      "Actions.Yellow": "#DF8E1D",
+      "Actions.Gray": "#9CA0B0",
+      "Actions.White": "#4C4F69",
+      "Actions.Black": "#DCE0E8",
+      "Actions.Grey": "#9CA0B0",
+      "Actions.GreyInline.Dark": "#1E66F5",
+      "Actions.GreyInline": "#1E66F5",
+      "Objects.Blue": "#1E66F5",
+      "Objects.Green": "#40A02B",
+      "Objects.GreenAndroid": "338022",
+      "Objects.Grey": "#9CA0B0",
+      "Objects.Pink": "#EA76CB",
+      "Objects.Purple": "#8839EF",
+      "Objects.Red": "#D20F39",
+      "Objects.RedStatus": "#D20F39",
+      "Objects.Yellow": "#DF8E1D",
+      "Objects.YellowDark": "#DD7878",
+      "Objects.BlackText": "#CCD0DA",
+      "Tree.iconColor": "#1E66F5"
     }
   }
 }

@@ -1,16 +1,28 @@
-#!/usr/bin/env deno run --allow-write --allow-read --allow-env
-import { Handlebars, JetBrains, path, variants } from "./deps.ts";
+#!/usr/bin/env -S deno run --allow-write --allow-read --allow-env
+import {Handlebars, JetBrains, path, variants, colormath} from "./deps.ts";
 
-const opacity = (color: string, opacity: number): string => {
-  const opacityHex = Math.floor(255 * opacity);
-  return (color + opacityHex.toString(16)).toUpperCase();
+const latteTernary = (lightCol: string, darkCol: string, base: Object): string => {
+  return base.data.root.isLatte ? lightCol : darkCol;
+}
+const opacity = (color: string, opacity: number, base: string = "base"): string => {
+  if(typeof(base) === "object") {
+    base = base.data.root.base;
+  }
+
+  return (
+    colormath.mixColor(
+      colormath.hex.toRgb(color),
+      colormath.hex.toRgb(base),
+      opacity,
+    )
+  ).hex.toLowerCase().replace("#", "");
 };
 
 const capitalize = (str: string): string => {
   return str.charAt(0).toUpperCase() + str.slice(1);
 };
 
-const basePath = "../src/main/resources/themes/";
+const basePath = "src/main/resources/themes/";
 
 Object.entries(variants).forEach(([key, value]) => {
   const isLatte = key === "latte";
@@ -20,13 +32,13 @@ Object.entries(variants).forEach(([key, value]) => {
     return {
       [key]: hex,
     };
-  }).reduce((acc, curr) => ({ ...acc, ...curr }), {});
+  }).reduce((acc, curr) => ({...acc, ...curr}), {});
 
   const theme: JetBrains = {
     name: `Catppuccin ${capitalize(key)}`,
     dark: !isLatte,
-    author: "Catppuccin Org <releases@catppucin.com>",
-    editorScheme: `/themes/Catppuccin-${capitalize(key)}.xml`,
+    author: "Catppuccin Org <releases@catppuccin.com>",
+    editorScheme: `/themes/${key}.xml`,
     colors: {
       rosewater: colors.rosewater,
       flamingo: colors.flamingo,
@@ -78,6 +90,9 @@ Object.entries(variants).forEach(([key, value]) => {
         borderColor: "primaryBackground",
         separatorColor: "separatorColor",
       },
+      List: {
+        background: "mantle"
+      },
       Borders: {
         color: "primaryBackground",
         ContrastBorderColor: "secondaryBackground",
@@ -113,7 +128,7 @@ Object.entries(variants).forEach(([key, value]) => {
         endBorderColor: "secondaryBackground",
         startBackground: "secondaryBackground",
         endBackground: "secondaryBackground",
-        focusedBorderColor: "accentColor",
+        focusedBorderColor: "secondaryBackground",
         disabledBorderColor: "primaryBackground",
         default: {
           foreground: "surface1",
@@ -142,7 +157,7 @@ Object.entries(variants).forEach(([key, value]) => {
       },
       CompletionPopup: {
         selectionBackground: "selectionBackground",
-        selectionInactiveBackground: "selectionInactiveBackground",
+        selectionInactiveBackground: "selectionBackground",
         matchForeground: "flamingo",
       },
       Component: {
@@ -167,16 +182,16 @@ Object.entries(variants).forEach(([key, value]) => {
         underlinedTabBackground: "secondaryBackground",
         underlineColor: "accentColor",
         underlineHeight: 1,
-        hoverBackground: "mantle",
+        hoverBackground: "surface0",
         inactiveUnderlineColor: "accentColor",
       },
       FileColor: {
-        Blue: "#96CDFB50",
-        Green: "#27403B50",
-        Orange: "#F8BD9650",
-        Yellow: "#243944ff",
-        Rose: "#F5E0DC50",
-        Violet: "#DDB6F250",
+        Blue: opacity(value.blue.hex, 0.25),
+        Green: opacity(value.green.hex, 0.25),
+        Orange: opacity(value.peach.hex, 0.25),
+        Yellow: opacity(value.yellow.hex, 0.25),
+        Rose: opacity(value.red.hex, 0.25),
+        Violet: opacity(value.lavender.hex, 0.25),
       },
       Link: {
         activeForeground: "accentColor",
@@ -184,8 +199,15 @@ Object.entries(variants).forEach(([key, value]) => {
         visitedForeground: "secondaryAccentColor",
         pressedForeground: "secondaryAccentColor",
       },
+      NotificationsToolwindow: {
+        newNotification: {
+          background: "primaryBackground",
+          hoverBackground: "hoverBackground",
+        },
+      },
       Notification: {
-        background: "mantle",
+        background: "primaryBackground",
+        borderColor: "mauve",
         errorBorderColor: "red",
         errorBackground: "primaryBackground",
         errorForeground: "primaryForeground",
@@ -241,6 +263,7 @@ Object.entries(variants).forEach(([key, value]) => {
         passedColor: "green",
       },
       Popup: {
+        borderColor: "mauve",
         Header: {
           activeBackground: "secondaryBackground",
           inactiveBackground: "secondaryBackground",
@@ -290,7 +313,7 @@ Object.entries(variants).forEach(([key, value]) => {
         hoverBackground: "selectionBackground",
       },
       TableHeader: {
-        bottomSeparatorColor: "prmaryBackground",
+        bottomSeparatorColor: "primaryBackground",
       },
       TextField: {
         background: "secondaryBackground",
@@ -381,36 +404,36 @@ Object.entries(variants).forEach(([key, value]) => {
     },
     icons: {
       ColorPalette: {
-        "Actions.Blue": "#96CDFB",
-        "Actions.Green": "#ABE9B3",
-        "Actions.Orange": "#F8BD96",
-        "Actions.Purple": "#DDB6F2",
-        "Actions.Red": "#F28FAD",
-        "Actions.Yellow": "#FAE3B0",
-        "Actions.Gray": "#6E6C7E",
-        "Actions.White": "#D9E0EE",
-        "Actions.Black": "#161320",
-        "Actions.Grey": "#6E6C7E",
-        "Actions.GreyInline.Dark": "#96CDFB",
-        "Actions.GreyInline": "#96CDFB",
-        "Objects.Blue": "#96CDFB",
-        "Objects.Green": "#ABE9B3",
-        "Objects.GreenAndroid": "#ABE9B3",
-        "Objects.Grey": "#6E6C7E",
-        "Objects.Pink": "#F5C2E7",
-        "Objects.Purple": "#DDB6F2",
-        "Objects.Red": "#F28FAD",
-        "Objects.RedStatus": "#F28FAD",
-        "Objects.Yellow": "#FAE3B0",
-        "Objects.YellowDark": "#F8BD96",
-        "Objects.BlackText": "#302D41",
-        "Tree.iconColor": "#96CDFB",
+        "Actions.Blue": colors.blue,
+        "Actions.Green": colors.green,
+        "Actions.Orange": colors.peach,
+        "Actions.Purple": colors.mauve,
+        "Actions.Red": colors.red,
+        "Actions.Yellow": colors.yellow,
+        "Actions.Gray": colors.overlay0,
+        "Actions.White": colors.text,
+        "Actions.Black": colors.crust,
+        "Actions.Grey": colors.overlay0,
+        "Actions.GreyInline.Dark": colors.blue,
+        "Actions.GreyInline": colors.blue,
+        "Objects.Blue": colors.blue,
+        "Objects.Green": colors.green,
+        "Objects.GreenAndroid": opacity(value.green.hex, 0.8),
+        "Objects.Grey": colors.overlay0,
+        "Objects.Pink": colors.pink,
+        "Objects.Purple": colors.mauve,
+        "Objects.Red": colors.red,
+        "Objects.RedStatus": colors.red,
+        "Objects.Yellow": colors.yellow,
+        "Objects.YellowDark": colors.flamingo,
+        "Objects.BlackText": colors.surface0,
+        "Tree.iconColor": colors.blue,
       },
     },
   };
 
   Deno.writeTextFileSync(
-    path.join(Deno.cwd(), basePath, `Catppuccin-${capitalize(key)}.json`),
+    path.join(Deno.cwd(), basePath, `${key}.theme.json`),
     JSON.stringify(theme, null, 2),
   );
 });
@@ -420,9 +443,10 @@ Object.entries(variants).forEach(([key, value]) => {
 // {{opacity color opacity}}
 // EXAMPLE:
 // {{opacity rosewater 0.5}}
+Handlebars.registerHelper("latte", latteTernary);
 Handlebars.registerHelper("opacity", opacity);
 
-const templatePath = path.join(Deno.cwd(), basePath, "Catppuccin.template.xml");
+const templatePath = path.join(Deno.cwd(), "generateScheme", "template.xml");
 
 Deno.readTextFile(templatePath).then((data) => {
   Object.entries(variants).forEach(([key, value]) => {
@@ -430,11 +454,11 @@ Deno.readTextFile(templatePath).then((data) => {
     const italicsVersions = [true, false];
 
     const hexValues = Object.entries(value).map(([key, value]) => {
-      const hex = value.hex.replace("#", "").toUpperCase();
+      const hex = value.hex.replace("#", "").toLowerCase();
       return {
         [key]: hex,
       };
-    }).reduce((acc, curr) => ({ ...acc, ...curr }), {});
+    }).reduce((acc, curr) => ({...acc, ...curr}), {});
 
     italicsVersions.forEach((italics) => {
       const options = {
@@ -447,7 +471,7 @@ Deno.readTextFile(templatePath).then((data) => {
       const output = Handlebars.compile(data)(options);
 
       const suffix = italics ? "" : "-no-italics";
-      const fileName = `Catppuccin-${capitalize(key)}${suffix}.xml`;
+      const fileName = `${key}${suffix}.xml`;
       Deno.writeTextFileSync(path.join(Deno.cwd(), basePath, fileName), output);
     });
   });
