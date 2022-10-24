@@ -40,17 +40,22 @@
 
 - Using IDE built-in plugin system:
 
-<kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > <kbd>Search for "Catppuccin Theme"</kbd> >
+<kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> >
+<kbd>Search for "Catppuccin Theme"</kbd> >
 <kbd>Install Plugin</kbd>
 
 - Manually:
 
-  Download the [latest release](https://github.com/catppuccin/jetbrains/releases/latest) and install it manually using
-  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
+  Download the
+  [latest release](https://github.com/catppuccin/jetbrains/releases/latest) and
+  install it manually using
+  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> >
+  <kbd>Install plugin from disk...</kbd>
 
 ## 💝 Thanks to
 
 - [tiepp](https://github.com/tiepp)
+- [Quentin](https://github.com/quentinguidee)
 - [Hamothy](https://github.com/sgoudham)
 - [winston](https://github.com/nekowinston)
 
