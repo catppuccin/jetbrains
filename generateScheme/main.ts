@@ -1,13 +1,20 @@
 #!/usr/bin/env -S deno run --allow-write --allow-read --allow-env
-import {Handlebars, JetBrains, path, variants, colormath} from "./deps.ts";
+import { colormath, Handlebars, JetBrains, path, variants } from "./deps.ts";
 
-const latteTernary = (lightCol: string, darkCol: string, base: Object): string => {
-  return base.data.root.isLatte ? lightCol : darkCol;
-}
-const opacity = (color: string, opacity: number, base: string = "base"): string => {
-  if(typeof(base) === "object") {
-    base = base.data.root.base;
-  }
+const handlebarsIsLatte = (
+  lightCol: string,
+  darkCol: string,
+  context: any,
+): string => {
+  return context.data.root.isLatte ? lightCol : darkCol;
+};
+
+const handlebarsOpacity = (
+  color: string,
+  opacity: number,
+  context: any,
+): string => {
+  const base = context.data.root.base;
 
   return (
     colormath.mixColor(
@@ -32,7 +39,19 @@ Object.entries(variants).forEach(([key, value]) => {
     return {
       [key]: hex,
     };
-  }).reduce((acc, curr) => ({...acc, ...curr}), {});
+  }).reduce((acc, curr) => ({ ...acc, ...curr }), {});
+
+  const opacity = (color: string, val: number): string => {
+    // mimick the context available in handlebars,
+    // pass in the colors for the current iteration
+    return handlebarsOpacity(color, val, {
+      data: {
+        root: {
+          ...colors,
+        },
+      },
+    });
+  };
 
   const theme: JetBrains = {
     name: `Catppuccin ${capitalize(key)}`,
@@ -91,7 +110,7 @@ Object.entries(variants).forEach(([key, value]) => {
         separatorColor: "separatorColor",
       },
       List: {
-        background: "mantle"
+        background: "mantle",
       },
       Borders: {
         color: "primaryBackground",
@@ -186,12 +205,24 @@ Object.entries(variants).forEach(([key, value]) => {
         inactiveUnderlineColor: "accentColor",
       },
       FileColor: {
-        Blue: opacity(value.blue.hex, 0.25),
-        Green: opacity(value.green.hex, 0.25),
-        Orange: opacity(value.peach.hex, 0.25),
-        Yellow: opacity(value.yellow.hex, 0.25),
-        Rose: opacity(value.red.hex, 0.25),
-        Violet: opacity(value.lavender.hex, 0.25),
+        Blue: isLatte
+          ? opacity(value.blue.hex, 0.20)
+          : opacity(value.blue.hex, 0.20),
+        Green: isLatte
+          ? opacity(value.green.hex, 0.20)
+          : opacity(value.green.hex, 0.20),
+        Orange: isLatte
+          ? opacity(value.peach.hex, 0.20)
+          : opacity(value.peach.hex, 0.20),
+        Yellow: isLatte
+          ? opacity(value.yellow.hex, 0.20)
+          : opacity(value.yellow.hex, 0.20),
+        Rose: isLatte
+          ? opacity(value.red.hex, 0.20)
+          : opacity(value.red.hex, 0.20),
+        Violet: isLatte
+          ? opacity(value.lavender.hex, 0.20)
+          : opacity(value.lavender.hex, 0.20),
       },
       Link: {
         activeForeground: "accentColor",
@@ -443,8 +474,8 @@ Object.entries(variants).forEach(([key, value]) => {
 // {{opacity color opacity}}
 // EXAMPLE:
 // {{opacity rosewater 0.5}}
-Handlebars.registerHelper("latte", latteTernary);
-Handlebars.registerHelper("opacity", opacity);
+Handlebars.registerHelper("latte", handlebarsIsLatte);
+Handlebars.registerHelper("opacity", handlebarsOpacity);
 
 const templatePath = path.join(Deno.cwd(), "generateScheme", "template.xml");
 
@@ -458,7 +489,7 @@ Deno.readTextFile(templatePath).then((data) => {
       return {
         [key]: hex,
       };
-    }).reduce((acc, curr) => ({...acc, ...curr}), {});
+    }).reduce((acc, curr) => ({ ...acc, ...curr }), {});
 
     italicsVersions.forEach((italics) => {
       const options = {
