@@ -1,502 +1,860 @@
 // To parse this data:
 //
-//   import { Convert, JetBrains } from "./file";
+//   import { Convert, JBTheme } from "./file";
 //
-//   const jetBrains = Convert.toJetBrains(json);
+//   const jBTheme = Convert.toJBTheme(json);
+//
+// These functions will throw an error if the JSON doesn't
+// match the expected interface, even if the JSON is valid.
 
-export interface JetBrains {
-    name:         string;
-    dark:         boolean;
-    author:       string;
-    editorScheme: string;
-    colors:       Colors;
-    ui:           Ui;
-    icons:        Icons;
+export interface JBTheme {
+  name: string;
+  dark: boolean;
+  additionalEditorSchemes?: any[];
+  /**
+   * The author of the theme
+   */
+  author: string;
+  editorScheme?: string;
+  background?: BackgroundImage;
+  /**
+   * Define common colors here and use color names in 'ui' section instead of #rrggbb values
+   */
+  colors?: { [key: string]: string };
+  /**
+   * If 'true' then Darcula theme will be used as the base for modification, otherwise Light
+   * theme will be used.
+   */
+  emptyFrameBackground?: BackgroundImage;
+  /**
+   * Provides a way to change icon colors under focused selection. Provide a map of colors to
+   * colors. When the icon under active selection, the key color will be replaced by the value
+   * color.
+   */
+  iconColorsOnSelection?: { [key: string]: string };
+  icons?: Icons;
+  /**
+   * Theme name
+   */
+  ui: { [key: string]: any };
 }
 
-export interface Colors {
-    rosewater:                   string;
-    flamingo:                    string;
-    mauve:                       string;
-    pink:                        string;
-    maroon:                      string;
-    red:                         string;
-    peach:                       string;
-    yellow:                      string;
-    green:                       string;
-    teal:                        string;
-    blue:                        string;
-    sky:                         string;
-    sapphire:                    string;
-    lavender:                    string;
-    crust:                       string;
-    mantle:                      string;
-    base:                        string;
-    surface0:                    string;
-    surface1:                    string;
-    surface2:                    string;
-    overlay0:                    string;
-    overlay1:                    string;
-    overlay2:                    string;
-    text:                        string;
-    subtext0:                    string;
-    subtext1:                    string;
-    accentColor:                 string;
-    secondaryAccentColor:        string;
-    primaryForeground:           string;
-    primaryBackground:           string;
-    secondaryBackground:         string;
-    hoverBackground:             string;
-    selectionBackground:         string;
-    selectionInactiveBackground: string;
-    borderColor:                 string;
-    separatorColor:              string;
+/**
+ * Background image for entire window
+ */
+export interface BackgroundImage {
+  /**
+   * Background image anchor. One of the following values: top_left, top_center, top_right,
+   * middle_left, center, middle_right, bottom_left, bottom_center, bottom_right
+   */
+  anchor?: BackgroundImageAnchor;
+  /**
+   * Background image filling options. One of the following values: plain, scale, tile
+   */
+  fill?: BackgroundImageFillingOptions;
+  /**
+   * Path to the background image starting with '/'
+   */
+  image: string;
+  /**
+   * An integer from 0 to 100.
+   */
+  transparency?: number;
+}
+
+/**
+ * Background image anchor. One of the following values: top_left, top_center, top_right,
+ * middle_left, center, middle_right, bottom_left, bottom_center, bottom_right
+ */
+export enum BackgroundImageAnchor {
+  BottomCenter = "bottom_center",
+  BottomLeft = "bottom_left",
+  BottomRight = "bottom_right",
+  Center = "center",
+  MiddleLeft = "middle_left",
+  MiddleRight = "middle_right",
+  TopCenter = "top_center",
+  TopLeft = "top_left",
+  TopRight = "top_right",
+}
+
+/**
+ * Background image filling options. One of the following values: plain, scale, tile
+ */
+export enum BackgroundImageFillingOptions {
+  Plain = "plain",
+  Scale = "scale",
+  Tile = "tile",
 }
 
 export interface Icons {
-    ColorPalette: ColorPalette;
+  ColorPalette?: ColorPalette;
 }
 
+/**
+ * Color palette for deuteranopia vision deficiency
+ *
+ * Color palette for protanopia vision deficiency
+ */
 export interface ColorPalette {
-    "Actions.Blue":            string;
-    "Actions.Green":           string;
-    "Actions.Orange":          string;
-    "Actions.Purple":          string;
-    "Actions.Red":             string;
-    "Actions.Yellow":          string;
-    "Actions.Gray":            string;
-    "Actions.White":           string;
-    "Actions.Black":           string;
-    "Actions.Grey":            string;
-    "Actions.GreyInline.Dark": string;
-    "Actions.GreyInline":      string;
-    "Objects.Blue":            string;
-    "Objects.Green":           string;
-    "Objects.GreenAndroid":    string;
-    "Objects.Grey":            string;
-    "Objects.Pink":            string;
-    "Objects.Purple":          string;
-    "Objects.Red":             string;
-    "Objects.RedStatus":       string;
-    "Objects.Yellow":          string;
-    "Objects.YellowDark":      string;
-    "Objects.BlackText":       string;
-    "Tree.iconColor":          string;
+  /**
+   * Color palette for deuteranopia vision deficiency
+   */
+  Deuteranopia?: ColorPaletteBase;
+  /**
+   * Color palette for protanopia vision deficiency
+   */
+  Protanopia?: ColorPaletteBase;
+  "Actions.Blue"?: string;
+  "Actions.Green"?: string;
+  "Actions.Grey"?: string;
+  /**
+   * Light-gray icons at the right side in input fields and combo boxes
+   */
+  "Actions.GreyInline"?: string;
+  /**
+   * Use for dark themes
+   */
+  "Actions.GreyInline.Dark"?: string;
+  /**
+   * Action colors are for icons that appear on toolbars
+   */
+  "Actions.Red"?: string;
+  "Actions.Yellow"?: string;
+  /**
+   * An unchecked checkbox or radio button
+   */
+  "Checkbox.Background.Default"?: string;
+  /**
+   * Use for dark themes
+   */
+  "Checkbox.Background.Default.Dark"?: string;
+  /**
+   * A disabled checkbox or radio button
+   */
+  "Checkbox.Background.Disabled"?: string;
+  /**
+   * Use for dark themes
+   */
+  "Checkbox.Background.Disabled.Dark"?: string;
+  /**
+   * A checked checkbox or radio button
+   */
+  "Checkbox.Background.Selected"?: string;
+  /**
+   * Use for dark themes
+   */
+  "Checkbox.Background.Selected.Dark"?: string;
+  "Checkbox.Border.Default"?: string;
+  /**
+   * Use for dark themes
+   */
+  "Checkbox.Border.Default.Dark"?: string;
+  "Checkbox.Border.Disabled"?: string;
+  /**
+   * Use for dark themes
+   */
+  "Checkbox.Border.Disabled.Dark"?: string;
+  "Checkbox.Border.Selected"?: string;
+  /**
+   * Use for dark themes
+   */
+  "Checkbox.Border.Selected.Dark"?: string;
+  /**
+   * 1px inner border in the focused state
+   */
+  "Checkbox.Focus.Thin.Default"?: string;
+  /**
+   * Use for dark themes
+   */
+  "Checkbox.Focus.Thin.Default.Dark"?: string;
+  "Checkbox.Focus.Thin.Selected"?: string;
+  /**
+   * Use for dark themes
+   */
+  "Checkbox.Focus.Thin.Selected.Dark"?: string;
+  /**
+   * 2px outer border in the focused state
+   */
+  "Checkbox.Focus.Wide"?: string;
+  /**
+   * Use for dark themes
+   */
+  "Checkbox.Focus.Wide.Dark"?: string;
+  "Checkbox.Foreground.Disabled"?: string;
+  /**
+   * Use for dark themes
+   */
+  "Checkbox.Foreground.Disabled.Dark"?: string;
+  "Checkbox.Foreground.Selected"?: string;
+  /**
+   * Use for dark themes
+   */
+  "Checkbox.Foreground.Selected.Dark"?: string;
+  "Objects.BlackText"?: string;
+  "Objects.Blue"?: string;
+  "Objects.Green"?: string;
+  /**
+   * Object colors are for icons in lists and trees
+   */
+  "Objects.Grey"?: string;
+  "Objects.Pink"?: string;
+  "Objects.Purple"?: string;
+  "Objects.Red"?: string;
+  "Objects.RedStatus"?: string;
+  "Objects.Yellow"?: string;
+  "Objects.YellowDark"?: string;
+  /**
+   * Color of expand/collapse icons
+   */
+  "Tree.iconColor"?: string;
 }
 
-export interface Ui {
-    "*":                       Empty;
-    Borders:                   Borders;
-    ActionButton:              ActionButton;
-    Bookmark:                  Bookmark;
-    BookmarkMnemonicAssigned:  BookmarkMnemonic;
-    BookmarkMnemonicAvailable: BookmarkMnemonicAvailable;
-    BookmarkMnemonicCurrent:   BookmarkMnemonic;
-    Button:                    Button;
-    Counter:                   Counter;
-    ComboBox:                  ComboBox;
-    CompletionPopup:           CompletionPopup;
-    Component:                 Component;
-    DragAndDrop:               DragAndDrop;
-    Editor:                    Editor;
-    EditorTabs:                EditorTabs;
-    FileColor:                 FileColor;
-    Link:                      Link;
-    Notification:              Notification;
-    PasswordField:             PasswordField;
-    Plugins:                   Plugins;
-    ProgressBar:               ProgressBar;
-    Popup:                     Popup;
-    ScrollBar:                 ScrollBar;
-    SearchEverywhere:          SearchEverywhere;
-    SearchMatch:               SearchMatch;
-    Separator:                 Separator;
-    SidePanel:                 PasswordField;
-    StatusBar:                 StatusBar;
-    TabbedPane:                TabbedPane;
-    Table:                     Table;
-    TableHeader:               TableHeader;
-    TextField:                 PasswordField;
-    TextArea:                  PasswordField;
-    ToggleButton:              ToggleButton;
-    ToolBar:                   ToolBar;
-    ToolWindow:                UiToolWindow;
-    Tree:                      Tree;
-    ValidationTooltip:         ValidationTooltip;
-    VersionControl:            VersionControl;
-    WelcomeScreen:             WelcomeScreen;
-}
-
-export interface Empty {
-    arc:                         string;
-    background:                  string;
-    selectionForeground:         string;
-    selectionInactiveForeground: string;
-    selectionBackground:         string;
-    selectionInactiveBackground: string;
-    inactiveBackground:          string;
-    disabledBackground:          string;
-    borderColor:                 string;
-    separatorColor:              string;
-}
-
-export interface ActionButton {
-    hoverBackground:    string;
-    hoverBorderColor:   string;
-    pressedBackground:  string;
-    pressedBorderColor: string;
-}
-
-export interface Bookmark {
-    iconBackground: string;
-    Mnemonic:       Mnemonic;
-}
-
-export interface Mnemonic {
-    iconForeground:  string;
-    iconBackground:  string;
-    iconBorderColor: string;
-}
-
-export interface BookmarkMnemonic {
-    foreground:  string;
-    background:  string;
-    borderColor: string;
-}
-
-export interface BookmarkMnemonicAvailable {
-}
-
-export interface Borders {
-    color:               string;
-    ContrastBorderColor: string;
-}
-
-export interface Button {
-    foreground:           string;
-    startBorderColor:     string;
-    endBorderColor:       string;
-    startBackground:      string;
-    endBackground:        string;
-    focusedBorderColor:   string;
-    disabledBorderColor?: string;
-    default?:             Button;
-    focusColor?:          string;
-}
-
-export interface ComboBox {
-    modifiedItemForeground: string;
-    ArrowButton:            ArrowButton;
-    selectionBackground:    string;
-    nonEditableBackground:  string;
-}
-
-export interface ArrowButton {
-    background:            string;
-    nonEditableBackground: string;
-    disabledIconColor:     string;
-    iconColor:             string;
-}
-
-export interface CompletionPopup {
-    selectionBackground:         string;
-    selectionInactiveBackground: string;
-    matchForeground:             string;
-}
-
-export interface Component {
-    focusColor:                string;
-    borderColor:               string;
-    focusedBorderColor:        string;
-    disabledBorderColor:       string;
-    errorFocusColor:           string;
-    inactiveErrorFocusColor:   string;
-    warningFocusColor:         string;
-    inactiveWarningFocusColor: string;
-}
-
-export interface Counter {
-    foreground: string;
-    background: string;
-}
-
-export interface DragAndDrop {
-    borderColor: string;
-}
-
-export interface Editor {
-    background:         string;
-    shortcutForeground: string;
-}
-
-export interface EditorTabs {
-    background?:                 string;
-    underlinedTabBackground:     string;
-    underlineColor:              string;
-    underlineHeight:             number;
-    hoverBackground:             string;
-    inactiveUnderlineColor:      string;
-    selectedInactiveBackground?: string;
-}
-
-export interface FileColor {
-    Blue:   string;
-    Green:  string;
-    Orange: string;
-    Yellow: string;
-    Rose:   string;
-    Violet: string;
-}
-
-export interface Link {
-    activeForeground:  string;
-    hoverForeground:   string;
-    visitedForeground: string;
-    pressedForeground: string;
-}
-
-export interface List {
-  background: string;
-}
-
-export interface NewNotification {
-  background: string
-  hoverBackground: string
-}
-
-export interface NotificationsToolwindow {
-  newNotification: NewNotification
-}
-
-export interface Notification {
-    background:       string;
-    borderColor:      string;
-    errorBorderColor: string;
-    errorBackground:  string;
-    errorForeground:  string;
-    ToolWindow:       NotificationToolWindow;
-}
-
-export interface NotificationToolWindow {
-    warningForeground:      string;
-    warningBackground:      string;
-    warningBorderColor:     string;
-    errorForeground:        string;
-    errorBorderColor:       string;
-    errorBackground:        string;
-    informativeForeground:  string;
-    informativeBackground:  string;
-    informativeBorderColor: string;
-}
-
-export interface PasswordField {
-    background: string;
-}
-
-export interface Plugins {
-    SearchField:              PasswordField;
-    SectionHeader:            SectionHeader;
-    hoverBackground:          string;
-    lightSelectionBackground: string;
-    Button:                   PluginsButton;
-    Tab:                      PluginsTab;
-}
-
-export interface PluginsButton {
-    installBorderColor:       string;
-    installForeground:        string;
-    installBackground:        string;
-    installFillForeground:    string;
-    installFillBackground:    string;
-    installFocusedBackground: string;
-    updateBorderColor:        string;
-    updateForeground:         string;
-    updateBackground:         string;
-}
-
-export interface SectionHeader {
-    foreground: string;
-}
-
-export interface PluginsTab {
-    selectedBackground: string;
-    selectedForeground: string;
-    hoverBackground:    string;
-}
-
-export interface Popup {
-    borderColor: string
-    Header: PopupHeader;
-}
-
-export interface PopupHeader {
-    activeBackground:   string;
-    inactiveBackground: string;
-}
-
-export interface ProgressBar {
-    failedEndColor:          string;
-    failedColor:             string;
-    trackColor:              string;
-    progressColor:           string;
-    indeterminateStartColor: string;
-    indeterminateEndColor:   string;
-    passedEndColor:          string;
-    passedColor:             string;
-}
-
-export interface ScrollBar {
-    Mac: Mac;
-}
-
-export interface Mac {
-    hoverThumbColor: string;
-    Transparent:     Transparent;
-}
-
-export interface Transparent {
-    hoverThumbColor: string;
-}
-
-export interface SearchEverywhere {
-    "Advertiser.foreground": string;
-    SearchField:             PasswordField;
-    Tab:                     SearchEverywhereTab;
-}
-
-export interface SearchEverywhereTab {
-    selectedBackground: string;
-    selectedForeground: string;
-}
-
-export interface SearchMatch {
-    startBackground: string;
-    endBackground:   string;
-}
-
-export interface Separator {
-    separatorColor: string;
-}
-
-export interface StatusBar {
-    borderColor:     string;
-    hoverBackground: string;
-}
-
-export interface TabbedPane {
-    tabSelectionHeight: number;
-    focusColor:         string;
-    hoverColor:         string;
-    underlineColor:     string;
-    contentAreaColor:   string;
-}
-
-export interface Table {
-    gridColor:       string;
-    hoverBackground: string;
-}
-
-export interface TableHeader {
-    bottomSeparatorColor: string;
-}
-
-export interface ToggleButton {
-    onBackground:  string;
-    onForeground:  string;
-    offBackground: string;
-    offForeground: string;
-    buttonColor:   string;
-}
-
-export interface ToolBar {
-    background:        string;
-    borderHandleColor: string;
-}
-
-export interface UiToolWindow {
-    Button:    ToolWindowButton;
-    Header:    ToolWindowHeader;
-    HeaderTab: EditorTabs;
-}
-
-export interface ToolWindowButton {
-    hoverBackground: string;
-}
-
-export interface ToolWindowHeader {
-    background:         string;
-    inactiveBackground: string;
-    borderColor:        string;
-}
-
-export interface Tree {
-    rowHeight:                   number;
-    background:                  string;
-    modifiedItemForeground:      string;
-    hoverBackground:             string;
-    selectionBackground:         string;
-    selectionInactiveBackground: string;
-}
-
-export interface ValidationTooltip {
-    errorBackground:    string;
-    errorBorderColor:   string;
-    warningBackground:  string;
-    warningBorderColor: string;
-}
-
-export interface VersionControl {
-    FileHistory: FileHistory;
-    GitLog:      GitLog;
-    Log:         Log;
-    RefLabel:    SectionHeader;
-}
-
-export interface FileHistory {
-    Commit: FileHistoryCommit;
-}
-
-export interface FileHistoryCommit {
-    selectedBranchBackground: string;
-}
-
-export interface GitLog {
-    headIconColor:         string;
-    localBranchIconColor:  string;
-    remoteBranchIconColor: string;
-    tagIconColor:          string;
-    otherIconColor:        string;
-}
-
-export interface Log {
-    Commit: LogCommit;
-}
-
-export interface LogCommit {
-    hoveredBackground:       string;
-    currentBranchBackground: string;
-}
-
-export interface WelcomeScreen {
-    SidePanel:      PasswordField;
-    separatorColor: string;
-    Projects:       Projects;
-}
-
-export interface Projects {
-    background:                  string;
-    selectionBackground:         string;
-    selectionInactiveBackground: string;
-    actions:                     PasswordField;
+/**
+ * Color palette for deuteranopia vision deficiency
+ *
+ * Color palette for protanopia vision deficiency
+ */
+export interface ColorPaletteBase {
+  "Actions.Blue"?: string;
+  "Actions.Green"?: string;
+  "Actions.Grey"?: string;
+  /**
+   * Light-gray icons at the right side in input fields and combo boxes
+   */
+  "Actions.GreyInline"?: string;
+  /**
+   * Use for dark themes
+   */
+  "Actions.GreyInline.Dark"?: string;
+  /**
+   * Action colors are for icons that appear on toolbars
+   */
+  "Actions.Red"?: string;
+  "Actions.Yellow"?: string;
+  /**
+   * An unchecked checkbox or radio button
+   */
+  "Checkbox.Background.Default"?: string;
+  /**
+   * Use for dark themes
+   */
+  "Checkbox.Background.Default.Dark"?: string;
+  /**
+   * A disabled checkbox or radio button
+   */
+  "Checkbox.Background.Disabled"?: string;
+  /**
+   * Use for dark themes
+   */
+  "Checkbox.Background.Disabled.Dark"?: string;
+  /**
+   * A checked checkbox or radio button
+   */
+  "Checkbox.Background.Selected"?: string;
+  /**
+   * Use for dark themes
+   */
+  "Checkbox.Background.Selected.Dark"?: string;
+  "Checkbox.Border.Default"?: string;
+  /**
+   * Use for dark themes
+   */
+  "Checkbox.Border.Default.Dark"?: string;
+  "Checkbox.Border.Disabled"?: string;
+  /**
+   * Use for dark themes
+   */
+  "Checkbox.Border.Disabled.Dark"?: string;
+  "Checkbox.Border.Selected"?: string;
+  /**
+   * Use for dark themes
+   */
+  "Checkbox.Border.Selected.Dark"?: string;
+  /**
+   * 1px inner border in the focused state
+   */
+  "Checkbox.Focus.Thin.Default"?: string;
+  /**
+   * Use for dark themes
+   */
+  "Checkbox.Focus.Thin.Default.Dark"?: string;
+  "Checkbox.Focus.Thin.Selected"?: string;
+  /**
+   * Use for dark themes
+   */
+  "Checkbox.Focus.Thin.Selected.Dark"?: string;
+  /**
+   * 2px outer border in the focused state
+   */
+  "Checkbox.Focus.Wide"?: string;
+  /**
+   * Use for dark themes
+   */
+  "Checkbox.Focus.Wide.Dark"?: string;
+  "Checkbox.Foreground.Disabled"?: string;
+  /**
+   * Use for dark themes
+   */
+  "Checkbox.Foreground.Disabled.Dark"?: string;
+  "Checkbox.Foreground.Selected"?: string;
+  /**
+   * Use for dark themes
+   */
+  "Checkbox.Foreground.Selected.Dark"?: string;
+  "Objects.BlackText"?: string;
+  "Objects.Blue"?: string;
+  "Objects.Green"?: string;
+  /**
+   * Object colors are for icons in lists and trees
+   */
+  "Objects.Grey"?: string;
+  "Objects.Pink"?: string;
+  "Objects.Purple"?: string;
+  "Objects.Red"?: string;
+  "Objects.RedStatus"?: string;
+  "Objects.Yellow"?: string;
+  "Objects.YellowDark"?: string;
+  /**
+   * Color of expand/collapse icons
+   */
+  "Tree.iconColor"?: string;
 }
 
 // Converts JSON strings to/from your types
+// and asserts the results of JSON.parse at runtime
 export class Convert {
-    public static toJetBrains(json: string): JetBrains {
-        return JSON.parse(json);
-    }
+  public static toJBTheme(json: string): JBTheme {
+    return cast(JSON.parse(json), r("JBTheme"));
+  }
 
-    public static jetBrainsToJson(value: JetBrains): string {
-        return JSON.stringify(value);
-    }
+  public static jBThemeToJson(value: JBTheme): string {
+    return JSON.stringify(uncast(value, r("JBTheme")), null, 2);
+  }
 }
+
+function invalidValue(typ: any, val: any, key: any = ""): never {
+  if (key) {
+    throw Error(
+      `Invalid value for key "${key}". Expected type ${
+        JSON.stringify(typ)
+      } but got ${JSON.stringify(val)}`,
+    );
+  }
+  throw Error(
+    `Invalid value ${JSON.stringify(val)} for type ${JSON.stringify(typ)}`,
+  );
+}
+
+function jsonToJSProps(typ: any): any {
+  if (typ.jsonToJS === undefined) {
+    const map: any = {};
+    typ.props.forEach((p: any) => map[p.json] = { key: p.js, typ: p.typ });
+    typ.jsonToJS = map;
+  }
+  return typ.jsonToJS;
+}
+
+function jsToJSONProps(typ: any): any {
+  if (typ.jsToJSON === undefined) {
+    const map: any = {};
+    typ.props.forEach((p: any) => map[p.js] = { key: p.json, typ: p.typ });
+    typ.jsToJSON = map;
+  }
+  return typ.jsToJSON;
+}
+
+function transform(val: any, typ: any, getProps: any, key: any = ""): any {
+  function transformPrimitive(typ: string, val: any): any {
+    if (typeof typ === typeof val) return val;
+    return invalidValue(typ, val, key);
+  }
+
+  function transformUnion(typs: any[], val: any): any {
+    // val must validate against one typ in typs
+    const l = typs.length;
+    for (let i = 0; i < l; i++) {
+      const typ = typs[i];
+      try {
+        return transform(val, typ, getProps);
+      } catch (_) {}
+    }
+    return invalidValue(typs, val);
+  }
+
+  function transformEnum(cases: string[], val: any): any {
+    if (cases.indexOf(val) !== -1) return val;
+    return invalidValue(cases, val);
+  }
+
+  function transformArray(typ: any, val: any): any {
+    // val must be an array with no invalid elements
+    if (!Array.isArray(val)) return invalidValue("array", val);
+    return val.map((el) => transform(el, typ, getProps));
+  }
+
+  function transformDate(val: any): any {
+    if (val === null) {
+      return null;
+    }
+    const d = new Date(val);
+    if (isNaN(d.valueOf())) {
+      return invalidValue("Date", val);
+    }
+    return d;
+  }
+
+  function transformObject(
+    props: { [k: string]: any },
+    additional: any,
+    val: any,
+  ): any {
+    if (val === null || typeof val !== "object" || Array.isArray(val)) {
+      return invalidValue("object", val);
+    }
+    const result: any = {};
+    Object.getOwnPropertyNames(props).forEach((key) => {
+      const prop = props[key];
+      const v = Object.prototype.hasOwnProperty.call(val, key)
+        ? val[key]
+        : undefined;
+      result[prop.key] = transform(v, prop.typ, getProps, prop.key);
+    });
+    Object.getOwnPropertyNames(val).forEach((key) => {
+      if (!Object.prototype.hasOwnProperty.call(props, key)) {
+        result[key] = transform(val[key], additional, getProps, key);
+      }
+    });
+    return result;
+  }
+
+  if (typ === "any") return val;
+  if (typ === null) {
+    if (val === null) return val;
+    return invalidValue(typ, val);
+  }
+  if (typ === false) return invalidValue(typ, val);
+  while (typeof typ === "object" && typ.ref !== undefined) {
+    typ = typeMap[typ.ref];
+  }
+  if (Array.isArray(typ)) return transformEnum(typ, val);
+  if (typeof typ === "object") {
+    return typ.hasOwnProperty("unionMembers")
+      ? transformUnion(typ.unionMembers, val)
+      : typ.hasOwnProperty("arrayItems")
+      ? transformArray(typ.arrayItems, val)
+      : typ.hasOwnProperty("props")
+      ? transformObject(getProps(typ), typ.additional, val)
+      : invalidValue(typ, val);
+  }
+  // Numbers can be parsed by Date but shouldn't be.
+  if (typ === Date && typeof val !== "number") return transformDate(val);
+  return transformPrimitive(typ, val);
+}
+
+function cast<T>(val: any, typ: any): T {
+  return transform(val, typ, jsonToJSProps);
+}
+
+function uncast<T>(val: T, typ: any): any {
+  return transform(val, typ, jsToJSONProps);
+}
+
+function a(typ: any) {
+  return { arrayItems: typ };
+}
+
+function u(...typs: any[]) {
+  return { unionMembers: typs };
+}
+
+function o(props: any[], additional: any) {
+  return { props, additional };
+}
+
+function m(additional: any) {
+  return { props: [], additional };
+}
+
+function r(name: string) {
+  return { ref: name };
+}
+
+const typeMap: any = {
+  "JBTheme": o([
+    {
+      json: "additionalEditorSchemes",
+      js: "additionalEditorSchemes",
+      typ: u(undefined, a("any")),
+    },
+    { json: "author", js: "author", typ: "" },
+    {
+      json: "background",
+      js: "background",
+      typ: u(undefined, r("BackgroundImage")),
+    },
+    { json: "colors", js: "colors", typ: u(undefined, m("")) },
+    { json: "dark", js: "dark", typ: true },
+    { json: "editorScheme", js: "editorScheme", typ: u(undefined, "") },
+    {
+      json: "emptyFrameBackground",
+      js: "emptyFrameBackground",
+      typ: u(undefined, r("BackgroundImage")),
+    },
+    {
+      json: "iconColorsOnSelection",
+      js: "iconColorsOnSelection",
+      typ: u(undefined, m("")),
+    },
+    { json: "icons", js: "icons", typ: u(undefined, r("Icons")) },
+    { json: "name", js: "name", typ: "" },
+    { json: "ui", js: "ui", typ: m("any") },
+  ], "any"),
+  "BackgroundImage": o([
+    {
+      json: "anchor",
+      js: "anchor",
+      typ: u(undefined, r("BackgroundImageAnchor")),
+    },
+    {
+      json: "fill",
+      js: "fill",
+      typ: u(undefined, r("BackgroundImageFillingOptions")),
+    },
+    { json: "image", js: "image", typ: "" },
+    { json: "transparency", js: "transparency", typ: u(undefined, 0) },
+  ], "any"),
+  "Icons": o([
+    {
+      json: "ColorPalette",
+      js: "ColorPalette",
+      typ: u(undefined, r("ColorPalette")),
+    },
+  ], "any"),
+  "ColorPalette": o([
+    {
+      json: "Deuteranopia",
+      js: "Deuteranopia",
+      typ: u(undefined, r("ColorPaletteBase")),
+    },
+    {
+      json: "Protanopia",
+      js: "Protanopia",
+      typ: u(undefined, r("ColorPaletteBase")),
+    },
+    { json: "Actions.Blue", js: "Actions.Blue", typ: u(undefined, "") },
+    { json: "Actions.Green", js: "Actions.Green", typ: u(undefined, "") },
+    { json: "Actions.Grey", js: "Actions.Grey", typ: u(undefined, "") },
+    {
+      json: "Actions.GreyInline",
+      js: "Actions.GreyInline",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Actions.GreyInline.Dark",
+      js: "Actions.GreyInline.Dark",
+      typ: u(undefined, ""),
+    },
+    { json: "Actions.Red", js: "Actions.Red", typ: u(undefined, "") },
+    { json: "Actions.Yellow", js: "Actions.Yellow", typ: u(undefined, "") },
+    {
+      json: "Checkbox.Background.Default",
+      js: "Checkbox.Background.Default",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Background.Default.Dark",
+      js: "Checkbox.Background.Default.Dark",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Background.Disabled",
+      js: "Checkbox.Background.Disabled",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Background.Disabled.Dark",
+      js: "Checkbox.Background.Disabled.Dark",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Background.Selected",
+      js: "Checkbox.Background.Selected",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Background.Selected.Dark",
+      js: "Checkbox.Background.Selected.Dark",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Border.Default",
+      js: "Checkbox.Border.Default",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Border.Default.Dark",
+      js: "Checkbox.Border.Default.Dark",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Border.Disabled",
+      js: "Checkbox.Border.Disabled",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Border.Disabled.Dark",
+      js: "Checkbox.Border.Disabled.Dark",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Border.Selected",
+      js: "Checkbox.Border.Selected",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Border.Selected.Dark",
+      js: "Checkbox.Border.Selected.Dark",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Focus.Thin.Default",
+      js: "Checkbox.Focus.Thin.Default",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Focus.Thin.Default.Dark",
+      js: "Checkbox.Focus.Thin.Default.Dark",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Focus.Thin.Selected",
+      js: "Checkbox.Focus.Thin.Selected",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Focus.Thin.Selected.Dark",
+      js: "Checkbox.Focus.Thin.Selected.Dark",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Focus.Wide",
+      js: "Checkbox.Focus.Wide",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Focus.Wide.Dark",
+      js: "Checkbox.Focus.Wide.Dark",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Foreground.Disabled",
+      js: "Checkbox.Foreground.Disabled",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Foreground.Disabled.Dark",
+      js: "Checkbox.Foreground.Disabled.Dark",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Foreground.Selected",
+      js: "Checkbox.Foreground.Selected",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Foreground.Selected.Dark",
+      js: "Checkbox.Foreground.Selected.Dark",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Objects.BlackText",
+      js: "Objects.BlackText",
+      typ: u(undefined, ""),
+    },
+    { json: "Objects.Blue", js: "Objects.Blue", typ: u(undefined, "") },
+    { json: "Objects.Green", js: "Objects.Green", typ: u(undefined, "") },
+    { json: "Objects.Grey", js: "Objects.Grey", typ: u(undefined, "") },
+    { json: "Objects.Pink", js: "Objects.Pink", typ: u(undefined, "") },
+    { json: "Objects.Purple", js: "Objects.Purple", typ: u(undefined, "") },
+    { json: "Objects.Red", js: "Objects.Red", typ: u(undefined, "") },
+    {
+      json: "Objects.RedStatus",
+      js: "Objects.RedStatus",
+      typ: u(undefined, ""),
+    },
+    { json: "Objects.Yellow", js: "Objects.Yellow", typ: u(undefined, "") },
+    {
+      json: "Objects.YellowDark",
+      js: "Objects.YellowDark",
+      typ: u(undefined, ""),
+    },
+    { json: "Tree.iconColor", js: "Tree.iconColor", typ: u(undefined, "") },
+  ], "any"),
+  "ColorPaletteBase": o([
+    { json: "Actions.Blue", js: "Actions.Blue", typ: u(undefined, "") },
+    { json: "Actions.Green", js: "Actions.Green", typ: u(undefined, "") },
+    { json: "Actions.Grey", js: "Actions.Grey", typ: u(undefined, "") },
+    {
+      json: "Actions.GreyInline",
+      js: "Actions.GreyInline",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Actions.GreyInline.Dark",
+      js: "Actions.GreyInline.Dark",
+      typ: u(undefined, ""),
+    },
+    { json: "Actions.Red", js: "Actions.Red", typ: u(undefined, "") },
+    { json: "Actions.Yellow", js: "Actions.Yellow", typ: u(undefined, "") },
+    {
+      json: "Checkbox.Background.Default",
+      js: "Checkbox.Background.Default",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Background.Default.Dark",
+      js: "Checkbox.Background.Default.Dark",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Background.Disabled",
+      js: "Checkbox.Background.Disabled",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Background.Disabled.Dark",
+      js: "Checkbox.Background.Disabled.Dark",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Background.Selected",
+      js: "Checkbox.Background.Selected",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Background.Selected.Dark",
+      js: "Checkbox.Background.Selected.Dark",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Border.Default",
+      js: "Checkbox.Border.Default",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Border.Default.Dark",
+      js: "Checkbox.Border.Default.Dark",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Border.Disabled",
+      js: "Checkbox.Border.Disabled",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Border.Disabled.Dark",
+      js: "Checkbox.Border.Disabled.Dark",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Border.Selected",
+      js: "Checkbox.Border.Selected",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Border.Selected.Dark",
+      js: "Checkbox.Border.Selected.Dark",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Focus.Thin.Default",
+      js: "Checkbox.Focus.Thin.Default",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Focus.Thin.Default.Dark",
+      js: "Checkbox.Focus.Thin.Default.Dark",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Focus.Thin.Selected",
+      js: "Checkbox.Focus.Thin.Selected",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Focus.Thin.Selected.Dark",
+      js: "Checkbox.Focus.Thin.Selected.Dark",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Focus.Wide",
+      js: "Checkbox.Focus.Wide",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Focus.Wide.Dark",
+      js: "Checkbox.Focus.Wide.Dark",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Foreground.Disabled",
+      js: "Checkbox.Foreground.Disabled",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Foreground.Disabled.Dark",
+      js: "Checkbox.Foreground.Disabled.Dark",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Foreground.Selected",
+      js: "Checkbox.Foreground.Selected",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Checkbox.Foreground.Selected.Dark",
+      js: "Checkbox.Foreground.Selected.Dark",
+      typ: u(undefined, ""),
+    },
+    {
+      json: "Objects.BlackText",
+      js: "Objects.BlackText",
+      typ: u(undefined, ""),
+    },
+    { json: "Objects.Blue", js: "Objects.Blue", typ: u(undefined, "") },
+    { json: "Objects.Green", js: "Objects.Green", typ: u(undefined, "") },
+    { json: "Objects.Grey", js: "Objects.Grey", typ: u(undefined, "") },
+    { json: "Objects.Pink", js: "Objects.Pink", typ: u(undefined, "") },
+    { json: "Objects.Purple", js: "Objects.Purple", typ: u(undefined, "") },
+    { json: "Objects.Red", js: "Objects.Red", typ: u(undefined, "") },
+    {
+      json: "Objects.RedStatus",
+      js: "Objects.RedStatus",
+      typ: u(undefined, ""),
+    },
+    { json: "Objects.Yellow", js: "Objects.Yellow", typ: u(undefined, "") },
+    {
+      json: "Objects.YellowDark",
+      js: "Objects.YellowDark",
+      typ: u(undefined, ""),
+    },
+    { json: "Tree.iconColor", js: "Tree.iconColor", typ: u(undefined, "") },
+  ], "any"),
+  "BackgroundImageAnchor": [
+    "bottom_center",
+    "bottom_left",
+    "bottom_right",
+    "center",
+    "middle_left",
+    "middle_right",
+    "top_center",
+    "top_left",
+    "top_right",
+  ],
+  "BackgroundImageFillingOptions": [
+    "plain",
+    "scale",
+    "tile",
+  ],
+};
