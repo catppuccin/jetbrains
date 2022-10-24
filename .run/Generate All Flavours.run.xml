@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Generate All Flavours" type="DenoConfigurationType" inputPath="$PROJECT_DIR$/generateScheme/main.ts" programParameters="run --allow-write --allow-read --allow-env">
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
