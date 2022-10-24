@@ -57,7 +57,8 @@
     <option name="RIGHT_MARGIN_COLOR" value="313244"/>
     <option name="SELECTED_INDENT_GUIDE" value="45475a"/>
     <option name="SELECTED_TEARLINE_COLOR" value="45475a"/>
-    <option name="SELECTION_BACKGROUND" value="3b3d4f"/>
+    <option name="SELECTION_FOREGROUND" value=""/>
+    <option name="SELECTION_BACKGROUND" value="5e6277"/>
     <option name="SEPARATOR_BELOW_COLOR" value=""/>
     <option name="ScrollBar.hoverThumbColor" value="3d3f51"/>
     <option name="ScrollBar.thumbColor" value="303042"/>

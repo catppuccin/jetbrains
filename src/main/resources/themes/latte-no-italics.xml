@@ -57,7 +57,8 @@
     <option name="RIGHT_MARGIN_COLOR" value="ccd0da"/>
     <option name="SELECTED_INDENT_GUIDE" value="bcc0cc"/>
     <option name="SELECTED_TEARLINE_COLOR" value="bcc0cc"/>
-    <option name="SELECTION_BACKGROUND" value="ccd0da"/>
+    <option name="SELECTION_FOREGROUND" value=""/>
+    <option name="SELECTION_BACKGROUND" value="bcc0cc"/>
     <option name="SEPARATOR_BELOW_COLOR" value=""/>
     <option name="ScrollBar.hoverThumbColor" value="ced1d9"/>
     <option name="ScrollBar.thumbColor" value="d8dbe3"/>
@@ -2650,7 +2651,7 @@
     </option>
     <option name="WRITE_IDENTIFIER_UNDER_CARET_ATTRIBUTES">
       <value>
-        <option name="BACKGROUND" value="bcc0cc"/>
+        <option name="BACKGROUND" value="ccd0da"/>
         <option name="ERROR_STRIPE_COLOR" value="bcc0cc"/>
       </value>
     </option>
