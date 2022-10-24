@@ -207,22 +207,22 @@ Object.entries(variants).forEach(([key, value]) => {
       FileColor: {
         Blue: isLatte
           ? opacity(value.blue.hex, 0.20)
-          : opacity(value.blue.hex, 0.20),
+          : opacity(value.blue.hex, 0.15),
         Green: isLatte
           ? opacity(value.green.hex, 0.20)
-          : opacity(value.green.hex, 0.20),
+          : opacity(value.green.hex, 0.15),
         Orange: isLatte
           ? opacity(value.peach.hex, 0.20)
-          : opacity(value.peach.hex, 0.20),
+          : opacity(value.peach.hex, 0.15),
         Yellow: isLatte
           ? opacity(value.yellow.hex, 0.20)
-          : opacity(value.yellow.hex, 0.20),
+          : opacity(value.yellow.hex, 0.15),
         Rose: isLatte
           ? opacity(value.red.hex, 0.20)
-          : opacity(value.red.hex, 0.20),
+          : opacity(value.red.hex, 0.15),
         Violet: isLatte
           ? opacity(value.lavender.hex, 0.20)
-          : opacity(value.lavender.hex, 0.20),
+          : opacity(value.lavender.hex, 0.15),
       },
       Link: {
         activeForeground: "accentColor",
