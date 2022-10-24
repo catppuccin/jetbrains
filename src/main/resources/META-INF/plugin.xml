@@ -47,6 +47,12 @@ Head into <kbd>Settings</kbd> > <kbd>Editor/Color Scheme</kbd> and then pick the
     <bundledColorScheme path="/themes/mocha-no-italics"/>
   </extensions>
   <change-notes><![CDATA[
+<h3>[2.0.1] - 24.10.2022</h3>
+
+Fixed file colour highlights for Latte
+<br>
+Improved cursor selection background highlights on all flavours
+
 <h3>[2.0.0] - 22.10.2022</h3>
 
 All four flavours of Catppuccin v2 palette are now available!
