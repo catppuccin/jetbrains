@@ -477,7 +477,7 @@ Object.entries(variants).forEach(([key, value]) => {
 Handlebars.registerHelper("latte", handlebarsIsLatte);
 Handlebars.registerHelper("opacity", handlebarsOpacity);
 
-const templatePath = path.join(Deno.cwd(), "generateScheme", "template.xml");
+const templatePath = path.join(Deno.cwd(), "generateFlavours", "template.xml");
 
 Deno.readTextFile(templatePath).then((data) => {
   Object.entries(variants).forEach(([key, value]) => {
