@@ -1,7 +1,6 @@
 #!/usr/bin/env -S deno run --allow-write --allow-read --allow-env
 import { colormath, Handlebars, path, variants } from "./deps.ts";
 import type { JBTheme } from "./types.ts";
-import { Convert } from "./types.ts";
 
 const handlebarsIsLatte = (
   lightCol: string,
@@ -31,7 +30,8 @@ const capitalize = (str: string): string => {
   return str.charAt(0).toUpperCase() + str.slice(1);
 };
 
-const basePath = "src/main/resources/themes/";
+const __dirname = path.dirname(path.fromFileUrl(import.meta.url));
+const themePath = path.join(__dirname, "../src/main/resources/themes/");
 
 Object.entries(variants).forEach(([key, value]) => {
   const isLatte = key === "latte";
@@ -460,7 +460,7 @@ Object.entries(variants).forEach(([key, value]) => {
   };
 
   Deno.writeTextFileSync(
-    path.join(Deno.cwd(), basePath, `${key}.theme.json`),
+    path.join(themePath, `${key}.theme.json`),
     JSON.stringify(theme, null, 2),
   );
 });
@@ -473,7 +473,7 @@ Object.entries(variants).forEach(([key, value]) => {
 Handlebars.registerHelper("isLatte", handlebarsIsLatte);
 Handlebars.registerHelper("opacity", handlebarsOpacity);
 
-const templatePath = path.join(Deno.cwd(), "generateFlavours", "template.xml");
+const templatePath = path.join("generateFlavours", "template.xml");
 
 Deno.readTextFile(templatePath).then((data) => {
   Object.entries(variants).forEach(([key, value]) => {
@@ -499,7 +499,10 @@ Deno.readTextFile(templatePath).then((data) => {
 
       const suffix = italics ? "" : "-no-italics";
       const fileName = `${key}${suffix}.xml`;
-      Deno.writeTextFileSync(path.join(Deno.cwd(), basePath, fileName), output);
+      Deno.writeTextFileSync(
+        path.join(themePath, fileName),
+        output,
+      );
     });
   });
 });

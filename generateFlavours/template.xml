@@ -3,11 +3,7 @@
     <option name="ADDED_LINES_COLOR" value="{{green}}"/>
     <option name="ANNOTATIONS_COLOR" value="{{text}}"/>
     <option name="CARET_COLOR" value="{{rosewater}}"/>
-    {{#if isLatte}}
-    <option name="CARET_ROW_COLOR" value="{{opacity surface1 0.25}}"/>
-    {{else}}
-    <option name="CARET_ROW_COLOR" value="{{surface0}}"/>
-    {{/if}}
+    <option name="CARET_ROW_COLOR" value="{{isLatte (opacity surface1 0.25) surface0}}"/>
     <option name="CONSOLE_BACKGROUND_KEY" value="{{base}}"/>
     <option name="DELETED_LINES_COLOR" value="{{maroon}}"/>
     <option name="DIFF_SEPARATORS_BACKGROUND" value="{{overlay0}}"/>
@@ -62,11 +58,7 @@
     <option name="SELECTED_INDENT_GUIDE" value="{{surface1}}"/>
     <option name="SELECTED_TEARLINE_COLOR" value="{{surface1}}"/>
     <option name="SELECTION_FOREGROUND" value=""/>
-    {{#if isLatte}}
-    <option name="SELECTION_BACKGROUND" value="{{surface1}}"/>
-    {{else}}
-    <option name="SELECTION_BACKGROUND" value="{{opacity overlay2 0.55}}"/>
-    {{/if}}
+    <option name="SELECTION_BACKGROUND" value="{{isLatte surface1 (opacity overlay2 0.55)}}"/>
     <option name="SEPARATOR_BELOW_COLOR" value=""/>
     <option name="ScrollBar.hoverThumbColor" value="{{opacity overlay0 0.4}}"/>
     <option name="ScrollBar.thumbColor" value="{{opacity surface1 0.45}}"/>
