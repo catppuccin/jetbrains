@@ -150,12 +150,12 @@
       "inactiveUnderlineColor": "accentColor"
     },
     "FileColor": {
-      "Blue": "232b3d",
-      "Green": "2a3725",
-      "Orange": "3d2a20",
-      "Yellow": "3c3528",
-      "Rose": "3b2226",
-      "Violet": "2e2f3e"
+      "Blue": "333b56",
+      "Green": "384248",
+      "Orange": "433b44",
+      "Yellow": "424149",
+      "Rose": "423548",
+      "Violet": "3a3e57"
     },
     "Link": {
       "activeForeground": "accentColor",
@@ -382,7 +382,7 @@
       "Actions.GreyInline": "#8AADF4",
       "Objects.Blue": "#8AADF4",
       "Objects.Green": "#A6DA95",
-      "Objects.GreenAndroid": "85ae77",
+      "Objects.GreenAndroid": "8cb683",
       "Objects.Grey": "#6E738D",
       "Objects.Pink": "#F5BDE6",
       "Objects.Purple": "#C6A0F6",
