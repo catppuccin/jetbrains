@@ -474,7 +474,7 @@ Object.entries(variants).forEach(([key, value]) => {
 // {{opacity color opacity}}
 // EXAMPLE:
 // {{opacity rosewater 0.5}}
-Handlebars.registerHelper("latte", handlebarsIsLatte);
+Handlebars.registerHelper("isLatte", handlebarsIsLatte);
 Handlebars.registerHelper("opacity", handlebarsOpacity);
 
 const templatePath = path.join(Deno.cwd(), "generateFlavours", "template.xml");

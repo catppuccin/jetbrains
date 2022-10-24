@@ -19,11 +19,7 @@
     <option name="FILESTATUS_DELETED" value="{{surface2}}"/>
     <option name="FILESTATUS_HIJACKED" value="{{yellow}}"/>
     <option name="FILESTATUS_IDEA_FILESTATUS_DELETED_FROM_FILE_SYSTEM" value="{{surface2}}"/>
-    {{#if isLatte}}
-    <option name="FILESTATUS_IDEA_FILESTATUS_IGNORED" value="{{overlay2}}"/>
-    {{else}}
-    <option name="FILESTATUS_IDEA_FILESTATUS_IGNORED" value="{{surface2}}"/>
-    {{/if}}
+    <option name="FILESTATUS_IDEA_FILESTATUS_IGNORED" value="{{isLatte overlay2 surface2}}"/>
     <option name="FILESTATUS_IDEA_FILESTATUS_MERGED_WITH_BOTH_CONFLICTS" value="{{peach}}"/>
     <option name="FILESTATUS_IDEA_FILESTATUS_MERGED_WITH_CONFLICTS" value="{{peach}}"/>
     <option name="FILESTATUS_IDEA_FILESTATUS_MERGED_WITH_PROPERTY_CONFLICTS" value="{{peach}}"/>
@@ -65,10 +61,11 @@
     <option name="RIGHT_MARGIN_COLOR" value="{{surface0}}"/>
     <option name="SELECTED_INDENT_GUIDE" value="{{surface1}}"/>
     <option name="SELECTED_TEARLINE_COLOR" value="{{surface1}}"/>
+    <option name="SELECTION_FOREGROUND" value=""/>
     {{#if isLatte}}
-    <option name="SELECTION_BACKGROUND" value="{{surface0}}"/>
+    <option name="SELECTION_BACKGROUND" value="{{surface1}}"/>
     {{else}}
-    <option name="SELECTION_BACKGROUND" value="{{opacity overlay2 0.25}}"/>
+    <option name="SELECTION_BACKGROUND" value="{{opacity overlay2 0.55}}"/>
     {{/if}}
     <option name="SEPARATOR_BELOW_COLOR" value=""/>
     <option name="ScrollBar.hoverThumbColor" value="{{opacity overlay0 0.4}}"/>
@@ -2971,7 +2968,7 @@
     </option>
     <option name="WRITE_IDENTIFIER_UNDER_CARET_ATTRIBUTES">
       <value>
-        <option name="BACKGROUND" value="{{surface1}}"/>
+        <option name="BACKGROUND" value="{{isLatte surface0 surface1}}"/>
         <option name="ERROR_STRIPE_COLOR" value="{{surface1}}"/>
       </value>
     </option>
