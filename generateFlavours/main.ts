@@ -1,5 +1,7 @@
 #!/usr/bin/env -S deno run --allow-write --allow-read --allow-env
-import { colormath, Handlebars, JetBrains, path, variants } from "./deps.ts";
+import { colormath, Handlebars, path, variants } from "./deps.ts";
+import type { JBTheme } from "./types.ts";
+import { Convert } from "./types.ts";
 
 const handlebarsIsLatte = (
   lightCol: string,
@@ -53,7 +55,7 @@ Object.entries(variants).forEach(([key, value]) => {
     });
   };
 
-  const theme: JetBrains = {
+  const theme: JBTheme = {
     name: `Catppuccin ${capitalize(key)}`,
     dark: !isLatte,
     author: "Catppuccin Org <releases@catppuccin.com>",
@@ -437,19 +439,13 @@ Object.entries(variants).forEach(([key, value]) => {
       ColorPalette: {
         "Actions.Blue": colors.blue,
         "Actions.Green": colors.green,
-        "Actions.Orange": colors.peach,
-        "Actions.Purple": colors.mauve,
         "Actions.Red": colors.red,
         "Actions.Yellow": colors.yellow,
-        "Actions.Gray": colors.overlay0,
-        "Actions.White": colors.text,
-        "Actions.Black": colors.crust,
         "Actions.Grey": colors.overlay0,
         "Actions.GreyInline.Dark": colors.blue,
         "Actions.GreyInline": colors.blue,
         "Objects.Blue": colors.blue,
         "Objects.Green": colors.green,
-        "Objects.GreenAndroid": opacity(value.green.hex, 0.8),
         "Objects.Grey": colors.overlay0,
         "Objects.Pink": colors.pink,
         "Objects.Purple": colors.mauve,
