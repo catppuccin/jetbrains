@@ -3,7 +3,7 @@
     <option name="ADDED_LINES_COLOR" value="{{green}}"/>
     <option name="ANNOTATIONS_COLOR" value="{{text}}"/>
     <option name="CARET_COLOR" value="{{rosewater}}"/>
-    <option name="CARET_ROW_COLOR" value="{{isLatte (opacity surface1 0.25) surface0}}"/>
+    <option name="CARET_ROW_COLOR" value="{{isLatte (opacity surface1 0.15) (opacity surface1 0.2)}}"/>
     <option name="CONSOLE_BACKGROUND_KEY" value="{{base}}"/>
     <option name="DELETED_LINES_COLOR" value="{{maroon}}"/>
     <option name="DIFF_SEPARATORS_BACKGROUND" value="{{overlay0}}"/>
@@ -57,8 +57,8 @@
     <option name="RIGHT_MARGIN_COLOR" value="{{surface0}}"/>
     <option name="SELECTED_INDENT_GUIDE" value="{{surface1}}"/>
     <option name="SELECTED_TEARLINE_COLOR" value="{{surface1}}"/>
+    <option name="SELECTION_BACKGROUND" value="{{opacity surface1 0.35}}"/>
     <option name="SELECTION_FOREGROUND" value=""/>
-    <option name="SELECTION_BACKGROUND" value="{{isLatte surface1 (opacity overlay2 0.55)}}"/>
     <option name="SEPARATOR_BELOW_COLOR" value=""/>
     <option name="ScrollBar.hoverThumbColor" value="{{opacity overlay0 0.4}}"/>
     <option name="ScrollBar.thumbColor" value="{{opacity surface1 0.45}}"/>
@@ -953,7 +953,7 @@
     </option>
     <option name="DELETED_TEXT_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="312c3f"/>
+        <option name="FOREGROUND" value="{{text}}"/>
         <option name="BACKGROUND" value="{{red}}"/>
       </value>
     </option>
@@ -2950,9 +2950,6 @@
     </option>
     <option name="WARNING_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
-        <option name="BACKGROUND" value="{{base}}"/>
-        <option name="FONT_TYPE" value="1"/>
         <option name="EFFECT_COLOR" value="{{peach}}"/>
         <option name="ERROR_STRIPE_COLOR" value="{{peach}}"/>
         <option name="EFFECT_TYPE" value="2"/>
@@ -2960,7 +2957,7 @@
     </option>
     <option name="WRITE_IDENTIFIER_UNDER_CARET_ATTRIBUTES">
       <value>
-        <option name="BACKGROUND" value="{{isLatte surface0 surface1}}"/>
+        <option name="EFFECT_COLOR" value="{{surface2}}"/>
         <option name="ERROR_STRIPE_COLOR" value="{{surface1}}"/>
       </value>
     </option>
