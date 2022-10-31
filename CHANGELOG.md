@@ -1,48 +1,59 @@
-<!-- Keep a Changelog guide -> https://keepachangelog.com -->
+# Changelog
 
-# Catppuccin Theme Changelog
+## [Unreleased]
 
-## [2.0.1] - 24.10.2022
+### Added
 
-Fixed file colour highlights on Latte
-Improved cursor selection background highlights on all flavours
+### Changed
 
-## [2.0.0] - 22.10.2022
+### Deprecated
 
-All four flavours of Catppuccin v2 palette are now available!  
-View your IDE in Latte, Frappe, Macchiato or Mocha!
+### Removed
 
-## [1.0.9] - 09.08.2022
+### Fixed
 
-row tree height fix
+### Security
 
-## [1.0.8] - 20.06.2022
+## 2.0.2 - 2022-10-30
 
-XAML support  
-selectionInactiveBackground visibility fix
+### Changed
+- Warnings are not bold anymore
+- When cursor is over identifier, highlights are now only bordered
 
-## [1.0.7] - 03.06.2022
+### Fixed
+- Comments are now readable when selected with cursor
 
-Compatibility with 2022.2
+## 2.0.1 - 2022-10-24
+- Fixed file colour highlights on Latte
+- Improved cursor selection background highlights on all flavours
 
-## [1.0.6] - 30.04.2022
+## 2.0.0 - 2022-10-22
+- All four flavours of Catppuccin v2 palette are now available!
+- View your IDE in Latte, Frappe, Macchiato or Mocha!
 
-Make TODO and FIXME comments more visible
+## 1.0.9 - 2022-08-09
+- row tree height fix
 
-## [1.0.5] - 07.04.2022
+## 1.0.8 - 2022-06-20
+- XAML support
+- selectionInactiveBackground visibility fix
 
-Compatibility with 2022.1
+## 1.0.7 - 2022-06-03
+- Compatibility with 2022.2
 
-## [1.0.4] - 27.02.2022
+## 1.0.6 - 2022-04-30
+- Make TODO and FIXME comments more visible
 
-Added missing description in plugin.xml
+## 1.0.5 - 2022-04-07
+- Compatibility with 2022.1
 
-## [1.0.3] - 24.02.2022
+## 1.0.4 - 2022-02-27
+- Added missing description in plugin.xml
 
-First Marketplace release 🎉  
-Fixed low contrast issues in various spots
+## 1.0.3 - 2022-02-24
+- First Marketplace release 🎉
+- Fixed low contrast issues in various spots
 
-## [1.0.1] - 30.01.2022
-
-Checkbox readability improved  
-Editor color scheme uses colors from palette
+## 1.0.1 - 2022-01-30
+- Checkbox readability improved
+- Editor color scheme uses colors from palette
