@@ -28,11 +28,11 @@ Head into <kbd>Settings</kbd> > <kbd>Editor/Color Scheme</kbd> and then pick the
 
 <h3>Screenshots</h3>
 
-<img src="https://raw.githubusercontent.com/catppuccin/jetbrains/v0.2.0/assets/png/preview.png" border="0" width="360"/><br/>
-<img src="https://raw.githubusercontent.com/catppuccin/jetbrains/v0.2.0/assets/png/latte.png" border="0" width="360"/><br/>
-<img src="https://raw.githubusercontent.com/catppuccin/jetbrains/v0.2.0/assets/png/frappe.png" border="0" width="360"/><br/>
-<img src="https://raw.githubusercontent.com/catppuccin/jetbrains/v0.2.0/assets/png/macchiato.png" border="0" width="360"/><br/>
-<img src="https://raw.githubusercontent.com/catppuccin/jetbrains/v0.2.0/assets/png/mocha.png" border="0" width="360"/><br/>
+<img src="https://plugins.jetbrains.com/files/18682/screenshot_806e7ddd-9f37-452b-9032-f7042f0f854f" border="0" width="360"/><br/>
+<img src="https://plugins.jetbrains.com/files/18682/screenshot_c2b52ee2-7322-40f1-9c82-55d0388e495f" border="0" width="360"/><br/>
+<img src="https://plugins.jetbrains.com/files/18682/screenshot_fa799357-1c75-4989-a08b-a2545be49cd3" border="0" width="360"/><br/>
+<img src="https://plugins.jetbrains.com/files/18682/screenshot_3563b654-8566-4848-8f60-5669248cec4f" border="0" width="360"/><br/>
+<img src="https://plugins.jetbrains.com/files/18682/screenshot_035adfc8-4a14-48af-82d6-05a97ed91390" border="0" width="360"/><br/>
 ]]></description>
   <depends>com.intellij.modules.platform</depends>
   <extensions defaultExtensionNs="com.intellij">
