@@ -14,6 +14,11 @@
 
 ### Security
 
+## [2.0.3] - 2022-11-03
+
+### Fixed
+- Cursor line highlights are now readable
+
 ## 2.0.2 - 2022-10-30
 
 ### Changed

@@ -6,11 +6,13 @@
   <description><![CDATA[
 <h2>🧠 Soothing pastel theme for JetBrains IDEs</h2>
 
-<h3>About</h3>
-
+<p>
 Catppuccin is a community-driven pastel theme that aims to be the middle ground between low and high contrast themes.
 It consists of <strong>4 soothing warm palettes</strong> with 26 eye-candy colors each,
 perfect for coding, designing, and much more!
+</p>
+
+<img src="https://plugins.jetbrains.com/files/18682/screenshot_9cbbd85a-c8f5-4a9d-9b32-ca5956c5c0be" width="550"/>
 
 <h3>Design Philosophy</h3>
 
@@ -24,15 +26,27 @@ perfect for coding, designing, and much more!
 
 There are 4 lovely flavours for you to choose from, <em>Latte, Frappé, Macchiato and Mocha!</em> If you are not fond of italics... don't worry! We've got you covered 😎
 <br>
-Head into <kbd>Settings</kbd> > <kbd>Editor/Color Scheme</kbd> and then pick the non-italic version of your favourite flavour! E.g. Catppuccin Mocha (no italics)
+Head into <strong>Settings</strong> > <strong>Editor/Color Scheme</strong> and then pick the non-italic version of your favourite flavour! E.g. Catppuccin Mocha (no italics)
 
-<h3>Screenshots</h3>
+<h3>Previews</h3>
 
-<img src="https://plugins.jetbrains.com/files/18682/screenshot_806e7ddd-9f37-452b-9032-f7042f0f854f" border="0" width="360"/><br/>
-<img src="https://plugins.jetbrains.com/files/18682/screenshot_c2b52ee2-7322-40f1-9c82-55d0388e495f" border="0" width="360"/><br/>
-<img src="https://plugins.jetbrains.com/files/18682/screenshot_fa799357-1c75-4989-a08b-a2545be49cd3" border="0" width="360"/><br/>
-<img src="https://plugins.jetbrains.com/files/18682/screenshot_3563b654-8566-4848-8f60-5669248cec4f" border="0" width="360"/><br/>
-<img src="https://plugins.jetbrains.com/files/18682/screenshot_035adfc8-4a14-48af-82d6-05a97ed91390" border="0" width="360"/><br/>
+<img src="https://plugins.jetbrains.com/files/18682/screenshot_7b9fe1f2-727c-4666-afd4-b2be99233958" border="0" width="400"/><br/>
+<img src="https://plugins.jetbrains.com/files/18682/screenshot_d306afe0-f385-4a63-830d-e12d42a7b1f7" border="0" width="400"/><br/>
+<img src="https://plugins.jetbrains.com/files/18682/screenshot_7971f49d-43bc-4210-89af-daddb7fc7f05" border="0" width="400"/><br/>
+<img src="https://plugins.jetbrains.com/files/18682/screenshot_c5d8857e-67c5-4fb5-9659-104f8ba59d30" border="0" width="400"/><br/>
+
+<h3>Help</h3>
+
+For further help, see also:
+
+<ul>
+  <li><a href="https://github.com/catppuccin/jetbrains" target="_blank">GitHub Repository</a></li>
+  <li><a href="https://github.com/catppuccin/jetbrains/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc" target="_blank">Issue Tracker</a></li>
+</ul>
+
+<p align="center"><img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/footers/gray0_ctp_on_line.png"/></p>
+<p align="center">Copyright &copy; 2021-present <a href="https://github.com/catppuccin" target="_blank">Catppuccin Org</a>
+<p align="center"><a href="https://github.com/catppuccin/catppuccin/blob/main/LICENSE"><img src="https://img.shields.io/static/v1.png?style=for-the-badge&label=License&message=MIT&logoColor=d9e0ee&colorA=363a4f&colorB=b7bdf8" border="0"/></a></p>
 ]]></description>
   <depends>com.intellij.modules.platform</depends>
   <extensions defaultExtensionNs="com.intellij">
