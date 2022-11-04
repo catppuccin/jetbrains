@@ -57,7 +57,7 @@
     <option name="RIGHT_MARGIN_COLOR" value="{{surface0}}"/>
     <option name="SELECTED_INDENT_GUIDE" value="{{surface1}}"/>
     <option name="SELECTED_TEARLINE_COLOR" value="{{surface1}}"/>
-    <option name="SELECTION_BACKGROUND" value="{{opacity surface1 0.35}}"/>
+    <option name="SELECTION_BACKGROUND" value="{{isLatte (opacity surface1 0.35) (opacity surface1 0.5)}}"/>
     <option name="SELECTION_FOREGROUND" value=""/>
     <option name="SEPARATOR_BELOW_COLOR" value=""/>
     <option name="ScrollBar.hoverThumbColor" value="{{opacity overlay0 0.4}}"/>
@@ -1829,7 +1829,6 @@
     <option name="MATCHED_BRACE_ATTRIBUTES">
       <value>
         <option name="FOREGROUND" value="{{pink}}"/>
-        <option name="BACKGROUND" value="{{surface1}}"/>
         <option name="FONT_TYPE" value="1"/>
       </value>
     </option>
