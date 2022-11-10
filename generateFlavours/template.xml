@@ -632,6 +632,7 @@
         <option name="BACKGROUND" value="{{opacity mauve 0.4}}" />
       </value>
     </option>
+    <option name="ComposableCallTextAttributes" baseAttributes="DEFAULT_FUNCTION_CALL"/>
     <option name="DART_COLON">
       <value>
         <option name="FOREGROUND" value="{{text}}"/>
