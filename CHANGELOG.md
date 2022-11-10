@@ -4,6 +4,8 @@
 
 ### Added
 
+- (AndroidStudio) Add highlights for composable functions
+
 ### Changed
 
 - (#31): Improved Ruby highlights
