@@ -6,11 +6,15 @@
 
 ### Changed
 
+- (#31): Improved Ruby highlights
+
 ### Deprecated
 
 ### Removed
 
 ### Fixed
+
+- (#32): Update button text is now readable 
 
 ### Security
 
