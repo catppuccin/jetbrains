@@ -276,7 +276,7 @@ Object.entries(variants).forEach(([key, value]) => {
           installFillBackground: "secondaryAccentColor",
           installFocusedBackground: "primaryBackground",
           updateBorderColor: "accentColor",
-          updateForeground: "primaryForeground",
+          updateForeground: "primaryBackground",
           updateBackground: "accentColor",
         },
         Tab: {
