@@ -42,13 +42,14 @@ jobs:
           VERSION="$(echo "$PROPERTIES" | grep "^version:" | cut -f2- -d ' ')"
           NAME="$(echo "$PROPERTIES" | grep "^pluginName:" | cut -f2- -d ' ')"
           CHANGELOG="$(./gradlew getChangelog --unreleased --no-header --console=plain -q)"
-          CHANGELOG="${CHANGELOG//'%'/'%25'}"
-          CHANGELOG="${CHANGELOG//$'\n'/'%0A'}"
-          CHANGELOG="${CHANGELOG//$'\r'/'%0D'}"
+          ESCAPED_CHANGELOG="${CHANGELOG//'%'/'%25'}"
+          ESCAPED_CHANGELOG="${ESCAPED_CHANGELOG//$'\n'/'%0A'}"
+          ESCAPED_CHANGELOG="${ESCAPED_CHANGELOG//$'\r'/'%0D'}"
 
           echo "version=$VERSION" >> $GITHUB_ENV
           echo "name=$NAME" >> $GITHUB_ENV
           echo "changelog=$CHANGELOG" >> $GITHUB_ENV
+          echo "escaped_changelog=$ESCAPED_CHANGELOG" >> $GITHUB_ENV
 
       - name: Generate All Flavours
         run: ./generateFlavours/main.ts
@@ -56,7 +57,7 @@ jobs:
       - name: Build Plugin
         run: ./gradlew buildPlugin
 
-      - name: Store JAR
+      - name: Upload JAR
         uses: actions/upload-artifact@v3
         with:
           name: ${{ env.name }}-${{ env.version }}.jar
