@@ -54,6 +54,12 @@ jobs:
       - name: Generate All Flavours
         run: ./generateFlavours/main.ts
 
+      - name: Cache Deno dependencies
+        uses: actions/cache@v2
+        with:
+          key: ${{ hashFiles('generateFlavours/lock.json') }}
+          path: ${{ env.DENO_DIR }}
+
       - name: Build Plugin
         run: ./gradlew buildPlugin
 
