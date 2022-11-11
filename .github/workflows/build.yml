@@ -36,6 +36,12 @@ jobs:
         uses: denoland/setup-deno@v1
         with:
           deno-version: v1.x
+      
+      - name: Cache Deno dependencies
+        uses: actions/cache@v3
+        with:
+          key: ${{ hashFiles('generateFlavours/lock.json') }}
+          path: ${{ env.DENO_DIR }}
 
       - name: Export Properties
         id: properties
@@ -44,23 +50,12 @@ jobs:
           PROPERTIES="$(./gradlew properties --console=plain -q)"
           VERSION="$(echo "$PROPERTIES" | grep "^version:" | cut -f2- -d ' ')"
           NAME="$(echo "$PROPERTIES" | grep "^pluginName:" | cut -f2- -d ' ')"
-          CHANGELOG="$(./gradlew getChangelog --unreleased --no-header --console=plain -q)"
-          CHANGELOG="${CHANGELOG//'%'/'%25'}"
-          CHANGELOG="${CHANGELOG//$'\n'/'%0A'}"
-          CHANGELOG="${CHANGELOG//$'\r'/'%0D'}"
 
           echo "version=$VERSION" >> $GITHUB_ENV
           echo "name=$NAME" >> $GITHUB_ENV
-          echo "changelog=$CHANGELOG" >> $GITHUB_ENV
 
       - name: Generate All Flavours
         run: ./generateFlavours/main.ts
-
-      - name: Cache Deno dependencies
-        uses: actions/cache@v3
-        with:
-          key: ${{ hashFiles('generateFlavours/lock.json') }}
-          path: ${{ env.DENO_DIR }}
 
       - name: Build Plugin
         run: ./gradlew buildPlugin
