@@ -97,7 +97,7 @@ jobs:
           body: echo "$(./gradlew getChangelog --console=plain -q)"
           draft: true
 
-      - name: Commit Changelog
+      - name: Commit Release Notes
         if: github.ref == 'refs/heads/main' && startsWith(github.ref, 'refs/tags/v')
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
