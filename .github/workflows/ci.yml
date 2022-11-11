@@ -1,4 +1,4 @@
-name: Build Plugin
+name: Continuous Integration
 
 on:
   push:
@@ -13,6 +13,8 @@ on:
       - 'generateFlavours'
       - 'gradle.properties'
       - '**.gradle.kts'
+  tags:
+    - "v*" # Push events to matching v*, i.e. v1.0, v20.15.10
 
 env:
   DENO_DIR: deno_cache
@@ -36,7 +38,7 @@ jobs:
         uses: denoland/setup-deno@v1
         with:
           deno-version: v1.x
-      
+
       - name: Cache Deno dependencies
         uses: actions/cache@v3
         with:
@@ -66,5 +68,37 @@ jobs:
           name: ${{ env.name }}-${{ env.version }}.jar
           path: build/libs/*.jar
 
-      - name: Show Unreleased Changes
-        run: echo "$(./gradlew getChangelog --unreleased --no-header --console=plain -q)" >> $GITHUB_STEP_SUMMARY
+      - name: Output Unreleased Changes
+        run: |
+          echo "# 🚧 Unreleased 🚧" >> $GITHUB_STEP_SUMMARY
+          echo "$(./gradlew getChangelog --unreleased --no-header --console=plain -q)" >> $GITHUB_STEP_SUMMARY`
+
+      - name: Patch Changelog
+        if: github.ref == 'refs/heads/main' && startsWith(github.ref, 'refs/tags/v')
+        run: ./gradlew patchChangelog
+
+      - name: Output Release Notes
+        if: github.ref == 'refs/heads/main' && startsWith(github.ref, 'refs/tags/v')
+        run: |
+          echo "# 🚀 Tagged Release 🚀" >> $GITHUB_STEP_SUMMARY
+          echo "$(./gradlew getChangelog --console=plain -q)" >> $GITHUB_STEP_SUMMARY`
+
+      - name: Publish Plugin
+        if: github.ref == 'refs/heads/main' && startsWith(github.ref, 'refs/tags/v')
+        env:
+          PUBLISH_TOKEN: ${{ secrets.JETBRAINS_MARKETPLACE_TOKEN }}
+        run: ./gradlew publishPlugin
+
+      - name: Create Release
+        if: github.ref == 'refs/heads/main' && startsWith(github.ref, 'refs/tags/v')
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: build/libs/*.jar
+          body: echo "$(./gradlew getChangelog --console=plain -q)"
+          draft: true
+
+      - name: Commit Changelog
+        if: github.ref == 'refs/heads/main' && startsWith(github.ref, 'refs/tags/v')
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "docs: update changelog"
