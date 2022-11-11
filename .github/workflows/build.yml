@@ -50,6 +50,9 @@ jobs:
           echo "name=$NAME" >> $GITHUB_ENV
           echo "changelog=$CHANGELOG" >> $GITHUB_ENV
 
+      - name: Generate All Flavours
+        run: deno run --allow-write --allow-read --allow-env generateFlavours/main.ts
+
       - name: Build Plugin
         run: ./gradlew buildPlugin
 
@@ -60,4 +63,4 @@ jobs:
           path: build/libs/*.jar
 
       - name: Show Unreleased Changes
-        run: echo "${{ env.changelog }}"
+        run: echo "${{ env.changelog }}" >> $GITHUB_STEP_SUMMARY
