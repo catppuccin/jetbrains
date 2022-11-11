@@ -7,14 +7,14 @@ on:
       - 'generateFlavours'
       - 'gradle.properties'
       - '**.gradle.kts'
+    tags:
+      - "v*" # Push events to matching v*, i.e. v1.0, v20.15.10
   pull_request:
     paths:
       - 'src/**'
       - 'generateFlavours'
       - 'gradle.properties'
       - '**.gradle.kts'
-  tags:
-    - "v*" # Push events to matching v*, i.e. v1.0, v20.15.10
 
 env:
   DENO_DIR: deno_cache
