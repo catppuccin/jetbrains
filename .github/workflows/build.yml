@@ -1,0 +1,63 @@
+name: Build Plugin
+
+on:
+  push:
+    paths:
+      - 'src/**'
+      - 'generateFlavours'
+      - 'gradle.properties'
+      - '**.gradle.kts'
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'generateFlavours'
+      - 'gradle.properties'
+      - '**.gradle.kts'
+
+jobs:
+  build:
+    name: Build Plugin
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: zulu
+          java-version: 11
+          cache: 'gradle'
+
+      - name: Setup Deno
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
+
+      - name: Export Properties
+        id: properties
+        shell: bash
+        run: |
+          PROPERTIES="$(./gradlew properties --console=plain -q)"
+          VERSION="$(echo "$PROPERTIES" | grep "^version:" | cut -f2- -d ' ')"
+          NAME="$(echo "$PROPERTIES" | grep "^pluginName:" | cut -f2- -d ' ')"
+          CHANGELOG="$(./gradlew getChangelog --unreleased --no-header --console=plain -q)"
+          CHANGELOG="${CHANGELOG//'%'/'%25'}"
+          CHANGELOG="${CHANGELOG//$'\n'/'%0A'}"
+          CHANGELOG="${CHANGELOG//$'\r'/'%0D'}"
+
+          echo "version=$VERSION" >> $GITHUB_ENV
+          echo "name=$NAME" >> $GITHUB_ENV
+          echo "changelog=$CHANGELOG" >> $GITHUB_ENV
+
+      - name: Build Plugin
+        run: ./gradlew buildPlugin
+
+      - name: Store JAR
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ env.name }}-${{ env.version }}.jar
+          path: build/libs/*.jar
+
+      - name: Show Unreleased Changes
+        run: echo "${{ env.changelog }}"
