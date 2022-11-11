@@ -51,7 +51,7 @@ jobs:
           echo "changelog=$CHANGELOG" >> $GITHUB_ENV
 
       - name: Generate All Flavours
-        run: deno run --allow-write --allow-read --allow-env generateFlavours/main.ts
+        run: ./generateFlavours/main.ts
 
       - name: Build Plugin
         run: ./gradlew buildPlugin
