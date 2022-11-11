@@ -37,7 +37,7 @@ intellij {
 changelog {
     version.set(properties("pluginVersion"))
     path.set(file("CHANGELOG.md").canonicalPath)
-    header.set(provider { "[${version.get()}] - ${date()}"})
+    header.set(provider { "${version.get()} - ${date()}"})
     headerParserRegex.set("""(\d\.\d\.\d)""".toRegex())
     itemPrefix.set("-")
     keepUnreleasedSection.set(true)
