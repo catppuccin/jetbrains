@@ -5,7 +5,7 @@ import type { JBTheme } from "./types.ts";
 const handlebarsIsLatte = (
   lightCol: string,
   darkCol: string,
-  context: any,
+  context: any
 ): string => {
   return context.data.root.isLatte ? lightCol : darkCol;
 };
@@ -13,17 +13,14 @@ const handlebarsIsLatte = (
 const handlebarsOpacity = (
   color: string,
   opacity: number,
-  context: any,
+  context: any
 ): string => {
   const base = context.data.root.base;
 
-  return (
-    colormath.mixColor(
-      colormath.hex.toRgb(color),
-      colormath.hex.toRgb(base),
-      opacity,
-    )
-  ).hex.toLowerCase().replace("#", "");
+  return colormath
+    .mixColor(colormath.hex.toRgb(color), colormath.hex.toRgb(base), opacity)
+    .hex.toLowerCase()
+    .replace("#", "");
 };
 
 const capitalize = (str: string): string => {
@@ -32,16 +29,19 @@ const capitalize = (str: string): string => {
 
 const __dirname = path.dirname(path.fromFileUrl(import.meta.url));
 const themePath = path.join(__dirname, "../src/main/resources/themes/");
+Deno.mkdirSync(themePath, { recursive: true });
 
 Object.entries(variants).forEach(([key, value]) => {
   const isLatte = key === "latte";
 
-  const colors = Object.entries(value).map(([key, value]) => {
-    const hex = value.hex.toUpperCase();
-    return {
-      [key]: hex,
-    };
-  }).reduce((acc, curr) => ({ ...acc, ...curr }), {});
+  const colors = Object.entries(value)
+    .map(([key, value]) => {
+      const hex = value.hex.toUpperCase();
+      return {
+        [key]: hex,
+      };
+    })
+    .reduce((acc, curr) => ({ ...acc, ...curr }), {});
 
   const opacity = (color: string, val: number): string => {
     // mimick the context available in handlebars,
@@ -208,22 +208,22 @@ Object.entries(variants).forEach(([key, value]) => {
       },
       FileColor: {
         Blue: isLatte
-          ? opacity(value.blue.hex, 0.20)
+          ? opacity(value.blue.hex, 0.2)
           : opacity(value.blue.hex, 0.15),
         Green: isLatte
-          ? opacity(value.green.hex, 0.20)
+          ? opacity(value.green.hex, 0.2)
           : opacity(value.green.hex, 0.15),
         Orange: isLatte
-          ? opacity(value.peach.hex, 0.20)
+          ? opacity(value.peach.hex, 0.2)
           : opacity(value.peach.hex, 0.15),
         Yellow: isLatte
-          ? opacity(value.yellow.hex, 0.20)
+          ? opacity(value.yellow.hex, 0.2)
           : opacity(value.yellow.hex, 0.15),
         Rose: isLatte
-          ? opacity(value.red.hex, 0.20)
+          ? opacity(value.red.hex, 0.2)
           : opacity(value.red.hex, 0.15),
         Violet: isLatte
-          ? opacity(value.lavender.hex, 0.20)
+          ? opacity(value.lavender.hex, 0.2)
           : opacity(value.lavender.hex, 0.15),
       },
       Link: {
@@ -461,7 +461,7 @@ Object.entries(variants).forEach(([key, value]) => {
 
   Deno.writeTextFileSync(
     path.join(themePath, `${key}.theme.json`),
-    JSON.stringify(theme, null, 2),
+    JSON.stringify(theme, null, 2)
   );
 });
 
@@ -480,12 +480,14 @@ Deno.readTextFile(templatePath).then((data) => {
     const isLatte = key === "latte";
     const italicsVersions = [true, false];
 
-    const hexValues = Object.entries(value).map(([key, value]) => {
-      const hex = value.hex.replace("#", "").toLowerCase();
-      return {
-        [key]: hex,
-      };
-    }).reduce((acc, curr) => ({ ...acc, ...curr }), {});
+    const hexValues = Object.entries(value)
+      .map(([key, value]) => {
+        const hex = value.hex.replace("#", "").toLowerCase();
+        return {
+          [key]: hex,
+        };
+      })
+      .reduce((acc, curr) => ({ ...acc, ...curr }), {});
 
     italicsVersions.forEach((italics) => {
       const options = {
@@ -499,10 +501,7 @@ Deno.readTextFile(templatePath).then((data) => {
 
       const suffix = italics ? "" : "-no-italics";
       const fileName = `${key}${suffix}.xml`;
-      Deno.writeTextFileSync(
-        path.join(themePath, fileName),
-        output,
-      );
+      Deno.writeTextFileSync(path.join(themePath, fileName), output);
     });
   });
 });
