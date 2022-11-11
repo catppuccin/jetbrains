@@ -1,0 +1,70 @@
+name: Build Plugin
+
+on:
+  push:
+    paths:
+      - 'src/**'
+      - 'generateFlavours'
+      - 'gradle.properties'
+      - '**.gradle.kts'
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'generateFlavours'
+      - 'gradle.properties'
+      - '**.gradle.kts'
+
+env:
+  DENO_DIR: deno_cache
+
+jobs:
+  build:
+    name: Build Plugin
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: zulu
+          java-version: 11
+          cache: 'gradle'
+
+      - name: Setup Deno
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
+      
+      - name: Cache Deno dependencies
+        uses: actions/cache@v3
+        with:
+          key: ${{ hashFiles('generateFlavours/lock.json') }}
+          path: ${{ env.DENO_DIR }}
+
+      - name: Export Properties
+        id: properties
+        shell: bash
+        run: |
+          PROPERTIES="$(./gradlew properties --console=plain -q)"
+          VERSION="$(echo "$PROPERTIES" | grep "^version:" | cut -f2- -d ' ')"
+          NAME="$(echo "$PROPERTIES" | grep "^pluginName:" | cut -f2- -d ' ')"
+
+          echo "version=$VERSION" >> $GITHUB_ENV
+          echo "name=$NAME" >> $GITHUB_ENV
+
+      - name: Generate All Flavours
+        run: ./generateFlavours/main.ts
+
+      - name: Build Plugin
+        run: ./gradlew buildPlugin
+
+      - name: Upload JAR
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ env.name }}-${{ env.version }}.jar
+          path: build/libs/*.jar
+
+      - name: Show Unreleased Changes
+        run: echo "$(./gradlew getChangelog --unreleased --no-header --console=plain -q)" >> $GITHUB_STEP_SUMMARY

@@ -17,6 +17,7 @@
 ### Fixed
 
 - (#32): Update button text is now readable 
+- (#29): GitHub Copilot suggestion highlights are now the same as comments
 
 ### Security
 
