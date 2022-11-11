@@ -16,6 +16,9 @@ on:
       - 'gradle.properties'
       - '**.gradle.kts'
 
+env:
+  DENO_DIR: deno_cache
+
 jobs:
   build:
     name: Build & Release
@@ -37,8 +40,6 @@ jobs:
           deno-version: v1.x
 
       - name: Cache Deno dependencies
-        env:
-          DENO_DIR: deno_cache
         uses: actions/cache@v3
         with:
           key: ${{ hashFiles('generateFlavours/lock.json') }}
