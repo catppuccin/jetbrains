@@ -60,5 +60,4 @@ For further help, see also:
     <bundledColorScheme path="/themes/macchiato-no-italics"/>
     <bundledColorScheme path="/themes/mocha-no-italics"/>
   </extensions>
-  <change-notes><![CDATA[]]></change-notes>
 </idea-plugin>
