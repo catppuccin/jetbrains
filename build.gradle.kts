@@ -37,7 +37,7 @@ intellij {
 changelog {
     version.set(properties("pluginVersion"))
     path.set(file("CHANGELOG.md").canonicalPath)
-    header.set(provider { "[${version.get()}] - ${date()}"})
+    header.set(provider { "${version.get()} - ${date()}"})
     headerParserRegex.set("""(\d\.\d\.\d)""".toRegex())
     itemPrefix.set("-")
     keepUnreleasedSection.set(true)
@@ -70,15 +70,6 @@ tasks {
         changeNotes.set(provider {
           changelog.renderItem(changelog.getLatest(), Changelog.OutputType.HTML)
         })
-    }
-
-    // Configure UI tests plugin
-    // Read more: https://github.com/JetBrains/intellij-ui-test-robot
-    runIdeForUiTests {
-        systemProperty("robot-server.port", "8082")
-        systemProperty("ide.mac.message.dialogs.as.sheets", "false")
-        systemProperty("jb.privacy.policy.text", "<!--999.999-->")
-        systemProperty("jb.consents.confirmation.enabled", "false")
     }
 
     signPlugin {

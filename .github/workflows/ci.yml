@@ -1,0 +1,108 @@
+name: Continuous Integration
+
+on:
+  push:
+    paths:
+      - 'src/**'
+      - 'generateFlavours/**'
+      - 'gradle.properties'
+      - '**.gradle.kts'
+    tags:
+      - "v*" # Push events to matching v*, i.e. v1.0, v20.15.10
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'generateFlavours/**'
+      - 'gradle.properties'
+      - '**.gradle.kts'
+
+env:
+  DENO_DIR: deno_cache
+  IS_TAGGED_RELEASE: ${{ github.ref == 'refs/heads/main' && startsWith(github.ref, 'refs/tags/v') }}
+
+jobs:
+  build:
+    name: Build & Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: zulu
+          java-version: 11
+          cache: 'gradle'
+
+      - name: Setup Deno
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
+
+      - name: Cache Deno dependencies
+        uses: actions/cache@v3
+        with:
+          key: ${{ hashFiles('generateFlavours/lock.json') }}
+          path: ${{ env.DENO_DIR }}
+
+      - name: Export Properties
+        id: properties
+        shell: bash
+        run: |
+          PROPERTIES="$(./gradlew properties --console=plain -q)"
+          VERSION="$(echo "$PROPERTIES" | grep "^version:" | cut -f2- -d ' ')"
+          NAME="$(echo "$PROPERTIES" | grep "^pluginName:" | cut -f2- -d ' ')"
+
+          echo "version=$VERSION" >> $GITHUB_ENV
+          echo "name=$NAME" >> $GITHUB_ENV
+
+      - name: Generate All Flavours
+        run: ./generateFlavours/main.ts
+
+      - name: Build Plugin
+        run: ./gradlew buildPlugin
+
+      - name: Upload JAR
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ env.name }}-${{ env.version }}.jar
+          path: build/libs/*.jar
+
+      - name: Output Unreleased Changes
+        if: env.IS_TAGGED_RELEASE == 'false'
+        run: |
+          echo "# 🚧 Unreleased 🚧" >> $GITHUB_STEP_SUMMARY
+          echo "$(./gradlew getChangelog --unreleased --no-header --console=plain -q)" >> $GITHUB_STEP_SUMMARY
+
+      - name: Patch Changelog
+        if: env.IS_TAGGED_RELEASE == 'true'
+        run: ./gradlew patchChangelog
+
+      - name: Output Release Notes
+        if: env.IS_TAGGED_RELEASE == 'true'
+        run: |
+          echo "# 🚀 Tagged Release 🚀" >> $GITHUB_STEP_SUMMARY
+          RELEASE_NOTES="$(./gradlew getChangelog --console=plain -q)"
+          echo "release_notes=$RELEASE_NOTES" >> $GITHUB_ENV
+          echo "$RELEASE_NOTES" >> $GITHUB_STEP_SUMMARY
+
+      - name: Publish Plugin
+        if: env.IS_TAGGED_RELEASE == 'true'
+        env:
+          PUBLISH_TOKEN: ${{ secrets.JETBRAINS_MARKETPLACE_TOKEN }}
+        run: ./gradlew publishPlugin
+
+      - name: Create Release
+        if: env.IS_TAGGED_RELEASE == 'true'
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: build/libs/*.jar
+          body: ${{ env.release_notes }}
+          draft: true
+
+      - name: Commit Release Notes
+        if: env.IS_TAGGED_RELEASE == 'true'
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "docs: update changelog"
