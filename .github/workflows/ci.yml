@@ -76,31 +76,34 @@ jobs:
           echo "$(./gradlew getChangelog --unreleased --no-header --console=plain -q)" >> $GITHUB_STEP_SUMMARY
 
       - name: Patch Changelog
-        if: env.IS_TAGGED_RELEASE
+        if: env.IS_TAGGED_RELEASE == 'true'
         run: ./gradlew patchChangelog
 
       - name: Output Release Notes
-        if: env.IS_TAGGED_RELEASE
+        id: release_notes
+        if: env.IS_TAGGED_RELEASE == 'true'
         run: |
           echo "# 🚀 Tagged Release 🚀" >> $GITHUB_STEP_SUMMARY
-          echo "$(./gradlew getChangelog --console=plain -q)" >> $GITHUB_STEP_SUMMARY
+          RELEASE_NOTES="$(./gradlew getChangelog --console=plain -q)"
+          echo "release_notes=$RELEASE_NOTES" >> $GITHUB_ENV
+          echo "$RELEASE_NOTES" >> $GITHUB_STEP_SUMMARY
 
       - name: Publish Plugin
-        if: env.IS_TAGGED_RELEASE
+        if: env.IS_TAGGED_RELEASE == 'true'
         env:
           PUBLISH_TOKEN: ${{ secrets.JETBRAINS_MARKETPLACE_TOKEN }}
         run: ./gradlew publishPlugin
 
       - name: Create Release
-        if: env.IS_TAGGED_RELEASE
+        if: env.IS_TAGGED_RELEASE == 'true'
         uses: ncipollo/release-action@v1
         with:
           artifacts: build/libs/*.jar
-          body: "$(./gradlew getChangelog --console=plain -q)"
+          body: ${{ env.release_notes }}
           draft: true
 
       - name: Commit Release Notes
-        if: env.IS_TAGGED_RELEASE
+        if: env.IS_TAGGED_RELEASE == 'true'
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "docs: update changelog"
