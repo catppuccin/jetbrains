@@ -4,12 +4,7 @@
 
 ### Added
 
-- [AndroidStudio] Add highlights for composable functions
-
 ### Changed
-
-- (#31): Improved Ruby highlights
-- Improve visibility of ignored files when using Latte
 
 ### Deprecated
 
@@ -17,11 +12,21 @@
 
 ### Fixed
 
-- (#32): Update button text is now readable 
+### Security
+
+## 2.0.4 - 2022-11-12
+
+### Added
+- [AndroidStudio] Add highlights for composable functions
+
+### Changed
+- (#31): Improved Ruby highlights
+- Improve visibility of ignored files when using Latte
+
+### Fixed
+- (#32): Update button text is now readable
 - (#28): Improve visibility of tabs
 - (#29): GitHub Copilot suggestion highlights are now the same as comments
-
-### Security
 
 ## 2.0.3 - 2022-11-03
 
