@@ -15,7 +15,7 @@
     <option name="FILESTATUS_DELETED" value="{{surface2}}"/>
     <option name="FILESTATUS_HIJACKED" value="{{yellow}}"/>
     <option name="FILESTATUS_IDEA_FILESTATUS_DELETED_FROM_FILE_SYSTEM" value="{{surface2}}"/>
-    <option name="FILESTATUS_IDEA_FILESTATUS_IGNORED" value="{{isLatte overlay2 surface2}}"/>
+    <option name="FILESTATUS_IDEA_FILESTATUS_IGNORED" value="{{isLatte overlay2 overlay0}}"/>
     <option name="FILESTATUS_IDEA_FILESTATUS_MERGED_WITH_BOTH_CONFLICTS" value="{{peach}}"/>
     <option name="FILESTATUS_IDEA_FILESTATUS_MERGED_WITH_CONFLICTS" value="{{peach}}"/>
     <option name="FILESTATUS_IDEA_FILESTATUS_MERGED_WITH_PROPERTY_CONFLICTS" value="{{peach}}"/>
@@ -25,7 +25,7 @@
     <option name="FILESTATUS_MODIFIED" value="{{blue}}"/>
     <option name="FILESTATUS_NOT_CHANGED_IMMEDIATE" value="{{blue}}"/>
     <option name="FILESTATUS_NOT_CHANGED_RECURSIVE" value="{{blue}}"/>
-    <option name="FILESTATUS_SUPPRESSED" value="{{surface1}}"/>
+    <option name="FILESTATUS_SUPPRESSED" value="{{isLatte overlay2 overlay0}}"/>
     <option name="FILESTATUS_SWITCHED" value="{{lavender}}"/>
     <option name="FILESTATUS_UNKNOWN" value="{{opacity peach 0.9}}"/>
     <option name="FILESTATUS_addedOutside" value="{{green}}"/>

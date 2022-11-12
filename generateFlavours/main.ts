@@ -311,7 +311,6 @@ Object.entries(variants).forEach(([key, value]) => {
         },
       },
       SearchEverywhere: {
-        "Advertiser.foreground": "primaryForeground",
         SearchField: {
           background: "secondaryBackground",
         },
