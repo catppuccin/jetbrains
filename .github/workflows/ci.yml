@@ -80,7 +80,6 @@ jobs:
         run: ./gradlew patchChangelog
 
       - name: Output Release Notes
-        id: release_notes
         if: env.IS_TAGGED_RELEASE == 'true'
         run: |
           echo "# 🚀 Tagged Release 🚀" >> $GITHUB_STEP_SUMMARY
