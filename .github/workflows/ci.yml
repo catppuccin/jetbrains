@@ -18,6 +18,7 @@ on:
 
 env:
   DENO_DIR: deno_cache
+  IS_TAGGED_RELEASE: ${{ github.ref == 'refs/heads/main' && startsWith(github.ref, 'refs/tags/v') }}
 
 jobs:
   build:
@@ -69,36 +70,37 @@ jobs:
           path: build/libs/*.jar
 
       - name: Output Unreleased Changes
+        if: env.IS_TAGGED_RELEASE == 'false'
         run: |
           echo "# 🚧 Unreleased 🚧" >> $GITHUB_STEP_SUMMARY
           echo "$(./gradlew getChangelog --unreleased --no-header --console=plain -q)" >> $GITHUB_STEP_SUMMARY
 
       - name: Patch Changelog
-        if: github.ref == 'refs/heads/main' && startsWith(github.ref, 'refs/tags/v')
+        if: env.IS_TAGGED_RELEASE
         run: ./gradlew patchChangelog
 
       - name: Output Release Notes
-        if: github.ref == 'refs/heads/main' && startsWith(github.ref, 'refs/tags/v')
+        if: env.IS_TAGGED_RELEASE
         run: |
           echo "# 🚀 Tagged Release 🚀" >> $GITHUB_STEP_SUMMARY
           echo "$(./gradlew getChangelog --console=plain -q)" >> $GITHUB_STEP_SUMMARY
 
       - name: Publish Plugin
-        if: github.ref == 'refs/heads/main' && startsWith(github.ref, 'refs/tags/v')
+        if: env.IS_TAGGED_RELEASE
         env:
           PUBLISH_TOKEN: ${{ secrets.JETBRAINS_MARKETPLACE_TOKEN }}
         run: ./gradlew publishPlugin
 
       - name: Create Release
-        if: github.ref == 'refs/heads/main' && startsWith(github.ref, 'refs/tags/v')
+        if: env.IS_TAGGED_RELEASE
         uses: ncipollo/release-action@v1
         with:
           artifacts: build/libs/*.jar
-          body: echo "$(./gradlew getChangelog --console=plain -q)"
+          body: "$(./gradlew getChangelog --console=plain -q)"
           draft: true
 
       - name: Commit Release Notes
-        if: github.ref == 'refs/heads/main' && startsWith(github.ref, 'refs/tags/v')
+        if: env.IS_TAGGED_RELEASE
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "docs: update changelog"
