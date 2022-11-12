@@ -82,12 +82,18 @@ jobs:
         if: env.IS_TAGGED_RELEASE == 'true'
         run: ./gradlew patchChangelog
 
+      # Notes on Script Hardening: https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#understanding-the-risk-of-script-injections
       - name: Output Release Notes
         if: env.IS_TAGGED_RELEASE == 'true'
         run: |
           echo "# 🚀 Tagged Release 🚀" >> $GITHUB_STEP_SUMMARY
           RELEASE_NOTES="$(./gradlew getChangelog --console=plain -q)"
-          echo "release_notes=$RELEASE_NOTES" >> $GITHUB_ENV
+          DELIMITER="$(openssl rand -hex 8)"
+
+          echo "release_notes<<$DELIMITER" >> $GITHUB_ENV
+          echo "$RELEASE_NOTES" >> $GITHUB_ENV
+          echo "$DELIMITER" >> $GITHUB_ENV
+
           echo "$RELEASE_NOTES" >> $GITHUB_STEP_SUMMARY
 
       - name: Publish Plugin
