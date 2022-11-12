@@ -21,7 +21,7 @@ on:
 
 env:
   DENO_DIR: deno_cache
-  IS_TAGGED_RELEASE: ${{ github.ref == 'refs/heads/main' && startsWith(github.ref, 'refs/tags/v') }}
+  IS_TAGGED_RELEASE: ${{ startsWith(github.ref, 'refs/tags/v') }}
 
 jobs:
   build:
