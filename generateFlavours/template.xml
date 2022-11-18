@@ -1831,6 +1831,7 @@
       <value>
         <option name="FOREGROUND" value="{{pink}}"/>
         <option name="FONT_TYPE" value="1"/>
+        <option name="EFFECT_COLOR" value="{{surface2}}" />
       </value>
     </option>
     <option name="MATCHED_TAG_NAME" baseAttributes="MATCHED_BRACE_ATTRIBUTES"/>
