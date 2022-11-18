@@ -12,6 +12,8 @@
 
 ### Fixed
 
+- Terminal colors: follow the Catppuccin style guide
+
 ### Security
 
 ## 2.0.4 - 2022-11-12
