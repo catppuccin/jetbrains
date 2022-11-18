@@ -235,99 +235,88 @@
         {{/if}}
       </value>
     </option>
+    <!-- Terminal colors -->
+    <!-- ANSI Color 00 -->
     <option name="CONSOLE_BLACK_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="{{base}}"/>
+        <option name="FOREGROUND" value="{{isLatte subtext1 surface1}}"/>
       </value>
     </option>
-    <option name="CONSOLE_BLUE_BRIGHT_OUTPUT">
+    <!-- ANSI Color 01 -->
+    <option name="CONSOLE_RED_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
-        {{#if italics}}
-        <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        <option name="FOREGROUND" value="{{red}}"/>
       </value>
     </option>
-    <option name="CONSOLE_BLUE_OUTPUT">
-      <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
-      </value>
-    </option>
-    <option name="CONSOLE_CYAN_BRIGHT_OUTPUT">
-      <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
-        {{#if italics}}
-        <option name="FONT_TYPE" value="2"/>
-        {{/if}}
-      </value>
-    </option>
-    <option name="CONSOLE_CYAN_OUTPUT">
-      <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
-      </value>
-    </option>
-    <option name="CONSOLE_DARKGRAY_OUTPUT">
-      <value>
-        <option name="FOREGROUND" value="{{subtext0}}"/>
-      </value>
-    </option>
-    <option name="CONSOLE_ERROR_OUTPUT">
-      <value>
-        <option name="FOREGROUND" value="{{maroon}}"/>
-      </value>
-    </option>
-    <option name="CONSOLE_GRAY_OUTPUT">
-      <value>
-        <option name="FOREGROUND" value="{{subtext1}}"/>
-      </value>
-    </option>
-    <option name="CONSOLE_GREEN_BRIGHT_OUTPUT">
-      <value>
-        <option name="FOREGROUND" value="{{green}}"/>
-        {{#if italics}}
-        <option name="FONT_TYPE" value="2"/>
-        {{/if}}
-      </value>
-    </option>
+    <!-- ANSI Color 02 -->
     <option name="CONSOLE_GREEN_OUTPUT">
       <value>
         <option name="FOREGROUND" value="{{green}}"/>
       </value>
     </option>
-    <option name="CONSOLE_MAGENTA_BRIGHT_OUTPUT">
+    <!-- ANSI Color 03 -->
+    <option name="CONSOLE_YELLOW_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
-        {{#if italics}}
-        <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        <option name="FOREGROUND" value="{{yellow}}"/>
       </value>
     </option>
+    <!-- ANSI Color 04 -->
+    <option name="CONSOLE_BLUE_OUTPUT">
+      <value>
+        <option name="FOREGROUND" value="{{blue}}"/>
+      </value>
+    </option>
+    <!-- ANSI Color 05 -->
     <option name="CONSOLE_MAGENTA_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
+        <option name="FOREGROUND" value="{{pink}}"/>
       </value>
     </option>
+    <!-- ANSI Color 06 -->
+    <option name="CONSOLE_CYAN_OUTPUT">
+      <value>
+        <option name="FOREGROUND" value="{{teal}}"/>
+      </value>
+    </option>
+    <!-- ANSI Color 07 -->
+    <option name="CONSOLE_GRAY_OUTPUT">
+      <value>
+        <option name="FOREGROUND" value="{{isLatte surface2 subtext1}}"/>
+      </value>
+    </option>
+    <!-- ANSI Color 08 -->
+    <option name="CONSOLE_DARKGRAY_OUTPUT">
+      <value>
+        <option name="FOREGROUND" value="{{isLatte subtext0 surface2}}"/>
+      </value>
+    </option>
+    <!-- ANSI Color 09 -->
+    <option name="CONSOLE_RED_BRIGHT_OUTPUT" baseAttributes="CONSOLE_RED_OUTPUT"/>
+    <!-- ANSI Color 10 -->
+    <option name="CONSOLE_GREEN_BRIGHT_OUTPUT" baseAttributes="CONSOLE_GREEN_OUTPUT"/>
+    <!-- ANSI Color 11 -->
+    <option name="CONSOLE_YELLOW_BRIGHT_OUTPUT" baseAttributes="CONSOLE_YELLOW_OUTPUT"/>
+    <!-- ANSI Color 12 -->
+    <option name="CONSOLE_BLUE_BRIGHT_OUTPUT" baseAttributes="CONSOLE_BLUE_OUTPUT" />
+    <!-- ANSI Color 13 -->
+    <option name="CONSOLE_MAGENTA_BRIGHT_OUTPUT" baseAttributes="CONSOLE_MAGENTA_OUTPUT"/>
+    <!-- ANSI Color 14 -->
+    <option name="CONSOLE_CYAN_BRIGHT_OUTPUT" baseAttributes="CONSOLE_CYAN_OUTPUT" />
+    <!-- ANSI Color 15 -->
     <option name="CONSOLE_NORMAL_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
+        <option name="FOREGROUND" value="{{isLatte surface1 subtext0}}"/>
+      </value>
+    </option>
+    <!-- other terminal colors -->
+    <option name="CONSOLE_ERROR_OUTPUT">
+      <value>
+        <option name="FOREGROUND" value="{{maroon}}"/>
       </value>
     </option>
     <option name="CONSOLE_RANGE_TO_EXECUTE">
       <value>
         <option name="EFFECT_COLOR" value="{{mauve}}"/>
-      </value>
-    </option>
-    <option name="CONSOLE_RED_BRIGHT_OUTPUT">
-      <value>
-        <option name="FOREGROUND" value="{{maroon}}"/>
-        {{#if italics}}
-        <option name="FONT_TYPE" value="2"/>
-        {{/if}}
-      </value>
-    </option>
-    <option name="CONSOLE_RED_OUTPUT">
-      <value>
-        <option name="FOREGROUND" value="{{red}}"/>
       </value>
     </option>
     <option name="CONSOLE_SYSTEM_OUTPUT">
@@ -346,19 +335,6 @@
     <option name="CONSOLE_WHITE_OUTPUT">
       <value>
         <option name="FOREGROUND" value="{{text}}"/>
-      </value>
-    </option>
-    <option name="CONSOLE_YELLOW_BRIGHT_OUTPUT">
-      <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
-        {{#if italics}}
-        <option name="FONT_TYPE" value="2"/>
-        {{/if}}
-      </value>
-    </option>
-    <option name="CONSOLE_YELLOW_OUTPUT">
-      <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
       </value>
     </option>
     <option name="CONSTRUCTOR_CALL_ATTRIBUTES">
