@@ -6,6 +6,8 @@
 
 ### Changed
 
+- Matching braces now have a border when hovered.
+
 ### Deprecated
 
 ### Removed
