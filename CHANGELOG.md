@@ -16,7 +16,7 @@
 
 ### Fixed
 
-- Terminal colors: follow the Catppuccin style guide
+- Terminal colors now follow the Catppuccin style guide
 
 ### Security
 
