@@ -4,11 +4,7 @@
 
 ### Added
 
-- (#27): Better support for New UI
-
 ### Changed
-
-- (#35): Matching braces now have a border when hovered.
 
 ### Deprecated
 
@@ -16,9 +12,18 @@
 
 ### Fixed
 
-- Terminal colors now follow the Catppuccin style guide
-
 ### Security
+
+## 2.0.5 - 2022-11-22
+
+### Added
+- (#27): Better support for New UI
+
+### Changed
+- (#35): Matching braces now have a border when hovered.
+
+### Fixed
+- Terminal colors now follow the Catppuccin style guide
 
 ## 2.0.4 - 2022-11-12
 
