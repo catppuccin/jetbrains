@@ -4,9 +4,11 @@
 
 ### Added
 
+- (#27): Better support for New UI
+
 ### Changed
 
-- Matching braces now have a border when hovered.
+- (#35): Matching braces now have a border when hovered.
 
 ### Deprecated
 
