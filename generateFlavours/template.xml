@@ -1020,6 +1020,10 @@
         <option name="FOREGROUND" value="{{green}}"/>
       </value>
     </option>
+    <option name="ERL_ATOM" baseAttributes="DEFAULT_IDENTIFIER" />
+    <option name="ERL_MACRO" baseAttributes="DEFAULT_STATIC_FIELD" />
+    <option name="ERL_RECORDS" baseAttributes="DEFAULT_INSTANCE_FIELD" />
+    <option name="ERL_VARIABLES" baseAttributes="DEFAULT_GLOBAL_VARIABLE" />
     <option name="ERRORS_ATTRIBUTES">
       <value>
         <option name="EFFECT_COLOR" value="{{red}}"/>
