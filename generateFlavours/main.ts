@@ -144,7 +144,6 @@ Object.entries(variants).forEach(([key, value]) => {
         borderColor: "accentColor",
       },
       Button: {
-        background: "mantle",
         foreground: "primaryForeground",
         startBorderColor: "secondaryBackground",
         endBorderColor: "secondaryBackground",
@@ -161,9 +160,6 @@ Object.entries(variants).forEach(([key, value]) => {
           focusColor: "accentColor",
           focusedBorderColor: "surface1",
         },
-      },
-      CheckBox: {
-        background: "mantle"
       },
       Counter: {
         foreground: "primaryBackground",
@@ -236,9 +232,6 @@ Object.entries(variants).forEach(([key, value]) => {
         visitedForeground: "secondaryAccentColor",
         pressedForeground: "secondaryAccentColor",
       },
-      MainToolbar: {
-        background: "mantle",
-      },
       NotificationsToolwindow: {
         newNotification: {
           background: "primaryBackground",
@@ -262,9 +255,6 @@ Object.entries(variants).forEach(([key, value]) => {
           informativeBackground: "primaryBackground",
           informativeBorderColor: "secondaryAccentColor",
         },
-      },
-      Panel: {
-        background: "mantle",
       },
       PasswordField: {
         background: "secondaryBackground",
@@ -312,9 +302,6 @@ Object.entries(variants).forEach(([key, value]) => {
           inactiveBackground: "secondaryBackground",
         },
       },
-      RadioButton: {
-        background: "mantle"
-      },
       ScrollBar: {
         Mac: {
           hoverThumbColor: "secondaryAccentColor",
@@ -341,9 +328,6 @@ Object.entries(variants).forEach(([key, value]) => {
       },
       SidePanel: {
         background: "mantle",
-      },
-      Spinner: {
-        background: "mantle"
       },
       StatusBar: {
         borderColor: "borderColor",

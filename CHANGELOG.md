@@ -3,6 +3,8 @@
 ## [Unreleased]
 
 ### Added
+- Support Erlang
+- Highlight FileTree to be darker in New UI
 
 ### Changed
 
@@ -11,6 +13,7 @@
 ### Removed
 
 ### Fixed
+- Revert changes from 2.0.5
 
 ### Security
 
