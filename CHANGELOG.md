@@ -4,11 +4,7 @@
 
 ### Added
 
-- Improve Scala highlights
-
 ### Changed
-
-- Update TOML keys to blue, aligning it with JSON/XML/YAML
 
 ### Deprecated
 
@@ -16,10 +12,19 @@
 
 ### Fixed
 
+### Security
+
+## 2.0.7 - 2023-01-02
+
+### Added
+- Improve Scala highlights
+
+### Changed
+- Update TOML keys to blue, aligning it with JSON/XML/YAML
+
+### Fixed
 - (#42): Make RunConfigurations readable in Latte
 - (#39): Make quick-fix error messages readable
-
-### Security
 
 ## 2.0.6 - 2022-11-27
 
