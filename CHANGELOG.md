@@ -8,6 +8,8 @@
 
 ### Changed
 
+- Update TOML keys to blue, aligning it with JSON/XML/YAML
+
 ### Deprecated
 
 ### Removed
