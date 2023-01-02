@@ -12,6 +12,8 @@
 
 ### Fixed
 
+- (#42): Make RunConfigurations readable in Latte
+
 ### Security
 
 ## 2.0.6 - 2022-11-27

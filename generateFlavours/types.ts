@@ -321,6 +321,12 @@ export interface ColorPaletteBase {
   "Tree.iconColor"?: string;
 }
 
+export interface RunWidget {
+  "separatorColor": string,
+  "foreground": string,
+  "background": string
+}
+
 // Converts JSON strings to/from your types
 // and asserts the results of JSON.parse at runtime
 export class Convert {

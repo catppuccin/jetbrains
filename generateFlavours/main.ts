@@ -191,6 +191,11 @@ Object.entries(variants).forEach(([key, value]) => {
         warningFocusColor: "yellow",
         inactiveWarningFocusColor: "yellow",
       },
+      RunWidget: {
+        separatorColor: "separatorColor",
+        foreground: "text",
+        background: "secondaryBackground"
+      },
       DragAndDrop: {
         borderColor: "selectionBackground",
       },
