@@ -13,6 +13,7 @@
 ### Fixed
 
 - (#42): Make RunConfigurations readable in Latte
+- (#39): Make quick-fix error messages readable
 
 ### Security
 

@@ -9,7 +9,7 @@
     <option name="DIFF_SEPARATORS_BACKGROUND" value="{{overlay0}}"/>
     <option name="DOCUMENTATION_COLOR" value="{{mantle}}"/>
     <option name="DOC_COMMENT_LINK" value="{{blue}}"/>
-    <option name="ERROR_HINT" value="{{red}}"/>
+    <option name="ERROR_HINT" value="{{isLatte red 781732}}"/> <!-- Can't figure out how to edit foreground colour so stock red honestly looks better for all dark flavours -->
     <option name="FILESTATUS_ADDED" value="{{green}}"/>
     <option name="FILESTATUS_COPIED" value="{{green}}"/>
     <option name="FILESTATUS_DELETED" value="{{surface2}}"/>
