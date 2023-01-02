@@ -4,6 +4,8 @@
 
 ### Added
 
+- Improve Scala highlights
+
 ### Changed
 
 ### Deprecated

@@ -2658,7 +2658,11 @@
         {{/if}}
       </value>
     </option>
-    <option name="Static method access" baseAttributes="STATIC_METHOD_ATTRIBUTES"/>
+    <option name="Scala Immutable Collection" baseAttributes="DEFAULT_IDENTIFIER" />
+    <option name="Scala Mutable Collection" baseAttributes="DEFAULT_IDENTIFIER" />
+    <option name="Scala Type Alias" baseAttributes="TYPE_PARAMETER_NAME_ATTRIBUTES" />
+    <option name="Scala Type parameter" baseAttributes="TYPE_PARAMETER_NAME_ATTRIBUTES" />
+    <option name="Static method access" baseAttributes="STATIC_METHOD_ATTRIBUTES" />
     <option name="Static property reference ID">
       <value>
         <option name="FOREGROUND" value="{{peach}}"/>
