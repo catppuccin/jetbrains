@@ -4,8 +4,6 @@
 
 ### Added
 
-- Support 2023.1 EAP
-
 ### Changed
 
 ### Deprecated
@@ -15,6 +13,11 @@
 ### Fixed
 
 ### Security
+
+## 2.0.8 - 2023-01-26
+
+### Added
+- Support 2023.1 EAP
 
 ## 2.0.7 - 2023-01-02
 
