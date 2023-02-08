@@ -2157,6 +2157,7 @@
         <option name="FOREGROUND" value="{{green}}"/>
       </value>
     </option>
+    <option name="PY.STRING.B" baseAttributes="DEFAULT_STRING" />
     <option name="RDOC_DIRECTIVE">
       <value>
         <option name="FOREGROUND" value="{{blue}}"/>
