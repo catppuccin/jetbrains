@@ -23,6 +23,17 @@ const handlebarsOpacity = (
     .replace("#", "");
 };
 
+const handlebarsMix = (
+  color1: string,
+  color2: string,
+  amount: number,
+): string => {
+  return colormath
+    .mixColor(colormath.hex.toRgb(color1), colormath.hex.toRgb(color2), amount)
+    .hex.toLowerCase()
+    .replace("#", "");
+};
+
 const capitalize = (str: string): string => {
   return str.charAt(0).toUpperCase() + str.slice(1);
 };
@@ -478,6 +489,7 @@ Object.entries(variants).forEach(([key, value]) => {
 // {{opacity rosewater 0.5}}
 Handlebars.registerHelper("isLatte", handlebarsIsLatte);
 Handlebars.registerHelper("opacity", handlebarsOpacity);
+Handlebars.registerHelper("mix", handlebarsMix);
 
 Deno.readTextFile(templatePath).then((data) => {
   Object.entries(variants).forEach(([key, value]) => {
