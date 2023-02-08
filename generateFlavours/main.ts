@@ -29,6 +29,7 @@ const capitalize = (str: string): string => {
 
 const __dirname = path.dirname(path.fromFileUrl(import.meta.url));
 const themePath = path.join(__dirname, "../src/main/resources/themes/");
+const templatePath = path.join(__dirname, "template.xml");
 Deno.mkdirSync(themePath, { recursive: true });
 
 Object.entries(variants).forEach(([key, value]) => {
@@ -44,7 +45,7 @@ Object.entries(variants).forEach(([key, value]) => {
     .reduce((acc, curr) => ({ ...acc, ...curr }), {});
 
   const opacity = (color: string, val: number): string => {
-    // mimick the context available in handlebars,
+    // mimic the context available in handlebars,
     // pass in the colors for the current iteration
     return handlebarsOpacity(color, val, {
       data: {
@@ -477,8 +478,6 @@ Object.entries(variants).forEach(([key, value]) => {
 // {{opacity rosewater 0.5}}
 Handlebars.registerHelper("isLatte", handlebarsIsLatte);
 Handlebars.registerHelper("opacity", handlebarsOpacity);
-
-const templatePath = path.join("generateFlavours", "template.xml");
 
 Deno.readTextFile(templatePath).then((data) => {
   Object.entries(variants).forEach(([key, value]) => {
