@@ -2938,5 +2938,31 @@
         <option name="FOREGROUND" value="{{maroon}}"/>
       </value>
     </option>
+    <!-- Semantic Highlights -->
+    <option name="RAINBOW_COLOR0">
+      <value>
+        <option name="FOREGROUND" value="{{mix text red 0.6}}" />
+      </value>
+    </option>
+    <option name="RAINBOW_COLOR1">
+      <value>
+        <option name="FOREGROUND" value="{{mix text yellow 0.6}}" />
+      </value>
+    </option>
+    <option name="RAINBOW_COLOR2">
+      <value>
+        <option name="FOREGROUND" value="{{mix text green 0.6}}" />
+      </value>
+    </option>
+    <option name="RAINBOW_COLOR3">
+      <value>
+        <option name="FOREGROUND" value="{{mix text blue 0.6}}" />
+      </value>
+    </option>
+    <option name="RAINBOW_COLOR4">
+      <value>
+        <option name="FOREGROUND" value="{{mix text mauve 0.6}}" />
+      </value>
+    </option>
   </attributes>
 </scheme>
