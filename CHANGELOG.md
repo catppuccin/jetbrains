@@ -5,6 +5,7 @@
 ### Added
 
 - (#53): Highlight Python binary strings
+- (#54): Apply Catppuccin to semantic highlights
 
 ### Changed
 
