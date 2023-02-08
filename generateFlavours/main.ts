@@ -132,17 +132,17 @@ Object.entries(variants).forEach(([key, value]) => {
           iconBackground: "secondaryBackground",
           iconBorderColor: "accentColor",
         },
-      },
-      BookmarkMnemonicAssigned: {
-        foreground: "primaryForeground",
-        background: "secondaryBackground",
-        borderColor: "secondaryAccentColor",
-      },
-      BookmarkMnemonicAvailable: {},
-      BookmarkMnemonicCurrent: {
-        foreground: "primaryForeground",
-        background: "selectionBackground",
-        borderColor: "accentColor",
+        MnemonicAssigned: {
+          foreground: "primaryForeground",
+          background: "secondaryBackground",
+          borderColor: "secondaryAccentColor",
+        },
+        MnemonicAvailable: {},
+        MnemonicCurrent: {
+          foreground: "primaryForeground",
+          background: "selectionBackground",
+          borderColor: "accentColor",
+        },
       },
       Button: {
         foreground: "primaryForeground",
