@@ -4,6 +4,8 @@
 
 ### Added
 
+- (#53): Highlight Python binary strings
+
 ### Changed
 
 - Update HTML <custom-tag> to be highlighted as KEYWORD
