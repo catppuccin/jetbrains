@@ -4,7 +4,19 @@
 
 ### Added
 
+- (#53): Highlight Python binary strings
+- (#54): Apply Catppuccin to semantic highlights
+
 ### Changed
+
+- (HTML): Align highlights with TOML/JSON/XML/YAML
+- (Rust): Lower opacity of conditionally disabled code
+- (Rust): Highlight parameters to be same as language default
+- (Debugger): No background highlighting on normal breakpoints
+- (Debugger): Current line that is stopped is background highlighted
+
+- If you would like to edit the debugging highlights yourself, they are
+  located in `Settings - Editor -> Color Scheme -> Debugger`
 
 ### Deprecated
 
@@ -12,23 +24,9 @@
 
 ### Fixed
 
-### Security
-
-## 2.0.9 - 2023-02-13
-
-### Added
-- (#53): Highlight Python binary strings
-- (#54): Apply Catppuccin to semantic highlights
-
-### Changed
-- Align HTML with TOML/JSON/XML/YAML
-- - Lower opacity of conditionally disabled code
-  - Highlight parameters to be same as language default
-- - No background highlighting on normal breakpoints
-  - Current line that is stopped is background highlighted
-
-### Fixed
 - Don't force italics on CSS Keywords
+
+### Security
 
 ## 2.0.8 - 2023-01-26
 
