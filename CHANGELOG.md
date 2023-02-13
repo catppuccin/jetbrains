@@ -6,11 +6,15 @@
 
 ### Changed
 
+- Update HTML <custom-tag> to be highlighted as KEYWORD
+
 ### Deprecated
 
 ### Removed
 
 ### Fixed
+
+- Don't force italics on CSS Keywords
 
 ### Security
 

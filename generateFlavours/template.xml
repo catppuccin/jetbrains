@@ -388,7 +388,9 @@
     <option name="CSS.KEYWORD">
       <value>
         <option name="FOREGROUND" value="{{red}}"/>
-        <option name="FONT_TYPE" value="3"/>
+        {{#if italics}}
+        <option name="FONT_TYPE" value="2"/>
+        {{/if}}
       </value>
     </option>
     <option name="CSS.OPERATORS">
@@ -1231,18 +1233,12 @@
       </value>
     </option>
     <option name="HAML_XHTML" baseAttributes=""/>
-    <option name="HTML_ATTRIBUTE_NAME">
-      <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
-      </value>
-    </option>
+    <option name="HTML_ATTRIBUTE_NAME" baseAttributes="DEFAULT_ATTRIBUTE" />
+    <option name="HTML_ATTRIBUTE_VALUE" baseAttributes="DEFAULT_STRING" />
     <option name="HTML_ATTRIBUTE_VALUE" baseAttributes="DEFAULT_STRING"/>
+    <option name="HTML_CUSTOM_TAG_NAME" baseAttributes="HTML_TAG_NAME" />
     <option name="HTML_ENTITY_REFERENCE" baseAttributes="DEFAULT_ENTITY"/>
-    <option name="HTML_TAG">
-      <value>
-        <option name="FOREGROUND" value="{{text}}"/>
-      </value>
-    </option>
+    <option name="HTML_TAG" baseAttributes="DEFAULT_TAG" />>
     <option name="HTML_TAG_NAME" baseAttributes="DEFAULT_KEYWORD"/>
     <option name="HTTP_REQUEST_INPUT_FILE">
       <value>
