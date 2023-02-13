@@ -176,9 +176,7 @@
       </value>
     </option>
     <option name="BREAKPOINT_ATTRIBUTES">
-      <value>
-        <option name="BACKGROUND" value="{{opacity red 0.3}}"/>
-      </value>
+      <value />
     </option>
     <option name="BUILDOUT.KEY">
       <value>
@@ -1041,8 +1039,7 @@
     </option>
     <option name="EXECUTIONPOINT_ATTRIBUTES">
       <value>
-        <option name="BACKGROUND" value="{{base}}"/>
-        <option name="EFFECT_COLOR" value="{{blue}}"/>
+        <option name="BACKGROUND" value="{{opacity yellow 0.15}}"/>
       </value>
     </option>
     <option name="FIRST SYMBOL IN LIST">

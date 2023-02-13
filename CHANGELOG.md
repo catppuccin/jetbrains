@@ -13,6 +13,12 @@
 - Improve Rust highlights
   - Lower opacity of conditionally disabled code
   - Highlight parameters to be same as language default
+- Align debugging highlights with VSCode
+  - No background highlighting on normal breakpoints
+  - Current line that is stopped is background highlighted
+
+If you would like to edit the debugging highlights yourself, they are
+located in `Settings - Editor -> Color Scheme -> Debugger`
 
 ### Deprecated
 
