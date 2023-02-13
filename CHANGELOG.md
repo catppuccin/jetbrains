@@ -10,6 +10,9 @@
 ### Changed
 
 - Align HTML with TOML/JSON/XML/YAML
+- Improve Rust highlights
+  - Lower opacity of conditionally disabled code
+  - Highlight parameters to be same as language default
 
 ### Deprecated
 

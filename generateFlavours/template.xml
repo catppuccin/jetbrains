@@ -2892,13 +2892,17 @@
         <option name="FOREGROUND" value="{{maroon}}"/>
       </value>
     </option>
-    <option name="org.rust.FUNCTION_CALL" baseAttributes="DEFAULT_FUNCTION_CALL"/>
-    <option name="org.rust.METHOD_CALL" baseAttributes="DEFAULT_FUNCTION_CALL"/>
+    <option name="org.rust.CFG_DISABLED_CODE">
+      <value>
+        <option name="FOREGROUND" value="{{subtext0}}" />
+      </value>
+    </option>
     <option name="org.rust.DOC_LINK">
       <value>
         <option name="FOREGROUND" value="{{sky}}"/>
       </value>
     </option>
+    <option name="org.rust.FUNCTION_CALL" baseAttributes="DEFAULT_FUNCTION_CALL"/>
     <option name="org.rust.LIFETIME">
       <value>
         <option name="FOREGROUND" value="{{blue}}"/>
@@ -2912,11 +2916,8 @@
         <option name="FOREGROUND" value="{{sky}}"/>
       </value>
     </option>
-    <option name="org.rust.MUT_PARAMETER">
-      <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
-      </value>
-    </option>
+    <option name="org.rust.METHOD_CALL" baseAttributes="DEFAULT_FUNCTION_CALL"/>
+    <option name="org.rust.MUT_PARAMETER" baseAttributes="DEFAULT_PARAMETER" />
     <option name="org.rust.Q_OPERATOR">
       <value/>
     </option>
