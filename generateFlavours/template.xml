@@ -1233,13 +1233,20 @@
       </value>
     </option>
     <option name="HAML_XHTML" baseAttributes=""/>
-    <option name="HTML_ATTRIBUTE_NAME" baseAttributes="DEFAULT_ATTRIBUTE" />
+    <option name="HTML_ATTRIBUTE_NAME">
+      <value>
+        <option name="FOREGROUND" value="{{yellow}}" />
+      </value>
+    </option>
     <option name="HTML_ATTRIBUTE_VALUE" baseAttributes="DEFAULT_STRING" />
-    <option name="HTML_ATTRIBUTE_VALUE" baseAttributes="DEFAULT_STRING"/>
     <option name="HTML_CUSTOM_TAG_NAME" baseAttributes="HTML_TAG_NAME" />
-    <option name="HTML_ENTITY_REFERENCE" baseAttributes="DEFAULT_ENTITY"/>
-    <option name="HTML_TAG" baseAttributes="DEFAULT_TAG" />>
-    <option name="HTML_TAG_NAME" baseAttributes="DEFAULT_KEYWORD"/>
+    <option name="HTML_ENTITY_REFERENCE" baseAttributes="DEFAULT_ENTITY" />
+    <option name="HTML_TAG" baseAttributes="DEFAULT_TAG" />
+    <option name="HTML_TAG_NAME">
+      <value>
+        <option name="FOREGROUND" value="{{blue}}" />
+      </value>
+    </option>
     <option name="HTTP_REQUEST_INPUT_FILE">
       <value>
         <option name="FOREGROUND" value="{{yellow}}"/>
@@ -2809,12 +2816,14 @@
       </value>
     </option>
     <option name="XML_ATTRIBUTE_NAME" baseAttributes="DEFAULT_ATTRIBUTE"/>
+    <option name="XML_CUSTOM_TAG_NAME" baseAttributes="XML_TAG_NAME" />
     <option name="XML_ENTITY_REFERENCE" baseAttributes="DEFAULT_ENTITY"/>
     <option name="XML_NS_PREFIX">
       <value>
         <option name="FOREGROUND" value="{{peach}}"/>
       </value>
     </option>
+    <option name="XML_TAG" baseAttributes="DEFAULT_TAG" />
     <option name="XML_TAG_DATA" baseAttributes="TEXT"/>
     <option name="XML_TAG_NAME">
       <value>

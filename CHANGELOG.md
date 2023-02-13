@@ -9,7 +9,7 @@
 
 ### Changed
 
-- Update HTML <custom-tag> to be highlighted as KEYWORD
+- Align HTML with TOML/JSON/XML/YAML
 
 ### Deprecated
 
