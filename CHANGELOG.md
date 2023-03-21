@@ -3,6 +3,7 @@
 ## [Unreleased]
 
 ### Added
+- Add styles to checkboxes and radio buttons
 
 ### Changed
 
