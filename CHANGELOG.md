@@ -12,6 +12,7 @@
 ### Removed
 
 ### Fixed
+- (#55): Add project selection color to welcome screen
 
 ### Security
 
