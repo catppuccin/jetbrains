@@ -360,6 +360,7 @@ Object.entries(variants).forEach(([key, value]) => {
       Table: {
         gridColor: "hoverBackground",
         hoverBackground: "selectionBackground",
+        lightSelectionBackground: "secondaryBackground",
       },
       TableHeader: {
         bottomSeparatorColor: "primaryBackground",
