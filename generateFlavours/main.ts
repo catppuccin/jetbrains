@@ -249,6 +249,10 @@ Object.entries(variants).forEach(([key, value]) => {
         visitedForeground: "secondaryAccentColor",
         pressedForeground: "secondaryAccentColor",
       },
+      MemoryIndicator: {
+        allocatedBackground: "surface0",
+        usedBackground: "surface1",
+      },
       NotificationsToolwindow: {
         newNotification: {
           background: "primaryBackground",
