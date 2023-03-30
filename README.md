@@ -79,7 +79,7 @@ for developing on this port.
 
 #### Requirements
 
-- Deno v1.27+
+- Deno v1.27+ with [Deno plugin](https://plugins.jetbrains.com/plugin/14382-deno)
 
 #### Debugging Tools
 
