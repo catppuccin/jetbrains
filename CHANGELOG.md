@@ -4,6 +4,7 @@
 
 ### Added
 - Add styles to checkboxes and radio buttons
+- Add selection background for tool window buttons
 
 ### Changed
 
