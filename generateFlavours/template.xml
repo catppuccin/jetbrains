@@ -303,7 +303,7 @@
     <!-- ANSI Color 15 -->
     <option name="CONSOLE_NORMAL_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="{{isLatte surface1 subtext0}}"/>
+        <option name="FOREGROUND" value="{{text}}"/>
       </value>
     </option>
     <!-- other terminal colors -->
