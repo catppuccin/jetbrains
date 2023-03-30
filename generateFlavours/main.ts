@@ -386,6 +386,7 @@ Object.entries(variants).forEach(([key, value]) => {
         background: "mantle",
         Button: {
           hoverBackground: "hoverBackground",
+          selectedBackground: "hoverBackground",
         },
         Header: {
           background: "primaryBackground",
