@@ -714,12 +714,12 @@
     </option>
     <option name="DEFAULT_BRACES">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
+        <option name="FOREGROUND" value="{{overlay2}}"/>
       </value>
     </option>
     <option name="DEFAULT_BRACKETS">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
+        <option name="FOREGROUND" value="{{overlay2}}"/>
       </value>
     </option>
     <option name="DEFAULT_CLASS_NAME">
@@ -737,7 +737,7 @@
     </option>
     <option name="DEFAULT_COMMA">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
+        <option name="FOREGROUND" value="{{overlay2}}"/>
       </value>
     </option>
     <option name="DEFAULT_CONSTANT">
@@ -776,7 +776,7 @@
     </option>
     <option name="DEFAULT_DOT">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
+        <option name="FOREGROUND" value="{{overlay2}}"/>
       </value>
     </option>
     <option name="DEFAULT_ENTITY">
@@ -884,7 +884,7 @@
     </option>
     <option name="DEFAULT_PARENTHS">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
+        <option name="FOREGROUND" value="{{overlay2}}"/>
       </value>
     </option>
     <option name="DEFAULT_PREDEFINED_SYMBOL">
@@ -899,7 +899,7 @@
     <option name="DEFAULT_REASSIGNED_PARAMETER" baseAttributes="DEFAULT_PARAMETER"/>
     <option name="DEFAULT_SEMICOLON">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
+        <option name="FOREGROUND" value="{{overlay2}}"/>
       </value>
     </option>
     <option name="DEFAULT_STATIC_FIELD">

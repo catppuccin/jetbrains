@@ -9,6 +9,7 @@
 - Add styles to main toolbar
 
 ### Changed
+- Braces, Brackets, Commas, Dots, Parenthesis & Semicolon now default to `overlay2` instead of `text`
 
 ### Deprecated
 
