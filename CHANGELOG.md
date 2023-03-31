@@ -9,6 +9,13 @@
 - Add styles to main toolbar
 
 ### Changed
+- Braces, Brackets, Commas, Dots, Parenthesis & Semicolon now default to `overlay2` instead of `text`
+- Hyperlinks are now `blue` instead of `rosewater`. Followed hyperlinks are now `lavender` instead of `mauve`
+- Comments are now `overlay2` instead of `surface2`. Additionally, the selection highlight now has more contrast.
+- (Markdown): Add rainbow highlighted headings
+- (Markdown): Inline HTML blocks now default to `text` instead of `red`
+- (Markdown): List items now default to `text` instead of `teal`
+- (VCS): Match diff colours with Catppuccin VSCode
 
 ### Deprecated
 
@@ -16,6 +23,8 @@
 
 ### Fixed
 - (#55): Add project selection color to welcome screen
+- (#57): Fix terminal text colour on Latte
+- (#60): Fix R Markdown Chunks
 - Add styles to scrollbar on macOS
 
 ### Security
