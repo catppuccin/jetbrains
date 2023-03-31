@@ -474,8 +474,8 @@
     </option>
     <option name="CTRL_CLICKABLE">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
-        <option name="EFFECT_COLOR" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="EFFECT_COLOR" value="{{blue}}"/>
         <option name="EFFECT_TYPE" value="1"/>
       </value>
     </option>
@@ -1059,11 +1059,11 @@
     </option>
     <option name="FOLLOWED_HYPERLINK_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
+        <option name="FOREGROUND" value="{{lavender}}"/>
         {{#if italics}}
         <option name="FONT_TYPE" value="2"/>
         {{/if}}
-        <option name="EFFECT_COLOR" value="{{mauve}}"/>
+        <option name="EFFECT_COLOR" value="{{lavender}}"/>
         <option name="EFFECT_TYPE" value="1"/>
       </value>
     </option>
@@ -1271,11 +1271,11 @@
     </option>
     <option name="HYPERLINK_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="{{rosewater}}"/>
+        <option name="FOREGROUND" value="{{blue}}"/>
         {{#if italics}}
         <option name="FONT_TYPE" value="2"/>
         {{/if}}
-        <option name="EFFECT_COLOR" value="{{rosewater}}"/>
+        <option name="EFFECT_COLOR" value="{{blue}}"/>
         <option name="EFFECT_TYPE" value="1"/>
       </value>
     </option>
@@ -1292,8 +1292,8 @@
     </option>
     <option name="INACTIVE_HYPERLINK_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
-        <option name="EFFECT_COLOR" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="EFFECT_COLOR" value="{{blue}}"/>
         <option name="EFFECT_TYPE" value="1"/>
       </value>
     </option>
@@ -1755,7 +1755,7 @@
     </option>
     <option name="MARKDOWN_LINK_DESTINATION">
       <value>
-        <option name="FOREGROUND" value="{{rosewater}}"/>
+        <option name="FOREGROUND" value="{{blue}}"/>
         {{#if italics}}
         <option name="FONT_TYPE" value="2"/>
         {{/if}}
@@ -2903,7 +2903,7 @@
     </option>
     <option name="org.rust.DOC_LINK">
       <value>
-        <option name="FOREGROUND" value="{{sky}}"/>
+        <option name="FOREGROUND" value="{{blue}}"/>
       </value>
     </option>
     <option name="org.rust.FUNCTION_CALL" baseAttributes="DEFAULT_FUNCTION_CALL"/>

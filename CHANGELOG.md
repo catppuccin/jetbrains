@@ -10,6 +10,7 @@
 
 ### Changed
 - Braces, Brackets, Commas, Dots, Parenthesis & Semicolon now default to `overlay2` instead of `text`
+- Hyperlinks are now `blue` instead of `rosewater`. Followed hyperlinks are now `lavender` instead of `mauve`
 
 ### Deprecated
 
