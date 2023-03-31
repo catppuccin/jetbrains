@@ -2328,7 +2328,8 @@
     </option>
     <option name="RMARKDOWN_CHUNK">
       <value>
-        <option name="BACKGROUND" value="{{text}}"/>
+        <option name="FOREGROUND" value="{{text}}" />
+        <option name="BACKGROUND" value="{{mantle}}" />
       </value>
     </option>
     <option name="ROUND_BRACKETS_RAINBOW_COLOR0">
@@ -2381,6 +2382,12 @@
         <option name="EFFECT_COLOR" value="{{peach}}"/>
         <option name="ERROR_STRIPE_COLOR" value="{{red}}"/>
         <option name="EFFECT_TYPE" value="5"/>
+      </value>
+    </option>
+    <option name="R_FUNCTION_CALL" baseAttributes="DEFAULT_FUNCTION_CALL" />
+    <option name="R_NAMED_ARGUMENT">
+      <value>
+        <option name="FOREGROUND" value="{{maroon}}" />
       </value>
     </option>
     <option name="ReShaper.ENUM_IDENTIFIER">
