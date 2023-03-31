@@ -7,6 +7,7 @@
 - Add selection background for tool window buttons
 - Add styles to memory indicator
 - Add styles to main toolbar
+- Theme `Indent Guides` via Rainbow Brackets plugin
 
 ### Changed
 - Braces, Brackets, Commas, Dots, Parenthesis & Semicolon now default to `overlay2` instead of `text`
