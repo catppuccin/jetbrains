@@ -1,6 +1,6 @@
 #!/usr/bin/env -S deno run --allow-write --allow-read --allow-env
-import { colormath, Handlebars, path, variants } from "./deps.ts";
-import type { JBTheme } from "./types.ts";
+import {colormath, Handlebars, path, variants} from "./deps.ts";
+import type {JBTheme} from "./types.ts";
 
 const handlebarsIsLatte = (
   lightCol: string,
@@ -495,8 +495,8 @@ Object.entries(variants).forEach(([key, value]) => {
         "Checkbox.Background.Disabled": colors.surface0,
         "Checkbox.Foreground.Selected": colors.mauve,
         "Checkbox.Foreground.Disabled": colors.overlay0,
-        "Checkbox.Border.Default": colors.surface1,
-        "Checkbox.Border.Selected": colors.surface1,
+        "Checkbox.Border.Default": colors.surface0,
+        "Checkbox.Border.Selected": colors.surface0,
         "Checkbox.Border.Disabled": colors.surface0,
       },
     },
