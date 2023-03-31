@@ -249,6 +249,18 @@ Object.entries(variants).forEach(([key, value]) => {
         visitedForeground: "secondaryAccentColor",
         pressedForeground: "secondaryAccentColor",
       },
+      MainToolbar: {
+        background: "primaryBackground",
+        inactiveBackground: "primaryBackground",
+        Dropdown: {
+          hoverBackground: "hoverBackground",
+          pressedBackground: "hoverBackground",
+        },
+        Icon: {
+          hoverBackground: "hoverBackground",
+          pressedBackground: "hoverBackground",
+        },
+      },
       MemoryIndicator: {
         allocatedBackground: "surface0",
         usedBackground: "surface1",

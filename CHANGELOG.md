@@ -6,6 +6,7 @@
 - Add styles to checkboxes and radio buttons
 - Add selection background for tool window buttons
 - Add styles to memory indicator
+- Add styles to main toolbar
 
 ### Changed
 
