@@ -11,6 +11,9 @@
 ### Changed
 - Braces, Brackets, Commas, Dots, Parenthesis & Semicolon now default to `overlay2` instead of `text`
 - Hyperlinks are now `blue` instead of `rosewater`. Followed hyperlinks are now `lavender` instead of `mauve`
+- (Markdown): Add rainbow highlighted headings
+- (Markdown): Inline HTML blocks now default to `text` instead of `red`
+- (Markdown): List items now default to `text` instead of `teal`
 
 ### Deprecated
 

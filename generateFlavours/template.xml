@@ -1671,7 +1671,7 @@
     </option>
     <option name="MARKDOWN_BOLD_MARKER">
       <value>
-        <option name="FOREGROUND" value="{{subtext0}}"/>
+        <option name="FOREGROUND" value="{{overlay2}}"/>
         <option name="FONT_TYPE" value="1"/>
       </value>
     </option>
@@ -1698,32 +1698,32 @@
     </option>
     <option name="MARKDOWN_HEADER_LEVEL_1">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{red}}"/>
       </value>
     </option>
     <option name="MARKDOWN_HEADER_LEVEL_2">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{peach}}"/>
       </value>
     </option>
     <option name="MARKDOWN_HEADER_LEVEL_3">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{yellow}}"/>
       </value>
     </option>
     <option name="MARKDOWN_HEADER_LEVEL_4">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{green}}"/>
       </value>
     </option>
     <option name="MARKDOWN_HEADER_LEVEL_5">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{sapphire}}"/>
       </value>
     </option>
     <option name="MARKDOWN_HEADER_LEVEL_6">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{lavender}}"/>
       </value>
     </option>
     <option name="MARKDOWN_HRULE">
@@ -1736,7 +1736,7 @@
     </option>
     <option name="MARKDOWN_HTML_BLOCK">
       <value>
-        <option name="FOREGROUND" value="{{red}}"/>
+        <option name="FOREGROUND" value="{{text}}"/>
       </value>
     </option>
     <option name="MARKDOWN_ITALIC">
@@ -1749,7 +1749,7 @@
     </option>
     <option name="MARKDOWN_ITALIC_MARKER">
       <value>
-        <option name="FOREGROUND" value="{{subtext0}}"/>
+        <option name="FOREGROUND" value="{{overlay2}}"/>
         <option name="FONT_TYPE" value="1"/>
       </value>
     </option>
@@ -1786,9 +1786,19 @@
         {{/if}}
       </value>
     </option>
-    <option name="MARKDOWN_ORDERED_LIST">
+    <option name="MARKDOWN_LIST_ITEM">
+      <value>
+        <option name="FOREGROUND" value="{{text}}"/>
+      </value>
+    </option>
+    <option name="MARKDOWN_LIST_MARKER">
       <value>
         <option name="FOREGROUND" value="{{teal}}"/>
+      </value>
+    </option>
+    <option name="MARKDOWN_ORDERED_LIST">
+      <value>
+        <option name="FOREGROUND" value="{{text}}"/>
       </value>
     </option>
     <option name="MARKDOWN_TABLE_SEPARATOR">
@@ -1798,7 +1808,7 @@
     </option>
     <option name="MARKDOWN_UNORDERED_LIST">
       <value>
-        <option name="FOREGROUND" value="{{teal}}"/>
+        <option name="FOREGROUND" value="{{text}}"/>
       </value>
     </option>
     <option name="MARKED_FOR_REMOVAL_ATTRIBUTES">
@@ -1966,7 +1976,7 @@
     </option>
     <option name="PHP_INSTANCE_FIELD">
       <value>
-        <option name="FOREGROUND" value="flamingo"/>
+        <option name="FOREGROUND" value="{{flamingo}}"/>
       </value>
     </option>
     <option name="PHP_INTERFACE">
