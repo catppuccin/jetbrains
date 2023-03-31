@@ -25,6 +25,7 @@
 - (#55): Add project selection color to welcome screen
 - (#57): Fix terminal text colour on Latte
 - (#60): Fix R Markdown Chunks
+- Add styles to scrollbar on macOS
 
 ### Security
 

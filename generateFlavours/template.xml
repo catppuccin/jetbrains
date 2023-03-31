@@ -62,6 +62,8 @@
     <option name="SEPARATOR_BELOW_COLOR" value=""/>
     <option name="ScrollBar.hoverThumbColor" value="{{opacity overlay0 0.4}}"/>
     <option name="ScrollBar.thumbColor" value="{{opacity surface1 0.45}}"/>
+    <option name="ScrollBar.Mac.hoverThumbColor" value="{{opacity overlay0 0.4}}"/>
+    <option name="ScrollBar.Mac.thumbColor" value="{{opacity surface1 0.45}}"/>
     <option name="TAB_UNDERLINE" value="{{pink}}"/>
     <option name="TAB_UNDERLINE_INACTIVE" value="{{text}}"/>
     <option name="TEARLINE_COLOR" value="{{surface0}}"/>
