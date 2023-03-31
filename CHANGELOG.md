@@ -16,6 +16,7 @@
 
 ### Fixed
 - (#55): Add project selection color to welcome screen
+- (#57): Fix terminal text colour on Latte
 
 ### Security
 
