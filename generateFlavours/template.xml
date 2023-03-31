@@ -57,7 +57,7 @@
     <option name="RIGHT_MARGIN_COLOR" value="{{surface0}}"/>
     <option name="SELECTED_INDENT_GUIDE" value="{{surface1}}"/>
     <option name="SELECTED_TEARLINE_COLOR" value="{{surface1}}"/>
-    <option name="SELECTION_BACKGROUND" value="{{isLatte (opacity surface1 0.35) (opacity surface1 0.55)}}"/>
+    <option name="SELECTION_BACKGROUND" value="{{isLatte (opacity surface2 0.4) (opacity surface2 0.65)}}"/>
     <option name="SELECTION_FOREGROUND" value=""/>
     <option name="SEPARATOR_BELOW_COLOR" value=""/>
     <option name="ScrollBar.hoverThumbColor" value="{{opacity overlay0 0.4}}"/>
@@ -706,7 +706,7 @@
     </option>
     <option name="DEFAULT_BLOCK_COMMENT">
       <value>
-        <option name="FOREGROUND" value="{{surface2}}"/>
+        <option name="FOREGROUND" value="{{overlay2}}"/>
         {{#if italics}}
         <option name="FONT_TYPE" value="2"/>
         {{/if}}
@@ -747,7 +747,7 @@
     </option>
     <option name="DEFAULT_DOC_COMMENT">
       <value>
-        <option name="FOREGROUND" value="{{surface2}}"/>
+        <option name="FOREGROUND" value="{{overlay2}}"/>
         {{#if italics}}
         <option name="FONT_TYPE" value="2"/>
         {{/if}}
@@ -845,7 +845,7 @@
     </option>
     <option name="DEFAULT_LINE_COMMENT">
       <value>
-        <option name="FOREGROUND" value="{{surface2}}"/>
+        <option name="FOREGROUND" value="{{overlay2}}"/>
         {{#if italics}}
         <option name="FONT_TYPE" value="2"/>
         {{/if}}
