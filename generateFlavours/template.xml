@@ -942,25 +942,25 @@
     </option>
     <option name="DIFF_CONFLICT">
       <value>
-        <option name="BACKGROUND" value="{{opacity maroon 0.25}}"/>
-        <option name="ERROR_STRIPE_COLOR" value="{{opacity maroon 0.25}}"/>
+        <option name="BACKGROUND" value="{{opacity red 0.25}}"/>
+        <option name="ERROR_STRIPE_COLOR" value="{{opacity red 0.2}}"/>
       </value>
     </option>
     <option name="DIFF_DELETED">
       <value>
-        <option name="BACKGROUND" value="{{surface1}}"/>
-        <option name="ERROR_STRIPE_COLOR" value="{{surface1}}"/>
+        <option name="BACKGROUND" value="{{opacity red 0.25}}"/>
+        <option name="ERROR_STRIPE_COLOR" value="{{opacity red 0.2}}"/>
       </value>
     </option>
     <option name="DIFF_INSERTED">
       <value>
-        <option name="BACKGROUND" value="{{opacity green 0.15}}"/>
-        <option name="ERROR_STRIPE_COLOR" value="{{opacity green 0.15}}"/>
+        <option name="BACKGROUND" value="{{opacity green 0.25}}"/>
+        <option name="ERROR_STRIPE_COLOR" value="{{opacity green 0.2}}"/>
       </value>
     </option>
     <option name="DIFF_MODIFIED">
       <value>
-        <option name="BACKGROUND" value="{{opacity blue 0.2}}"/>
+        <option name="BACKGROUND" value="{{opacity blue 0.25}}"/>
         <option name="ERROR_STRIPE_COLOR" value="{{opacity blue 0.2}}"/>
       </value>
     </option>

@@ -14,6 +14,7 @@
 - (Markdown): Add rainbow highlighted headings
 - (Markdown): Inline HTML blocks now default to `text` instead of `red`
 - (Markdown): List items now default to `text` instead of `teal`
+- (VCS): Match diff colours with Catppuccin VSCode
 
 ### Deprecated
 
