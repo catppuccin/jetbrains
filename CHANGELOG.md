@@ -16,6 +16,7 @@
 
 ### Fixed
 - (#55): Add project selection color to welcome screen
+- Add styles to scrollbar on macOS
 
 ### Security
 
