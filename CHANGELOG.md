@@ -3,40 +3,33 @@
 ## [Unreleased]
 
 ### Added
+- Add styles to checkboxes and radio buttons
+- Add selection background for tool window buttons
+- Add styles to memory indicator
+- Add styles to main toolbar
+- Add styles to scrollbar on macOS
+- Theme `Indent Guides` via Rainbow Brackets plugin
 
 ### Changed
+- Braces, Brackets, Commas, Dots, Parenthesis & Semicolon now default to `overlay2` instead of `text`
+- Hyperlinks are now `blue` instead of `rosewater`. Followed hyperlinks are now `lavender` instead of `mauve`
+- Comments are now `overlay0` instead of `surface2`. This matches other Catppuccin IDEs and means that selection
+  highlights have more contrast
+- (Markdown): Add rainbow highlighted headings
+- (Markdown): Inline HTML blocks now default to `text` instead of `red`
+- (Markdown): List items now default to `text` instead of `teal`
+- (VCS): Match diff colours with Catppuccin VSCode
 
 ### Deprecated
 
 ### Removed
 
 ### Fixed
-
-### Security
-
-## 2.1.0 - 2023-04-01
-
-### Added
-- Add styles to checkboxes and radio buttons
-- Add selection background for tool window buttons
-- Add styles to memory indicator
-- Add styles to main toolbar
-- Theme `Indent Guides` via Rainbow Brackets plugin
-
-### Changed
-- Braces, Brackets, Commas, Dots, Parenthesis & Semicolon now default to `overlay2` instead of `text`
-- Hyperlinks are now `blue` instead of `rosewater`. Followed hyperlinks are now `lavender` instead of `mauve`
-- Comments are now `overlay2` instead of `surface2`. Additionally, the selection highlight now has more contrast.
-- (Markdown): Add rainbow highlighted headings
-- (Markdown): Inline HTML blocks now default to `text` instead of `red`
-- (Markdown): List items now default to `text` instead of `teal`
-- (VCS): Match diff colours with Catppuccin VSCode
-
-### Fixed
 - (#55): Add project selection color to welcome screen
 - (#57): Fix terminal text colour on Latte
 - (#60): Fix R Markdown Chunks
-- Add styles to scrollbar on macOS
+
+### Security
 
 ## 2.0.9 - 2023-02-13
 
