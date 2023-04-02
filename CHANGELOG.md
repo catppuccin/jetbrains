@@ -3,6 +3,20 @@
 ## [Unreleased]
 
 ### Added
+
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## 2.1.0 - 2023-04-02
+
+### Added
 - Add styles to checkboxes and radio buttons
 - Add selection background for tool window buttons
 - Add styles to memory indicator
@@ -20,16 +34,10 @@
 - (Markdown): List items now default to `text` instead of `teal`
 - (VCS): Match diff colours with Catppuccin VSCode
 
-### Deprecated
-
-### Removed
-
 ### Fixed
 - (#55): Add project selection color to welcome screen
 - (#57): Fix terminal text colour on Latte
 - (#60): Fix R Markdown Chunks
-
-### Security
 
 ## 2.0.9 - 2023-02-13
 
