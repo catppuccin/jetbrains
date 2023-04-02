@@ -57,7 +57,7 @@
     <option name="RIGHT_MARGIN_COLOR" value="{{surface0}}"/>
     <option name="SELECTED_INDENT_GUIDE" value="{{surface1}}"/>
     <option name="SELECTED_TEARLINE_COLOR" value="{{surface1}}"/>
-    <option name="SELECTION_BACKGROUND" value="{{isLatte (opacity surface2 0.4) (opacity surface2 0.65)}}"/>
+    <option name="SELECTION_BACKGROUND" value="{{isLatte (opacity surface2 0.4) (opacity surface2 0.6)}}"/>
     <option name="SELECTION_FOREGROUND" value=""/>
     <option name="SEPARATOR_BELOW_COLOR" value=""/>
     <option name="ScrollBar.hoverThumbColor" value="{{opacity overlay0 0.4}}"/>
@@ -178,7 +178,7 @@
       </value>
     </option>
     <option name="BREAKPOINT_ATTRIBUTES">
-      <value />
+      <value/>
     </option>
     <option name="BUILDOUT.KEY">
       <value>
@@ -190,14 +190,7 @@
         <option name="FOREGROUND" value="{{text}}"/>
       </value>
     </option>
-    <option name="BUILDOUT.LINE_COMMENT">
-      <value>
-        <option name="FOREGROUND" value="{{surface2}}"/>
-        {{#if italics}}
-        <option name="FONT_TYPE" value="2"/>
-        {{/if}}
-      </value>
-    </option>
+    <option name="BUILDOUT.LINE_COMMENT" baseAttributes="DEFAULT_LINE_COMMENT"/>
     <option name="BUILDOUT.SECTION_NAME">
       <value>
         <option name="FOREGROUND" value="{{peach}}"/>
@@ -297,11 +290,11 @@
     <!-- ANSI Color 11 -->
     <option name="CONSOLE_YELLOW_BRIGHT_OUTPUT" baseAttributes="CONSOLE_YELLOW_OUTPUT"/>
     <!-- ANSI Color 12 -->
-    <option name="CONSOLE_BLUE_BRIGHT_OUTPUT" baseAttributes="CONSOLE_BLUE_OUTPUT" />
+    <option name="CONSOLE_BLUE_BRIGHT_OUTPUT" baseAttributes="CONSOLE_BLUE_OUTPUT"/>
     <!-- ANSI Color 13 -->
     <option name="CONSOLE_MAGENTA_BRIGHT_OUTPUT" baseAttributes="CONSOLE_MAGENTA_OUTPUT"/>
     <!-- ANSI Color 14 -->
-    <option name="CONSOLE_CYAN_BRIGHT_OUTPUT" baseAttributes="CONSOLE_CYAN_OUTPUT" />
+    <option name="CONSOLE_CYAN_BRIGHT_OUTPUT" baseAttributes="CONSOLE_CYAN_OUTPUT"/>
     <!-- ANSI Color 15 -->
     <option name="CONSOLE_NORMAL_OUTPUT">
       <value>
@@ -524,14 +517,7 @@
         <option name="FOREGROUND" value="{{text}}"/>
       </value>
     </option>
-    <option name="Clojure Line comment">
-      <value>
-        <option name="FOREGROUND" value="{{surface2}}"/>
-        {{#if italics}}
-        <option name="FONT_TYPE" value="2"/>
-        {{/if}}
-      </value>
-    </option>
+    <option name="Clojure Line comment" baseAttributes="DEFAULT_LINE_COMMENT"/>
     <option name="Clojure Literal">
       <value>
         <option name="FOREGROUND" value="{{text}}"/>
@@ -552,62 +538,62 @@
     </option>
     <option name="CodeWithMe.USER_1_MARKER">
       <value>
-        <option name="BACKGROUND" value="{{red}}" />
+        <option name="BACKGROUND" value="{{red}}"/>
       </value>
     </option>
     <option name="CodeWithMe.USER_1_SELECTION">
       <value>
-        <option name="BACKGROUND" value="{{opacity red 0.2}}" />
+        <option name="BACKGROUND" value="{{opacity red 0.2}}"/>
       </value>
     </option>
     <option name="CodeWithMe.USER_2_MARKER">
       <value>
-        <option name="BACKGROUND" value="{{peach}}" />
+        <option name="BACKGROUND" value="{{peach}}"/>
       </value>
     </option>
     <option name="CodeWithMe.USER_2_SELECTION">
       <value>
-        <option name="BACKGROUND" value="{{opacity peach 0.4}}" />
+        <option name="BACKGROUND" value="{{opacity peach 0.4}}"/>
       </value>
     </option>
     <option name="CodeWithMe.USER_3_MARKER">
       <value>
-        <option name="BACKGROUND" value="{{yellow}}" />
+        <option name="BACKGROUND" value="{{yellow}}"/>
       </value>
     </option>
     <option name="CodeWithMe.USER_3_SELECTION">
       <value>
-        <option name="BACKGROUND" value="{{opacity yellow 0.4}}" />
+        <option name="BACKGROUND" value="{{opacity yellow 0.4}}"/>
       </value>
     </option>
     <option name="CodeWithMe.USER_4_MARKER">
       <value>
-        <option name="BACKGROUND" value="{{green}}" />
+        <option name="BACKGROUND" value="{{green}}"/>
       </value>
     </option>
     <option name="CodeWithMe.USER_4_SELECTION">
       <value>
-        <option name="BACKGROUND" value="{{opacity green 0.4}}" />
+        <option name="BACKGROUND" value="{{opacity green 0.4}}"/>
       </value>
     </option>
     <option name="CodeWithMe.USER_5_MARKER">
       <value>
-        <option name="BACKGROUND" value="{{sapphire}}" />
+        <option name="BACKGROUND" value="{{sapphire}}"/>
       </value>
     </option>
     <option name="CodeWithMe.USER_5_SELECTION">
       <value>
-        <option name="BACKGROUND" value="{{opacity sapphire 0.4}}" />
+        <option name="BACKGROUND" value="{{opacity sapphire 0.4}}"/>
       </value>
     </option>
     <option name="CodeWithMe.USER_6_MARKER">
       <value>
-        <option name="BACKGROUND" value="{{mauve}}" />
+        <option name="BACKGROUND" value="{{mauve}}"/>
       </value>
     </option>
     <option name="CodeWithMe.USER_6_SELECTION">
       <value>
-        <option name="BACKGROUND" value="{{opacity mauve 0.4}}" />
+        <option name="BACKGROUND" value="{{opacity mauve 0.4}}"/>
       </value>
     </option>
     <option name="ComposableCallTextAttributes" baseAttributes="DEFAULT_FUNCTION_CALL"/>
@@ -708,7 +694,7 @@
     </option>
     <option name="DEFAULT_BLOCK_COMMENT">
       <value>
-        <option name="FOREGROUND" value="{{overlay2}}"/>
+        <option name="FOREGROUND" value="{{overlay0}}"/>
         {{#if italics}}
         <option name="FONT_TYPE" value="2"/>
         {{/if}}
@@ -749,7 +735,7 @@
     </option>
     <option name="DEFAULT_DOC_COMMENT">
       <value>
-        <option name="FOREGROUND" value="{{overlay2}}"/>
+        <option name="FOREGROUND" value="{{overlay0}}"/>
         {{#if italics}}
         <option name="FONT_TYPE" value="2"/>
         {{/if}}
@@ -847,7 +833,7 @@
     </option>
     <option name="DEFAULT_LINE_COMMENT">
       <value>
-        <option name="FOREGROUND" value="{{overlay2}}"/>
+        <option name="FOREGROUND" value="{{overlay0}}"/>
         {{#if italics}}
         <option name="FONT_TYPE" value="2"/>
         {{/if}}
@@ -1022,10 +1008,10 @@
         <option name="FOREGROUND" value="{{green}}"/>
       </value>
     </option>
-    <option name="ERL_ATOM" baseAttributes="DEFAULT_IDENTIFIER" />
-    <option name="ERL_MACRO" baseAttributes="DEFAULT_STATIC_FIELD" />
-    <option name="ERL_RECORDS" baseAttributes="DEFAULT_INSTANCE_FIELD" />
-    <option name="ERL_VARIABLES" baseAttributes="DEFAULT_GLOBAL_VARIABLE" />
+    <option name="ERL_ATOM" baseAttributes="DEFAULT_IDENTIFIER"/>
+    <option name="ERL_MACRO" baseAttributes="DEFAULT_STATIC_FIELD"/>
+    <option name="ERL_RECORDS" baseAttributes="DEFAULT_INSTANCE_FIELD"/>
+    <option name="ERL_VARIABLES" baseAttributes="DEFAULT_GLOBAL_VARIABLE"/>
     <option name="ERRORS_ATTRIBUTES">
       <value>
         <option name="EFFECT_COLOR" value="{{red}}"/>
@@ -1082,14 +1068,7 @@
         <option name="EFFECT_TYPE" value="2"/>
       </value>
     </option>
-    <option name="GHERKIN_COMMENT">
-      <value>
-        <option name="FOREGROUND" value="{{surface2}}"/>
-        {{#if italics}}
-        <option name="FONT_TYPE" value="2"/>
-        {{/if}}
-      </value>
-    </option>
+    <option name="GHERKIN_COMMENT" baseAttributes="DEFAULT_LINE_COMMENT"/>
     <option name="GHERKIN_KEYWORD">
       <value>
         <option name="FOREGROUND" value="{{red}}"/>
@@ -1143,14 +1122,7 @@
     </option>
     <option name="GO_EXPORTED_FUNCTION_CALL" baseAttributes="DEFAULT_FUNCTION_CALL"/>
     <option name="GO_LOCAL_FUNCTION_CALL" baseAttributes="DEFAULT_FUNCTION_CALL"/>
-    <option name="GO_COMMENT_REFERENCE">
-      <value>
-        <option name="FOREGROUND" value="{{overlay2}}"/>
-        {{#if italics}}
-        <option name="FONT_TYPE" value="2"/>
-        {{/if}}
-      </value>
-    </option>
+    <option name="GO_COMMENT_REFERENCE" baseAttributes="DEFAULT_LINE_COMMENT"/>
     <option name="GO_LOCAL_CONSTANT">
       <value>
         <option name="FOREGROUND" value="{{text}}"/>
@@ -1183,14 +1155,7 @@
         <option name="FOREGROUND" value="{{peach}}"/>
       </value>
     </option>
-    <option name="HAML_COMMENT">
-      <value>
-        <option name="FOREGROUND" value="{{surface2}}"/>
-        {{#if italics}}
-        <option name="FONT_TYPE" value="2"/>
-        {{/if}}
-      </value>
-    </option>
+    <option name="HAML_COMMENT" baseAttributes="DEFAULT_LINE_COMMENT"/>
     <option name="HAML_FILTER" baseAttributes=""/>
     <option name="HAML_FILTER_CONTENT" baseAttributes=""/>
     <option name="HAML_ID">
@@ -1234,16 +1199,16 @@
     <option name="HAML_XHTML" baseAttributes=""/>
     <option name="HTML_ATTRIBUTE_NAME">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}" />
+        <option name="FOREGROUND" value="{{yellow}}"/>
       </value>
     </option>
-    <option name="HTML_ATTRIBUTE_VALUE" baseAttributes="DEFAULT_STRING" />
-    <option name="HTML_CUSTOM_TAG_NAME" baseAttributes="HTML_TAG_NAME" />
-    <option name="HTML_ENTITY_REFERENCE" baseAttributes="DEFAULT_ENTITY" />
-    <option name="HTML_TAG" baseAttributes="DEFAULT_TAG" />
+    <option name="HTML_ATTRIBUTE_VALUE" baseAttributes="DEFAULT_STRING"/>
+    <option name="HTML_CUSTOM_TAG_NAME" baseAttributes="HTML_TAG_NAME"/>
+    <option name="HTML_ENTITY_REFERENCE" baseAttributes="DEFAULT_ENTITY"/>
+    <option name="HTML_TAG" baseAttributes="DEFAULT_TAG"/>
     <option name="HTML_TAG_NAME">
       <value>
-        <option name="FOREGROUND" value="{{blue}}" />
+        <option name="FOREGROUND" value="{{blue}}"/>
       </value>
     </option>
     <option name="HTTP_REQUEST_INPUT_FILE">
@@ -1301,27 +1266,27 @@
     </option>
     <option name="INDENT_GUIDES_RAINBOW_COLOR0">
       <value>
-        <option name="FOREGROUND" value="{{red}}" />
+        <option name="FOREGROUND" value="{{red}}"/>
       </value>
     </option>
     <option name="INDENT_GUIDES_RAINBOW_COLOR1">
       <value>
-        <option name="FOREGROUND" value="{{peach}}" />
+        <option name="FOREGROUND" value="{{peach}}"/>
       </value>
     </option>
     <option name="INDENT_GUIDES_RAINBOW_COLOR2">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}" />
+        <option name="FOREGROUND" value="{{yellow}}"/>
       </value>
     </option>
     <option name="INDENT_GUIDES_RAINBOW_COLOR3">
       <value>
-        <option name="FOREGROUND" value="{{green}}" />
+        <option name="FOREGROUND" value="{{green}}"/>
       </value>
     </option>
     <option name="INDENT_GUIDES_RAINBOW_COLOR4">
       <value>
-        <option name="FOREGROUND" value="{{sapphire}}" />
+        <option name="FOREGROUND" value="{{sapphire}}"/>
       </value>
     </option>
     <option name="INFO_ATTRIBUTES">
@@ -1848,7 +1813,7 @@
       <value>
         <option name="FOREGROUND" value="{{pink}}"/>
         <option name="FONT_TYPE" value="1"/>
-        <option name="EFFECT_COLOR" value="{{surface2}}" />
+        <option name="EFFECT_COLOR" value="{{surface2}}"/>
       </value>
     </option>
     <option name="MATCHED_TAG_NAME" baseAttributes="MATCHED_BRACE_ATTRIBUTES"/>
@@ -2043,14 +2008,7 @@
         <option name="BACKGROUND" value="{{maroon}}"/>
       </value>
     </option>
-    <option name="PUPPET_BLOCK_COMMENT">
-      <value>
-        <option name="FOREGROUND" value="{{surface2}}"/>
-        {{#if italics}}
-        <option name="FONT_TYPE" value="2"/>
-        {{/if}}
-      </value>
-    </option>
+    <option name="PUPPET_BLOCK_COMMENT" baseAttributes="DEFAULT_LINE_COMMENT"/>
     <option name="PUPPET_BRACES">
       <value>
         <option name="FOREGROUND" value="{{green}}"/>
@@ -2198,7 +2156,7 @@
         <option name="FOREGROUND" value="{{green}}"/>
       </value>
     </option>
-    <option name="PY.STRING.B" baseAttributes="DEFAULT_STRING" />
+    <option name="PY.STRING.B" baseAttributes="DEFAULT_STRING"/>
     <option name="RDOC_DIRECTIVE">
       <value>
         <option name="FOREGROUND" value="{{blue}}"/>
@@ -2309,14 +2267,7 @@
         <option name="FONT_TYPE" value="2"/>
       </value>
     </option>
-    <option name="REST.LINE_COMMENT">
-      <value>
-        <option name="FOREGROUND" value="{{surface2}}"/>
-        {{#if italics}}
-        <option name="FONT_TYPE" value="2"/>
-        {{/if}}
-      </value>
-    </option>
+    <option name="REST.LINE_COMMENT" baseAttributes="DEFAULT_LINE_COMMENT"/>
     <option name="REST.REF.NAME">
       <value>
         <option name="FOREGROUND" value="{{green}}"/>
@@ -2325,14 +2276,7 @@
         {{/if}}
       </value>
     </option>
-    <option name="RHTML_COMMENT_ID">
-      <value>
-        <option name="FOREGROUND" value="{{surface2}}"/>
-        {{#if italics}}
-        <option name="FONT_TYPE" value="2"/>
-        {{/if}}
-      </value>
-    </option>
+    <option name="RHTML_COMMENT_ID" baseAttributes="DEFAULT_LINE_COMMENT"/>
     <option name="RHTML_EXPRESSION_END_ID">
       <value>
         <option name="FOREGROUND" value="{{yellow}}"/>
@@ -2365,8 +2309,8 @@
     </option>
     <option name="RMARKDOWN_CHUNK">
       <value>
-        <option name="FOREGROUND" value="{{text}}" />
-        <option name="BACKGROUND" value="{{mantle}}" />
+        <option name="FOREGROUND" value="{{text}}"/>
+        <option name="BACKGROUND" value="{{mantle}}"/>
       </value>
     </option>
     <option name="ROUND_BRACKETS_RAINBOW_COLOR0">
@@ -2394,26 +2338,26 @@
         <option name="FOREGROUND" value="{{sapphire}}"/>
       </value>
     </option>
-    <option name="RUBY_BAD_CHARACTER" baseAttributes="BAD_CHARACTER" />
-    <option name="RUBY_COMMENT" baseAttributes="DEFAULT_DOC_COMMENT" />
-    <option name="RUBY_CONSTANT" baseAttributes="DEFAULT_CONSTANT" />
-    <option name="RUBY_CONSTANT_DECLARATION" baseAttributes="DEFAULT_CONSTANT" />
-    <option name="RUBY_ESCAPE_SEQUENCE" baseAttributes="DEFAULT_VALID_STRING_ESCAPE" />
-    <option name="RUBY_GVAR" baseAttributes="DEFAULT_GLOBAL_VARIABLE" />
-    <option name="RUBY_HEREDOC_CONTENT" baseAttributes="TEXT" />
-    <option name="RUBY_HEREDOC_ID" baseAttributes="DEFAULT_IDENTIFIER" />
-    <option name="RUBY_INVALID_ESCAPE_SEQUENCE" baseAttributes="DEFAULT_INVALID_STRING_ESCAPE" />
-    <option name="RUBY_LINE_CONTINUATION" baseAttributes="DEFAULT_COMMA" />
-    <option name="RUBY_LOCAL_VAR_ID" baseAttributes="DEFAULT_LOCAL_VARIABLE" />
-    <option name="RUBY_METHOD_NAME" baseAttributes="DEFAULT_INSTANCE_METHOD" />
-    <option name="RUBY_NTH_REF" baseAttributes="DEFAULT_PREDEFINED_SYMBOL" />
-    <option name="RUBY_NUMBER" baseAttributes="DEFAULT_NUMBER" />
-    <option name="RUBY_PARAMDEF_CALL" baseAttributes="DEFAULT_STATIC_METHOD" />
-    <option name="RUBY_PARAMETER_ID" baseAttributes="DEFAULT_PARAMETER" />
-    <option name="RUBY_REGEXP" baseAttributes="DEFAULT_TEMPLATE_LANGUAGE_COLOR" />
-    <option name="RUBY_SPECIFIC_CALL" baseAttributes="DEFAULT_STATIC_METHOD" />
-    <option name="RUBY_SYMBOL" baseAttributes="DEFAULT_INSTANCE_FIELD" />
-    <option name="RUBY_WORDS" baseAttributes="DEFAULT_STRING" />
+    <option name="RUBY_BAD_CHARACTER" baseAttributes="BAD_CHARACTER"/>
+    <option name="RUBY_COMMENT" baseAttributes="DEFAULT_DOC_COMMENT"/>
+    <option name="RUBY_CONSTANT" baseAttributes="DEFAULT_CONSTANT"/>
+    <option name="RUBY_CONSTANT_DECLARATION" baseAttributes="DEFAULT_CONSTANT"/>
+    <option name="RUBY_ESCAPE_SEQUENCE" baseAttributes="DEFAULT_VALID_STRING_ESCAPE"/>
+    <option name="RUBY_GVAR" baseAttributes="DEFAULT_GLOBAL_VARIABLE"/>
+    <option name="RUBY_HEREDOC_CONTENT" baseAttributes="TEXT"/>
+    <option name="RUBY_HEREDOC_ID" baseAttributes="DEFAULT_IDENTIFIER"/>
+    <option name="RUBY_INVALID_ESCAPE_SEQUENCE" baseAttributes="DEFAULT_INVALID_STRING_ESCAPE"/>
+    <option name="RUBY_LINE_CONTINUATION" baseAttributes="DEFAULT_COMMA"/>
+    <option name="RUBY_LOCAL_VAR_ID" baseAttributes="DEFAULT_LOCAL_VARIABLE"/>
+    <option name="RUBY_METHOD_NAME" baseAttributes="DEFAULT_INSTANCE_METHOD"/>
+    <option name="RUBY_NTH_REF" baseAttributes="DEFAULT_PREDEFINED_SYMBOL"/>
+    <option name="RUBY_NUMBER" baseAttributes="DEFAULT_NUMBER"/>
+    <option name="RUBY_PARAMDEF_CALL" baseAttributes="DEFAULT_STATIC_METHOD"/>
+    <option name="RUBY_PARAMETER_ID" baseAttributes="DEFAULT_PARAMETER"/>
+    <option name="RUBY_REGEXP" baseAttributes="DEFAULT_TEMPLATE_LANGUAGE_COLOR"/>
+    <option name="RUBY_SPECIFIC_CALL" baseAttributes="DEFAULT_STATIC_METHOD"/>
+    <option name="RUBY_SYMBOL" baseAttributes="DEFAULT_INSTANCE_FIELD"/>
+    <option name="RUBY_WORDS" baseAttributes="DEFAULT_STRING"/>
     <option name="RUNTIME_ERROR">
       <value>
         <option name="EFFECT_COLOR" value="{{peach}}"/>
@@ -2421,10 +2365,10 @@
         <option name="EFFECT_TYPE" value="5"/>
       </value>
     </option>
-    <option name="R_FUNCTION_CALL" baseAttributes="DEFAULT_FUNCTION_CALL" />
+    <option name="R_FUNCTION_CALL" baseAttributes="DEFAULT_FUNCTION_CALL"/>
     <option name="R_NAMED_ARGUMENT">
       <value>
-        <option name="FOREGROUND" value="{{maroon}}" />
+        <option name="FOREGROUND" value="{{maroon}}"/>
       </value>
     </option>
     <option name="ReShaper.ENUM_IDENTIFIER">
@@ -2529,14 +2473,7 @@
         <option name="FOREGROUND" value="{{peach}}"/>
       </value>
     </option>
-    <option name="SLIM_COMMENT">
-      <value>
-        <option name="FOREGROUND" value="{{surface2}}"/>
-        {{#if italics}}
-        <option name="FONT_TYPE" value="2"/>
-        {{/if}}
-      </value>
-    </option>
+    <option name="SLIM_COMMENT" baseAttributes="DEFAULT_LINE_COMMENT"/>
     <option name="SLIM_DOCTYPE_KWD">
       <value>
         <option name="FOREGROUND" value="{{maroon}}"/>
@@ -2587,34 +2524,34 @@
     </option>
     <option name="SPY-JS.EXCEPTION">
       <value>
-        <option name="FOREGROUND" value="{{red}}" />
-        <option name="EFFECT_TYPE" value="2" />
+        <option name="FOREGROUND" value="{{red}}"/>
+        <option name="EFFECT_TYPE" value="2"/>
       </value>
     </option>
     <option name="SPY-JS.FUNCTION_SCOPE">
       <value>
-        <option name="FOREGROUND" value="{{text}}" />
-        <option name="EFFECT_TYPE" value="2" />
+        <option name="FOREGROUND" value="{{text}}"/>
+        <option name="EFFECT_TYPE" value="2"/>
       </value>
     </option>
     <option name="SPY-JS.PATH_LEVEL_ONE">
       <value>
-        <option name="FOREGROUND" value="{{text}}" />
+        <option name="FOREGROUND" value="{{text}}"/>
         {{#if italics}}
         <option name="FONT_TYPE" value="2"/>
         {{/if}}
-        <option name="EFFECT_TYPE" value="2" />
+        <option name="EFFECT_TYPE" value="2"/>
       </value>
     </option>
     <option name="SPY-JS.PATH_LEVEL_TWO">
       <value>
-        <option name="FOREGROUND" value="{{peach}}" />
-        <option name="EFFECT_TYPE" value="1" />
+        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="EFFECT_TYPE" value="1"/>
       </value>
     </option>
     <option name="SPY-JS.PROGRAM_SCOPE">
       <value>
-        <option name="BACKGROUND" value="{{base}}" />
+        <option name="BACKGROUND" value="{{base}}"/>
         {{#if italics}}
         <option name="FONT_TYPE" value="2"/>
         {{/if}}
@@ -2622,7 +2559,7 @@
     </option>
     <option name="SPY-JS.VALUE_HINT">
       <value>
-        <option name="FOREGROUND" value="{{lavender}}" />
+        <option name="FOREGROUND" value="{{lavender}}"/>
       </value>
     </option>
     <option name="SQUARE_BRACKETS_RAINBOW_COLOR0">
@@ -2695,19 +2632,12 @@
         <option name="FOREGROUND" value="{{blue}}"/>
       </value>
     </option>
-    <option name="SWIFT_SHEBANG_COMMENT">
-      <value>
-        <option name="FOREGROUND" value="{{surface2}}"/>
-        {{#if italics}}
-        <option name="FONT_TYPE" value="2"/>
-        {{/if}}
-      </value>
-    </option>
-    <option name="Scala Immutable Collection" baseAttributes="DEFAULT_IDENTIFIER" />
-    <option name="Scala Mutable Collection" baseAttributes="DEFAULT_IDENTIFIER" />
-    <option name="Scala Type Alias" baseAttributes="TYPE_PARAMETER_NAME_ATTRIBUTES" />
-    <option name="Scala Type parameter" baseAttributes="TYPE_PARAMETER_NAME_ATTRIBUTES" />
-    <option name="Static method access" baseAttributes="STATIC_METHOD_ATTRIBUTES" />
+    <option name="SWIFT_SHEBANG_COMMENT" baseAttributes="DEFAULT_LINE_COMMENT"/>
+    <option name="Scala Immutable Collection" baseAttributes="DEFAULT_IDENTIFIER"/>
+    <option name="Scala Mutable Collection" baseAttributes="DEFAULT_IDENTIFIER"/>
+    <option name="Scala Type Alias" baseAttributes="TYPE_PARAMETER_NAME_ATTRIBUTES"/>
+    <option name="Scala Type parameter" baseAttributes="TYPE_PARAMETER_NAME_ATTRIBUTES"/>
+    <option name="Static method access" baseAttributes="STATIC_METHOD_ATTRIBUTES"/>
     <option name="Static property reference ID">
       <value>
         <option name="FOREGROUND" value="{{peach}}"/>
@@ -2857,14 +2787,14 @@
       </value>
     </option>
     <option name="XML_ATTRIBUTE_NAME" baseAttributes="DEFAULT_ATTRIBUTE"/>
-    <option name="XML_CUSTOM_TAG_NAME" baseAttributes="XML_TAG_NAME" />
+    <option name="XML_CUSTOM_TAG_NAME" baseAttributes="XML_TAG_NAME"/>
     <option name="XML_ENTITY_REFERENCE" baseAttributes="DEFAULT_ENTITY"/>
     <option name="XML_NS_PREFIX">
       <value>
         <option name="FOREGROUND" value="{{peach}}"/>
       </value>
     </option>
-    <option name="XML_TAG" baseAttributes="DEFAULT_TAG" />
+    <option name="XML_TAG" baseAttributes="DEFAULT_TAG"/>
     <option name="XML_TAG_DATA" baseAttributes="TEXT"/>
     <option name="XML_TAG_NAME">
       <value>
@@ -2935,7 +2865,7 @@
     </option>
     <option name="org.rust.CFG_DISABLED_CODE">
       <value>
-        <option name="FOREGROUND" value="{{subtext0}}" />
+        <option name="FOREGROUND" value="{{subtext0}}"/>
       </value>
     </option>
     <option name="org.rust.DOC_LINK">
@@ -2958,7 +2888,7 @@
       </value>
     </option>
     <option name="org.rust.METHOD_CALL" baseAttributes="DEFAULT_FUNCTION_CALL"/>
-    <option name="org.rust.MUT_PARAMETER" baseAttributes="DEFAULT_PARAMETER" />
+    <option name="org.rust.MUT_PARAMETER" baseAttributes="DEFAULT_PARAMETER"/>
     <option name="org.rust.Q_OPERATOR">
       <value/>
     </option>
@@ -2976,7 +2906,7 @@
     </option>
     <option name="org.toml.KEY">
       <value>
-        <option name="FOREGROUND" value="{{blue}}" />
+        <option name="FOREGROUND" value="{{blue}}"/>
       </value>
     </option>
     <option name="osmorc.attributeName">
@@ -2992,27 +2922,27 @@
     <!-- Semantic Highlights -->
     <option name="RAINBOW_COLOR0">
       <value>
-        <option name="FOREGROUND" value="{{mix text red 0.6}}" />
+        <option name="FOREGROUND" value="{{mix text red 0.6}}"/>
       </value>
     </option>
     <option name="RAINBOW_COLOR1">
       <value>
-        <option name="FOREGROUND" value="{{mix text yellow 0.6}}" />
+        <option name="FOREGROUND" value="{{mix text yellow 0.6}}"/>
       </value>
     </option>
     <option name="RAINBOW_COLOR2">
       <value>
-        <option name="FOREGROUND" value="{{mix text green 0.6}}" />
+        <option name="FOREGROUND" value="{{mix text green 0.6}}"/>
       </value>
     </option>
     <option name="RAINBOW_COLOR3">
       <value>
-        <option name="FOREGROUND" value="{{mix text blue 0.6}}" />
+        <option name="FOREGROUND" value="{{mix text blue 0.6}}"/>
       </value>
     </option>
     <option name="RAINBOW_COLOR4">
       <value>
-        <option name="FOREGROUND" value="{{mix text mauve 0.6}}" />
+        <option name="FOREGROUND" value="{{mix text mauve 0.6}}"/>
       </value>
     </option>
   </attributes>
