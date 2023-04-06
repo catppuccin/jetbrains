@@ -3,6 +3,7 @@
 ## [Unreleased]
 
 ### Added
+- Add background color for plugin tags
 
 ### Changed
 
