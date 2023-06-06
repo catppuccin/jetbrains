@@ -3,6 +3,7 @@
 ## [Unreleased]
 
 ### Added
+ - Support 2023.2 EAP
 
 ### Changed
 
