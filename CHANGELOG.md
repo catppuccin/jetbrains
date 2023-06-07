@@ -3,7 +3,6 @@
 ## [Unreleased]
 
 ### Added
- - Support 2023.2 EAP
 
 ### Changed
 
@@ -14,6 +13,11 @@
 ### Fixed
 
 ### Security
+
+## 2.2.0 - 2023-06-07
+
+### Added
+- Support 2023.2 EAP
 
 ## 2.1.0 - 2023-04-02
 
