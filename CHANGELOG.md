@@ -12,6 +12,8 @@
 
 ### Fixed
 
+- Improve Nix syntax highlighting
+
 ### Security
 
 ## 2.2.0 - 2023-06-07
