@@ -1842,6 +1842,17 @@
         <option name="FOREGROUND" value="{{peach}}"/>
       </value>
     </option>
+    <option name="NIX_BUILTIN">
+      <value>
+        <option name="FOREGROUND" value="{{red}}" />
+        <option name="FONT_TYPE" value="2" />
+      </value>
+    </option>
+    <option name="NIX_IDENTIFIER">
+      <value>
+        <option name="FOREGROUND" value="{{blue}}" />
+      </value>
+    </option>
     <option name="NOT_TOP_FRAME_ATTRIBUTES">
       <value>
         <option name="BACKGROUND" value="{{surface0}}"/>
