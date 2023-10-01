@@ -104,11 +104,11 @@ Object.entries(variants).forEach(([key, value]) => {
       primaryForeground: colors.text,
       primaryBackground: colors.base,
       secondaryBackground: colors.surface0,
-      hoverBackground: colors.surface1,
-      selectionBackground: colors.surface1,
+      hoverBackground: colors.surface0,
+      selectionBackground: colors.surface0,
       selectionInactiveBackground: colors.base,
-      borderColor: colors.surface1,
-      separatorColor: colors.surface1,
+      borderColor: colors.base,
+      separatorColor: colors.base,
     },
     ui: {
       "*": {
@@ -124,6 +124,7 @@ Object.entries(variants).forEach(([key, value]) => {
         separatorColor: "separatorColor",
       },
       List: {
+        rowHeight: 24,
         background: "mantle",
       },
       Borders: {
@@ -216,7 +217,7 @@ Object.entries(variants).forEach(([key, value]) => {
         shortcutForeground: "accentColor",
       },
       EditorTabs: {
-        background: "primaryBackground",
+        background: "base",
         underlinedTabBackground: "secondaryBackground",
         underlineColor: "accentColor",
         underlineHeight: 1,
@@ -250,8 +251,8 @@ Object.entries(variants).forEach(([key, value]) => {
         pressedForeground: "secondaryAccentColor",
       },
       MainToolbar: {
-        background: "primaryBackground",
-        inactiveBackground: "primaryBackground",
+        background: "crust",
+        inactiveBackground: "mantle",
         Dropdown: {
           hoverBackground: "hoverBackground",
           pressedBackground: "hoverBackground",
@@ -272,8 +273,8 @@ Object.entries(variants).forEach(([key, value]) => {
         },
       },
       Notification: {
-        background: "primaryBackground",
-        borderColor: "mauve",
+        background: "mantle",
+        borderColor: "surface0",
         errorBorderColor: "red",
         errorBackground: "primaryBackground",
         errorForeground: "primaryForeground",
@@ -288,6 +289,9 @@ Object.entries(variants).forEach(([key, value]) => {
           informativeBackground: "primaryBackground",
           informativeBorderColor: "secondaryAccentColor",
         },
+      },
+      Panel: {
+        background: "mantle"
       },
       PasswordField: {
         background: "secondaryBackground",
@@ -329,10 +333,10 @@ Object.entries(variants).forEach(([key, value]) => {
         passedColor: "green",
       },
       Popup: {
-        borderColor: "mauve",
+        borderColor: "surface1",
         Header: {
-          activeBackground: "secondaryBackground",
-          inactiveBackground: "secondaryBackground",
+          activeBackground: "mantle",
+          inactiveBackground: "mantle",
         },
       },
       ScrollBar: {
@@ -363,6 +367,7 @@ Object.entries(variants).forEach(([key, value]) => {
         background: "mantle",
       },
       StatusBar: {
+        background: "mantle",
         borderColor: "borderColor",
         hoverBackground: "hoverBackground",
       },
@@ -395,7 +400,7 @@ Object.entries(variants).forEach(([key, value]) => {
         buttonColor: "primaryForeground",
       },
       ToolBar: {
-        background: "primaryBackground",
+        background: "mantle",
         borderHandleColor: "secondaryAccentColor",
       },
       ToolWindow: {
@@ -405,17 +410,15 @@ Object.entries(variants).forEach(([key, value]) => {
           selectedBackground: "hoverBackground",
         },
         Header: {
-          background: "primaryBackground",
-          inactiveBackground: "primaryBackground",
-          borderColor: "secondaryBackground",
+          background: "mantle",
+          inactiveBackground: "mantle",
+          borderColor: "primaryBackground",
         },
         HeaderTab: {
           underlineColor: "pink",
           inactiveUnderlineColor: "text",
           underlineHeight: 1,
-          underlinedTabBackground: "surface1",
-          selectedInactiveBackground: "base",
-          hoverBackground: "hoverBackground",
+          hoverBackground: "surface0",
         },
       },
       Tree: {
@@ -457,7 +460,7 @@ Object.entries(variants).forEach(([key, value]) => {
       },
       WelcomeScreen: {
         SidePanel: {
-          background: "secondaryBackground",
+          background: "mantle",
         },
         separatorColor: "separatorColor",
         Projects: {
@@ -489,7 +492,7 @@ Object.entries(variants).forEach(([key, value]) => {
         "Objects.Yellow": colors.yellow,
         "Objects.YellowDark": colors.flamingo,
         "Objects.BlackText": colors.surface0,
-        "Tree.iconColor": colors.blue,
+        "Tree.iconColor": colors.text,
         "Checkbox.Background.Default": colors.surface1,
         "Checkbox.Background.Selected": colors.surface1,
         "Checkbox.Background.Disabled": colors.surface0,
@@ -500,7 +503,7 @@ Object.entries(variants).forEach(([key, value]) => {
         "Checkbox.Border.Disabled": colors.surface0,
       },
     },
-  };
+  }
 
   Deno.writeTextFileSync(
     path.join(themePath, `${key}.theme.json`),
