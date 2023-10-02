@@ -13,6 +13,7 @@
 ### Fixed
 
 - Improve Nix syntax highlighting
+- (Go): Fix template syntax highlighting
 
 ### Security
 
