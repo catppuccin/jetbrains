@@ -51,9 +51,68 @@ For further help, see also:
   <depends>com.intellij.modules.platform</depends>
   <extensions defaultExtensionNs="com.intellij">
     <themeProvider id="com.github.catppuccin.latte.jetbrains" path="/themes/latte.theme.json"/>
+    <themeProvider id="com.github.catppuccin.latte.rosewater" path="/themes/latte.rosewater.theme.json"/>
+    <themeProvider id="com.github.catppuccin.latte.flamingo" path="/themes/latte.flamingo.theme.json"/>
+    <themeProvider id="com.github.catppuccin.latte.pink" path="/themes/latte.pink.theme.json"/>
+    <themeProvider id="com.github.catppuccin.latte.mauve" path="/themes/latte.mauve.theme.json"/>
+    <themeProvider id="com.github.catppuccin.latte.red" path="/themes/latte.red.theme.json"/>
+    <themeProvider id="com.github.catppuccin.latte.maroon" path="/themes/latte.maroon.theme.json"/>
+    <themeProvider id="com.github.catppuccin.latte.peach" path="/themes/latte.peach.theme.json"/>
+    <themeProvider id="com.github.catppuccin.latte.yellow" path="/themes/latte.yellow.theme.json"/>
+    <themeProvider id="com.github.catppuccin.latte.green" path="/themes/latte.green.theme.json"/>
+    <themeProvider id="com.github.catppuccin.latte.teal" path="/themes/latte.teal.theme.json"/>
+    <themeProvider id="com.github.catppuccin.latte.sky" path="/themes/latte.sky.theme.json"/>
+    <themeProvider id="com.github.catppuccin.latte.sapphire" path="/themes/latte.sapphire.theme.json"/>
+    <themeProvider id="com.github.catppuccin.latte.blue" path="/themes/latte.blue.theme.json"/>
+    <themeProvider id="com.github.catppuccin.latte.lavender" path="/themes/latte.lavender.theme.json"/>
+
     <themeProvider id="com.github.catppuccin.frappe.jetbrains" path="/themes/frappe.theme.json"/>
+    <themeProvider id="com.github.catppuccin.frappe.rosewater" path="/themes/frappe.rosewater.theme.json"/>
+    <themeProvider id="com.github.catppuccin.frappe.flamingo" path="/themes/frappe.flamingo.theme.json"/>
+    <themeProvider id="com.github.catppuccin.frappe.pink" path="/themes/frappe.pink.theme.json"/>
+    <themeProvider id="com.github.catppuccin.frappe.mauve" path="/themes/frappe.mauve.theme.json"/>
+    <themeProvider id="com.github.catppuccin.frappe.red" path="/themes/frappe.red.theme.json"/>
+    <themeProvider id="com.github.catppuccin.frappe.maroon" path="/themes/frappe.maroon.theme.json"/>
+    <themeProvider id="com.github.catppuccin.frappe.peach" path="/themes/frappe.peach.theme.json"/>
+    <themeProvider id="com.github.catppuccin.frappe.yellow" path="/themes/frappe.yellow.theme.json"/>
+    <themeProvider id="com.github.catppuccin.frappe.green" path="/themes/frappe.green.theme.json"/>
+    <themeProvider id="com.github.catppuccin.frappe.teal" path="/themes/frappe.teal.theme.json"/>
+    <themeProvider id="com.github.catppuccin.frappe.sky" path="/themes/frappe.sky.theme.json"/>
+    <themeProvider id="com.github.catppuccin.frappe.sapphire" path="/themes/frappe.sapphire.theme.json"/>
+    <themeProvider id="com.github.catppuccin.frappe.blue" path="/themes/frappe.blue.theme.json"/>
+    <themeProvider id="com.github.catppuccin.frappe.lavender" path="/themes/frappe.lavender.theme.json"/>
+
     <themeProvider id="com.github.catppuccin.macchiato.jetbrains" path="/themes/macchiato.theme.json"/>
+    <themeProvider id="com.github.catppuccin.macchiato.rosewater" path="/themes/macchiato.rosewater.theme.json"/>
+    <themeProvider id="com.github.catppuccin.macchiato.flamingo" path="/themes/macchiato.flamingo.theme.json"/>
+    <themeProvider id="com.github.catppuccin.macchiato.pink" path="/themes/macchiato.pink.theme.json"/>
+    <themeProvider id="com.github.catppuccin.macchiato.mauve" path="/themes/macchiato.mauve.theme.json"/>
+    <themeProvider id="com.github.catppuccin.macchiato.red" path="/themes/macchiato.red.theme.json"/>
+    <themeProvider id="com.github.catppuccin.macchiato.maroon" path="/themes/macchiato.maroon.theme.json"/>
+    <themeProvider id="com.github.catppuccin.macchiato.peach" path="/themes/macchiato.peach.theme.json"/>
+    <themeProvider id="com.github.catppuccin.macchiato.yellow" path="/themes/macchiato.yellow.theme.json"/>
+    <themeProvider id="com.github.catppuccin.macchiato.green" path="/themes/macchiato.green.theme.json"/>
+    <themeProvider id="com.github.catppuccin.macchiato.teal" path="/themes/macchiato.teal.theme.json"/>
+    <themeProvider id="com.github.catppuccin.macchiato.sky" path="/themes/macchiato.sky.theme.json"/>
+    <themeProvider id="com.github.catppuccin.macchiato.sapphire" path="/themes/macchiato.sapphire.theme.json"/>
+    <themeProvider id="com.github.catppuccin.macchiato.blue" path="/themes/macchiato.blue.theme.json"/>
+    <themeProvider id="com.github.catppuccin.macchiato.lavender" path="/themes/macchiato.lavender.theme.json"/>
+
     <themeProvider id="com.github.catppuccin.mocha.jetbrains" path="/themes/mocha.theme.json"/>
+    <themeProvider id="com.github.catppuccin.mocha.rosewater" path="/themes/mocha.rosewater.theme.json"/>
+    <themeProvider id="com.github.catppuccin.mocha.flamingo" path="/themes/mocha.flamingo.theme.json"/>
+    <themeProvider id="com.github.catppuccin.mocha.pink" path="/themes/mocha.pink.theme.json"/>
+    <themeProvider id="com.github.catppuccin.mocha.mauve" path="/themes/mocha.mauve.theme.json"/>
+    <themeProvider id="com.github.catppuccin.mocha.red" path="/themes/mocha.red.theme.json"/>
+    <themeProvider id="com.github.catppuccin.mocha.maroon" path="/themes/mocha.maroon.theme.json"/>
+    <themeProvider id="com.github.catppuccin.mocha.peach" path="/themes/mocha.peach.theme.json"/>
+    <themeProvider id="com.github.catppuccin.mocha.yellow" path="/themes/mocha.yellow.theme.json"/>
+    <themeProvider id="com.github.catppuccin.mocha.green" path="/themes/mocha.green.theme.json"/>
+    <themeProvider id="com.github.catppuccin.mocha.teal" path="/themes/mocha.teal.theme.json"/>
+    <themeProvider id="com.github.catppuccin.mocha.sky" path="/themes/mocha.sky.theme.json"/>
+    <themeProvider id="com.github.catppuccin.mocha.sapphire" path="/themes/mocha.sapphire.theme.json"/>
+    <themeProvider id="com.github.catppuccin.mocha.blue" path="/themes/mocha.blue.theme.json"/>
+    <themeProvider id="com.github.catppuccin.mocha.lavender" path="/themes/mocha.lavender.theme.json"/>
 
     <bundledColorScheme path="/themes/latte-no-italics"/>
     <bundledColorScheme path="/themes/frappe-no-italics"/>

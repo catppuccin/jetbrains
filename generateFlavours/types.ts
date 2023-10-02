@@ -89,6 +89,7 @@ export enum BackgroundImageFillingOptions {
 
 export interface Icons {
   ColorPalette?: ColorPalette;
+  [key: `/${string}`]: string;
 }
 
 /**
