@@ -108,7 +108,7 @@ Object.entries(variants).forEach(([key, value]) => {
       selectionBackground: colors.surface0,
       selectionInactiveBackground: colors.base,
       borderColor: colors.base,
-      separatorColor: colors.base,
+      separatorColor: colors.surface0,
     },
     ui: {
       "*": {
@@ -120,7 +120,7 @@ Object.entries(variants).forEach(([key, value]) => {
         selectionInactiveBackground: "selectionInactiveBackground",
         inactiveBackground: "primaryBackground",
         disabledBackground: "primaryBackground",
-        borderColor: "primaryBackground",
+        borderColor: "borderColor",
         separatorColor: "separatorColor",
       },
       List: {
@@ -128,7 +128,7 @@ Object.entries(variants).forEach(([key, value]) => {
         background: "mantle",
       },
       Borders: {
-        color: "primaryBackground",
+        color: "borderColor",
         ContrastBorderColor: "secondaryBackground",
       },
       ActionButton: {
@@ -218,11 +218,11 @@ Object.entries(variants).forEach(([key, value]) => {
       },
       EditorTabs: {
         background: "base",
-        underlinedTabBackground: "secondaryBackground",
+        underlinedTabBackground: "base",
         underlineColor: "accentColor",
         underlineHeight: 1,
-        hoverBackground: "surface0",
-        inactiveUnderlineColor: "accentColor",
+        hoverBackground: "base",
+        inactiveUnderlineColor: "lavender",
       },
       FileColor: {
         Blue: '#' + (isLatte
@@ -412,10 +412,10 @@ Object.entries(variants).forEach(([key, value]) => {
         Header: {
           background: "mantle",
           inactiveBackground: "mantle",
-          borderColor: "primaryBackground",
+          borderColor: "borderColor",
         },
         HeaderTab: {
-          underlineColor: "pink",
+          underlineColor: "accentColor",
           inactiveUnderlineColor: "text",
           underlineHeight: 1,
           hoverBackground: "surface0",
