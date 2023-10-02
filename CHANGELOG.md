@@ -13,6 +13,7 @@
 ### Fixed
 
 - Improve Nix syntax highlighting
+- (Go Template): Prevent the Go Template background colors to inherit default
 
 ### Security
 
