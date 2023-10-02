@@ -3,6 +3,7 @@
 ## [Unreleased]
 
 ### Added
+- Add background color for plugin tags
 
 ### Changed
 
@@ -14,6 +15,7 @@
 
 - Improve Nix syntax highlighting
 - (Go): Make references in comments distinguishable
+- (Go): Fix template syntax highlighting
 
 ### Security
 
