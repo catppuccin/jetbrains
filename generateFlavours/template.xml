@@ -1120,6 +1120,12 @@
         <option name="FOREGROUND" value="{{mauve}}"/>
       </value>
     </option>
+    <option name="GO_COMMENT_REFERENCE">
+      <value>
+        <option name="FOREGROUND" value="{{overlay2}}"/>
+        <option name="FONT_TYPE" value="2"/>
+      </value>
+    </option>
     <option name="GO_EXPORTED_FUNCTION_CALL" baseAttributes="DEFAULT_FUNCTION_CALL"/>
     <option name="GO_LOCAL_FUNCTION_CALL" baseAttributes="DEFAULT_FUNCTION_CALL"/>
     <option name="GO_COMMENT_REFERENCE" baseAttributes="DEFAULT_LINE_COMMENT"/>

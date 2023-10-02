@@ -13,6 +13,7 @@
 ### Fixed
 
 - Improve Nix syntax highlighting
+- (Go): Make references in comments distinguishable
 
 ### Security
 
