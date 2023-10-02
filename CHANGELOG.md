@@ -3,6 +3,7 @@
 ## [Unreleased]
 
 ### Added
+- Themes for different accent colors
 
 ### Changed
 
@@ -11,7 +12,6 @@
 ### Removed
 
 ### Fixed
-
 - Improve Nix syntax highlighting
 - (Go): Fix template syntax highlighting
 
