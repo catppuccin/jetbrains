@@ -333,7 +333,9 @@ Object.entries(variants).forEach(([key, value]) => {
         passedColor: "green",
       },
       Popup: {
-        borderColor: "surface1",
+        borderWidth: 1,
+        paintBorder: true,
+        borderColor: "separatorColor",
         Header: {
           activeBackground: "mantle",
           inactiveBackground: "mantle",
