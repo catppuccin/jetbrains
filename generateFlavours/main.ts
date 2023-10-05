@@ -472,6 +472,9 @@ Object.entries(variants).forEach(([key, value]) => {
           },
         },
       },
+      CheckBox: {
+        background: "mantle",
+      }
     },
     icons: {
       ColorPalette: {
