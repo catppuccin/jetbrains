@@ -132,9 +132,20 @@ Object.entries(variants).forEach(([key, value]) => {
           leftRightInset: 8,
         }
       },
+      Banner: {
+        informativeForeground: "primaryForeground",
+        informativeBackground: "#" + opacity(value.blue.hex, 0.1),
+        informativeBorderColor: "#" + opacity(value.blue.hex, 0.15),
+        errorForeground: "primaryForeground",
+        errorBackground: "#" + opacity(value.red.hex, 0.1),
+        errorBorderColor: "#" + opacity(value.red.hex, 0.15),
+        warningForeground: "primaryForeground",
+        warningBackground: "#" + opacity(value.peach.hex, 0.1),
+        warningBorderColor: "#" + opacity(value.peach.hex, 0.15),
+      },
       Borders: {
         color: "borderColor",
-        ContrastBorderColor: "secondaryBackground",
+        ContrastBorderColor: "separatorColor",
       },
       ActionButton: {
         hoverBackground: "hoverBackground",
@@ -238,23 +249,23 @@ Object.entries(variants).forEach(([key, value]) => {
       },
       FileColor: {
         Blue: '#' + (isLatte
-          ? opacity(value.blue.hex, 0.2)
-          : opacity(value.blue.hex, 0.15)),
+          ? opacity(value.blue.hex, 0.15)
+          : opacity(value.blue.hex, 0.10)),
         Green: '#' + (isLatte
-          ? opacity(value.green.hex, 0.2)
-          : opacity(value.green.hex, 0.15)),
+          ? opacity(value.green.hex, 0.15)
+          : opacity(value.green.hex, 0.10)),
         Orange: '#' + (isLatte
-          ? opacity(value.peach.hex, 0.2)
-          : opacity(value.peach.hex, 0.15)),
+          ? opacity(value.peach.hex, 0.15)
+          : opacity(value.peach.hex, 0.10)),
         Yellow: '#' + (isLatte
-          ? opacity(value.yellow.hex, 0.2)
-          : opacity(value.yellow.hex, 0.15)),
+          ? opacity(value.yellow.hex, 0.15)
+          : opacity(value.yellow.hex, 0.10)),
         Rose: '#' + (isLatte
-          ? opacity(value.red.hex, 0.2)
-          : opacity(value.red.hex, 0.15)),
+          ? opacity(value.red.hex, 0.15)
+          : opacity(value.red.hex, 0.10)),
         Violet: '#' + (isLatte
-          ? opacity(value.lavender.hex, 0.2)
-          : opacity(value.lavender.hex, 0.15)),
+          ? opacity(value.lavender.hex, 0.15)
+          : opacity(value.lavender.hex, 0.10)),
       },
       Link: {
         activeForeground: "accentColor",
