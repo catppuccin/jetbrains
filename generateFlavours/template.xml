@@ -64,7 +64,7 @@
     <option name="ScrollBar.thumbColor" value="{{opacity surface1 0.45}}"/>
     <option name="ScrollBar.Mac.hoverThumbColor" value="{{opacity overlay0 0.4}}"/>
     <option name="ScrollBar.Mac.thumbColor" value="{{opacity surface1 0.45}}"/>
-    <option name="TAB_UNDERLINE" value="{{pink}}"/>
+    <option name="TAB_UNDERLINE" value="{{mauve}}"/>
     <option name="TAB_UNDERLINE_INACTIVE" value="{{text}}"/>
     <option name="TEARLINE_COLOR" value="{{surface0}}"/>
     <option name="VCS_ANNOTATIONS_COLOR_1" value="{{opacity mauve 0.6}}"/>
@@ -2656,13 +2656,13 @@
     </option>
     <option name="TAB_SELECTED">
       <value>
-        <option name="FOREGROUND" value="{{pink}}"/>
+        <option name="FOREGROUND" value="{{mauve}}"/>
         <option name="BACKGROUND" value="{{surface0}}"/>
       </value>
     </option>
     <option name="TAB_SELECTED_INACTIVE">
       <value>
-        <option name="FOREGROUND" value="{{pink}}"/>
+        <option name="FOREGROUND" value="{{mauve}}"/>
         <option name="BACKGROUND" value="{{surface0}}"/>
       </value>
     </option>

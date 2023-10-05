@@ -206,9 +206,10 @@ Object.entries(variants).forEach(([key, value]) => {
         nonEditableBackground: "secondaryBackground",
       },
       CompletionPopup: {
-        selectionBackground: "selectionBackground",
-        selectionInactiveBackground: "selectionBackground",
-        matchForeground: "flamingo",
+        foreground: "text",
+        selectionBackground: "surface1",
+        selectionInactiveBackground: "surface0",
+        matchForeground: "mauve",
       },
       Component: {
         focusColor: "accentColor",
@@ -361,7 +362,10 @@ Object.entries(variants).forEach(([key, value]) => {
         borderWidth: 1,
         paintBorder: true,
         borderColor: "separatorColor",
+        inactiveBorderColor: "separatorColor",
         Advertiser: {
+          background: "mantle",
+          foreground: "text",
           fontSizeOffset: -1
         },
         Header: {
