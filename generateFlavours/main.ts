@@ -124,8 +124,13 @@ Object.entries(variants).forEach(([key, value]) => {
         separatorColor: "separatorColor",
       },
       List: {
-        rowHeight: 24,
+        rowHeight: "24",
+        border: "4,0,4,0",
         background: "mantle",
+        Button: {
+          separatorInset: 4,
+          leftRightInset: 8,
+        }
       },
       Borders: {
         color: "borderColor",
@@ -216,13 +221,20 @@ Object.entries(variants).forEach(([key, value]) => {
         background: "primaryBackground",
         shortcutForeground: "accentColor",
       },
+      EditorPane: {
+        splitBorder: "separatorColor"
+      },
       EditorTabs: {
+        underlineArc: 4,
+        unselectedBlend: 0.7,
         background: "base",
-        underlinedTabBackground: "base",
+        underlinedTabBackground: "mantle",
         underlineColor: "accentColor",
         underlineHeight: 1,
         hoverBackground: "base",
         inactiveUnderlineColor: "lavender",
+        inactiveHoverBackground: "red",
+        underTabsBorderColor: "separatorColor",
       },
       FileColor: {
         Blue: '#' + (isLatte
@@ -253,13 +265,15 @@ Object.entries(variants).forEach(([key, value]) => {
       MainToolbar: {
         background: "crust",
         inactiveBackground: "mantle",
-        Dropdown: {
-          hoverBackground: "hoverBackground",
-          pressedBackground: "hoverBackground",
-        },
         Icon: {
           hoverBackground: "hoverBackground",
           pressedBackground: "hoverBackground",
+          insets: "5,5,5,5",
+        },
+        Dropdown: {
+          hoverBackground: "hoverBackground",
+          pressedBackground: "hoverBackground",
+          maxWidth: 350,
         },
       },
       MemoryIndicator: {
@@ -336,6 +350,9 @@ Object.entries(variants).forEach(([key, value]) => {
         borderWidth: 1,
         paintBorder: true,
         borderColor: "separatorColor",
+        Advertiser: {
+          fontSizeOffset: -1
+        },
         Header: {
           activeBackground: "mantle",
           inactiveBackground: "mantle",
@@ -372,8 +389,13 @@ Object.entries(variants).forEach(([key, value]) => {
         background: "mantle",
         borderColor: "borderColor",
         hoverBackground: "hoverBackground",
+        Breadcrumbs: {
+          chevronInset: 0,
+        }
       },
       TabbedPane: {
+        tabHeight: 40,
+        tabSelectionArc: 4,
         tabSelectionHeight: 1,
         focusColor: "hoverBackground",
         hoverColor: "hoverBackground",
@@ -425,6 +447,7 @@ Object.entries(variants).forEach(([key, value]) => {
       },
       Tree: {
         rowHeight: 24,
+        border: "4,12,4,12",
         background: "mantle",
         modifiedItemForeground: "accentColor",
         hoverBackground: "secondaryBackground",
