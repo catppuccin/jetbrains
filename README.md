@@ -38,7 +38,7 @@
 
 ## Installation
 
-- Using IDE built-in plugin system:
+- Using IDE's built-in plugin system:
 
 <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> >
 <kbd>Search for "Catppuccin Theme"</kbd> >
@@ -56,7 +56,7 @@
 
 First, thank you for wanting to contribute! Make sure to read the organisation-wide [CONTRIBUTING.md](https://github.com/catppuccin/.github/blob/main/CONTRIBUTING.md)!
 
-Listed below are details on the  file structure, optimal development workflow and general notes that are useful 
+Listed below are details on the file structure, optimal development workflow and general notes that are useful 
 for developing on this port. 
 
 > **Note** <br>
@@ -68,7 +68,7 @@ for developing on this port.
 - `.github/workflows/` - CI/CD workflows for building and distributing `.jar` files
 - `.run/` - Collection of useful Intellij run configuration tasks that ease the development process
 - `generateFlavours/` - JS/TS code that generates all 4 Catppuccin flavours into the specified XML format that JetBrains require
-  - `main.ts` - Generates `.theme.json` and `.xml` files. The `.theme.json` file relates to the UI elements whereas the `.xml` file (derived solely from the `.template.xml`) is for the Editor elements entirely (e.g the code syntax highlighting)
+  - `main.ts` - Generates `.theme.json` and `.xml` files. The `.theme.json` file relates to the UI elements whereas the `.xml` file (derived solely from the `.template.xml`) is for the Editor elements entirely (e.g., the code syntax highlighting)
   - `template.xml` - As mentioned above, these are all the highlights for everything to do regarding the editor. It is important to note that we have included some [handlebars](https://handlebarsjs.com/) syntax to allow for easier generation of the Latte flavour compared to Frappé, Macchiato and Mocha
 - `src/main/resources/META-INF` - Contains metadata that is shipped with the `.jar` including the Catppuccin logo, id, name, and description
 - `build.gradle.kts` - Standard gradle build file defining custom build tasks on top of defaults
@@ -83,7 +83,7 @@ for developing on this port.
 
 #### Debugging Tools
 
-JetBrains (thankfully) provide internal debugging tools to aid with theme creation in their IDE's. Please refer to the documentation below:
+JetBrains (thankfully) provides internal debugging tools to aid with theme creation in their IDE. Please refer to the documentation below:
 
 - [Internal Actions Menu](https://plugins.jetbrains.com/docs/intellij/internal-actions-intro.html)
 - [UI Inspector](https://plugins.jetbrains.com/docs/intellij/internal-ui-inspector.html)
@@ -92,8 +92,8 @@ JetBrains (thankfully) provide internal debugging tools to aid with theme creati
 #### IDE Build Configuration
 
 > **Note** <br>
-> The configuration in the given screenshots below contain hardcoded paths based on my personal system. Please ensure 
-> that you tweak your configurations to make sense within the context of your own system setup 
+> The configuration in the given screenshots below contains hardcoded paths based on my personal system.
+> Please ensure that you tweak your configurations to make sense within the context of your own system setup.
 > 
 > ~ Hammy
 
@@ -116,7 +116,7 @@ should look like the following:
 
 #### Example Scenario
 
-Some high level steps are shown below in an example development workflow for editing Link (UI) & Selection (Editor) highlights
+Some high-level steps are shown below in an example development workflow for editing Link (UI) & Selection (Editor) highlights
 
 ##### High Level
 
