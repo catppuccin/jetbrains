@@ -19,8 +19,7 @@ const handlebarsOpacity = (
 
   return colormath
     .mixColor(colormath.hex.toRgb(color), colormath.hex.toRgb(base), opacity)
-    .hex.toLowerCase()
-    .replace("#", "");
+    .hex.toLowerCase();
 };
 
 const handlebarsMix = (
