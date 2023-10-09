@@ -2479,7 +2479,7 @@
     <option name="SASS_VARIABLE" baseAttributes="DEFAULT_INSTANCE_FIELD"/>
     <option name="SEARCH_RESULT_ATTRIBUTES">
       <value>
-        <option name="BACKGROUND" value="{{base}}"/>
+        <option name="BACKGROUND" value="{{opacity blue 0.3}}"/>
       </value>
     </option>
     <option name="SLIM_BAD_CHARACTER">
