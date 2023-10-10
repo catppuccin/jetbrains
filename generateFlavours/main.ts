@@ -104,11 +104,11 @@ Object.entries(variants).forEach(([key, value]) => {
       primaryForeground: colors.text,
       primaryBackground: colors.base,
       secondaryBackground: colors.surface0,
-      hoverBackground: colors.surface1,
-      selectionBackground: colors.surface1,
+      hoverBackground: colors.surface0,
+      selectionBackground: colors.surface0,
       selectionInactiveBackground: colors.base,
-      borderColor: colors.surface1,
-      separatorColor: colors.surface1,
+      borderColor: colors.base,
+      separatorColor: colors.surface0,
     },
     ui: {
       "*": {
@@ -120,15 +120,32 @@ Object.entries(variants).forEach(([key, value]) => {
         selectionInactiveBackground: "selectionInactiveBackground",
         inactiveBackground: "primaryBackground",
         disabledBackground: "primaryBackground",
-        borderColor: "primaryBackground",
+        borderColor: "borderColor",
         separatorColor: "separatorColor",
       },
       List: {
+        rowHeight: "24",
+        border: "4,0,4,0",
         background: "mantle",
+        Button: {
+          separatorInset: 4,
+          leftRightInset: 8,
+        }
+      },
+      Banner: {
+        informativeForeground: "primaryForeground",
+        informativeBackground: "#" + opacity(value.blue.hex, 0.1),
+        informativeBorderColor: "#" + opacity(value.blue.hex, 0.15),
+        errorForeground: "primaryForeground",
+        errorBackground: "#" + opacity(value.red.hex, 0.1),
+        errorBorderColor: "#" + opacity(value.red.hex, 0.15),
+        warningForeground: "primaryForeground",
+        warningBackground: "#" + opacity(value.peach.hex, 0.1),
+        warningBorderColor: "#" + opacity(value.peach.hex, 0.15),
       },
       Borders: {
-        color: "primaryBackground",
-        ContrastBorderColor: "secondaryBackground",
+        color: "borderColor",
+        ContrastBorderColor: "separatorColor",
       },
       ActionButton: {
         hoverBackground: "hoverBackground",
@@ -189,9 +206,10 @@ Object.entries(variants).forEach(([key, value]) => {
         nonEditableBackground: "secondaryBackground",
       },
       CompletionPopup: {
-        selectionBackground: "selectionBackground",
-        selectionInactiveBackground: "selectionBackground",
-        matchForeground: "flamingo",
+        foreground: "text",
+        selectionBackground: "surface1",
+        selectionInactiveBackground: "surface0",
+        matchForeground: "mauve",
       },
       Component: {
         focusColor: "accentColor",
@@ -215,33 +233,40 @@ Object.entries(variants).forEach(([key, value]) => {
         background: "primaryBackground",
         shortcutForeground: "accentColor",
       },
+      EditorPane: {
+        splitBorder: "separatorColor"
+      },
       EditorTabs: {
-        background: "primaryBackground",
-        underlinedTabBackground: "secondaryBackground",
+        underlineArc: 4,
+        unselectedBlend: 0.7,
+        background: "base",
+        underlinedTabBackground: "mantle",
         underlineColor: "accentColor",
         underlineHeight: 1,
-        hoverBackground: "surface0",
-        inactiveUnderlineColor: "accentColor",
+        hoverBackground: "base",
+        inactiveUnderlineColor: "lavender",
+        inactiveHoverBackground: "red",
+        underTabsBorderColor: "separatorColor",
       },
       FileColor: {
-        Blue: isLatte
-          ? opacity(value.blue.hex, 0.2)
-          : opacity(value.blue.hex, 0.15),
-        Green: isLatte
-          ? opacity(value.green.hex, 0.2)
-          : opacity(value.green.hex, 0.15),
-        Orange: isLatte
-          ? opacity(value.peach.hex, 0.2)
-          : opacity(value.peach.hex, 0.15),
-        Yellow: isLatte
-          ? opacity(value.yellow.hex, 0.2)
-          : opacity(value.yellow.hex, 0.15),
-        Rose: isLatte
-          ? opacity(value.red.hex, 0.2)
-          : opacity(value.red.hex, 0.15),
-        Violet: isLatte
-          ? opacity(value.lavender.hex, 0.2)
-          : opacity(value.lavender.hex, 0.15),
+        Blue: '#' + (isLatte
+          ? opacity(value.blue.hex, 0.15)
+          : opacity(value.blue.hex, 0.10)),
+        Green: '#' + (isLatte
+          ? opacity(value.green.hex, 0.15)
+          : opacity(value.green.hex, 0.10)),
+        Orange: '#' + (isLatte
+          ? opacity(value.peach.hex, 0.15)
+          : opacity(value.peach.hex, 0.10)),
+        Yellow: '#' + (isLatte
+          ? opacity(value.yellow.hex, 0.15)
+          : opacity(value.yellow.hex, 0.10)),
+        Rose: '#' + (isLatte
+          ? opacity(value.red.hex, 0.15)
+          : opacity(value.red.hex, 0.10)),
+        Violet: '#' + (isLatte
+          ? opacity(value.lavender.hex, 0.15)
+          : opacity(value.lavender.hex, 0.10)),
       },
       Link: {
         activeForeground: "accentColor",
@@ -250,15 +275,17 @@ Object.entries(variants).forEach(([key, value]) => {
         pressedForeground: "secondaryAccentColor",
       },
       MainToolbar: {
-        background: "primaryBackground",
-        inactiveBackground: "primaryBackground",
-        Dropdown: {
-          hoverBackground: "hoverBackground",
-          pressedBackground: "hoverBackground",
-        },
+        background: "crust",
+        inactiveBackground: "mantle",
         Icon: {
           hoverBackground: "hoverBackground",
           pressedBackground: "hoverBackground",
+          insets: "5,5,5,5",
+        },
+        Dropdown: {
+          hoverBackground: "hoverBackground",
+          pressedBackground: "hoverBackground",
+          maxWidth: 350,
         },
       },
       MemoryIndicator: {
@@ -272,8 +299,8 @@ Object.entries(variants).forEach(([key, value]) => {
         },
       },
       Notification: {
-        background: "primaryBackground",
-        borderColor: "mauve",
+        background: "mantle",
+        borderColor: "surface0",
         errorBorderColor: "red",
         errorBackground: "primaryBackground",
         errorForeground: "primaryForeground",
@@ -288,6 +315,9 @@ Object.entries(variants).forEach(([key, value]) => {
           informativeBackground: "primaryBackground",
           informativeBorderColor: "secondaryAccentColor",
         },
+      },
+      Panel: {
+        background: "mantle"
       },
       PasswordField: {
         background: "secondaryBackground",
@@ -330,10 +360,18 @@ Object.entries(variants).forEach(([key, value]) => {
         passedColor: "green",
       },
       Popup: {
-        borderColor: "mauve",
+        borderWidth: 1,
+        paintBorder: true,
+        borderColor: "separatorColor",
+        inactiveBorderColor: "separatorColor",
+        Advertiser: {
+          background: "mantle",
+          foreground: "text",
+          fontSizeOffset: -1
+        },
         Header: {
-          activeBackground: "secondaryBackground",
-          inactiveBackground: "secondaryBackground",
+          activeBackground: "mantle",
+          inactiveBackground: "mantle",
         },
       },
       ScrollBar: {
@@ -364,10 +402,16 @@ Object.entries(variants).forEach(([key, value]) => {
         background: "mantle",
       },
       StatusBar: {
+        background: "mantle",
         borderColor: "borderColor",
         hoverBackground: "hoverBackground",
+        Breadcrumbs: {
+          chevronInset: 0,
+        }
       },
       TabbedPane: {
+        tabHeight: 40,
+        tabSelectionArc: 4,
         tabSelectionHeight: 1,
         focusColor: "hoverBackground",
         hoverColor: "hoverBackground",
@@ -396,7 +440,7 @@ Object.entries(variants).forEach(([key, value]) => {
         buttonColor: "primaryForeground",
       },
       ToolBar: {
-        background: "primaryBackground",
+        background: "mantle",
         borderHandleColor: "secondaryAccentColor",
       },
       ToolWindow: {
@@ -406,21 +450,20 @@ Object.entries(variants).forEach(([key, value]) => {
           selectedBackground: "hoverBackground",
         },
         Header: {
-          background: "primaryBackground",
-          inactiveBackground: "primaryBackground",
-          borderColor: "secondaryBackground",
+          background: "mantle",
+          inactiveBackground: "mantle",
+          borderColor: "borderColor",
         },
         HeaderTab: {
-          underlineColor: "pink",
+          underlineColor: "accentColor",
           inactiveUnderlineColor: "text",
           underlineHeight: 1,
-          underlinedTabBackground: "surface1",
-          selectedInactiveBackground: "base",
-          hoverBackground: "hoverBackground",
+          hoverBackground: "surface0",
         },
       },
       Tree: {
         rowHeight: 24,
+        border: "4,12,4,12",
         background: "mantle",
         modifiedItemForeground: "accentColor",
         hoverBackground: "secondaryBackground",
@@ -458,7 +501,7 @@ Object.entries(variants).forEach(([key, value]) => {
       },
       WelcomeScreen: {
         SidePanel: {
-          background: "secondaryBackground",
+          background: "mantle",
         },
         separatorColor: "separatorColor",
         Projects: {
@@ -470,6 +513,9 @@ Object.entries(variants).forEach(([key, value]) => {
           },
         },
       },
+      CheckBox: {
+        background: "mantle",
+      }
     },
     icons: {
       ColorPalette: {
@@ -490,7 +536,7 @@ Object.entries(variants).forEach(([key, value]) => {
         "Objects.Yellow": colors.yellow,
         "Objects.YellowDark": colors.flamingo,
         "Objects.BlackText": colors.surface0,
-        "Tree.iconColor": colors.blue,
+        "Tree.iconColor": colors.text,
         "Checkbox.Background.Default": colors.surface1,
         "Checkbox.Background.Selected": colors.surface1,
         "Checkbox.Background.Disabled": colors.surface0,
@@ -501,7 +547,7 @@ Object.entries(variants).forEach(([key, value]) => {
         "Checkbox.Border.Disabled": colors.surface0,
       },
     },
-  };
+  }
 
   Deno.writeTextFileSync(
     path.join(themePath, `${key}.theme.json`),

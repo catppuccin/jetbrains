@@ -4,6 +4,7 @@
 
 ### Added
 - Add background color for plugin tags
+- Overhaul/Refine user interface for "New UI"
 
 ### Changed
 
