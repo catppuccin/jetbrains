@@ -1152,7 +1152,7 @@
       </value>
     </option>
     <option name="GO_TEMPLATE_BACKGROUND">
-      <value />
+      <value/>
     </option>
     <option name="GO_TYPE_REFERENCE">
       <value>
@@ -1347,6 +1347,7 @@
         <option name="BACKGROUND" value="{{surface1}}"/>
       </value>
     </option>
+    <option name="INSTANCE_FIELD_ATTRIBUTES" baseAttributes="DEFAULT_INSTANCE_FIELD"/>
     <option name="IVAR">
       <value>
         <option name="FOREGROUND" value="{{text}}"/>
@@ -1820,9 +1821,8 @@
     </option>
     <option name="MATCHED_BRACE_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="{{pink}}"/>
         <option name="FONT_TYPE" value="1"/>
-        <option name="EFFECT_COLOR" value="{{surface2}}"/>
+        <option name="EFFECT_COLOR" value="{{overlay0}}"/>
       </value>
     </option>
     <option name="MATCHED_TAG_NAME" baseAttributes="MATCHED_BRACE_ATTRIBUTES"/>
@@ -1853,13 +1853,13 @@
     </option>
     <option name="NIX_BUILTIN">
       <value>
-        <option name="FOREGROUND" value="{{red}}" />
-        <option name="FONT_TYPE" value="2" />
+        <option name="FOREGROUND" value="{{red}}"/>
+        <option name="FONT_TYPE" value="2"/>
       </value>
     </option>
     <option name="NIX_IDENTIFIER">
       <value>
-        <option name="FOREGROUND" value="{{blue}}" />
+        <option name="FOREGROUND" value="{{blue}}"/>
       </value>
     </option>
     <option name="NOT_TOP_FRAME_ATTRIBUTES">
@@ -2633,6 +2633,8 @@
       </value>
     </option>
     <option name="STATIC_METHOD_ATTRIBUTES" baseAttributes="DEFAULT_STATIC_METHOD"/>
+    <option name="STATIC_FIELD_ATTRIBUTES" baseAttributes="DEFAULT_STATIC_FIELD"/>
+    <option name="STATIC_FINAL_FIELD_ATTRIBUTES" baseAttributes="STATIC_FIELD_ATTRIBUTES"/>
     <option name="STYLUS_VARIABLE">
       <value/>
     </option>
