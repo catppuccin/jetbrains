@@ -2,9 +2,24 @@
 
 ## [Unreleased]
 
+We have significantly improved the contrast between panels and
+improved consistency in the "New UI." 
+
+**We have chosen to raise the minimum supported version for this 
+plugin to `2023.1`** as the development of themes in JetBrains 
+has become increasingly painful as the "New UI" manages to break 
+existing behaviour and introduce new keys which change multiple 
+things at once with each new version.
+
+If you find that anything has regressed since the previous version,
+please raise an issue in our [issue tracker](https://github.com/catppuccin/jetbrains/issues)
+if it hasn't already been raised.
+
 ### Added
-- Add background color for plugin tags
-- Overhaul/Refine user interface for "New UI"
+
+- (UI): Add background color for plugin tags
+- (UI): Refine user interface for "New UI"
+- (General): Support 2023.3 EAP
 
 ### Changed
 
@@ -14,10 +29,10 @@
 
 ### Fixed
 
-- Improve Nix syntax highlighting
+- (Nix): Improve syntax highlighting
 - (Go): Make references in comments distinguishable
 - (Go): Fix template syntax highlighting
-- Highlight background of search results consistency
+- (General): Highlight background of search results for consistency
 
 ### Security
 
