@@ -468,7 +468,7 @@ Object.entries(variants).forEach(([key, value]) => {
         modifiedItemForeground: "accentColor",
         hoverBackground: "secondaryBackground",
         selectionBackground: "selectionBackground",
-        selectionInactiveBackground: "selectionInactiveBackground",
+        selectionInactiveBackground: "selectionBackground",
       },
       ValidationTooltip: {
         errorBackground: "mantle",
