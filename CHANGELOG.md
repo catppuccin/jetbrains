@@ -10,6 +10,8 @@
 
 ### Removed
 
+- (Misc): incorrect image link in plugin description
+
 ### Fixed
 
 ### Security
