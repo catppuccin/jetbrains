@@ -2926,6 +2926,11 @@
     <option name="org.rust.UNSAFE_CODE">
       <value/>
     </option>
+    <option name="org.rust.VARIABLE">
+      <value>
+        <option name="FOREGROUND" value="{{text}}"/>
+      </value>
+    </option>
     <option name="org.toml.KEY">
       <value>
         <option name="FOREGROUND" value="{{blue}}"/>

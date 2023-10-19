@@ -14,6 +14,8 @@
 
 ### Fixed
 
+- (Rust): Highlight variables as `text` instead of `peach`
+
 ### Security
 
 ## 3.0.0 - 2023-10-16
