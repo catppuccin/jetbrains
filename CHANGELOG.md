@@ -16,6 +16,7 @@
 
 - (Rust): Highlight variables as `text` instead of `peach`
 - (Editor): Highlight first row of code completion popup
+- (UI): Sync button background with panel background
 
 ### Security
 

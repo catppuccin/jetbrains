@@ -173,13 +173,14 @@ Object.entries(variants).forEach(([key, value]) => {
         },
       },
       Button: {
+        background: "mantle",
         foreground: "primaryForeground",
         startBorderColor: "secondaryBackground",
         endBorderColor: "secondaryBackground",
         startBackground: "secondaryBackground",
         endBackground: "secondaryBackground",
         focusedBorderColor: "secondaryBackground",
-        disabledBorderColor: "primaryBackground",
+        disabledBorderColor: "secondaryBackground",
         default: {
           foreground: "surface1",
           startBackground: "accentColor",
@@ -187,7 +188,7 @@ Object.entries(variants).forEach(([key, value]) => {
           startBorderColor: "accentColor",
           endBorderColor: "accentColor",
           focusColor: "accentColor",
-          focusedBorderColor: "surface1",
+          focusedBorderColor: "accentColor",
         },
       },
       Counter: {
