@@ -7,6 +7,7 @@
 ### Changed
 
 - (UI): Highlight text in accented buttons as `crust` instead of `surface1` for increased contrast
+- (SDL): Improve syntax highlighting
 
 ### Deprecated
 
