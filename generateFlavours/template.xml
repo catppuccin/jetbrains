@@ -1348,6 +1348,11 @@
       </value>
     </option>
     <option name="INSTANCE_FIELD_ATTRIBUTES" baseAttributes="DEFAULT_INSTANCE_FIELD"/>
+    <option name="io.github.intellij.dlanguage.sdlang.TAG_IDENTIFIER">
+      <value>
+        <option name="FOREGROUND" value="{{blue}}" />
+      </value>
+    </option>
     <option name="IVAR">
       <value>
         <option name="FOREGROUND" value="{{text}}"/>
