@@ -41,7 +41,7 @@ const capitalize = (str: string): string => {
 const __dirname = path.dirname(path.fromFileUrl(import.meta.url));
 const themePath = path.join(__dirname, "../src/main/resources/themes/");
 const templatePath = path.join(__dirname, "template.xml");
-Deno.mkdirSync(themePath, { recursive: true });
+Deno.mkdirSync(themePath, {recursive: true});
 
 Object.entries(variants).forEach(([key, value]) => {
   const isLatte = key === "latte";
@@ -53,7 +53,7 @@ Object.entries(variants).forEach(([key, value]) => {
         [key]: hex,
       };
     })
-    .reduce((acc, curr) => ({ ...acc, ...curr }), {});
+    .reduce((acc, curr) => ({...acc, ...curr}), {});
 
   const opacity = (color: string, val: number): string => {
     // mimic the context available in handlebars,
@@ -578,7 +578,7 @@ Deno.readTextFile(templatePath).then((data) => {
           [key]: hex,
         };
       })
-      .reduce((acc, curr) => ({ ...acc, ...curr }), {});
+      .reduce((acc, curr) => ({...acc, ...curr}), {});
 
     italicsVersions.forEach((italics) => {
       const options = {
