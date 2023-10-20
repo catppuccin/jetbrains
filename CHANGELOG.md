@@ -15,6 +15,7 @@
 ### Fixed
 
 - (Rust): Highlight variables as `text` instead of `peach`
+- (Editor): Highlight first row of code completion popup
 
 ### Security
 

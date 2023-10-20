@@ -206,9 +206,8 @@ Object.entries(variants).forEach(([key, value]) => {
         nonEditableBackground: "secondaryBackground",
       },
       CompletionPopup: {
-        foreground: "text",
         selectionBackground: "surface1",
-        selectionInactiveBackground: "surface0",
+        selectionInactiveBackground: "surface1",
         matchForeground: "mauve",
       },
       Component: {
