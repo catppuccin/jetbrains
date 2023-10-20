@@ -182,7 +182,7 @@ Object.entries(variants).forEach(([key, value]) => {
         focusedBorderColor: "secondaryBackground",
         disabledBorderColor: "secondaryBackground",
         default: {
-          foreground: "surface1",
+          foreground: "crust",
           startBackground: "accentColor",
           endBackground: "accentColor",
           startBorderColor: "accentColor",
