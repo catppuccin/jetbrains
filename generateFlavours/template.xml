@@ -1384,6 +1384,16 @@
         <option name="FOREGROUND" value="{{sky}}"/>
       </value>
     </option>
+    <option name="JADE_FILTER_NAME">
+      <value>
+        <option name="FOREGROUND" value="{{blue}}" />
+      </value>
+    </option>
+    <option name="JADE_JS_BLOCK">
+      <value>
+        <option name="FOREGROUND" value="{{lavender}}" />
+      </value>
+    </option>
     <option name="JS.PARAMETER" baseAttributes="DEFAULT_PARAMETER"/>
     <option name="JS.DECORATOR">
       <value>
