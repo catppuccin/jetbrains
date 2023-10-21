@@ -76,6 +76,7 @@ Deno.readTextFile(uiPath).then((data) => {
       name: `Catppuccin ${capitalize(key)}`,
       editorScheme: `/themes/${key}.xml`,
       isDark: isDark,
+      isLatte: !isDark,
       ...hexValues,
     };
 
