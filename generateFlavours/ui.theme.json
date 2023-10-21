@@ -162,7 +162,10 @@
     },
     "Editor": {
       "background": "primaryBackground",
-      "shortcutForeground": "accentColor"
+      "shortcutForeground": "accentColor",
+      "Toolbar": {
+        "borderColor": "separatorColor"
+      }
     },
     "EditorPane": {
       "splitBorder": "separatorColor"
