@@ -1,3 +1,9 @@
+# Workflow Description:
+#   - Patches the `CHANGELOG.md` into the `.jar` for updated release notes
+#   - Builds the `.jar`
+#   - Publishes to the JetBrains Marketplace
+#   - Creates a draft release on GitHub for maintainers with the new `.jar` to manually review and release
+
 name: Publish
 
 on:
