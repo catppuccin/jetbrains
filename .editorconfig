@@ -18,7 +18,7 @@ indent_style = tab
 indent_size = 4
 
 # python
-[*.{ini,py,py.tpl,rst}]
+[*.{ini,py,py.tpl,rst,kt,kts}]
 indent_size = 4
 
 # rust

@@ -50,5 +50,9 @@ For further help, see also:
     <bundledColorScheme path="/themes/frappe-no-italics"/>
     <bundledColorScheme path="/themes/macchiato-no-italics"/>
     <bundledColorScheme path="/themes/mocha-no-italics"/>
+
+    <iconProvider implementation="com.github.catppuccin.jetbrains.icons.CatppuccinIconProvider"
+                  order="first"
+                  id="CatppuccinIconProvider"/>
   </extensions>
 </idea-plugin>
