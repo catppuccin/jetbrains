@@ -6,24 +6,29 @@
 
 ### Changed
 
-- (UI): Highlight text in accented buttons as `crust` instead of `surface1` for increased contrast
-- (UI)(Latte): Use `crust` instead of `base` for darker borders and increased contrast.
-- (SDL, Logcat, Jade): Improve syntax highlighting
-
 ### Deprecated
 
 ### Removed
 
+### Fixed
+
+### Security
+
+## 3.1.0 - 2023-10-21
+
+### Changed
+- (UI): Highlight text in accented buttons as `crust` instead of `surface1` for increased contrast
+- (UI)(Latte): Use `crust` instead of `base` for darker borders and increased contrast.
+- (SDL, Logcat, Jade): Improve syntax highlighting
+
+### Removed
 - (Misc): incorrect image link in plugin description
 
 ### Fixed
-
 - (Rust): Highlight variables as `text` instead of `peach`
 - (Editor): Highlight first row of code completion popup
 - (UI): Sync button background with panel background
 - (UI)(Latte): Darken checkboxes to make radio buttons visible
-
-### Security
 
 ## 3.0.0 - 2023-10-16
 We have significantly improved the contrast between panels and
