@@ -38,7 +38,7 @@
     "hoverBackground": "{{surface0}}",
     "selectionBackground": "{{surface0}}",
     "selectionInactiveBackground": "{{base}}",
-    "borderColor": "{{base}}",
+    "borderColor": "{{isLatte crust base}}",
     "separatorColor": "{{surface0}}"
   },
   "ui": {

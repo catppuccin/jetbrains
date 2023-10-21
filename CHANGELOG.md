@@ -7,6 +7,7 @@
 ### Changed
 
 - (UI): Highlight text in accented buttons as `crust` instead of `surface1` for increased contrast
+- (UI)(Latte): Use `crust` instead of `base` for darker borders and increased contrast.
 - (SDL, Logcat, Jade): Improve syntax highlighting
 
 ### Deprecated
