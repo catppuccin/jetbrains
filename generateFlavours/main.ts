@@ -77,6 +77,21 @@ Deno.readTextFile(uiPath).then((data) => {
       editorScheme: `/themes/${key}.xml`,
       isDark: isDark,
       isLatte: !isDark,
+
+      // strive to only use these values inside of `ui.theme.json`
+      accentColor: hexValues.mauve,
+      secondaryAccentColor: hexValues.yellow,
+      primaryForeground: hexValues.text,
+      primaryBackground: hexValues.base,
+      secondaryBackground: hexValues.surface0,
+      panelBackground: hexValues.mantle,
+      hoverBackground: hexValues.surface0,
+      selectionBackground: hexValues.surface0,
+      selectionInactiveBackground: hexValues.base,
+      borderColor: isDark ? hexValues.base : hexValues.crust,
+      separatorColor: hexValues.surface0,
+
+      // normal palette
       ...hexValues,
     };
 

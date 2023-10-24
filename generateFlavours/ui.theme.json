@@ -30,16 +30,17 @@
     "text": "{{text}}",
     "subtext0": "{{subtext0}}",
     "subtext1": "{{subtext1}}",
-    "accentColor": "{{mauve}}",
-    "secondaryAccentColor": "{{yellow}}",
-    "primaryForeground": "{{text}}",
-    "primaryBackground": "{{base}}",
-    "secondaryBackground": "{{surface0}}",
-    "hoverBackground": "{{surface0}}",
-    "selectionBackground": "{{surface0}}",
-    "selectionInactiveBackground": "{{base}}",
-    "borderColor": "{{isLatte crust base}}",
-    "separatorColor": "{{surface0}}"
+    "accentColor": "{{accentColor}}",
+    "secondaryAccentColor": "{{secondaryAccentColor}}",
+    "primaryForeground": "{{primaryForeground}}",
+    "primaryBackground": "{{primaryBackground}}",
+    "secondaryBackground": "{{secondaryBackground}}",
+    "panelBackground": "{{panelBackground}}",
+    "hoverBackground": "{{hoverBackground}}",
+    "selectionBackground": "{{selectionBackground}}",
+    "selectionInactiveBackground": "{{selectionInactiveBackground}}",
+    "borderColor": "{{borderColor}}",
+    "separatorColor": "{{separatorColor}}"
   },
   "ui": {
     "*": {
@@ -57,7 +58,7 @@
     "List": {
       "rowHeight": "24",
       "border": "4,0,4,0",
-      "background": "mantle",
+      "background": "panelBackground",
       "Button": {
         "separatorInset": 4,
         "leftRightInset": 8
@@ -81,8 +82,8 @@
     "ActionButton": {
       "hoverBackground": "hoverBackground",
       "hoverBorderColor": "hoverBackground",
-      "pressedBackground": "hoverBackground",
-      "pressedBorderColor": "hoverBackground"
+      "pressedBackground": "selectionBackground",
+      "pressedBorderColor": "selectionBackground"
     },
     "Bookmark": {
       "iconBackground": "accentColor",
@@ -104,7 +105,7 @@
       }
     },
     "Button": {
-      "background": "mantle",
+      "background": "panelBackground",
       "foreground": "primaryForeground",
       "startBorderColor": "secondaryBackground",
       "endBorderColor": "secondaryBackground",
@@ -174,7 +175,7 @@
       "underlineArc": 4,
       "unselectedBlend": 0.7,
       "background": "base",
-      "underlinedTabBackground": "mantle",
+      "underlinedTabBackground": "panelBackground",
       "underlineColor": "accentColor",
       "underlineHeight": 1,
       "hoverBackground": "base",
@@ -198,7 +199,7 @@
     },
     "MainToolbar": {
       "background": "crust",
-      "inactiveBackground": "mantle",
+      "inactiveBackground": "panelBackground",
       "Icon": {
         "hoverBackground": "hoverBackground",
         "pressedBackground": "hoverBackground",
@@ -221,7 +222,7 @@
       }
     },
     "Notification": {
-      "background": "mantle",
+      "background": "panelBackground",
       "borderColor": "surface0",
       "errorBorderColor": "red",
       "errorBackground": "primaryBackground",
@@ -239,7 +240,7 @@
       }
     },
     "Panel": {
-      "background": "mantle"
+      "background": "panelBackground"
     },
     "PasswordField": {
       "background": "secondaryBackground"
@@ -287,13 +288,13 @@
       "borderColor": "separatorColor",
       "inactiveBorderColor": "separatorColor",
       "Advertiser": {
-        "background": "mantle",
+        "background": "panelBackground",
         "foreground": "text",
         "fontSizeOffset": -1
       },
       "Header": {
-        "activeBackground": "mantle",
-        "inactiveBackground": "mantle"
+        "activeBackground": "panelBackground",
+        "inactiveBackground": "panelBackground"
       }
     },
     "ScrollBar": {
@@ -321,10 +322,10 @@
       "separatorColor": "separatorColor"
     },
     "SidePanel": {
-      "background": "mantle"
+      "background": "panelBackground"
     },
     "StatusBar": {
-      "background": "mantle",
+      "background": "panelBackground",
       "borderColor": "borderColor",
       "hoverBackground": "hoverBackground",
       "Breadcrumbs": {
@@ -352,7 +353,7 @@
       "background": "secondaryBackground"
     },
     "TextArea": {
-      "background": "mantle"
+      "background": "panelBackground"
     },
     "ToggleButton": {
       "onBackground": "green",
@@ -362,18 +363,18 @@
       "buttonColor": "primaryForeground"
     },
     "ToolBar": {
-      "background": "mantle",
+      "background": "panelBackground",
       "borderHandleColor": "secondaryAccentColor"
     },
     "ToolWindow": {
-      "background": "mantle",
+      "background": "panelBackground",
       "Button": {
         "hoverBackground": "hoverBackground",
         "selectedBackground": "hoverBackground"
       },
       "Header": {
-        "background": "mantle",
-        "inactiveBackground": "mantle",
+        "background": "panelBackground",
+        "inactiveBackground": "panelBackground",
         "borderColor": "borderColor"
       },
       "HeaderTab": {
@@ -386,16 +387,16 @@
     "Tree": {
       "rowHeight": 24,
       "border": "4,12,4,12",
-      "background": "mantle",
+      "background": "panelBackground",
       "modifiedItemForeground": "accentColor",
-      "hoverBackground": "secondaryBackground",
+      "hoverBackground": "crust",
       "selectionBackground": "selectionBackground",
       "selectionInactiveBackground": "selectionBackground"
     },
     "ValidationTooltip": {
-      "errorBackground": "mantle",
+      "errorBackground": "panelBackground",
       "errorBorderColor": "red",
-      "warningBackground": "mantle",
+      "warningBackground": "panelBackground",
       "warningBorderColor": "secondaryAccentColor"
     },
     "VersionControl": {
@@ -423,7 +424,7 @@
     },
     "WelcomeScreen": {
       "SidePanel": {
-        "background": "mantle"
+        "background": "panelBackground"
       },
       "separatorColor": "separatorColor",
       "Projects": {
@@ -436,7 +437,7 @@
       }
     },
     "CheckBox": {
-      "background": "mantle"
+      "background": "panelBackground"
     }
   },
   "icons": {
@@ -465,8 +466,8 @@
       "Checkbox.Background.Selected.Dark": "{{surface1}}",
       "Checkbox.Background.Disabled": "{{surface0}}",
       "Checkbox.Background.Disabled.Dark": "{{surface0}}",
-      "Checkbox.Foreground.Selected": "{{mauve}}",
-      "Checkbox.Foreground.Selected.Dark": "{{mauve}}",
+      "Checkbox.Foreground.Selected": "{{accentColor}}",
+      "Checkbox.Foreground.Selected.Dark": "{{accentColor}}",
       "Checkbox.Foreground.Disabled": "{{overlay0}}",
       "Checkbox.Foreground.Disabled.Dark": "{{overlay0}}",
       "Checkbox.Border.Default": "{{surface0}}",
