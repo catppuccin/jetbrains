@@ -80,6 +80,7 @@
   "ui": {
     "*": {
       "arc": "7",
+      "foreground": "primaryForeground",
       "background": "primaryBackground",
       "borderColor": "borderColor",
       "disabledBackground": "primaryBackground",
