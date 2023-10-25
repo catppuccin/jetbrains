@@ -183,6 +183,9 @@
       "background": "accentColor",
       "foreground": "primaryBackground"
     },
+    "DefaultTabs": {
+      "background": "panelBackground"
+    },
     "DragAndDrop": {
       "borderColor": "selectionBackground"
     },
@@ -216,6 +219,10 @@
       "Violet": "{{isLatte (opacityNoHex lavender 0.15) (opacityNoHex lavender 0.1)}}",
       "Yellow": "{{isLatte (opacityNoHex yellow 0.15) (opacityNoHex yellow 0.1)}}"
     },
+    "Label": {
+      "selectedForeground": "selectionBackground",
+      "background": "panelBackground"
+    },
     "Link": {
       "activeForeground": "accentColor",
       "hoverForeground": "accentColor",
@@ -229,7 +236,9 @@
       },
       "background": "panelBackground",
       "border": "4,0,4,0",
-      "rowHeight": "24"
+      "rowHeight": "24",
+      "selectionInactiveBackground": "{{isLatte hoverBackground base}}",
+      "hoverBackground": "hoverBackground"
     },
     "MainToolbar": {
       "Dropdown": {
@@ -280,6 +289,7 @@
       "background": "secondaryBackground"
     },
     "Plugins": {
+      "borderColor": "borderColor",
       "Button": {
         "installBackground": "primaryBackground",
         "installBorderColor": "secondaryAccentColor",
@@ -331,6 +341,9 @@
       "progressColor": "accentColor",
       "trackColor": "selectionBackground"
     },
+    "RadioButton": {
+      "background": "panelBackground"
+    },
     "RunWidget": {
       "background": "secondaryBackground",
       "foreground": "text",
@@ -363,6 +376,9 @@
     "SidePanel": {
       "background": "panelBackground"
     },
+    "Slider": {
+      "background": "panelBackground"
+    },
     "StatusBar": {
       "Breadcrumbs": {
         "chevronInset": 0
@@ -372,8 +388,9 @@
       "hoverBackground": "hoverBackground"
     },
     "TabbedPane": {
-      "contentAreaColor": "primaryBackground",
-      "focusColor": "hoverBackground",
+      "background": "panelBackground",
+      "contentAreaColor": "borderColor",
+      "focusColor": "selectionBackground",
       "hoverColor": "hoverBackground",
       "tabHeight": 40,
       "tabSelectionArc": 4,

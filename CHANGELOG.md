@@ -10,6 +10,9 @@
 
 ### Changed
 
+- (UI): Try to unify `RadioButton`, `Slider`, `List`, `Label` and `Tab` backgrounds. This should hopefully fix some 
+  of the little inconsistencies in the settings.
+
 ### Deprecated
 
 ### Removed
