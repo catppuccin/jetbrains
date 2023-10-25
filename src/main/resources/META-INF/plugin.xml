@@ -45,10 +45,9 @@ For further help, see also:
     <themeProvider id="com.github.catppuccin.frappe.jetbrains" path="/themes/frappe.theme.json"/>
     <themeProvider id="com.github.catppuccin.macchiato.jetbrains" path="/themes/macchiato.theme.json"/>
     <themeProvider id="com.github.catppuccin.mocha.jetbrains" path="/themes/mocha.theme.json"/>
-
-    <bundledColorScheme path="/themes/latte-no-italics"/>
-    <bundledColorScheme path="/themes/frappe-no-italics"/>
-    <bundledColorScheme path="/themes/macchiato-no-italics"/>
-    <bundledColorScheme path="/themes/mocha-no-italics"/>
+    <bundledColorScheme id="com.github.catppuccin.latte.no.italics.jetbrains" path="/themes/latte-no-italics"/>
+    <bundledColorScheme id="com.github.catppuccin.frappe.no.italics.jetbrains" path="/themes/frappe-no-italics"/>
+    <bundledColorScheme id="com.github.catppuccin.macchiato.no.italics.jetbrains" path="/themes/macchiato-no-italics"/>
+    <bundledColorScheme id="com.github.catppuccin.mocha.no.italics.jetbrains" path="/themes/mocha-no-italics"/>
   </extensions>
 </idea-plugin>
