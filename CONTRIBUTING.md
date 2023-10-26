@@ -15,8 +15,8 @@ for contributors.
 - `.github/workflows/` - CI/CD workflows for building and distributing `.jar` files
 - `.run/` - Collection of useful Intellij run configuration tasks that ease the development process
 - `generateFlavours/` - Typescript code that generates all 4 Catppuccin flavours into JetBrains format.
-  - `editor.xml` - Highlights for everything contained within the [editor]()
-  - `ui.theme.json` - Highlights for everything contained within the [user interface]()
+  - `editor.xml` - Highlights for everything contained within the [editor](https://www.jetbrains.com/help/idea/configuring-colors-and-fonts.html)
+  - `ui.theme.json` - Highlights for everything contained within the [user interface](https://www.jetbrains.com/help/idea/user-interface-themes.html)
   - `main.ts` - Responsible for parsing the `editor.xml` and `ui.theme.json` and generating the themes
     in `src/main/resources/themes`.
 - `src/main/resources/META-INF` - Contains metadata that is shipped with the built `.jar` including the logo, id, name,
