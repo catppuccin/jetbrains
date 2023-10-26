@@ -443,7 +443,7 @@
     "Tree": {
       "background": "panelBackground",
       "border": "4,12,4,12",
-      "hoverBackground": "crust",
+      "hoverBackground": "hoverBackground",
       "modifiedItemForeground": "accentColor",
       "rowHeight": 24,
       "selectionBackground": "selectionBackground",
@@ -470,8 +470,9 @@
       },
       "Log": {
         "Commit": {
-          "currentBranchBackground": "secondaryBackground",
-          "hoveredBackground": "selectionBackground"
+          "selectionInactiveBackground": "selectionInactiveBackground",
+          "currentBranchBackground": "panelBackground",
+          "hoveredBackground": "hoverBackground"
         }
       },
       "RefLabel": {
