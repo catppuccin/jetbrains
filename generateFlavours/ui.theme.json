@@ -80,10 +80,10 @@
   "ui": {
     "*": {
       "arc": "7",
-      "foreground": "primaryForeground",
       "background": "primaryBackground",
       "borderColor": "borderColor",
       "disabledBackground": "primaryBackground",
+      "foreground": "primaryForeground",
       "inactiveBackground": "primaryBackground",
       "selectionBackground": "selectionBackground",
       "selectionForeground": "primaryForeground",
@@ -173,9 +173,9 @@
       "borderColor": "borderColor",
       "disabledBorderColor": "selectionBackground",
       "errorFocusColor": "red",
-      "iconColor": "primaryForeground",
       "focusColor": "accentColor",
       "focusedBorderColor": "selectionBackground",
+      "iconColor": "primaryForeground",
       "inactiveErrorFocusColor": "red",
       "inactiveWarningFocusColor": "yellow",
       "warningFocusColor": "yellow"
@@ -185,9 +185,9 @@
       "foreground": "primaryBackground"
     },
     "DefaultTabs": {
-      "underlinedTabBackground": "panelBackground",
+      "background": "panelBackground",
       "hoverBackground": "primaryBackground",
-      "background": "panelBackground"
+      "underlinedTabBackground": "panelBackground"
     },
     "DragAndDrop": {
       "borderColor": "selectionBackground"
@@ -223,8 +223,8 @@
       "Yellow": "{{isLatte (opacityWithHex yellow 0.15) (opacityWithHex yellow 0.1)}}"
     },
     "Label": {
-      "selectedForeground": "selectionBackground",
-      "background": "panelBackground"
+      "background": "panelBackground",
+      "selectedForeground": "selectionBackground"
     },
     "Link": {
       "activeForeground": "accentColor",
@@ -239,9 +239,9 @@
       },
       "background": "panelBackground",
       "border": "4,0,4,0",
+      "hoverBackground": "hoverBackground",
       "rowHeight": "24",
-      "selectionInactiveBackground": "{{isLatte hoverBackground base}}",
-      "hoverBackground": "hoverBackground"
+      "selectionInactiveBackground": "{{isLatte hoverBackground base}}"
     },
     "MainToolbar": {
       "Dropdown": {
@@ -292,10 +292,6 @@
       "background": "secondaryBackground"
     },
     "Plugins": {
-      "borderColor": "borderColor",
-      "hoverBackground": "hoverBackground",
-      "lightSelectionBackground": "selectionBackground",
-      "tagBackground": "panelBackground",
       "Button": {
         "installBackground": "primaryBackground",
         "installBorderColor": "secondaryAccentColor",
@@ -317,7 +313,11 @@
         "hoverBackground": "hoverBackground",
         "selectedBackground": "selectionBackground",
         "selectedForeground": "primaryForeground"
-      }
+      },
+      "borderColor": "borderColor",
+      "hoverBackground": "hoverBackground",
+      "lightSelectionBackground": "selectionBackground",
+      "tagBackground": "panelBackground"
     },
     "Popup": {
       "Advertiser": {
@@ -348,12 +348,12 @@
       "background": "panelBackground"
     },
     "RunWidget": {
-      "iconColor": "primaryForeground",
-      "pressedBackground": "green",
-      "stopBackground": "red",
       "background": "secondaryBackground",
       "foreground": "text",
-      "separatorColor": "separatorColor"
+      "iconColor": "primaryForeground",
+      "pressedBackground": "green",
+      "separatorColor": "separatorColor",
+      "stopBackground": "red"
     },
     "ScrollBar": {
       "Mac": {
@@ -448,9 +448,9 @@
       "background": "panelBackground"
     },
     "Tree": {
-      "foreground": "primaryForeground",
       "background": "panelBackground",
       "border": "4,12,4,12",
+      "foreground": "primaryForeground",
       "hoverBackground": "hoverBackground",
       "modifiedItemForeground": "accentColor",
       "rowHeight": 24,
@@ -478,9 +478,9 @@
       },
       "Log": {
         "Commit": {
-          "selectionInactiveBackground": "selectionInactiveBackground",
           "currentBranchBackground": "panelBackground",
-          "hoveredBackground": "hoverBackground"
+          "hoveredBackground": "hoverBackground",
+          "selectionInactiveBackground": "selectionInactiveBackground"
         }
       },
       "RefLabel": {
