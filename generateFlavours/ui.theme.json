@@ -184,6 +184,8 @@
       "foreground": "primaryBackground"
     },
     "DefaultTabs": {
+      "underlinedTabBackground": "panelBackground",
+      "hoverBackground": "primaryBackground",
       "background": "panelBackground"
     },
     "DragAndDrop": {
@@ -200,8 +202,8 @@
       "splitBorder": "separatorColor"
     },
     "EditorTabs": {
-      "background": "base",
-      "hoverBackground": "base",
+      "background": "primaryBackground",
+      "hoverBackground": "primaryBackground",
       "inactiveHoverBackground": "red",
       "inactiveUnderlineColor": "lavender",
       "underTabsBorderColor": "separatorColor",
