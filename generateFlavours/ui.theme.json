@@ -170,9 +170,10 @@
       "selectionInactiveBackground": "surface1"
     },
     "Component": {
-      "borderColor": "primaryBackground",
+      "borderColor": "borderColor",
       "disabledBorderColor": "selectionBackground",
       "errorFocusColor": "red",
+      "iconColor": "primaryForeground",
       "focusColor": "accentColor",
       "focusedBorderColor": "selectionBackground",
       "inactiveErrorFocusColor": "red",

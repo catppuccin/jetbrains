@@ -22,6 +22,8 @@
 
 ### Fixed
 
+- (UI): Sync border with background for `TextField`, `ComboBox`, and `Spinner`
+
 ### Security
 
 ## 3.1.1 - 2023-10-26
