@@ -427,7 +427,8 @@
     "ToolWindow": {
       "Button": {
         "hoverBackground": "hoverBackground",
-        "selectedBackground": "hoverBackground"
+        "selectedBackground": "hoverBackground",
+        "selectedForeground": "primaryForeground"
       },
       "Header": {
         "background": "panelBackground",
@@ -443,6 +444,7 @@
       "background": "panelBackground"
     },
     "Tree": {
+      "foreground": "primaryForeground",
       "background": "panelBackground",
       "border": "4,12,4,12",
       "hoverBackground": "hoverBackground",
