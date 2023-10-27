@@ -13,8 +13,8 @@
 
 - (UI): Try to unify `RadioButton`, `Slider`, `List`, `Label` and `Tab` backgrounds. This should hopefully fix some 
   of the little inconsistencies in the settings.
-- (UI): Improve highlights for the `VersionControl.GitLog`
-- (UI): Improve highlights for the `Plugin` settings panel
+- (UI): Improve highlights for the Git Log panel. (`VersionControl.GitLog`)
+- (UI): Improve highlights for the Marketplace Plugin panel. (`Settings` -> `Plugins`)
 
 ### Deprecated
 
@@ -22,7 +22,7 @@
 
 ### Fixed
 
-- (UI): Sync border with background for `TextField`, `ComboBox`, and `Spinner`
+- (UI): Sync border with background for `TextField`, `ComboBox`, and `Spinner`.
 
 ### Security
 
