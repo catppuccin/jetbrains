@@ -347,6 +347,9 @@
       "background": "panelBackground"
     },
     "RunWidget": {
+      "iconColor": "primaryForeground",
+      "pressedBackground": "green",
+      "stopBackground": "red",
       "background": "secondaryBackground",
       "foreground": "text",
       "separatorColor": "separatorColor"

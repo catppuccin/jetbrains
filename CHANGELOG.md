@@ -7,6 +7,7 @@
 - (UI): **Set all `foreground` elements to use `text` colour.** This really should have been set from the beginning,
   you may notice that UI text elements are lighter and contrast less with the background. (i.e. Mocha thus far has
   been using `#FFFFFF` instead of the intended text colour `#cdd6f4` in the user interface)
+- (UI): Highlight `RunWidget` icons (More Actions, Spinning Icon) as `text`
 
 ### Changed
 
