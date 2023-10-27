@@ -290,6 +290,9 @@
     },
     "Plugins": {
       "borderColor": "borderColor",
+      "hoverBackground": "hoverBackground",
+      "lightSelectionBackground": "selectionBackground",
+      "tagBackground": "panelBackground",
       "Button": {
         "installBackground": "primaryBackground",
         "installBorderColor": "secondaryAccentColor",
@@ -302,19 +305,16 @@
         "updateForeground": "primaryBackground"
       },
       "SearchField": {
-        "background": "secondaryBackground"
+        "background": "panelBackground"
       },
       "SectionHeader": {
         "foreground": "primaryForeground"
       },
       "Tab": {
         "hoverBackground": "hoverBackground",
-        "selectedBackground": "hoverBackground",
+        "selectedBackground": "selectionBackground",
         "selectedForeground": "primaryForeground"
-      },
-      "hoverBackground": "hoverBackground",
-      "lightSelectionBackground": "hoverBackground",
-      "tagBackground": "secondaryBackground"
+      }
     },
     "Popup": {
       "Advertiser": {

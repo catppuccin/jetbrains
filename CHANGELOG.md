@@ -13,6 +13,7 @@
 - (UI): Try to unify `RadioButton`, `Slider`, `List`, `Label` and `Tab` backgrounds. This should hopefully fix some 
   of the little inconsistencies in the settings.
 - (UI): Improve highlights for the `VersionControl.GitLog`
+- (UI): Improve highlights for the `Plugin` settings panel
 
 ### Deprecated
 
