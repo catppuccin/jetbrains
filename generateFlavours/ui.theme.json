@@ -271,7 +271,7 @@
         "warningForeground": "primaryForeground"
       },
       "background": "panelBackground",
-      "borderColor": "surface0",
+      "borderColor": "borderColor",
       "errorBackground": "primaryBackground",
       "errorBorderColor": "red",
       "errorForeground": "primaryForeground"
