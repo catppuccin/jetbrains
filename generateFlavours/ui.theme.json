@@ -98,14 +98,14 @@
       "pressedBorderColor": "selectionBackground"
     },
     "Banner": {
-      "errorBackground": "{{opacityNoHex red 0.1}}",
-      "errorBorderColor": "{{opacityNoHex red 0.15}}",
+      "errorBackground": "{{opacityWithHex red 0.1}}",
+      "errorBorderColor": "{{opacityWithHex red 0.15}}",
       "errorForeground": "primaryForeground",
-      "informativeBackground": "{{opacityNoHex blue 0.1}}",
-      "informativeBorderColor": "{{opacityNoHex blue 0.15}}",
+      "informativeBackground": "{{opacityWithHex blue 0.1}}",
+      "informativeBorderColor": "{{opacityWithHex blue 0.15}}",
       "informativeForeground": "primaryForeground",
-      "warningBackground": "{{opacityNoHex peach 0.1}}",
-      "warningBorderColor": "{{opacityNoHex peach 0.15}}",
+      "warningBackground": "{{opacityWithHex peach 0.1}}",
+      "warningBorderColor": "{{opacityWithHex peach 0.15}}",
       "warningForeground": "primaryForeground"
     },
     "Bookmark": {
@@ -212,12 +212,12 @@
       "unselectedBlend": 0.7
     },
     "FileColor": {
-      "Blue": "{{isLatte (opacityNoHex blue 0.15) (opacityNoHex blue 0.1)}}",
-      "Green": "{{isLatte (opacityNoHex green 0.15) (opacityNoHex green 0.1)}}",
-      "Orange": "{{isLatte (opacityNoHex peach 0.15) (opacityNoHex peach 0.1)}}",
-      "Rose": "{{isLatte (opacityNoHex red 0.15) (opacityNoHex red 0.1)}}",
-      "Violet": "{{isLatte (opacityNoHex lavender 0.15) (opacityNoHex lavender 0.1)}}",
-      "Yellow": "{{isLatte (opacityNoHex yellow 0.15) (opacityNoHex yellow 0.1)}}"
+      "Blue": "{{isLatte (opacityWithHex blue 0.15) (opacityWithHex blue 0.1)}}",
+      "Green": "{{isLatte (opacityWithHex green 0.15) (opacityWithHex green 0.1)}}",
+      "Orange": "{{isLatte (opacityWithHex peach 0.15) (opacityWithHex peach 0.1)}}",
+      "Rose": "{{isLatte (opacityWithHex red 0.15) (opacityWithHex red 0.1)}}",
+      "Violet": "{{isLatte (opacityWithHex lavender 0.15) (opacityWithHex lavender 0.1)}}",
+      "Yellow": "{{isLatte (opacityWithHex yellow 0.15) (opacityWithHex yellow 0.1)}}"
     },
     "Label": {
       "selectedForeground": "selectionBackground",

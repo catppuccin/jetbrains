@@ -28,7 +28,7 @@ const handlebarsOpacity = (
   return calculateOpacity(color, opacity, context).replace("#", "")
 }
 
-const handlebarsOpacityNoHex = (
+const handlebarsOpacityWithHex = (
   color: string,
   opacity: number,
   context: any,
@@ -53,7 +53,7 @@ const capitalize = (str: string): string => {
 
 Handlebars.registerHelper("isLatte", handlebarsIsLatte);
 Handlebars.registerHelper("opacity", handlebarsOpacity);
-Handlebars.registerHelper("opacityNoHex", handlebarsOpacityNoHex);
+Handlebars.registerHelper("opacityWithHex", handlebarsOpacityWithHex);
 Handlebars.registerHelper("mix", handlebarsMix);
 
 const __dirname = path.dirname(path.fromFileUrl(import.meta.url));
