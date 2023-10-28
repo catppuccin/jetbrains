@@ -11,8 +11,8 @@ body:
           required: true
   - type: checkboxes
     attributes:
-      label: "Have you followed the instructions in the [pinned issue](https://github.com/catppuccin/jetbrains/issues/97)?"
-      description: The pinned issue contains fixes for common issues encountered by users.
+      label: "Have you followed the instructions in the the pinned issue?"
+      description: The pinned issue, [#97](https://github.com/catppuccin/jetbrains/issues/97), contains fixes for common issues encountered by users.
       options:
         - label: I have followed the instructions in the pinned issue and they do not solve my problem.
           required: true
