@@ -4,18 +4,7 @@
 
 ### Added
 
-- (UI): **Set all `foreground` elements to use `text` colour.** This really should have been set from the beginning,
-  you may notice that UI text elements are lighter and contrast less with the background. (i.e. Mocha thus far has
-  been using `#FFFFFF` instead of the intended text colour `#cdd6f4` in the user interface)
-- (UI): Highlight `RunWidget` icons (More Actions, Spinning Icon) as `text`
-- (UI): Highlight Android Plugin's `UI Designer` backgrounds
-
 ### Changed
-
-- (UI): Try to unify `RadioButton`, `Slider`, `List`, `Label` and `Tab` backgrounds. This should hopefully fix some 
-  of the little inconsistencies in the settings.
-- (UI): Improve highlights for the Git Log panel. (`VersionControl.GitLog`)
-- (UI): Improve highlights for the Marketplace Plugin panel. (`Settings` -> `Plugins`)
 
 ### Deprecated
 
@@ -23,14 +12,30 @@
 
 ### Fixed
 
+### Security
+
+## 3.2.0 - 2023-10-28
+
+### Added
+- (UI): **Set all `foreground` elements to use `text` colour.** This really should have been set from the beginning,
+  you may notice that UI text elements are lighter and contrast less with the background. (i.e. Mocha thus far has
+  been using `#FFFFFF` instead of the intended text colour `#cdd6f4` in the user interface)
+- (UI): Highlight `RunWidget` icons (More Actions, Spinning Icon) as `text`
+- (UI): Highlight Android Plugin's `UI Designer` backgrounds
+
+### Changed
+- (UI): Try to unify `RadioButton`, `Slider`, `List`, `Label` and `Tab` backgrounds. This should hopefully fix some 
+  of the little inconsistencies in the settings.
+- (UI): Improve highlights for the Git Log panel. (`VersionControl.GitLog`)
+- (UI): Improve highlights for the Marketplace Plugin panel. (`Settings` -> `Plugins`)
+
+### Fixed
 - (UI): Sync border with background for `TextField`, `ComboBox`, and `Spinner`.
 - (Build): **Correctly register all theme `*.xml` files.** We are cautiously optimistic that this will reduce the
   chances of the [user interface](https://www.jetbrains.com/help/idea/user-interface-themes.html)
   and [editor](https://www.jetbrains.com/help/idea/configuring-colors-and-fonts.html) themes going out of sync. However,
   this may not be the case so please follow the instructions [here](https://github.com/catppuccin/jetbrains/issues/97)
   if your theme looks incorrect upon install.
-
-### Security
 
 ## 3.1.1 - 2023-10-26
 
