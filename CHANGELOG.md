@@ -23,6 +23,11 @@
 ### Fixed
 
 - (UI): Sync border with background for `TextField`, `ComboBox`, and `Spinner`.
+- (Build): **Correctly register all theme `*.xml` files.** We are cautiously optimistic that this will reduce the
+  chances of the [user interface](https://www.jetbrains.com/help/idea/user-interface-themes.html)
+  and [editor](https://www.jetbrains.com/help/idea/configuring-colors-and-fonts.html) themes going out of sync. However,
+  this may not be the case so please follow the instructions [here](https://github.com/catppuccin/jetbrains/issues/97)
+  if your theme looks incorrect upon install.
 
 ### Security
 
