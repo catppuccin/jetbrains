@@ -1,0 +1,40 @@
+name: Bug Report
+description: Report your bugs with the theme here!
+labels: [ bug ]
+body:
+  - type: checkboxes
+    attributes:
+      label: Is there an existing issue outlining your problem?
+      description: Please search to see if an issue already exists for your problem.
+      options:
+        - label: I have searched the existing issues and they do not solve my problem.
+          required: true
+  - type: checkboxes
+    attributes:
+      label: "Have you followed the instructions in the [pinned issue](https://github.com/catppuccin/jetbrains/issues/97)?"
+      description: The pinned issue contains fixes for common issues encountered by users.
+      options:
+        - label: I have followed the instructions in the pinned issue and they do not solve my problem.
+          required: true
+  - type: textarea
+    attributes:
+      label: Describe your problem.
+      description: Also tell us, what do you expect to see?
+      placeholder: The tree background colour has suddenly changed to black...
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Attach screenshots.
+      description: If applicable, attach screenshots which clearly highlight the issue.
+  - type: input
+    attributes:
+      label: What IDE(s) are you seeing the problem on?
+      description: "The IDE version is also important, you can find your version by going to `Help` → `About`"
+      placeholder: IntelliJ IDEA 2023.2.3 (Ultimate Edition)
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Any additional comments?
+      description: Add any information that hasn't been covered in the previous sections!
