@@ -457,6 +457,10 @@
       "selectionBackground": "selectionBackground",
       "selectionInactiveBackground": "selectionBackground"
     },
+    "UiDesigner": {
+      "Panel.background": "panelBackground",
+      "Preview.background": "panelBackground"
+    },
     "ValidationTooltip": {
       "errorBackground": "panelBackground",
       "errorBorderColor": "red",
