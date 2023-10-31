@@ -11,9 +11,13 @@
 ### Removed
 
 ### Fixed
-- Fix build on 2023.3 EAP
 
 ### Security
+
+## 3.2.1 - 2023-10-31
+
+### Fixed
+- Fix build on 2023.3 EAP
 
 ## 3.2.0 - 2023-10-28
 
