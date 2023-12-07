@@ -2,8 +2,6 @@
 
 ## [Unreleased]
 
-- (Misc): We now have an icon pack! Search the marketplace for "**Catppuccin Icons**" to install it!
-
 ### Added
 
 ### Changed
@@ -14,10 +12,14 @@
 
 ### Fixed
 
+### Security
+
+## 3.2.2 - 2023-12-07
+- (Misc): We now have an icon pack! Search the marketplace for "**Catppuccin Icons**" to install it!
+
+### Fixed
 - (UI): `TextField.selectionBackground` no longer matches `TextField.background`. Selected text should now clearly stand
   out compared to non-selected text.
-
-### Security
 
 ## 3.2.1 - 2023-10-31
 
