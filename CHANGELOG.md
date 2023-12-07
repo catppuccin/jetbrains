@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- (Misc): We now have an icon pack! Search the marketplace for "**Catppuccin Icons**" to install it!
+
 ### Added
 
 ### Changed

@@ -22,12 +22,29 @@ perfect for coding, designing, and much more!
 
 <h3>Usage</h3>
 
-<p>There are 4 lovely flavours for you to choose from, <strong>Latte</strong>, <strong>Frappé</strong>, <strong>Macchiato</strong> and <strong>Mocha</strong>.</p>
+<p>There are 4 lovely flavours for you to choose from: <strong>Latte</strong>, <strong>Frappé</strong>, <strong>Macchiato</strong> and <strong>Mocha</strong>.</p>
+
+<h4>User Interface</h4>
 
 <ul>
-  <li>User Interface: <strong>Settings</strong> → <strong>Appearance & Behaviour</strong> → <strong>Appearance</strong> → Pick your favourite flavour!</li>
-  <li>Code Editor: <strong>Settings</strong> → <strong>Editor</strong> → <strong>Color Scheme</strong> → Pick your favourite flavour!</li>
+  <li>Head to <strong>Settings</strong> → <strong>Appearance & Behaviour</strong> → <strong>Appearance</strong></li>
+  <li>Pick your favourite flavour</li>
+  <li><strong>(Optional)</strong> Restart your IDE</li>
 </ul>
+
+<h4>Code Editor</h4>
+
+<ul>
+  <li>Head to <strong>Settings</strong> → <strong>Editor</strong> → <strong>Color Scheme</strong></li>
+  <li>Pick your favourite flavour</li>
+  <li><strong>(Optional)</strong> Restart your IDE</li>
+</ul>
+
+<h4>Icon Pack</h4>
+
+<p>
+We have created an icon pack to compliment this theme! Search the marketplace for "**Catppuccin Icons**" to install it.
+</p>
 
 <h3>Help</h3>
 

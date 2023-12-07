@@ -52,9 +52,24 @@ Settings</kbd> → <kbd>Plugins</kbd> → ⚙️ → <kbd>Install plugin from di
 
 ## Usage
 
-- User Interface: <kbd>Settings</kbd> → <kbd>Appearance & Behaviour</kbd> → <kbd>Appearance</kbd> → Pick your
-  favourite flavour!
-- Code Editor: <kbd>Settings</kbd> → <kbd>Editor</kbd> → <kbd>Color Scheme</kbd> → Pick your favourite flavour!
+There are 4 lovely flavours for you to choose from: **Latte**, **Frappé**, **Macchiato** and **Mocha**.
+
+### User Interface
+
+1. Head to <kbd>Settings</kbd> → <kbd>Appearance & Behaviour</kbd> → <kbd>Appearance</kbd>
+2. Pick your favourite flavour
+3. **(Optional)** Restart your IDE
+
+### Code Editor
+
+1. Head to <kbd>Settings</kbd> → <kbd>Editor</kbd> → <kbd>Color Scheme</kbd>
+2. Pick your favourite flavour
+3. **(Optional)** Restart your IDE
+
+### Icon Pack
+
+We have created an icon pack, **Catppuccin Icons**, to compliment this theme. Follow the instructions on
+the [GitHub repository](https://github.com/catppuccin/jetbrains-icons) to install it.
 
 ## Contributing
 
