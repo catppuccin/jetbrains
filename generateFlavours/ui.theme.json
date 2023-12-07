@@ -380,7 +380,8 @@
       "background": "panelBackground"
     },
     "TextField": {
-      "background": "secondaryBackground"
+      "background": "secondaryBackground",
+      "selectionBackground": "{{isLatte (opacityWithHex surface0 0.4) surface2}}"
     },
     "ToggleButton": {
       "buttonColor": "primaryForeground",
