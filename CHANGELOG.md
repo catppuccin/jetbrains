@@ -4,6 +4,8 @@
 
 ### Added
 
+- Support 2024.1 EAP
+
 ### Changed
 
 ### Deprecated
