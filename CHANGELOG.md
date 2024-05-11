@@ -4,6 +4,8 @@
 
 ### Added
 
+- (Editor): Style new terminal
+
 ### Changed
 
 ### Deprecated

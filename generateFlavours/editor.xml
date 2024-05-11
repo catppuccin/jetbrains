@@ -3,8 +3,8 @@
     <option name="ADDED_LINES_COLOR" value="{{green}}"/>
     <option name="ANNOTATIONS_COLOR" value="{{text}}"/>
     <option name="BLOCK_TERMINAL_BLOCK_BACKGROUND_END" value="{{mantle}}" />
-    <option name="BLOCK_TERMINAL_BLOCK_BACKGROUND_START" value="{{base}}" />
-    <option name="BLOCK_TERMINAL_DEFAULT_BACKGROUND" value="{{mantle}}" />
+    <option name="BLOCK_TERMINAL_BLOCK_BACKGROUND_START" value="{{mantle}}" />
+    <option name="BLOCK_TERMINAL_DEFAULT_BACKGROUND" value="{{base}}" />
     <option name="BLOCK_TERMINAL_DEFAULT_FOREGROUND" value="{{text}}" />
     <option name="BLOCK_TERMINAL_ERROR_BLOCK_STROKE_COLOR" value="{{red}}" />
     <option name="BLOCK_TERMINAL_INACTIVE_SELECTED_BLOCK_BACKGROUND" value="{{surface1}}" />
@@ -163,40 +163,22 @@
       </value>
     </option>
     <option name="TERMINAL_BACKGROUND" value="{{base}}"/>
-    <option name="BLOCK_TERMINAL_CURRENT_SEARCH_ENTRY">
-      <value>
-        <option name="FOREGROUND" value="{{crust}}" />
-        <option name="BACKGROUND" value="{{peach}}" />
-      </value>
-    </option>
-    <option name="BLOCK_TERMINAL_SEARCH_ENTRY">
-      <value>
-        <option name="FOREGROUND" value="{{crust}}" />
-        <option name="BACKGROUND" value="{{yellow}}" />
-      </value>
-    </option>
     <option name="BLOCK_TERMINAL_COMMAND">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}" />
+        <option name="FOREGROUND" value="{{blue}}" />
         <option name="FONT_TYPE" value="1" />
       </value>
     </option>
     <option name="BLOCK_TERMINAL_CURRENT_SEARCH_ENTRY">
       <value>
-        <option name="FOREGROUND" value="{{crust}}" />
-        <option name="BACKGROUND" value="{{peach}}" />
+        <option name="FOREGROUND" value="{{text}}" />
+        <option name="BACKGROUND" value="{{opacity red 0.3}}" />
       </value>
     </option>
     <option name="BLOCK_TERMINAL_SEARCH_ENTRY">
       <value>
-        <option name="FOREGROUND" value="{{crust}}" />
-        <option name="BACKGROUND" value="{{yellow}}" />
-      </value>
-    </option>
-    <option name="BLOCK_TERMINAL_COMMAND">
-      <value>
-        <option name="FOREGROUND" value="{{yellow}}" />
-        <option name="FONT_TYPE" value="1" />
+        <option name="FOREGROUND" value="{{text}}" />
+        <option name="BACKGROUND" value="{{opacity blue 0.3}}" />
       </value>
     </option>
     <option name="BLOCK_TERMINAL_BLACK" >
@@ -250,8 +232,8 @@
 
     <option name="BLOCK_TERMINAL_BLACK_BRIGHT" >
       <value>
-        <option name="FOREGROUND" value="{{isLatte subtext1 surface1}}"/>
-        <option name="BACKGROUND" value="{{isLatte subtext1 surface1}}"/>
+        <option name="FOREGROUND" value="{{isLatte subtext0 surface2}}"/>
+        <option name="BACKGROUND" value="{{isLatte subtext0 surface2}}"/>
       </value>
     </option>
     <option name="BLOCK_TERMINAL_BLUE_BRIGHT" >
@@ -286,8 +268,8 @@
     </option>
     <option name="BLOCK_TERMINAL_WHITE_BRIGHT">
       <value>
-        <option name="FOREGROUND" value="{{isLatte surface2 subtext1}}"/>
-        <option name="BACKGROUND" value="{{isLatte surface2 subtext1}}"/>
+        <option name="FOREGROUND" value="{{isLatte surface1 subtext0}}"/>
+        <option name="BACKGROUND" value="{{isLatte surface1 subtext0}}"/>
       </value>
     </option>
     <option name="BLOCK_TERMINAL_YELLOW_BRIGHT" >
