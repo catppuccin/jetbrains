@@ -8,6 +8,8 @@
 
 ### Changed
 
+- (Editor): Increase whitespace contrast
+
 ### Deprecated
 
 ### Removed
