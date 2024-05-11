@@ -4,11 +4,7 @@
 
 ### Added
 
-- (UI): Style new block terminal
-
 ### Changed
-
-- (Editor): Increase whitespace contrast
 
 ### Deprecated
 
@@ -17,6 +13,14 @@
 ### Fixed
 
 ### Security
+
+## 3.3.0 - 2024-05-11
+
+### Added
+- (UI): Style new block terminal
+
+### Changed
+- (Editor): Increase whitespace contrast
 
 ## 3.2.3 - 2024-01-21
 
