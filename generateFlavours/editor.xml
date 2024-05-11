@@ -83,7 +83,7 @@
     <option name="VCS_ANNOTATIONS_COLOR_4" value="{{opacity sapphire 0.3}}"/>
     <option name="VCS_ANNOTATIONS_COLOR_5" value="{{opacity blue 0.6}}"/>
     <option name="VISUAL_INDENT_GUIDE" value="{{surface0}}"/>
-    <option name="WHITESPACES" value="{{surface0}}"/>
+    <option name="WHITESPACES" value="{{overlay2}}"/>
     <option name="WHITESPACES_MODIFIED_LINES_COLOR" value="{{surface2}}"/>
   </colors>
   <attributes>
