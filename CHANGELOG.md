@@ -4,7 +4,7 @@
 
 ### Added
 
-- (Editor): Style new terminal
+- (Editor): Style new block terminal
 
 ### Changed
 
