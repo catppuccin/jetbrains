@@ -4,6 +4,8 @@
 
 ### Added
 
+- (UI): Style new block terminal
+
 ### Changed
 
 ### Deprecated
