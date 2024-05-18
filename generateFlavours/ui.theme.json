@@ -341,6 +341,12 @@
       "endBackground": "accentColor",
       "startBackground": "accentColor"
     },
+    "SegmentedButton": {
+      "focusedSelectedButtonColor": "secondaryBackground",
+      "selectedButtonColor": "secondaryBackground",
+      "selectedEndBorderColor": "secondaryBackground",
+      "selectedStartBorderColor": "secondaryBackground"
+    },
     "Separator": {
       "separatorColor": "separatorColor"
     },

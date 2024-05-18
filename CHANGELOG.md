@@ -3,6 +3,7 @@
 ## [Unreleased]
 
 ### Added
+- (UI): Style segmented button
 
 ### Changed
 
