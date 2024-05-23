@@ -3,7 +3,7 @@
 ## [Unreleased]
 
 ### Added
-
+- (UI): Style segmented button
 - Support 2024.2 EAP
 
 ### Changed
