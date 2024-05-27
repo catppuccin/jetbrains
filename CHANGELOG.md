@@ -3,8 +3,6 @@
 ## [Unreleased]
 
 ### Added
-- (UI): Style segmented button
-- Support 2024.2 EAP
 
 ### Changed
 
@@ -15,6 +13,12 @@
 ### Fixed
 
 ### Security
+
+## 3.3.1 - 2024-05-27
+
+### Added
+- (UI): Style segmented button
+- Support 2024.2 EAP
 
 ## 3.3.0 - 2024-05-11
 
