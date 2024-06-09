@@ -10,7 +10,7 @@ plugins {
     // Kotlin support
     id("org.jetbrains.kotlin.jvm") version "1.9.24"
     // Gradle IntelliJ Plugin
-    id("org.jetbrains.intellij") version "1.16.0"
+    id("org.jetbrains.intellij") version "1.17.3"
     // Gradle Changelog Plugin
     id("org.jetbrains.changelog") version "2.0.0"
 }
