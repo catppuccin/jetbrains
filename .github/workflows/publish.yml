@@ -58,7 +58,7 @@ jobs:
         run: ./gradlew buildPlugin
 
       - name: Upload JAR
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ env.name }}-${{ env.version }}.jar
           path: build/libs/*.jar
