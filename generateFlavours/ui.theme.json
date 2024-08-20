@@ -338,8 +338,8 @@
       }
     },
     "SearchMatch": {
-      "endBackground": "accentColor",
-      "startBackground": "accentColor"
+      "endBackground": "secondaryAccentColor",
+      "startBackground": "secondaryAccentColor"
     },
     "SegmentedButton": {
       "focusedSelectedButtonColor": "secondaryBackground",
