@@ -180,12 +180,12 @@
       "unselectedBlend": 0.7
     },
     "FileColor": {
-      "Blue": "{{isLatte (opacityWithHex blue 0.15) (opacityWithHex blue 0.1)}}",
-      "Green": "{{isLatte (opacityWithHex green 0.15) (opacityWithHex green 0.1)}}",
-      "Orange": "{{isLatte (opacityWithHex peach 0.15) (opacityWithHex peach 0.1)}}",
-      "Rose": "{{isLatte (opacityWithHex red 0.15) (opacityWithHex red 0.1)}}",
-      "Violet": "{{isLatte (opacityWithHex lavender 0.15) (opacityWithHex lavender 0.1)}}",
-      "Yellow": "{{isLatte (opacityWithHex yellow 0.15) (opacityWithHex yellow 0.1)}}"
+      "Blue": "{{isLatte (opacityWithHex blue 0.15) (opacityWithHex blue 0.2)}}",
+      "Green": "{{isLatte (opacityWithHex green 0.15) (opacityWithHex green 0.2)}}",
+      "Orange": "{{isLatte (opacityWithHex peach 0.15) (opacityWithHex peach 0.2)}}",
+      "Rose": "{{isLatte (opacityWithHex red 0.15) (opacityWithHex red 0.2)}}",
+      "Violet": "{{isLatte (opacityWithHex lavender 0.15) (opacityWithHex lavender 0.2)}}",
+      "Yellow": "{{isLatte (opacityWithHex yellow 0.15) (opacityWithHex yellow 0.2)}}"
     },
     "Label": {
       "background": "panelBackground",
