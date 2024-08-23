@@ -6,6 +6,8 @@
 
 ### Changed
 
+- (UI): Increase contrast of "File Colors" on Frappé, Macchiato & Mocha
+
 ### Deprecated
 
 ### Removed
