@@ -338,8 +338,8 @@
       }
     },
     "SearchMatch": {
-      "endBackground": "accentColor",
-      "startBackground": "accentColor"
+      "endBackground": "{{isLatte (opacityWithHex mauve 0.5) mauve}}",
+      "startBackground": "{{isLatte (opacityWithHex mauve 0.5) mauve}}"
     },
     "SegmentedButton": {
       "focusedSelectedButtonColor": "secondaryBackground",
