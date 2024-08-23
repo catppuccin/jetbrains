@@ -12,6 +12,8 @@
 
 ### Fixed
 
+- (UI - Latte): Search contrast on the Search Everywhere popup
+
 ### Security
 
 ## 3.3.1 - 2024-05-27
