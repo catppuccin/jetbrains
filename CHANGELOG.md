@@ -14,7 +14,7 @@
 
 ### Fixed
 
-- (UI - Latte): Search contrast on the Search Everywhere popup
+- (UI): Search contrast on the Search Everywhere popup when using Latte
 
 ### Security
 
