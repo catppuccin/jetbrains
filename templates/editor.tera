@@ -27,8 +27,8 @@
   {{c | mix(color=base, amount=a) | get(key='hex')}}
   {%- endmacro -%}
 
-  {%- macro mixWithText(c,a) -%}
-  {{c | mix(color=text, amount=a) | get(key='hex')}}
+  {%- macro rainbow(c) -%}
+  {{c | mix(color=text, amount=0.6) | get(key='hex')}}
   {%- endmacro -%}
 
   {%- macro italics() -%}
@@ -2979,27 +2979,27 @@
     <!-- Semantic Highlights -->
     <option name="RAINBOW_COLOR0">
       <value>
-        <option name="FOREGROUND" value="{{self::mixWithText(c=red, a=0.6)}}"/>
+        <option name="FOREGROUND" value="{{self::rainbow(c=red)}}"/>
       </value>
     </option>
     <option name="RAINBOW_COLOR1">
       <value>
-        <option name="FOREGROUND" value="{{self::mixWithText(c=yellow, a=0.6)}}"/>
+        <option name="FOREGROUND" value="{{self::rainbow(c=yellow)}}"/>
       </value>
     </option>
     <option name="RAINBOW_COLOR2">
       <value>
-        <option name="FOREGROUND" value="{{self::mixWithText(c=green, a=0.6)}}"/>
+        <option name="FOREGROUND" value="{{self::rainbow(c=green)}}"/>
       </value>
     </option>
     <option name="RAINBOW_COLOR3">
       <value>
-        <option name="FOREGROUND" value="{{self::mixWithText(c=blue, a=0.6)}}"/>
+        <option name="FOREGROUND" value="{{self::rainbow(c=blue)}}"/>
       </value>
     </option>
     <option name="RAINBOW_COLOR4">
       <value>
-        <option name="FOREGROUND" value="{{self::mixWithText(c=mauve, a=0.6)}}"/>
+        <option name="FOREGROUND" value="{{self::rainbow(c=mauve)}}"/>
       </value>
     </option>
   </attributes>
