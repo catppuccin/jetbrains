@@ -2030,7 +2030,7 @@
     </option>
     <option name="NOT_USED_ELEMENT_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="{{surface2}}"/>
+        <option name="FOREGROUND" value="{{overlay2}}"/>
       </value>
     </option>
     <option name="OC.CLASS_REFERENCE">
