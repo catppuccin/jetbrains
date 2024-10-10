@@ -1384,7 +1384,7 @@
     <option name="IDENTIFIER_UNDER_CARET_ATTRIBUTES">
       <value>
         <option name="EFFECT_COLOR" value="{{surface2}}"/>
-        <option name="ERROR_STRIPE_COLOR" value="{{surface1}}"/>
+        <option name="ERROR_STRIPE_COLOR" value="{{teal}}"/>
       </value>
     </option>
     <option name="IMPLICIT_ANONYMOUS_CLASS_PARAMETER_ATTRIBUTES">
@@ -2954,7 +2954,7 @@
     <option name="WRITE_IDENTIFIER_UNDER_CARET_ATTRIBUTES">
       <value>
         <option name="EFFECT_COLOR" value="{{surface2}}"/>
-        <option name="ERROR_STRIPE_COLOR" value="{{surface1}}"/>
+        <option name="ERROR_STRIPE_COLOR" value="{{teal}}"/>
       </value>
     </option>
     <option name="WRITE_SEARCH_RESULT_ATTRIBUTES">
