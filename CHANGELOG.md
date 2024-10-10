@@ -6,17 +6,23 @@
 
 ### Changed
 
-- (Editor): Increase contrast of unused code by setting it to `overlay2`.
-
 ### Deprecated
 
 ### Removed
 
 ### Fixed
 
-- (Editor): Selected identifiers now show up beside the scrollbar as `teal`.
-
 ### Security
+
+## 3.3.4 - 2024-10-10
+
+### Changed
+
+- (Editor): Increase contrast of unused code by setting it to `overlay2`.
+
+### Fixed
+
+- (Editor): Selected identifiers now show up beside the scrollbar as `teal`.
 
 ## 3.3.3 - 2024-09-13
 
