@@ -6,11 +6,15 @@
 
 ### Changed
 
+- (Editor): Increase contrast of unused code by setting it to `overlay2`.
+
 ### Deprecated
 
 ### Removed
 
 ### Fixed
+
+- (Editor): Selected identifiers now show up in the beside the scrollbar as `teal`.
 
 ### Security
 
