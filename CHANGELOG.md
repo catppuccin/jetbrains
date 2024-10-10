@@ -14,7 +14,7 @@
 
 ### Fixed
 
-- (Editor): Selected identifiers now show up in the beside the scrollbar as `teal`.
+- (Editor): Selected identifiers now show up beside the scrollbar as `teal`.
 
 ### Security
 
