@@ -12,6 +12,8 @@
 
 ### Fixed
 
+- (Scala): Make predefined types (Int, Double, etc) distinguishable from unused
+
 ### Security
 
 ## 3.3.4 - 2024-10-10
