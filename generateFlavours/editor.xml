@@ -2818,6 +2818,11 @@
     <option name="SWIFT_SHEBANG_COMMENT" baseAttributes="DEFAULT_LINE_COMMENT"/>
     <option name="Scala Immutable Collection" baseAttributes="DEFAULT_IDENTIFIER"/>
     <option name="Scala Mutable Collection" baseAttributes="DEFAULT_IDENTIFIER"/>
+    <option name="Scala Predefined types">
+      <value>
+        <option name="FOREGROUND" value="{{yellow}}" />
+      </value>
+    </option>
     <option name="Scala Type Alias" baseAttributes="TYPE_PARAMETER_NAME_ATTRIBUTES"/>
     <option name="Scala Type parameter" baseAttributes="TYPE_PARAMETER_NAME_ATTRIBUTES"/>
     <option name="Static method access" baseAttributes="STATIC_METHOD_ATTRIBUTES"/>
