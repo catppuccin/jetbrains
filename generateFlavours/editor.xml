@@ -2820,7 +2820,7 @@
     <option name="Scala Mutable Collection" baseAttributes="DEFAULT_IDENTIFIER"/>
     <option name="Scala Predefined types">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}" />
+        <option name="FOREGROUND" value="{{yellow}}" />
       </value>
     </option>
     <option name="Scala Type Alias" baseAttributes="TYPE_PARAMETER_NAME_ATTRIBUTES"/>
