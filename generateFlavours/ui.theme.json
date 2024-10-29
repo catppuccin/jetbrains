@@ -143,7 +143,8 @@
       "iconColor": "primaryForeground",
       "inactiveErrorFocusColor": "red",
       "inactiveWarningFocusColor": "yellow",
-      "warningFocusColor": "yellow"
+      "warningFocusColor": "yellow",
+      "infoForeground": "subtext0"
     },
     "Counter": {
       "background": "accentColor",

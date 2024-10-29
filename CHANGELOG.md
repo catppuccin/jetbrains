@@ -13,6 +13,7 @@
 ### Fixed
 
 - (Scala): Make predefined types (Int, Double, etc) distinguishable from unused
+- (UI): Theme informational text.
 
 ### Security
 
