@@ -6,6 +6,8 @@
 
 ### Changed
 
+- (UI): Enhance colors of new UI macOS tabs to make them look native
+
 ### Deprecated
 
 ### Removed
