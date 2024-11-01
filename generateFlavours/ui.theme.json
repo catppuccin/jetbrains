@@ -223,6 +223,19 @@
       "background": "crust",
       "inactiveBackground": "panelBackground"
     },
+    "MainWindow": {
+      "Tab": {
+        "background": "panelBackground",
+        "borderColor": "panelBackground",
+        "foreground": "{{opacityWithHex primaryForeground 0.5}}",
+        "hoverBackground": "{{opacityWithHex panelBackground 0.7}}",
+        "hoverForeground": "{{opacityWithHex primaryForeground 0.5}}",
+        "selectedBackground": "primaryBackground",
+        "selectedForeground": "primaryForeground",
+        "selectedInactiveBackground": "panelBackground",
+        "separatorColor": "panelBackground"
+      }
+    },
     "MemoryIndicator": {
       "allocatedBackground": "surface0",
       "usedBackground": "surface1"

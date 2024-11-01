@@ -12,8 +12,9 @@
 
 ### Fixed
 
-- (Scala): Make predefined types (Int, Double, etc) distinguishable from unused
+- (Scala): Make predefined types (Int, Double, etc) distinguishable from unused.
 - (UI): Theme informational text.
+- (UI): Theme macOS project tabs.
 
 ### Security
 
