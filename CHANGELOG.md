@@ -12,11 +12,15 @@
 
 ### Fixed
 
+### Security
+
+## 3.3.5 - 2024-11-01
+
+### Fixed
+
 - (Scala): Make predefined types (Int, Double, etc) distinguishable from unused.
 - (UI): Theme informational text.
 - (UI): Theme macOS project tabs.
-
-### Security
 
 ## 3.3.4 - 2024-10-10
 
