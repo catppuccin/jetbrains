@@ -6,16 +6,15 @@
 
 ### Changed
 
-- (UI): Enhance colors of new UI macOS tabs to make them look native
-
 ### Deprecated
 
 ### Removed
 
 ### Fixed
 
-- (Scala): Make predefined types (Int, Double, etc) distinguishable from unused
+- (Scala): Make predefined types (Int, Double, etc) distinguishable from unused.
 - (UI): Theme informational text.
+- (UI): Theme macOS project tabs.
 
 ### Security
 
