@@ -2628,6 +2628,24 @@
         <option name="FOREGROUND" value="{{blue}}"/>
       </value>
     </option>
+    <option name="ReSharper.XAML_NAMESPACE_ALIAS">
+      <value>
+        <option name="FOREGROUND" value="{{peach}}" />
+      </value>
+    </option>
+    <option name="ReSharper.XAML_PREDEFINED_ELEMENT">
+      <value>
+        <option name="FOREGROUND" value="{{mauve}}" />
+        {{#if italics}}
+        <option name="FONT_TYPE" value="2" />
+        {{/if}}
+      </value>
+    </option>
+    <option name="ReSharper.XAML_STYLE_CLASS">
+      <value>
+        <option name="FOREGROUND" value="{{teal}}" />
+      </value>
+    </option>
     <option name="SASS_COMMENT" baseAttributes="CSS.COMMENT"/>
     <option name="SASS_MIXIN">
       <value>
