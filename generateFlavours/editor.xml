@@ -70,10 +70,14 @@
     <option name="SELECTION_BACKGROUND" value="{{isLatte (opacity surface2 0.4) (opacity surface2 0.6)}}"/>
     <option name="SELECTION_FOREGROUND" value=""/>
     <option name="SEPARATOR_BELOW_COLOR" value=""/>
-    <option name="ScrollBar.hoverThumbColor" value="{{opacity overlay0 0.4}}"/>
-    <option name="ScrollBar.thumbColor" value="{{opacity surface1 0.45}}"/>
-    <option name="ScrollBar.Mac.hoverThumbColor" value="{{opacity overlay0 0.4}}"/>
-    <option name="ScrollBar.Mac.thumbColor" value="{{opacity surface1 0.45}}"/>
+    <option name="ScrollBar.thumbColor" value="{{surface0}}"/>
+    <option name="ScrollBar.thumbBorderColor" value="{{surface0}}"/>
+    <option name="ScrollBar.hoverThumbColor" value="{{surface1}}"/>
+    <option name="ScrollBar.hoverThumbBorderColor" value="{{surface1}}"/>
+    <option name="ScrollBar.Mac.thumbColor" value="{{surface0}}"/>
+    <option name="ScrollBar.Mac.thumbBorderColor" value="{{surface0}}"/>
+    <option name="ScrollBar.Mac.hoverThumbColor" value="{{surface1}}"/>
+    <option name="ScrollBar.Mac.hoverThumbBorderColor" value="{{surface1}}"/>
     <option name="TAB_UNDERLINE" value="{{mauve}}"/>
     <option name="TAB_UNDERLINE_INACTIVE" value="{{text}}"/>
     <option name="TEARLINE_COLOR" value="{{surface0}}"/>
