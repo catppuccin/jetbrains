@@ -4,6 +4,8 @@
 
 ### Added
 
+- (XAML): Improve syntax highlighting
+
 ### Changed
 
 ### Deprecated
