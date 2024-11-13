@@ -2890,6 +2890,7 @@
       <value>
         <option name="FOREGROUND" value="{{text}}"/>
         <option name="BACKGROUND" value="{{opacity blue 0.3}}"/>
+        <option name="ERROR_STRIPE_COLOR" value="{{blue}}"/>
       </value>
     </option>
     <option name="TODO_DEFAULT_ATTRIBUTES">
