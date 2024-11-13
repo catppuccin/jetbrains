@@ -4,11 +4,7 @@
 
 ### Added
 
-- (XAML): Improve syntax highlighting
-
 ### Changed
-
-- (Editor/UI): Scrollbar now matches palette colours directly (`surface0` by default, `surface1` on hover.)
 
 ### Deprecated
 
@@ -16,12 +12,24 @@
 
 ### Fixed
 
+### Security
+
+## 3.4.0 - 2024-11-13
+
+### Added
+
+- (XAML): Improve syntax highlighting
+
+### Changed
+
+- (Editor/UI): Scrollbar now matches palette colours directly (`surface0` by default, `surface1` on hover.)
+
+### Fixed
+
 - (UI): Removed macOS scrollbar turning yellow on hover. I'm sorry to anyone who liked this behaviour, but it was not
   supposed to exist in the first place.
 - (Editor): Search results now show up beside the scrollbar as `blue`.
 - (UI): Highlight current branch in git log pane.
-
-### Security
 
 ## 3.3.5 - 2024-11-01
 
