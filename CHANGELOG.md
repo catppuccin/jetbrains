@@ -19,6 +19,7 @@
 - (UI): Removed macOS scrollbar turning yellow on hover. I'm sorry to anyone who liked this behaviour, but it was not
   supposed to exist in the first place.
 - (Editor): Search results now show up beside the scrollbar as `blue`.
+- (UI): Highlight current branch in git log pane.
 
 ### Security
 

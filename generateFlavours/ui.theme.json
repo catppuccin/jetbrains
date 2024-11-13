@@ -472,9 +472,9 @@
       },
       "Log": {
         "Commit": {
-          "currentBranchBackground": "panelBackground",
+          "currentBranchBackground": "{{mixWithHex mauve mantle 0.05}}",
           "hoveredBackground": "hoverBackground",
-          "selectionInactiveBackground": "selectionInactiveBackground"
+          "selectionInactiveBackground": "hoverBackground"
         }
       },
       "RefLabel": {
