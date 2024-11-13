@@ -36,7 +36,7 @@ const handlebarsOpacityWithHex = (
   return calculateOpacity(color, opacity, context)
 }
 
-const handlebarsMix = (
+const mix = (
   color1: string,
   color2: string,
   amount: number,
@@ -44,7 +44,22 @@ const handlebarsMix = (
   return colormath
     .mixColor(colormath.hex.toRgb(color1), colormath.hex.toRgb(color2), amount)
     .hex.toLowerCase()
-    .replace("#", "");
+};
+
+const handlebarsMix = (
+  color1: string,
+  color2: string,
+  amount: number,
+): string => {
+  return mix(color1, color2, amount).replace("#", "");
+};
+
+const handlebarsMixWithHex = (
+  color1: string,
+  color2: string,
+  amount: number,
+): string => {
+  return mix(color1, color2, amount)
 };
 
 const capitalize = (str: string): string => {
@@ -55,6 +70,7 @@ Handlebars.registerHelper("isLatte", handlebarsIsLatte);
 Handlebars.registerHelper("opacity", handlebarsOpacity);
 Handlebars.registerHelper("opacityWithHex", handlebarsOpacityWithHex);
 Handlebars.registerHelper("mix", handlebarsMix);
+Handlebars.registerHelper("mixWithHex", handlebarsMixWithHex);
 
 const __dirname = path.dirname(path.fromFileUrl(import.meta.url));
 const themePath = path.join(__dirname, "../src/main/resources/themes/");
