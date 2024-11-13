@@ -55,7 +55,7 @@
     <option name="INLINE_REFACTORING_SETTINGS_FOCUSED" value="{{opacity surface2 0.55}}"/>
     <option name="INLINE_REFACTORING_SETTINGS_HOVERED" value="{{opacity surface2 0.55}}"/>
     <option name="LINE_NUMBERS_COLOR" value="{{overlay0}}"/>
-    <option name="LINE_NUMBER_ON_CARET_ROW_COLOR" value="{{overlay1}}"/>
+    <option name="LINE_NUMBER_ON_CARET_ROW_COLOR" value="{{lavender}}"/>
     <option name="LOOKUP_COLOR" value="{{surface0}}"/>
     <option name="METHOD_SEPARATORS_COLOR" value="{{surface0}}"/>
     <option name="MODIFIED_LINES_COLOR" value="{{peach}}"/>
@@ -182,7 +182,7 @@
     <option name="BLOCK_TERMINAL_SEARCH_ENTRY">
       <value>
         <option name="FOREGROUND" value="{{text}}" />
-        <option name="BACKGROUND" value="{{opacity blue 0.3}}" />
+        <option name="BACKGROUND" value="{{opacity teal 0.1}}" />
       </value>
     </option>
     <option name="BLOCK_TERMINAL_BLACK" >
@@ -824,7 +824,7 @@
     </option>
     <option name="DEFAULT_BLOCK_COMMENT">
       <value>
-        <option name="FOREGROUND" value="{{overlay0}}"/>
+        <option name="FOREGROUND" value="{{overlay2}}"/>
         {{#if italics}}
         <option name="FONT_TYPE" value="2"/>
         {{/if}}
@@ -865,7 +865,7 @@
     </option>
     <option name="DEFAULT_DOC_COMMENT">
       <value>
-        <option name="FOREGROUND" value="{{overlay0}}"/>
+        <option name="FOREGROUND" value="{{overlay2}}"/>
         {{#if italics}}
         <option name="FONT_TYPE" value="2"/>
         {{/if}}
@@ -963,7 +963,7 @@
     </option>
     <option name="DEFAULT_LINE_COMMENT">
       <value>
-        <option name="FOREGROUND" value="{{overlay0}}"/>
+        <option name="FOREGROUND" value="{{overlay2}}"/>
         {{#if italics}}
         <option name="FONT_TYPE" value="2"/>
         {{/if}}
@@ -2662,7 +2662,7 @@
     <option name="SASS_VARIABLE" baseAttributes="DEFAULT_INSTANCE_FIELD"/>
     <option name="SEARCH_RESULT_ATTRIBUTES">
       <value>
-        <option name="BACKGROUND" value="{{opacity blue 0.3}}"/>
+        <option name="BACKGROUND" value="{{opacity teal 0.1}}"/>
       </value>
     </option>
     <option name="SLIM_BAD_CHARACTER">
@@ -2889,7 +2889,7 @@
     <option name="TEXT_SEARCH_RESULT_ATTRIBUTES">
       <value>
         <option name="FOREGROUND" value="{{text}}"/>
-        <option name="BACKGROUND" value="{{opacity blue 0.3}}"/>
+        <option name="BACKGROUND" value="{{opacity teal 0.1}}"/>
       </value>
     </option>
     <option name="TODO_DEFAULT_ATTRIBUTES">
