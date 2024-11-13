@@ -8,11 +8,16 @@
 
 ### Changed
 
+- (Editor/UI): Scrollbar now matches palette colours directly (`surface0` by default, `surface1` on hover.)
+
 ### Deprecated
 
 ### Removed
 
 ### Fixed
+
+- (UI): Removed macOS scrollbar turning yellow on hover. I'm sorry to anyone who liked this behaviour, but it was not
+  supposed to exist in the first place.
 
 ### Security
 
