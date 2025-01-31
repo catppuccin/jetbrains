@@ -311,7 +311,7 @@
       "borderColor": "separatorColor",
       "borderWidth": 1,
       "inactiveBorderColor": "separatorColor",
-      "paintBorder": true
+      "paintBorder": false
     },
     "ProgressBar": {
       "failedColor": "red",
