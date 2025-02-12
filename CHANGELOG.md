@@ -4,8 +4,6 @@
 
 ### Added
 
-- Support 2025.1 EAP
-
 ### Changed
 
 ### Deprecated
@@ -14,9 +12,17 @@
 
 ### Fixed
 
-- IDE freezing/crashing due to internal error when painting popup borders (https://youtrack.jetbrains.com/issue/JBR-7981/Intellij-2024.3-freezes-continuously-on-opening-Context-Menu-Opt-Enter)
-
 ### Security
+
+## 3.4.1 - 2025-02-12
+
+### Added
+
+- Support 2025.1 EAP
+
+### Fixed
+
+- IDE freezing/crashing due to internal error when painting popup borders (https://youtrack.jetbrains.com/issue/JBR-7981/Intellij-2024.3-freezes-continuously-on-opening-Context-Menu-Opt-Enter)
 
 ## 3.4.0 - 2024-11-13
 
