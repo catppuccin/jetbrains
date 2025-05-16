@@ -4,6 +4,8 @@
 
 ### Added
 
+- Support 2025.2 EAP
+
 ### Changed
 
 ### Deprecated
