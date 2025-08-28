@@ -1,7 +1,9 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Generate All Flavours" type="DenoConfigurationType" inputPath="$PROJECT_DIR$/generateFlavours/main.ts" programParameters="run --allow-write --allow-read --allow-env">
-    <method v="2">
-      <option name="Make" enabled="true" />
-    </method>
+  <configuration default="false" name="Generate All Flavours" type="JustRunConfiguration" factoryName="JustRunConfiguration">
+    <option name="envVariables" />
+    <option name="fileName" value="justfile" />
+    <option name="recipeArgs" />
+    <option name="recipeName" value="build" />
+    <method v="2" />
   </configuration>
 </component>

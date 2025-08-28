@@ -30,7 +30,8 @@ for contributors.
 
 ### Requirements
 
-- Deno v1.27+ with [Deno plugin](https://plugins.jetbrains.com/plugin/14382-deno)
+- Just (from [package manager](https://just.systems/man/en/packages.html) or from [pre-built binaries](https://github.com/casey/just/releases))
+- [Whiskers](https://whiskers.catppuccin.com/getting-started/installation/)
 
 ### Debugging Tools
 
@@ -55,7 +56,7 @@ point if you find that your tasks are not working properly.
 #### Generate All Flavours
 
 `Generate All Flavours`
-![deno-configuration.png](assets/docs/deno-configuration.png)
+![just-configuration.png](assets/docs/just-configuration.png)
 
 #### Build Plugin
 

@@ -18,8 +18,9 @@
     <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
     <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
     <DebugAllEnabled>false</DebugAllEnabled>
+    <RunAsTest>false</RunAsTest>
     <method v="2">
-      <option name="RunConfigurationTask" enabled="true" run_configuration_name="Generate All Flavours" run_configuration_type="DenoConfigurationType" />
+      <option name="RunConfigurationTask" enabled="true" run_configuration_name="Generate All Flavours" run_configuration_type="JustRunConfiguration" />
     </method>
   </configuration>
 </component>
