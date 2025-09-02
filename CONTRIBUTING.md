@@ -30,7 +30,6 @@ for contributors.
 
 ### Requirements
 
-- Just (from [package manager](https://just.systems/man/en/packages.html) or from [pre-built binaries](https://github.com/casey/just/releases))
 - [Whiskers](https://whiskers.catppuccin.com/getting-started/installation/)
 
 ### Debugging Tools
@@ -56,7 +55,7 @@ point if you find that your tasks are not working properly.
 #### Generate All Flavours
 
 `Generate All Flavours`
-![just-configuration.png](assets/docs/just-configuration.png)
+![shell-script-configuration.png](assets/docs/shell-script-configuration.png)
 
 #### Build Plugin
 

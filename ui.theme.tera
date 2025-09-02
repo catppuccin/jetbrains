@@ -5,11 +5,16 @@ whiskers:
     - flavor
   filename: "src/main/resources/themes/{{ flavor.identifier }}.theme.json"
   hex_format: "#{{r}}{{g}}{{b}}{{z}}"
+accent: "mauve"
+secondary_accent: "yellow"
 ---
+
+{%- macro file_color(color) -%}
+  {{ if(cond = flavor.light, t = color | mix(color = base, amount = 0.15), f = color | mix(color = base, amount = 0.2)) | get(key = "hex") }}
+{%- endmacro file_color -%}
+
 {% set name = "Catppuccin " ~ flavor.name -%}
 {% set editor_scheme = "/themes/" ~ flavor.identifier ~ ".xml" -%}
-{% set accent_color = mauve -%}
-{% set secondary_accent_color = yellow -%}
 {% set primary_foreground = text -%}
 {% set primary_background = base -%}
 {% set secondary_background = surface0 -%}
@@ -25,18 +30,13 @@ whiskers:
 {% set informative_border_color = blue | mix(color = base, amount = 0.15) -%}
 {% set warning_background = peach | mix(color = base, amount = 0.1) -%}
 {% set warning_border_color = peach | mix(color = base, amount = 0.15) -%}
-{% set file_color_blue = if(cond = flavor.light, t = blue | mix(color = base, amount = 0.15), f = blue | mix(color = base, amount = 0.2)) -%}
-{% set file_color_green = if(cond = flavor.light, t = green | mix(color = base, amount = 0.15), f = green | mix(color = base, amount = 0.2)) -%}
-{% set file_color_orange = if(cond = flavor.light, t = peach | mix(color = base, amount = 0.15), f = peach | mix(color = base, amount = 0.2)) -%}
-{% set file_color_rose = if(cond = flavor.light, t = red | mix(color = base, amount = 0.15), f = red | mix(color = base, amount = 0.2)) -%}
-{% set file_color_violet = if(cond = flavor.light, t = lavender | mix(color = base, amount = 0.15), f = lavender | mix(color = base, amount = 0.2)) -%}
-{% set file_color_yellow = if(cond = flavor.light, t = yellow | mix(color = base, amount = 0.15), f = yellow | mix(color = base, amount = 0.2)) -%}
 {% set list_selection_inactive_background = if(cond = flavor.light, t = hover_background, f = base) -%}
 {% set main_tab_foreground = primary_foreground | mix(color = base, amount = 0.5) -%}
 {% set main_tab_hover_background = panel_background | mix(color = base, amount = 0.7) -%}
 {% set search_match_background = if(cond = flavor.light, t = mauve | mix(color = base, amount = 0.5), f = mauve) -%}
 {% set text_field_selection_background = if(cond = flavor.light, t = surface0 | mix(color = base, amount = 0.4), f = surface2) -%}
 {% set commit_current_branch_background = mauve | mix(color = mantle, amount = 0.05) -%}
+
 {
   "name": "{{ name }}",
   "dark": "{{ flavor.dark }}",
@@ -69,8 +69,8 @@ whiskers:
     "text": "{{ text.hex }}",
     "subtext0": "{{ subtext0.hex }}",
     "subtext1": "{{ subtext1.hex }}",
-    "accentColor": "{{ accent_color.hex }}",
-    "secondaryAccentColor": "{{ secondary_accent_color.hex }}",
+    "accentColor": "{{ flavor.colors[accent].hex }}",
+    "secondaryAccentColor": "{{ flavor.colors[secondary_accent].hex }}",
     "primaryForeground": "{{ primary_foreground.hex }}",
     "primaryBackground": "{{ primary_background.hex }}",
     "secondaryBackground": "{{ secondary_background.hex }}",
@@ -220,12 +220,12 @@ whiskers:
       "unselectedBlend": 0.7
     },
     "FileColor": {
-      "Blue": "{{ file_color_blue.hex }}",
-      "Green": "{{ file_color_green.hex }}",
-      "Orange": "{{ file_color_orange.hex }}",
-      "Rose": "{{ file_color_rose.hex }}",
-      "Violet": "{{ file_color_violet.hex }}",
-      "Yellow": "{{ file_color_yellow.hex }}"
+      "Blue": "{{ self::file_color(color = blue) }}",
+      "Green": "{{ self::file_color(color = green) }}",
+      "Orange": "{{ self::file_color(color = peach) }}",
+      "Rose": "{{ self::file_color(color = red) }}",
+      "Violet": "{{ self::file_color(color = lavender) }}",
+      "Yellow": "{{ self::file_color(color = yellow) }}"
     },
     "Label": {
       "background": "panelBackground",
@@ -565,8 +565,8 @@ whiskers:
       "Checkbox.Border.Selected": "{{ surface0.hex }}",
       "Checkbox.Foreground.Disabled": "{{ overlay0.hex }}",
       "Checkbox.Foreground.Disabled.Dark": "{{ overlay0.hex }}",
-      "Checkbox.Foreground.Selected": "{{ accent_color.hex }}",
-      "Checkbox.Foreground.Selected.Dark": "{{ accent_color.hex }}",
+      "Checkbox.Foreground.Selected": "{{ flavor.colors[accent].hex }}",
+      "Checkbox.Foreground.Selected.Dark": "{{ flavor.colors[accent].hex }}",
       "Tree.iconColor": "{{ text.hex }}"
     }
   }

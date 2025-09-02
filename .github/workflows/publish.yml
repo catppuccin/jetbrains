@@ -28,9 +28,6 @@ jobs:
           java-version: 17
           cache: 'gradle'
 
-      - name: Setup Just
-        uses: extractions/setup-just@v3
-
       - name: Setup Whiskers
         uses: catppuccin/setup-whiskers@v2
         with:
@@ -43,7 +40,9 @@ jobs:
           echo "name=$(echo "$PROPERTIES" | grep "^pluginName:" | cut -f2- -d ' ')" >> $GITHUB_ENV
 
       - name: Generate All Flavours
-        run: just build
+        run: |
+          whiskers ./ui.theme.tera
+          whiskers ./editor.tera
 
       - name: Patch Changelog
         run: ./gradlew patchChangelog

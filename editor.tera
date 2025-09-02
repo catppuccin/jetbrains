@@ -6,7 +6,8 @@ whiskers:
     - flavor
   filename: "src/main/resources/themes/{{ flavor.identifier }}{{ variant }}.xml"
 ---
-{% set italics = variant != "-no-italics" -%}
+
+{%- set italics = variant != "-no-italics" -%}
 {% set name = "Catppuccin " ~ flavor.name ~ if(cond = not italics, t = " (no italics)", f="") -%}
 {% set parent_scheme = if(cond = flavor.light, t = "Default", f = "Darcula") -%}
 {% set caret_row_color = if(cond = flavor.light, t = surface1 | mix(color=base, amount = 0.15), f = surface1 | mix(color = base, amount = 0.2)) -%}
@@ -48,6 +49,7 @@ whiskers:
 {% set rainbow_color2 = text | mix(color = green, amount = 0.6) -%}
 {% set rainbow_color3 = text | mix(color = blue, amount = 0.6) -%}
 {% set rainbow_color4 = text | mix(color = mauve, amount = 0.6) -%}
+
 <scheme name="{{ name }}" version="142" parent_scheme="{{ parent_scheme }}">
   <colors>
     <option name="ADDED_LINES_COLOR" value="{{ green.hex }}"/>

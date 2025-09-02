@@ -31,16 +31,15 @@ jobs:
           java-version: 17
           cache: 'gradle'
 
-      - name: Setup Just
-        uses: extractions/setup-just@v3
-
       - name: Setup Whiskers
         uses: catppuccin/setup-whiskers@v2
         with:
           whiskers-version: "2.x"
 
       - name: Generate All Flavours
-        run: just build
+        run: |
+          whiskers ./ui.theme.tera
+          whiskers ./editor.tera
 
       - name: Build Plugin
         run: ./gradlew buildPlugin
