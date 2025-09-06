@@ -30,8 +30,6 @@ jobs:
 
       - name: Setup Whiskers
         uses: catppuccin/setup-whiskers@v2
-        with:
-          whiskers-version: "2.x"
 
       - name: Export Properties
         run: |
