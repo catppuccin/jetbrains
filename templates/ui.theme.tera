@@ -416,7 +416,6 @@ secondary_accent: "yellow"
       "hoverColor": "hoverBackground",
       "tabHeight": 40,
       "tabSelectionArc": 4,
-      "tabSelectionHeight": 1,
       "underlineColor": "accentColor"
     },
     "Table": {
