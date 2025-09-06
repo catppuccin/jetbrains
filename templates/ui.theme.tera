@@ -10,7 +10,7 @@ secondary_accent: "yellow"
 ---
 
 {%- macro file_color(color) -%}
-  {{ if(cond = flavor.light, t = color | mod(opacity=0.05), f = color | mod(opacity=0.1)) | get(key = "hex") }}
+  {{ color | mix(color=base, amount=0.05) | get(key='hex') }}
 {%- endmacro file_color -%}
 
 {%- macro banner_background(color) -%}
@@ -21,21 +21,10 @@ secondary_accent: "yellow"
   {{ color | mod(opacity=0.15) | get(key="hex") }}
 {%- endmacro banner_background_border -%}
 
-{%- macro search_match() -%}
-  {{ if(cond = flavor.light, t = flavor.colors[accent] | mod(opacity=0.3), f = flavor.colors[accent]) | get(key = "hex") }}
-{%- endmacro search_match -%}
-
-{%- macro textfield_background() -%}
-  {{ if(cond = flavor.light, t = surface1, f = surface2) | get(key = "hex") }}
-{%- endmacro textfield_background -%}
-
-{%- macro git_log_background() -%}
-  {{ flavor.colors[accent] | mod(opacity=0.05) | get(key="hex") }}
-{%- endmacro git_log_background -%}
-
-{%- macro drag_and_drop_row_background() -%}
-  {{ flavor.colors[accent] | mod(opacity=0.2) | get(key="hex") }}
-{%- endmacro drag_and_drop_row_background -%}
+{%- set search_match_bg = if(cond = flavor.light, t = flavor.colors[accent] | mod(opacity=0.3), f = flavor.colors[accent]) | get(key = "hex") -%}
+{%- set text_field_bg = if(cond = flavor.light, t = surface1, f = surface2) | get(key = "hex") -%}
+{%- set git_log_bg = flavor.colors[accent] | mod(opacity=0.05) | get(key="hex") -%}
+{%- set drag_and_drop_bg = flavor.colors[accent] | mod(opacity=0.15) | get(key="hex") -%}
 
 {
   "name": "{{ 'Catppuccin ' ~ flavor.name }}",
@@ -77,7 +66,7 @@ secondary_accent: "yellow"
     "inactiveBackground": "{{ crust.hex }}",
     "panelBackground": "{{ mantle.hex }}",
     "hoverBackground": "{{ overlay2 | mix(color=base, amount=0.3) | get(key='hex') }}",
-    "selectionBackground": "{{ overlay2 | mix(color=base, amount=0.2) | get(key='hex') }}",
+    "selectionBackground": "{{ overlay2 | mod(opacity=0.2) | get(key='hex') }}",
     "selectionInactiveBackground": "{{ base.hex }}",
     "borderColor": "{{ if(cond = flavor.dark, t = base, f = crust) | get(key='hex') }}",
     "separatorColor": "{{ surface0.hex }}"
@@ -196,7 +185,7 @@ secondary_accent: "yellow"
     },
     "DragAndDrop": {
       "borderColor": "selectionBackground",
-      "rowBackground": "{{ self::drag_and_drop_row_background() }}",
+      "rowBackground": "{{ drag_and_drop_bg }}",
       "areaForeground": "primaryForeground",
       "areaBackground": "panelBackground",
       "areaBorderColor": "accentColor"
@@ -394,8 +383,8 @@ secondary_accent: "yellow"
       }
     },
     "SearchMatch": {
-      "endBackground": "{{ self::search_match() }}",
-      "startBackground": "{{ self::search_match() }}"
+      "endBackground": "{{ search_match_bg }}",
+      "startBackground": "{{ search_match_bg }}"
     },
     "SegmentedButton": {
       "focusedSelectedButtonColor": "secondaryBackground",
@@ -443,7 +432,7 @@ secondary_accent: "yellow"
     },
     "TextField": {
       "background": "secondaryBackground",
-      "selectionBackground": "{{ self::textfield_background() }}"
+      "selectionBackground": "{{ text_field_bg }}"
     },
     "ToggleButton": {
       "buttonColor": "primaryForeground",
@@ -509,7 +498,7 @@ secondary_accent: "yellow"
       },
       "Log": {
         "Commit": {
-          "currentBranchBackground": "{{ self::git_log_background() }}",
+          "currentBranchBackground": "{{ git_log_bg }}",
           "hoveredBackground": "hoverBackground",
           "selectionInactiveBackground": "hoverBackground"
         }
