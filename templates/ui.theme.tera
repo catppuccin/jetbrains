@@ -15,27 +15,27 @@ secondary_accent: "yellow"
 
 {%- macro banner_background(color) -%}
   {{ color | mod(opacity=0.1) | get(key="hex") }}
-{%- endmacro file_color -%}
+{%- endmacro banner_background -%}
 
 {%- macro banner_background_border(color) -%}
   {{ color | mod(opacity=0.15) | get(key="hex") }}
-{%- endmacro file_color -%}
+{%- endmacro banner_background_border -%}
 
 {%- macro search_match() -%}
   {{ if(cond = flavor.light, t = flavor.colors[accent] | mod(opacity=0.3), f = flavor.colors[accent]) | get(key = "hex") }}
-{%- endmacro file_color -%}
+{%- endmacro search_match -%}
 
 {%- macro textfield_background() -%}
   {{ if(cond = flavor.light, t = surface1, f = surface2) | get(key = "hex") }}
-{%- endmacro file_color -%}
+{%- endmacro textfield_background -%}
 
 {%- macro git_log_background() -%}
   {{ flavor.colors[accent] | mod(opacity=0.05) | get(key="hex") }}
-{%- endmacro file_color -%}
+{%- endmacro git_log_background -%}
 
 {%- macro drag_and_drop_row_background() -%}
   {{ flavor.colors[accent] | mod(opacity=0.2) | get(key="hex") }}
-{%- endmacro file_color -%}
+{%- endmacro drag_and_drop_row_background -%}
 
 {
   "name": "{{ 'Catppuccin ' ~ flavor.name }}",
@@ -251,7 +251,6 @@ secondary_accent: "yellow"
       "rowHeight": "24"
     },
     "MainToolbar": { {#- The bar at the very top, with the run icons/project switcher -#}
-      "background": "crust",
       "Dropdown": {
         "hoverBackground": "hoverBackground",
         "maxWidth": 350,
