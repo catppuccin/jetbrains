@@ -6,11 +6,20 @@
 
 ### Changed
 
+- (Editor/UI): Moved theme engines from Deno to Whiskers, so some highlights on the UI/Editor may look a little
+  different. Please raise an issue if you are unsure whether a highlight is intended or not.
+- (UI): File colours have been toned all the way back in an attempt to increase readability by default.
+
 ### Deprecated
 
 ### Removed
 
 ### Fixed
+
+- (UI): Checkboxes in the Commit pane are now visible when using Latte.
+- (UI): Buttons in the run configuration are highlighted on hover.
+- (UI): The default option when creating a new Java class is now highlighted when using Frappé, Macchiato or Mocha.
+- (UI): The Git Blame panel now uses shades of a single accent colour to imply commit recency.
 
 ### Security
 
