@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Generate All Flavours" type="ShConfigurationType">
-    <option name="SCRIPT_TEXT" value="whiskers ui.theme.tera; whiskers editor.tera" />
+    <option name="SCRIPT_TEXT" value="whiskers templates/ui.theme.tera; whiskers templates/editor.tera" />
     <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
     <option name="SCRIPT_PATH" value="" />
     <option name="SCRIPT_OPTIONS" value="" />

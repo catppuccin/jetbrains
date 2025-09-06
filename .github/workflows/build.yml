@@ -6,13 +6,13 @@ on:
     branches: [ "main" ]
     paths:
       - 'src/**'
-      - 'generateFlavours/**'
+      - 'templates/**'
       - 'gradle.properties'
       - '**.gradle.kts'
   pull_request:
     paths:
       - 'src/**'
-      - 'generateFlavours/**'
+      - 'templates/**'
       - 'gradle.properties'
       - '**.gradle.kts'
 
@@ -33,13 +33,11 @@ jobs:
 
       - name: Setup Whiskers
         uses: catppuccin/setup-whiskers@v2
-        with:
-          whiskers-version: "2.x"
 
       - name: Generate All Flavours
         run: |
-          whiskers ./ui.theme.tera
-          whiskers ./editor.tera
+          whiskers templates/ui.theme.tera
+          whiskers templates/editor.tera
 
       - name: Build Plugin
         run: ./gradlew buildPlugin

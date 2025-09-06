@@ -41,8 +41,8 @@ jobs:
 
       - name: Generate All Flavours
         run: |
-          whiskers ./ui.theme.tera
-          whiskers ./editor.tera
+          whiskers templates/ui.theme.tera
+          whiskers templates/editor.tera
 
       - name: Patch Changelog
         run: ./gradlew patchChangelog
