@@ -5,11 +5,13 @@ whiskers:
     - variant: ["", "-no-italics"]
     - flavor
   filename: "src/main/resources/themes/{{ flavor.identifier }}{{ variant }}.xml"
+accent: "mauve"
 ---
 
-{%- set italics = variant != "-no-italics" -%}
-{% set name = "Catppuccin " ~ flavor.name ~ if(cond = not italics, t = " (no italics)", f="") -%}
-{% set parent_scheme = if(cond = flavor.light, t = "Default", f = "Darcula") -%}
+{%- set italics = variant == "" -%}
+{%- set name = "Catppuccin " ~ flavor.name ~ if(cond = italics, t = "", f = " (no italics)") -%}
+{%- set parent_scheme = if(cond = flavor.light, t = "Default", f = "Darcula") -%}
+
 {% set caret_row_color = if(cond = flavor.light, t = surface1 | mix(color=base, amount = 0.15), f = surface1 | mix(color = base, amount = 0.2)) -%}
 {% set error_hint = if(cond = flavor.light, t = red.hex, f = "781732") -%}
 {% set filestatus_ignored_suppressed = if(cond = flavor.light, t = overlay2, f = overlay0) -%}
@@ -18,11 +20,6 @@ whiskers:
 {% set inline_refactoring_settings_default = surface1 | mix(color = base, amount = 0.65) -%}
 {% set inline_refactoring_settings_focused_hovered = surface2 | mix(color = base, amount = 0.55) -%}
 {% set selection_background = if(cond=flavor.light, t = surface2 | mix(color = base, amount = 0.4), f = surface2 | mix(color = base, amount = 0.6)) -%}
-{% set vcs_annotations_color_1 = mauve | mix(color = base, amount = 0.6) -%}
-{% set vcs_annotations_color_2 = red | mix(color = base, amount = 0.4) -%}
-{% set vcs_annotations_color_3 = green | mix(color = base, amount = 0.7) -%}
-{% set vcs_annotations_color_4 = sapphire | mix(color = base, amount = 0.3) -%}
-{% set vcs_annotations_color_5 = blue | mix(color = base, amount = 0.6) -%}
 {% set block_terminal_current_search_entry_background = red | mix(color = base, amount = 0.3) -%}
 {% set block_terminal_search_entry_background = blue | mix(color = base, amount = 0.3) -%}
 {% set block_terminal_black_bright = if(cond = flavor.light, t = subtext0, f = surface2) -%}
@@ -30,12 +27,6 @@ whiskers:
 {% set console_terminal_black = if(cond = flavor.light, t = subtext1, f = surface1) -%}
 {% set console_terminal_white = if(cond = flavor.light, t = surface2, f = subtext1) -%}
 {% set console_terminal_black_bright = if(cond = flavor.light, t = subtext0, f = surface2) -%}
-{% set codewithme_user_1_selection = red | mix(color = base, amount = 0.2) -%}
-{% set codewithme_user_2_selection = peach | mix(color = base, amount = 0.4) -%}
-{% set codewithme_user_3_selection = yellow | mix(color = base, amount = 0.4) -%}
-{% set codewithme_user_4_selection = green | mix(color = base, amount = 0.4) -%}
-{% set codewithme_user_5_selection = sapphire | mix(color = base, amount = 0.4) -%}
-{% set codewithme_user_6_selection = mauve | mix(color = base, amount = 0.4) -%}
 {% set diff_conflict_deleted_background = red | mix(color = base, amount = 0.25) -%}
 {% set diff_conflict_deleted_error_stripe_color = red | mix(color = base, amount = 0.2) -%}
 {% set diff_inserted_background = green | mix(color = base, amount = 0.25) -%}
@@ -44,11 +35,18 @@ whiskers:
 {% set diff_modified_error_stripe_color = blue | mix(color = base, amount = 0.2) -%}
 {% set executionpoint_attributes = yellow | mix(color = base, amount = 0.15) -%}
 {% set search_result_attributes_background = blue | mix(color = base, amount = 0.3) -%}
-{% set rainbow_color0 = text | mix(color = red, amount = 0.6) -%}
-{% set rainbow_color1 = text | mix(color = yellow, amount = 0.6) -%}
-{% set rainbow_color2 = text | mix(color = green, amount = 0.6) -%}
-{% set rainbow_color3 = text | mix(color = blue, amount = 0.6) -%}
-{% set rainbow_color4 = text | mix(color = mauve, amount = 0.6) -%}
+
+{%- macro vcs_annotations(a) -%}
+  {{ flavor.colors[accent] | mix(color = base, amount = a) | get(key='hex') }}
+{%- endmacro vcs_annotations -%}
+
+{%- macro semantic_highlights(c) -%}
+  {{ text | mix(color = c, amount = 0.6) | get(key='hex') }}
+{%- endmacro semantic_highlights -%}
+
+{%- macro code_with_me_selection(c,a=0.4) -%}
+  {{ c | mix(color = base, amount = a) | get(key='hex') }}
+{%- endmacro code_with_me_selection -%}
 
 <scheme name="{{ name }}" version="142" parent_scheme="{{ parent_scheme }}">
   <colors>
@@ -71,8 +69,7 @@ whiskers:
     <option name="DIFF_SEPARATORS_BACKGROUND" value="{{ overlay0.hex }}"/>
     <option name="DOCUMENTATION_COLOR" value="{{ mantle.hex }}"/>
     <option name="DOC_COMMENT_LINK" value="{{ blue.hex }}"/>
-    <option name="ERROR_HINT" value="{{ error_hint }}"/>
-    <!-- Can't figure out how to edit foreground colour so stock red honestly looks better for all dark flavours -->
+    <option name="ERROR_HINT" value="{{ error_hint }}"/> <!-- Can't figure out how to edit foreground colour so stock red honestly looks better for all dark flavours -->
     <option name="FILESTATUS_ADDED" value="{{ green.hex }}"/>
     <option name="FILESTATUS_COPIED" value="{{ green.hex }}"/>
     <option name="FILESTATUS_DELETED" value="{{ surface2.hex }}"/>
@@ -134,11 +131,11 @@ whiskers:
     <option name="TAB_UNDERLINE" value="{{ mauve.hex }}"/>
     <option name="TAB_UNDERLINE_INACTIVE" value="{{ text.hex }}"/>
     <option name="TEARLINE_COLOR" value="{{ surface0.hex }}"/>
-    <option name="VCS_ANNOTATIONS_COLOR_1" value="{{ vcs_annotations_color_1.hex }}"/>
-    <option name="VCS_ANNOTATIONS_COLOR_2" value="{{ vcs_annotations_color_2.hex }}"/>
-    <option name="VCS_ANNOTATIONS_COLOR_3" value="{{ vcs_annotations_color_3.hex }}"/>
-    <option name="VCS_ANNOTATIONS_COLOR_4" value="{{ vcs_annotations_color_4.hex }}"/>
-    <option name="VCS_ANNOTATIONS_COLOR_5" value="{{ vcs_annotations_color_5.hex }}"/>
+    <option name="VCS_ANNOTATIONS_COLOR_1" value="{{ self::vcs_annotations(a=0.4) }}"/>
+    <option name="VCS_ANNOTATIONS_COLOR_2" value="{{ self::vcs_annotations(a=0.32) }}"/>
+    <option name="VCS_ANNOTATIONS_COLOR_3" value="{{ self::vcs_annotations(a=0.26) }}"/>
+    <option name="VCS_ANNOTATIONS_COLOR_4" value="{{ self::vcs_annotations(a=0.18) }}"/>
+    <option name="VCS_ANNOTATIONS_COLOR_5" value="{{ self::vcs_annotations(a=0.1) }}"/>
     <option name="VISUAL_INDENT_GUIDE" value="{{ surface0.hex }}"/>
     <option name="WHITESPACES" value="{{ overlay2.hex }}"/>
     <option name="WHITESPACES_MODIFIED_LINES_COLOR" value="{{ surface2.hex }}"/>
@@ -726,7 +723,7 @@ whiskers:
     </option>
     <option name="CodeWithMe.USER_1_SELECTION">
       <value>
-        <option name="BACKGROUND" value="{{ codewithme_user_1_selection.hex }}"/>
+        <option name="BACKGROUND" value="{{ self::code_with_me_selection(c=red,a=0.2) }}"/>
       </value>
     </option>
     <option name="CodeWithMe.USER_2_MARKER">
@@ -736,7 +733,7 @@ whiskers:
     </option>
     <option name="CodeWithMe.USER_2_SELECTION">
       <value>
-        <option name="BACKGROUND" value="{{ codewithme_user_2_selection.hex }}"/>
+        <option name="BACKGROUND" value="{{ self::code_with_me_selection(c=peach) }}"/>
       </value>
     </option>
     <option name="CodeWithMe.USER_3_MARKER">
@@ -746,7 +743,7 @@ whiskers:
     </option>
     <option name="CodeWithMe.USER_3_SELECTION">
       <value>
-        <option name="BACKGROUND" value="{{ codewithme_user_3_selection.hex }}"/>
+        <option name="BACKGROUND" value="{{ self::code_with_me_selection(c=yellow) }}"/>
       </value>
     </option>
     <option name="CodeWithMe.USER_4_MARKER">
@@ -756,7 +753,7 @@ whiskers:
     </option>
     <option name="CodeWithMe.USER_4_SELECTION">
       <value>
-        <option name="BACKGROUND" value="{{ codewithme_user_4_selection.hex }}"/>
+        <option name="BACKGROUND" value="{{ self::code_with_me_selection(c=green) }}"/>
       </value>
     </option>
     <option name="CodeWithMe.USER_5_MARKER">
@@ -766,7 +763,7 @@ whiskers:
     </option>
     <option name="CodeWithMe.USER_5_SELECTION">
       <value>
-        <option name="BACKGROUND" value="{{ codewithme_user_5_selection.hex }}"/>
+        <option name="BACKGROUND" value="{{ self::code_with_me_selection(c=sapphire) }}"/>
       </value>
     </option>
     <option name="CodeWithMe.USER_6_MARKER">
@@ -776,7 +773,7 @@ whiskers:
     </option>
     <option name="CodeWithMe.USER_6_SELECTION">
       <value>
-        <option name="BACKGROUND" value="{{ codewithme_user_6_selection.hex }}"/>
+        <option name="BACKGROUND" value="{{ self::code_with_me_selection(c=mauve) }}"/>
       </value>
     </option>
     <option name="ComposableCallTextAttributes" baseAttributes="DEFAULT_FUNCTION_CALL"/>
@@ -3191,27 +3188,27 @@ whiskers:
     <!-- Semantic Highlights -->
     <option name="RAINBOW_COLOR0">
       <value>
-        <option name="FOREGROUND" value="{{ rainbow_color0.hex }}"/>
+        <option name="FOREGROUND" value="{{ self::semantic_highlights(c=red) }}"/>
       </value>
     </option>
     <option name="RAINBOW_COLOR1">
       <value>
-        <option name="FOREGROUND" value="{{ rainbow_color1.hex }}"/>
+        <option name="FOREGROUND" value="{{ self::semantic_highlights(c=yellow) }}"/>
       </value>
     </option>
     <option name="RAINBOW_COLOR2">
       <value>
-        <option name="FOREGROUND" value="{{ rainbow_color2.hex }}"/>
+        <option name="FOREGROUND" value="{{ self::semantic_highlights(c=green) }}"/>
       </value>
     </option>
     <option name="RAINBOW_COLOR3">
       <value>
-        <option name="FOREGROUND" value="{{ rainbow_color3.hex }}"/>
+        <option name="FOREGROUND" value="{{ self::semantic_highlights(c=blue) }}"/>
       </value>
     </option>
     <option name="RAINBOW_COLOR4">
       <value>
-        <option name="FOREGROUND" value="{{ rainbow_color4.hex }}"/>
+        <option name="FOREGROUND" value="{{ self::semantic_highlights(c=mauve) }}"/>
       </value>
     </option>
   </attributes>
