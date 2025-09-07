@@ -11,9 +11,6 @@ on:
     tags:
       - "v*" # Push events to matching v*, i.e. v1.0, v20.15.10
 
-env:
-  DENO_DIR: deno_cache
-
 jobs:
   build:
     name: Publish Plugin
@@ -31,16 +28,8 @@ jobs:
           java-version: 17
           cache: 'gradle'
 
-      - name: Setup Deno
-        uses: denoland/setup-deno@v1
-        with:
-          deno-version: v1.x
-
-      - name: Cache Deno
-        uses: actions/cache@v4
-        with:
-          key: ${{ hashFiles('generateFlavours/lock.json') }}
-          path: ${{ env.DENO_DIR }}
+      - name: Setup Whiskers
+        uses: catppuccin/setup-whiskers@v2
 
       - name: Export Properties
         run: |
@@ -49,7 +38,9 @@ jobs:
           echo "name=$(echo "$PROPERTIES" | grep "^pluginName:" | cut -f2- -d ' ')" >> $GITHUB_ENV
 
       - name: Generate All Flavours
-        run: ./generateFlavours/main.ts
+        run: |
+          whiskers templates/ui.theme.tera
+          whiskers templates/editor.tera
 
       - name: Patch Changelog
         run: ./gradlew patchChangelog

@@ -1,146 +1,197 @@
-<scheme name="{{name}}" version="142" parent_scheme="{{parent_scheme}}">
+---
+whiskers:
+  version: "^2.5.1"
+  matrix:
+    - variant: ["", "-no-italics"]
+    - flavor
+  filename: "src/main/resources/themes/{{ flavor.identifier }}{{ variant }}.xml"
+accent: "mauve"
+---
+
+{%- set italics = variant == "" -%}
+{%- set name = "Catppuccin " ~ flavor.name ~ if(cond = italics, t = "", f = " (no italics)") -%}
+{%- set parent_scheme = if(cond = flavor.light, t = "Default", f = "Darcula") -%}
+
+{% set caret_row_color = if(cond = flavor.light, t = surface1 | mix(color=base, amount = 0.15), f = surface1 | mix(color = base, amount = 0.2)) -%}
+{% set error_hint = if(cond = flavor.light, t = red.hex, f = "781732") -%}
+{% set filestatus_ignored_suppressed = if(cond = flavor.light, t = subtext0, f = overlay2) -%}
+{% set filestatus_unknown = peach | mix(color = base, amount = 0.9) -%}
+{% set filestatus_changelistconflict = red | mix(color = base, amount = 0.9) -%}
+{% set inline_refactoring_settings_default = surface1 | mix(color = base, amount = 0.65) -%}
+{% set inline_refactoring_settings_focused_hovered = surface2 | mix(color = base, amount = 0.55) -%}
+{% set selection_background = if(cond=flavor.light, t = surface2 | mix(color = base, amount = 0.4), f = surface2 | mix(color = base, amount = 0.6)) -%}
+{% set block_terminal_current_search_entry_background = red | mix(color = base, amount = 0.3) -%}
+{% set block_terminal_search_entry_background = blue | mix(color = base, amount = 0.3) -%}
+{% set block_terminal_black_bright = if(cond = flavor.light, t = subtext0, f = surface2) -%}
+{% set block_terminal_white_bright = if(cond = flavor.light, t = surface1, f = subtext0) -%}
+{% set console_terminal_black = if(cond = flavor.light, t = subtext1, f = surface1) -%}
+{% set console_terminal_white = if(cond = flavor.light, t = surface2, f = subtext1) -%}
+{% set console_terminal_black_bright = if(cond = flavor.light, t = subtext0, f = surface2) -%}
+{% set diff_conflict_deleted_background = red | mix(color = base, amount = 0.25) -%}
+{% set diff_conflict_deleted_error_stripe_color = red | mix(color = base, amount = 0.2) -%}
+{% set diff_inserted_background = green | mix(color = base, amount = 0.25) -%}
+{% set diff_inserted_error_stripe_color = green | mix(color = base, amount = 0.2) -%}
+{% set diff_modified_background = blue | mix(color = base, amount = 0.25) -%}
+{% set diff_modified_error_stripe_color = blue | mix(color = base, amount = 0.2) -%}
+{% set executionpoint_attributes = yellow | mix(color = base, amount = 0.15) -%}
+{% set search_result_attributes_background = blue | mix(color = base, amount = 0.3) -%}
+{% set tab_selected_background = overlay2 | mix(color=base, amount=0.2) -%}
+
+{%- macro vcs_annotations(a) -%}
+  {{ flavor.colors[accent] | mix(color = base, amount = a) | get(key='hex') }}
+{%- endmacro vcs_annotations -%}
+
+{%- macro semantic_highlights(c) -%}
+  {{ text | mix(color = c, amount = 0.6) | get(key='hex') }}
+{%- endmacro semantic_highlights -%}
+
+{%- macro code_with_me_selection(c,a=0.4) -%}
+  {{ c | mix(color = base, amount = a) | get(key='hex') }}
+{%- endmacro code_with_me_selection -%}
+
+<scheme name="{{ name }}" version="142" parent_scheme="{{ parent_scheme }}">
   <colors>
-    <option name="ADDED_LINES_COLOR" value="{{green}}"/>
-    <option name="ANNOTATIONS_COLOR" value="{{text}}"/>
-    <option name="BLOCK_TERMINAL_BLOCK_BACKGROUND_END" value="{{mantle}}" />
-    <option name="BLOCK_TERMINAL_BLOCK_BACKGROUND_START" value="{{mantle}}" />
-    <option name="BLOCK_TERMINAL_DEFAULT_BACKGROUND" value="{{base}}" />
-    <option name="BLOCK_TERMINAL_DEFAULT_FOREGROUND" value="{{text}}" />
-    <option name="BLOCK_TERMINAL_ERROR_BLOCK_STROKE_COLOR" value="{{red}}" />
-    <option name="BLOCK_TERMINAL_INACTIVE_SELECTED_BLOCK_BACKGROUND" value="{{surface1}}" />
-    <option name="BLOCK_TERMINAL_INACTIVE_SELECTED_BLOCK_STROKE_COLOR" value="{{overlay0}}" />
-    <option name="BLOCK_TERMINAL_PROMPT_SEPARATOR_COLOR" value="{{surface1}}" />
-    <option name="BLOCK_TERMINAL_SELECTED_BLOCK_BACKGROUND" value="{{surface0}}" />
-    <option name="BLOCK_TERMINAL_SELECTED_BLOCK_STROKE_COLOR" value="{{blue}}" />
-    <option name="CARET_COLOR" value="{{rosewater}}"/>
-    <option name="CARET_ROW_COLOR" value="{{isLatte (opacity surface1 0.15) (opacity surface1 0.2)}}"/>
-    <option name="CONSOLE_BACKGROUND_KEY" value="{{base}}"/>
-    <option name="DELETED_LINES_COLOR" value="{{maroon}}"/>
-    <option name="DIFF_SEPARATORS_BACKGROUND" value="{{overlay0}}"/>
-    <option name="DOCUMENTATION_COLOR" value="{{mantle}}"/>
-    <option name="DOC_COMMENT_LINK" value="{{blue}}"/>
-    <option name="ERROR_HINT" value="{{isLatte red 781732}}"/> <!-- Can't figure out how to edit foreground colour so stock red honestly looks better for all dark flavours -->
-    <option name="FILESTATUS_ADDED" value="{{green}}"/>
-    <option name="FILESTATUS_COPIED" value="{{green}}"/>
-    <option name="FILESTATUS_DELETED" value="{{surface2}}"/>
-    <option name="FILESTATUS_HIJACKED" value="{{yellow}}"/>
-    <option name="FILESTATUS_IDEA_FILESTATUS_DELETED_FROM_FILE_SYSTEM" value="{{surface2}}"/>
-    <option name="FILESTATUS_IDEA_FILESTATUS_IGNORED" value="{{isLatte overlay2 overlay0}}"/>
-    <option name="FILESTATUS_IDEA_FILESTATUS_MERGED_WITH_BOTH_CONFLICTS" value="{{peach}}"/>
-    <option name="FILESTATUS_IDEA_FILESTATUS_MERGED_WITH_CONFLICTS" value="{{peach}}"/>
-    <option name="FILESTATUS_IDEA_FILESTATUS_MERGED_WITH_PROPERTY_CONFLICTS" value="{{peach}}"/>
-    <option name="FILESTATUS_IDEA_SVN_FILESTATUS_EXTERNAL" value="{{green}}"/>
-    <option name="FILESTATUS_IGNORE.PROJECT_VIEW.IGNORED" value="{{overlay0}}"/>
-    <option name="FILESTATUS_MERGED" value="{{mauve}}"/>
-    <option name="FILESTATUS_MODIFIED" value="{{blue}}"/>
-    <option name="FILESTATUS_NOT_CHANGED_IMMEDIATE" value="{{blue}}"/>
-    <option name="FILESTATUS_NOT_CHANGED_RECURSIVE" value="{{blue}}"/>
-    <option name="FILESTATUS_SUPPRESSED" value="{{isLatte overlay2 overlay0}}"/>
-    <option name="FILESTATUS_SWITCHED" value="{{lavender}}"/>
-    <option name="FILESTATUS_UNKNOWN" value="{{opacity peach 0.9}}"/>
-    <option name="FILESTATUS_addedOutside" value="{{green}}"/>
-    <option name="FILESTATUS_changelistConflict" value="{{opacity red 0.9}}"/>
-    <option name="FILESTATUS_modifiedOutside" value="{{blue}}"/>
+    <option name="ADDED_LINES_COLOR" value="{{ green.hex }}"/>
+    <option name="ANNOTATIONS_COLOR" value="{{ text.hex }}"/>
+    <option name="BLOCK_TERMINAL_BLOCK_BACKGROUND_END" value="{{ mantle.hex }}"/>
+    <option name="BLOCK_TERMINAL_BLOCK_BACKGROUND_START" value="{{ mantle.hex }}"/>
+    <option name="BLOCK_TERMINAL_DEFAULT_BACKGROUND" value="{{ base.hex }}"/>
+    <option name="BLOCK_TERMINAL_DEFAULT_FOREGROUND" value="{{ text.hex }}"/>
+    <option name="BLOCK_TERMINAL_ERROR_BLOCK_STROKE_COLOR" value="{{ red.hex }}"/>
+    <option name="BLOCK_TERMINAL_INACTIVE_SELECTED_BLOCK_BACKGROUND" value="{{ surface1.hex }}"/>
+    <option name="BLOCK_TERMINAL_INACTIVE_SELECTED_BLOCK_STROKE_COLOR" value="{{ overlay0.hex }}"/>
+    <option name="BLOCK_TERMINAL_PROMPT_SEPARATOR_COLOR" value="{{ surface1.hex }}"/>
+    <option name="BLOCK_TERMINAL_SELECTED_BLOCK_BACKGROUND" value="{{ surface0.hex }}"/>
+    <option name="BLOCK_TERMINAL_SELECTED_BLOCK_STROKE_COLOR" value="{{ blue.hex }}"/>
+    <option name="CARET_COLOR" value="{{ rosewater.hex }}"/>
+    <option name="CARET_ROW_COLOR" value="{{ caret_row_color.hex }}"/>
+    <option name="CONSOLE_BACKGROUND_KEY" value="{{ base.hex }}"/>
+    <option name="DELETED_LINES_COLOR" value="{{ maroon.hex }}"/>
+    <option name="DIFF_SEPARATORS_BACKGROUND" value="{{ overlay0.hex }}"/>
+    <option name="DOCUMENTATION_COLOR" value="{{ mantle.hex }}"/>
+    <option name="DOC_COMMENT_LINK" value="{{ blue.hex }}"/>
+    <option name="ERROR_HINT" value="{{ error_hint }}"/> <!-- Can't figure out how to edit foreground colour so stock red honestly looks better for all dark flavours -->
+    <option name="FILESTATUS_ADDED" value="{{ green.hex }}"/>
+    <option name="FILESTATUS_COPIED" value="{{ green.hex }}"/>
+    <option name="FILESTATUS_DELETED" value="{{ surface2.hex }}"/>
+    <option name="FILESTATUS_HIJACKED" value="{{ yellow.hex }}"/>
+    <option name="FILESTATUS_IDEA_FILESTATUS_DELETED_FROM_FILE_SYSTEM" value="{{ surface2.hex }}"/>
+    <option name="FILESTATUS_IDEA_FILESTATUS_IGNORED" value="{{ filestatus_ignored_suppressed.hex }}"/>
+    <option name="FILESTATUS_IDEA_FILESTATUS_MERGED_WITH_BOTH_CONFLICTS" value="{{ peach.hex }}"/>
+    <option name="FILESTATUS_IDEA_FILESTATUS_MERGED_WITH_CONFLICTS" value="{{ peach.hex }}"/>
+    <option name="FILESTATUS_IDEA_FILESTATUS_MERGED_WITH_PROPERTY_CONFLICTS" value="{{ peach.hex }}"/>
+    <option name="FILESTATUS_IDEA_SVN_FILESTATUS_EXTERNAL" value="{{ green.hex }}"/>
+    <option name="FILESTATUS_IGNORE.PROJECT_VIEW.IGNORED" value="{{ overlay0.hex }}"/>
+    <option name="FILESTATUS_MERGED" value="{{ mauve.hex }}"/>
+    <option name="FILESTATUS_MODIFIED" value="{{ blue.hex }}"/>
+    <option name="FILESTATUS_NOT_CHANGED_IMMEDIATE" value="{{ blue.hex }}"/>
+    <option name="FILESTATUS_NOT_CHANGED_RECURSIVE" value="{{ blue.hex }}"/>
+    <option name="FILESTATUS_SUPPRESSED" value="{{ filestatus_ignored_suppressed.hex }}"/>
+    <option name="FILESTATUS_SWITCHED" value="{{ lavender.hex }}"/>
+    <option name="FILESTATUS_UNKNOWN" value="{{ filestatus_unknown.hex }}"/>
+    <option name="FILESTATUS_addedOutside" value="{{ green.hex }}"/>
+    <option name="FILESTATUS_changelistConflict" value="{{ filestatus_changelistconflict.hex }}"/>
+    <option name="FILESTATUS_modifiedOutside" value="{{ blue.hex }}"/>
     <option name="FOLDED_TEXT_BORDER_COLOR" value=""/>
-    <option name="GUTTER_BACKGROUND" value="{{base}}"/>
-    <option name="HTML_TAG_TREE_LEVEL0" value="{{red}}"/>
-    <option name="HTML_TAG_TREE_LEVEL1" value="{{yellow}}"/>
-    <option name="HTML_TAG_TREE_LEVEL2" value="{{green}}"/>
-    <option name="HTML_TAG_TREE_LEVEL3" value="{{blue}}"/>
-    <option name="HTML_TAG_TREE_LEVEL4" value="{{sky}}"/>
-    <option name="HTML_TAG_TREE_LEVEL5" value="{{mauve}}"/>
-    <option name="INDENT_GUIDE" value="{{surface0}}"/>
-    <option name="INFORMATION_HINT" value="{{surface0}}"/>
-    <option name="INLINE_REFACTORING_SETTINGS_DEFAULT" value="{{opacity surface1 0.65}}"/>
-    <option name="INLINE_REFACTORING_SETTINGS_FOCUSED" value="{{opacity surface2 0.55}}"/>
-    <option name="INLINE_REFACTORING_SETTINGS_HOVERED" value="{{opacity surface2 0.55}}"/>
-    <option name="LINE_NUMBERS_COLOR" value="{{overlay0}}"/>
-    <option name="LINE_NUMBER_ON_CARET_ROW_COLOR" value="{{overlay1}}"/>
-    <option name="LOOKUP_COLOR" value="{{surface0}}"/>
-    <option name="METHOD_SEPARATORS_COLOR" value="{{surface0}}"/>
-    <option name="MODIFIED_LINES_COLOR" value="{{peach}}"/>
-    <option name="MODIFIED_TAB_ICON" value="{{blue}}"/>
-    <option name="NOTIFICATION_BACKGROUND" value="{{mantle}}"/>
-    <option name="PROMOTION_PANE" value="{{surface0}}"/>
-    <option name="QUESTION_HINT" value="{{surface0}}"/>
-    <option name="RECENT_LOCATIONS_SELECTION" value="{{surface0}}"/>
-    <option name="RIGHT_MARGIN_COLOR" value="{{surface0}}"/>
-    <option name="SELECTED_INDENT_GUIDE" value="{{surface1}}"/>
-    <option name="SELECTED_TEARLINE_COLOR" value="{{surface1}}"/>
-    <option name="SELECTION_BACKGROUND" value="{{isLatte (opacity surface2 0.4) (opacity surface2 0.6)}}"/>
+    <option name="GUTTER_BACKGROUND" value="{{ base.hex }}"/>
+    <option name="HTML_TAG_TREE_LEVEL0" value="{{ red.hex }}"/>
+    <option name="HTML_TAG_TREE_LEVEL1" value="{{ yellow.hex }}"/>
+    <option name="HTML_TAG_TREE_LEVEL2" value="{{ green.hex }}"/>
+    <option name="HTML_TAG_TREE_LEVEL3" value="{{ blue.hex }}"/>
+    <option name="HTML_TAG_TREE_LEVEL4" value="{{ sky.hex }}"/>
+    <option name="HTML_TAG_TREE_LEVEL5" value="{{ mauve.hex }}"/>
+    <option name="INDENT_GUIDE" value="{{ surface0.hex }}"/>
+    <option name="INFORMATION_HINT" value="{{ surface0.hex }}"/>
+    <option name="INLINE_REFACTORING_SETTINGS_DEFAULT" value="{{ inline_refactoring_settings_default.hex }}"/>
+    <option name="INLINE_REFACTORING_SETTINGS_FOCUSED" value="{{ inline_refactoring_settings_focused_hovered.hex }}"/>
+    <option name="INLINE_REFACTORING_SETTINGS_HOVERED" value="{{ inline_refactoring_settings_focused_hovered.hex }}"/>
+    <option name="LINE_NUMBERS_COLOR" value="{{ overlay0.hex }}"/>
+    <option name="LINE_NUMBER_ON_CARET_ROW_COLOR" value="{{ lavender.hex }}"/>
+    <option name="LOOKUP_COLOR" value="{{ surface0.hex }}"/>
+    <option name="METHOD_SEPARATORS_COLOR" value="{{ surface0.hex }}"/>
+    <option name="MODIFIED_LINES_COLOR" value="{{ peach.hex }}"/>
+    <option name="MODIFIED_TAB_ICON" value="{{ blue.hex }}"/>
+    <option name="NOTIFICATION_BACKGROUND" value="{{ mantle.hex }}"/>
+    <option name="PROMOTION_PANE" value="{{ surface0.hex }}"/>
+    <option name="QUESTION_HINT" value="{{ surface0.hex }}"/>
+    <option name="RECENT_LOCATIONS_SELECTION" value="{{ surface0.hex }}"/>
+    <option name="RIGHT_MARGIN_COLOR" value="{{ surface0.hex }}"/>
+    <option name="SELECTED_INDENT_GUIDE" value="{{ surface1.hex }}"/>
+    <option name="SELECTED_TEARLINE_COLOR" value="{{ surface1.hex }}"/>
+    <option name="SELECTION_BACKGROUND" value="{{ selection_background.hex }}"/>
     <option name="SELECTION_FOREGROUND" value=""/>
     <option name="SEPARATOR_BELOW_COLOR" value=""/>
-    <option name="ScrollBar.thumbColor" value="{{surface0}}"/>
-    <option name="ScrollBar.thumbBorderColor" value="{{surface0}}"/>
-    <option name="ScrollBar.hoverThumbColor" value="{{surface1}}"/>
-    <option name="ScrollBar.hoverThumbBorderColor" value="{{surface1}}"/>
-    <option name="ScrollBar.Mac.thumbColor" value="{{surface0}}"/>
-    <option name="ScrollBar.Mac.thumbBorderColor" value="{{surface0}}"/>
-    <option name="ScrollBar.Mac.hoverThumbColor" value="{{surface1}}"/>
-    <option name="ScrollBar.Mac.hoverThumbBorderColor" value="{{surface1}}"/>
-    <option name="TAB_UNDERLINE" value="{{mauve}}"/>
-    <option name="TAB_UNDERLINE_INACTIVE" value="{{text}}"/>
-    <option name="TEARLINE_COLOR" value="{{surface0}}"/>
-    <option name="VCS_ANNOTATIONS_COLOR_1" value="{{opacity mauve 0.6}}"/>
-    <option name="VCS_ANNOTATIONS_COLOR_2" value="{{opacity red 0.4}}"/>
-    <option name="VCS_ANNOTATIONS_COLOR_3" value="{{opacity green 0.7}}"/>
-    <option name="VCS_ANNOTATIONS_COLOR_4" value="{{opacity sapphire 0.3}}"/>
-    <option name="VCS_ANNOTATIONS_COLOR_5" value="{{opacity blue 0.6}}"/>
-    <option name="VISUAL_INDENT_GUIDE" value="{{surface0}}"/>
-    <option name="WHITESPACES" value="{{overlay2}}"/>
-    <option name="WHITESPACES_MODIFIED_LINES_COLOR" value="{{surface2}}"/>
+    <option name="ScrollBar.thumbColor" value="{{ surface0.hex }}"/>
+    <option name="ScrollBar.thumbBorderColor" value="{{ surface0.hex }}"/>
+    <option name="ScrollBar.hoverThumbColor" value="{{ surface1.hex }}"/>
+    <option name="ScrollBar.hoverThumbBorderColor" value="{{ surface1.hex }}"/>
+    <option name="ScrollBar.Mac.thumbColor" value="{{ surface0.hex }}"/>
+    <option name="ScrollBar.Mac.thumbBorderColor" value="{{ surface0.hex }}"/>
+    <option name="ScrollBar.Mac.hoverThumbColor" value="{{ surface1.hex }}"/>
+    <option name="ScrollBar.Mac.hoverThumbBorderColor" value="{{ surface1.hex }}"/>
+    <option name="TAB_UNDERLINE" value="{{ mauve.hex }}"/>
+    <option name="TAB_UNDERLINE_INACTIVE" value="{{ text.hex }}"/>
+    <option name="TEARLINE_COLOR" value="{{ surface0.hex }}"/>
+    <option name="VCS_ANNOTATIONS_COLOR_1" value="{{ self::vcs_annotations(a=0.4) }}"/>
+    <option name="VCS_ANNOTATIONS_COLOR_2" value="{{ self::vcs_annotations(a=0.32) }}"/>
+    <option name="VCS_ANNOTATIONS_COLOR_3" value="{{ self::vcs_annotations(a=0.26) }}"/>
+    <option name="VCS_ANNOTATIONS_COLOR_4" value="{{ self::vcs_annotations(a=0.18) }}"/>
+    <option name="VCS_ANNOTATIONS_COLOR_5" value="{{ self::vcs_annotations(a=0.1) }}"/>
+    <option name="VISUAL_INDENT_GUIDE" value="{{ surface0.hex }}"/>
+    <option name="WHITESPACES" value="{{ overlay2.hex }}"/>
+    <option name="WHITESPACES_MODIFIED_LINES_COLOR" value="{{ surface2.hex }}"/>
   </colors>
   <attributes>
     <option name="ABSTRACT_METHOD_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="ANGLE_BRACKETS_RAINBOW_COLOR0">
       <value>
-        <option name="FOREGROUND" value="{{red}}"/>
+        <option name="FOREGROUND" value="{{ red.hex }}"/>
       </value>
     </option>
     <option name="ANGLE_BRACKETS_RAINBOW_COLOR1">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="ANGLE_BRACKETS_RAINBOW_COLOR2">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="ANGLE_BRACKETS_RAINBOW_COLOR3">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="ANGLE_BRACKETS_RAINBOW_COLOR4">
       <value>
-        <option name="FOREGROUND" value="{{sapphire}}"/>
+        <option name="FOREGROUND" value="{{ sapphire.hex }}"/>
       </value>
     </option>
     <option name="ANNOTATION_ATTRIBUTE_NAME_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="{{maroon}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ maroon.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="ANNOTATION_NAME_ATTRIBUTES" baseAttributes=""/>
     <option name="APACHE_CONFIG.IDENTIFIER">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
+        <option name="FOREGROUND" value="{{ mauve.hex }}"/>
       </value>
     </option>
     <option name="BAD_CHARACTER">
       <value>
-        <option name="EFFECT_COLOR" value="{{red}}"/>
+        <option name="EFFECT_COLOR" value="{{ red.hex }}"/>
         <option name="EFFECT_TYPE" value="2"/>
       </value>
     </option>
@@ -149,13 +200,13 @@
     </option>
     <option name="BASH.CONDITIONAL">
       <value>
-        <option name="FOREGROUND" value="{{teal}}"/>
+        <option name="FOREGROUND" value="{{ teal.hex }}"/>
       </value>
     </option>
     <option name="BASH.EXTERNAL_COMMAND" baseAttributes="DEFAULT_IDENTIFIER"/>
     <option name="BASH.FUNCTION_CALL">
       <value>
-        <option name="FOREGROUND" value="{{sky}}"/>
+        <option name="FOREGROUND" value="{{ sky.hex }}"/>
       </value>
     </option>
     <option name="BASH.HERE_DOC_END" baseAttributes="DEFAULT_KEYWORD"/>
@@ -163,123 +214,123 @@
     <option name="BASH.SHEBANG" baseAttributes="BASH.LINE_COMMENT"/>
     <option name="BLADE_DIRECTIVE">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
+        <option name="FOREGROUND" value="{{ mauve.hex }}"/>
       </value>
     </option>
-    <option name="TERMINAL_BACKGROUND" value="{{base}}"/>
+    <option name="TERMINAL_BACKGROUND" value="{{ base.hex }}"/>
     <option name="BLOCK_TERMINAL_COMMAND">
       <value>
-        <option name="FOREGROUND" value="{{blue}}" />
-        <option name="FONT_TYPE" value="1" />
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
+        <option name="FONT_TYPE" value="1"/>
       </value>
     </option>
     <option name="BLOCK_TERMINAL_CURRENT_SEARCH_ENTRY">
       <value>
-        <option name="FOREGROUND" value="{{text}}" />
-        <option name="BACKGROUND" value="{{opacity red 0.3}}" />
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
+        <option name="BACKGROUND" value="{{ block_terminal_current_search_entry_background.hex }}"/>
       </value>
     </option>
     <option name="BLOCK_TERMINAL_SEARCH_ENTRY">
       <value>
-        <option name="FOREGROUND" value="{{text}}" />
-        <option name="BACKGROUND" value="{{opacity blue 0.3}}" />
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
+        <option name="BACKGROUND" value="{{ block_terminal_search_entry_background.hex }}"/>
       </value>
     </option>
-    <option name="BLOCK_TERMINAL_BLACK" >
+    <option name="BLOCK_TERMINAL_BLACK">
       <value>
-        <option name="FOREGROUND" value="{{isLatte subtext1 surface1}}"/>
-        <option name="BACKGROUND" value="{{isLatte subtext1 surface1}}"/>
+        <option name="FOREGROUND" value="{{ console_terminal_black.hex }}"/>
+        <option name="BACKGROUND" value="{{ console_terminal_black.hex }}"/>
       </value>
     </option>
-    <option name="BLOCK_TERMINAL_BLUE" >
+    <option name="BLOCK_TERMINAL_BLUE">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
-        <option name="BACKGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
+        <option name="BACKGROUND" value="{{ blue.hex }}"/>
       </value>
     </option>
-    <option name="BLOCK_TERMINAL_CYAN" >
+    <option name="BLOCK_TERMINAL_CYAN">
       <value>
-        <option name="FOREGROUND" value="{{teal}}"/>
-        <option name="BACKGROUND" value="{{teal}}"/>
+        <option name="FOREGROUND" value="{{ teal.hex }}"/>
+        <option name="BACKGROUND" value="{{ teal.hex }}"/>
       </value>
     </option>
-    <option name="BLOCK_TERMINAL_GREEN" >
+    <option name="BLOCK_TERMINAL_GREEN">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
-        <option name="BACKGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
+        <option name="BACKGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="BLOCK_TERMINAL_MAGENTA">
       <value>
-        <option name="FOREGROUND" value="{{pink}}"/>
-        <option name="BACKGROUND" value="{{pink}}"/>
+        <option name="FOREGROUND" value="{{ pink.hex }}"/>
+        <option name="BACKGROUND" value="{{ pink.hex }}"/>
       </value>
     </option>
-    <option name="BLOCK_TERMINAL_RED"  >
+    <option name="BLOCK_TERMINAL_RED">
       <value>
-        <option name="FOREGROUND" value="{{red}}"/>
-        <option name="BACKGROUND" value="{{red}}"/>
+        <option name="FOREGROUND" value="{{ red.hex }}"/>
+        <option name="BACKGROUND" value="{{ red.hex }}"/>
       </value>
     </option>
-    <option name="BLOCK_TERMINAL_WHITE" >
+    <option name="BLOCK_TERMINAL_WHITE">
       <value>
-        <option name="FOREGROUND" value="{{isLatte surface2 subtext1}}"/>
-        <option name="BACKGROUND" value="{{isLatte surface2 subtext1}}"/>
+        <option name="FOREGROUND" value="{{ console_terminal_white.hex }}"/>
+        <option name="BACKGROUND" value="{{ console_terminal_white.hex }}"/>
       </value>
     </option>
-    <option name="BLOCK_TERMINAL_YELLOW" >
+    <option name="BLOCK_TERMINAL_YELLOW">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
-        <option name="BACKGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
+        <option name="BACKGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
 
-    <option name="BLOCK_TERMINAL_BLACK_BRIGHT" >
+    <option name="BLOCK_TERMINAL_BLACK_BRIGHT">
       <value>
-        <option name="FOREGROUND" value="{{isLatte subtext0 surface2}}"/>
-        <option name="BACKGROUND" value="{{isLatte subtext0 surface2}}"/>
+        <option name="FOREGROUND" value="{{ console_terminal_black_bright.hex }}"/>
+        <option name="BACKGROUND" value="{{ console_terminal_black_bright.hex }}"/>
       </value>
     </option>
-    <option name="BLOCK_TERMINAL_BLUE_BRIGHT" >
+    <option name="BLOCK_TERMINAL_BLUE_BRIGHT">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
-        <option name="BACKGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
+        <option name="BACKGROUND" value="{{ blue.hex }}"/>
       </value>
     </option>
-    <option name="BLOCK_TERMINAL_CYAN_BRIGHT" >
+    <option name="BLOCK_TERMINAL_CYAN_BRIGHT">
       <value>
-        <option name="FOREGROUND" value="{{teal}}"/>
-        <option name="BACKGROUND" value="{{teal}}"/>
+        <option name="FOREGROUND" value="{{ teal.hex }}"/>
+        <option name="BACKGROUND" value="{{ teal.hex }}"/>
       </value>
     </option>
-    <option name="BLOCK_TERMINAL_GREEN_BRIGHT" >
+    <option name="BLOCK_TERMINAL_GREEN_BRIGHT">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
-        <option name="BACKGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
+        <option name="BACKGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
-    <option name="BLOCK_TERMINAL_MAGENTA_BRIGHT" >
+    <option name="BLOCK_TERMINAL_MAGENTA_BRIGHT">
       <value>
-        <option name="FOREGROUND" value="{{pink}}"/>
-        <option name="BACKGROUND" value="{{pink}}"/>
+        <option name="FOREGROUND" value="{{ pink.hex }}"/>
+        <option name="BACKGROUND" value="{{ pink.hex }}"/>
       </value>
     </option>
     <option name="BLOCK_TERMINAL_RED_BRIGHT">
       <value>
-        <option name="FOREGROUND" value="{{red}}"/>
-        <option name="BACKGROUND" value="{{red}}"/>
+        <option name="FOREGROUND" value="{{ red.hex }}"/>
+        <option name="BACKGROUND" value="{{ red.hex }}"/>
       </value>
     </option>
     <option name="BLOCK_TERMINAL_WHITE_BRIGHT">
       <value>
-        <option name="FOREGROUND" value="{{isLatte surface1 subtext0}}"/>
-        <option name="BACKGROUND" value="{{isLatte surface1 subtext0}}"/>
+        <option name="FOREGROUND" value="{{ block_terminal_white_bright.hex }}"/>
+        <option name="BACKGROUND" value="{{ block_terminal_white_bright.hex }}"/>
       </value>
     </option>
-    <option name="BLOCK_TERMINAL_YELLOW_BRIGHT" >
+    <option name="BLOCK_TERMINAL_YELLOW_BRIGHT">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
-        <option name="BACKGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
+        <option name="BACKGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="BOOKMARKS_ATTRIBUTES">
@@ -287,24 +338,24 @@
     </option>
     <option name="BREADCRUMBS_CURRENT">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
-        <option name="BACKGROUND" value="{{surface0}}"/>
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
+        <option name="BACKGROUND" value="{{ surface0.hex }}"/>
       </value>
     </option>
     <option name="BREADCRUMBS_DEFAULT">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
       </value>
     </option>
     <option name="BREADCRUMBS_HOVERED">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
-        <option name="BACKGROUND" value="{{surface2}}"/>
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
+        <option name="BACKGROUND" value="{{ surface2.hex }}"/>
       </value>
     </option>
     <option name="BREADCRUMBS_INACTIVE">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
       </value>
     </option>
     <option name="BREAKPOINT_ATTRIBUTES">
@@ -312,105 +363,105 @@
     </option>
     <option name="BUILDOUT.KEY">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
+        <option name="FOREGROUND" value="{{ mauve.hex }}"/>
       </value>
     </option>
     <option name="BUILDOUT.KEY_VALUE_SEPARATOR">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
       </value>
     </option>
     <option name="BUILDOUT.LINE_COMMENT" baseAttributes="DEFAULT_LINE_COMMENT"/>
     <option name="BUILDOUT.SECTION_NAME">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="BUILDOUT.VALUE">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="CLASS_REFERENCE">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="CODE_LENS_BORDER_COLOR">
       <value>
-        <option name="BACKGROUND" value="{{surface0}}"/>
-        <option name="EFFECT_COLOR" value="{{lavender}}"/>
+        <option name="BACKGROUND" value="{{ surface0.hex }}"/>
+        <option name="EFFECT_COLOR" value="{{ lavender.hex }}"/>
       </value>
     </option>
     <option name="COFFEESCRIPT.CLASS_NAME">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="CONDITIONALLY_NOT_COMPILED">
       <value>
-        <option name="FOREGROUND" value="{{surface2}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ surface2.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <!-- Terminal colors -->
     <!-- ANSI Color 00 -->
     <option name="CONSOLE_BLACK_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="{{isLatte subtext1 surface1}}"/>
+        <option name="FOREGROUND" value="{{ console_terminal_black.hex }}"/>
       </value>
     </option>
     <!-- ANSI Color 01 -->
     <option name="CONSOLE_RED_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="{{red}}"/>
+        <option name="FOREGROUND" value="{{ red.hex }}"/>
       </value>
     </option>
     <!-- ANSI Color 02 -->
     <option name="CONSOLE_GREEN_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <!-- ANSI Color 03 -->
     <option name="CONSOLE_YELLOW_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <!-- ANSI Color 04 -->
     <option name="CONSOLE_BLUE_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
       </value>
     </option>
     <!-- ANSI Color 05 -->
     <option name="CONSOLE_MAGENTA_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="{{pink}}"/>
+        <option name="FOREGROUND" value="{{ pink.hex }}"/>
       </value>
     </option>
     <!-- ANSI Color 06 -->
     <option name="CONSOLE_CYAN_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="{{teal}}"/>
+        <option name="FOREGROUND" value="{{ teal.hex }}"/>
       </value>
     </option>
     <!-- ANSI Color 07 -->
     <option name="CONSOLE_GRAY_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="{{isLatte surface2 subtext1}}"/>
+        <option name="FOREGROUND" value="{{ console_terminal_white.hex }}"/>
       </value>
     </option>
     <!-- ANSI Color 08 -->
     <option name="CONSOLE_DARKGRAY_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="{{isLatte subtext0 surface2}}"/>
+        <option name="FOREGROUND" value="{{ console_terminal_black_bright.hex }}"/>
       </value>
     </option>
     <!-- ANSI Color 09 -->
@@ -428,205 +479,205 @@
     <!-- ANSI Color 15 -->
     <option name="CONSOLE_NORMAL_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
       </value>
     </option>
     <!-- other terminal colors -->
     <option name="CONSOLE_ERROR_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="{{maroon}}"/>
+        <option name="FOREGROUND" value="{{ maroon.hex }}"/>
       </value>
     </option>
     <option name="CONSOLE_RANGE_TO_EXECUTE">
       <value>
-        <option name="EFFECT_COLOR" value="{{mauve}}"/>
+        <option name="EFFECT_COLOR" value="{{ mauve.hex }}"/>
       </value>
     </option>
     <option name="CONSOLE_SYSTEM_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="{{rosewater}}"/>
+        <option name="FOREGROUND" value="{{ rosewater.hex }}"/>
       </value>
     </option>
     <option name="CONSOLE_USER_INPUT">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="CONSOLE_WHITE_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
       </value>
     </option>
     <option name="CONSTRUCTOR_CALL_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="CONSTRUCTOR_DECLARATION_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="CSS.BRACKETS">
       <value>
-        <option name="FOREGROUND" value="{{maroon}}"/>
+        <option name="FOREGROUND" value="{{ maroon.hex }}"/>
       </value>
     </option>
     <option name="CSS.CLASS_NAME">
       <value>
-        <option name="FOREGROUND" value="{{teal}}"/>
+        <option name="FOREGROUND" value="{{ teal.hex }}"/>
       </value>
     </option>
     <option name="CSS.COLOR" baseAttributes="CSS.IDENT"/>
     <option name="CSS.FUNCTION">
       <value>
-        <option name="FOREGROUND" value="{{sky}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ sky.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="CSS.HASH">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
       </value>
     </option>
     <option name="CSS.IMPORTANT">
       <value>
-        <option name="FOREGROUND" value="{{lavender}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ lavender.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="CSS.KEYWORD">
       <value>
-        <option name="FOREGROUND" value="{{red}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ red.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="CSS.OPERATORS">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
       </value>
     </option>
     <option name="CSS.PROPERTY_NAME">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="CSS.PROPERTY_VALUE">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="CSS.PSEUDO">
       <value>
-        <option name="FOREGROUND" value="{{teal}}"/>
+        <option name="FOREGROUND" value="{{ teal.hex }}"/>
       </value>
     </option>
     <option name="CSS.TAG_NAME">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="CSS.URL">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="CSV_PLUGIN_COLUMN_COLORING_ATTRIBUTE_1">
       <value>
-        <option name="FOREGROUND" value="{{red}}"/>
+        <option name="FOREGROUND" value="{{ red.hex }}"/>
       </value>
     </option>
     <option name="CSV_PLUGIN_COLUMN_COLORING_ATTRIBUTE_2">
       <value>
-        <option name="FOREGROUND" value="{{sky}}"/>
+        <option name="FOREGROUND" value="{{ sky.hex }}"/>
       </value>
     </option>
     <option name="CSV_PLUGIN_COLUMN_COLORING_ATTRIBUTE_3">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="CSV_PLUGIN_COLUMN_COLORING_ATTRIBUTE_4">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
       </value>
     </option>
     <option name="CSV_PLUGIN_COLUMN_COLORING_ATTRIBUTE_5">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
+        <option name="FOREGROUND" value="{{ mauve.hex }}"/>
       </value>
     </option>
     <option name="CSV_PLUGIN_COLUMN_COLORING_ATTRIBUTE_6">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="CSV_PLUGIN_COLUMN_COLORING_ATTRIBUTE_7">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="CSV_PLUGIN_COLUMN_COLORING_ATTRIBUTE_8">
       <value>
-        <option name="FOREGROUND" value="{{maroon}}"/>
+        <option name="FOREGROUND" value="{{ maroon.hex }}"/>
       </value>
     </option>
     <option name="CSV_PLUGIN_COLUMN_COLORING_ATTRIBUTE_9">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="CTRL_CLICKABLE">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
-        <option name="EFFECT_COLOR" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
+        <option name="EFFECT_COLOR" value="{{ blue.hex }}"/>
         <option name="EFFECT_TYPE" value="1"/>
       </value>
     </option>
     <option name="CUSTOM_KEYWORD1_ATTRIBUTES" baseAttributes="DEFAULT_KEYWORD"/>
     <option name="CUSTOM_KEYWORD2_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="CUSTOM_KEYWORD3_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="CUSTOM_KEYWORD4_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="{{sky}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ sky.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="CUSTOM_STRING_ATTRIBUTES" baseAttributes="DEFAULT_STRING"/>
@@ -634,508 +685,508 @@
     <option name="Class" baseAttributes="CLASS_NAME_ATTRIBUTES"/>
     <option name="Clojure Atom">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
+        <option name="FOREGROUND" value="{{ mauve.hex }}"/>
       </value>
     </option>
     <option name="Clojure Character">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="Clojure Keyword">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
       </value>
     </option>
     <option name="Clojure Line comment" baseAttributes="DEFAULT_LINE_COMMENT"/>
     <option name="Clojure Literal">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="Clojure Numbers">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="Clojure Strings">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="CodeWithMe.USER_1_MARKER">
       <value>
-        <option name="BACKGROUND" value="{{red}}"/>
+        <option name="BACKGROUND" value="{{ red.hex }}"/>
       </value>
     </option>
     <option name="CodeWithMe.USER_1_SELECTION">
       <value>
-        <option name="BACKGROUND" value="{{opacity red 0.2}}"/>
+        <option name="BACKGROUND" value="{{ self::code_with_me_selection(c=red,a=0.2) }}"/>
       </value>
     </option>
     <option name="CodeWithMe.USER_2_MARKER">
       <value>
-        <option name="BACKGROUND" value="{{peach}}"/>
+        <option name="BACKGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="CodeWithMe.USER_2_SELECTION">
       <value>
-        <option name="BACKGROUND" value="{{opacity peach 0.4}}"/>
+        <option name="BACKGROUND" value="{{ self::code_with_me_selection(c=peach) }}"/>
       </value>
     </option>
     <option name="CodeWithMe.USER_3_MARKER">
       <value>
-        <option name="BACKGROUND" value="{{yellow}}"/>
+        <option name="BACKGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="CodeWithMe.USER_3_SELECTION">
       <value>
-        <option name="BACKGROUND" value="{{opacity yellow 0.4}}"/>
+        <option name="BACKGROUND" value="{{ self::code_with_me_selection(c=yellow) }}"/>
       </value>
     </option>
     <option name="CodeWithMe.USER_4_MARKER">
       <value>
-        <option name="BACKGROUND" value="{{green}}"/>
+        <option name="BACKGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="CodeWithMe.USER_4_SELECTION">
       <value>
-        <option name="BACKGROUND" value="{{opacity green 0.4}}"/>
+        <option name="BACKGROUND" value="{{ self::code_with_me_selection(c=green) }}"/>
       </value>
     </option>
     <option name="CodeWithMe.USER_5_MARKER">
       <value>
-        <option name="BACKGROUND" value="{{sapphire}}"/>
+        <option name="BACKGROUND" value="{{ sapphire.hex }}"/>
       </value>
     </option>
     <option name="CodeWithMe.USER_5_SELECTION">
       <value>
-        <option name="BACKGROUND" value="{{opacity sapphire 0.4}}"/>
+        <option name="BACKGROUND" value="{{ self::code_with_me_selection(c=sapphire) }}"/>
       </value>
     </option>
     <option name="CodeWithMe.USER_6_MARKER">
       <value>
-        <option name="BACKGROUND" value="{{mauve}}"/>
+        <option name="BACKGROUND" value="{{ mauve.hex }}"/>
       </value>
     </option>
     <option name="CodeWithMe.USER_6_SELECTION">
       <value>
-        <option name="BACKGROUND" value="{{opacity mauve 0.4}}"/>
+        <option name="BACKGROUND" value="{{ self::code_with_me_selection(c=mauve) }}"/>
       </value>
     </option>
     <option name="ComposableCallTextAttributes" baseAttributes="DEFAULT_FUNCTION_CALL"/>
     <option name="DART_COLON">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
       </value>
     </option>
     <option name="DART_CONSTRUCTOR">
       <value>
-        <option name="FOREGROUND" value="{{maroon}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ maroon.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="DART_ENUM_CONSTANT">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="DART_FAT_ARROW">
       <value>
-        <option name="FOREGROUND" value="{{maroon}}"/>
+        <option name="FOREGROUND" value="{{ maroon.hex }}"/>
       </value>
     </option>
     <option name="DART_FUNCTION_TYPE_ALIAS">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
       </value>
     </option>
     <option name="DART_LOCAL_FUNCTION_DECLARATION">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
       </value>
     </option>
     <option name="DART_LOCAL_FUNCTION_REFERENCE">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
       </value>
     </option>
     <option name="DART_TOP_LEVEL_GETTER_DECLARATION">
       <value>
-        <option name="FOREGROUND" value="{{maroon}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ maroon.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="DART_TYPE_NAME_DYNAMIC">
       <value>
-        <option name="FOREGROUND" value="{{lavender}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ lavender.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="DART_TYPE_PARAMETER">
       <value>
-        <option name="FOREGROUND" value="{{lavender}}"/>
+        <option name="FOREGROUND" value="{{ lavender.hex }}"/>
       </value>
     </option>
     <option name="DART_UNRESOLVED_INSTANCE_MEMBER_REFERENCE">
       <value>
-        <option name="FOREGROUND" value="{{surface2}}"/>
+        <option name="FOREGROUND" value="{{ surface2.hex }}"/>
       </value>
     </option>
     <option name="DEBUGGER_INLINED_VALUES">
       <value>
-        <option name="FOREGROUND" value="{{surface2}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ surface2.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="DEBUGGER_INLINED_VALUES_EXECUTION_LINE">
       <value>
-        <option name="FOREGROUND" value="{{surface2}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ surface2.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="DEBUGGER_INLINED_VALUES_MODIFIED">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="DEBUGGER_SMART_STEP_INTO_SELECTION" baseAttributes="LIVE_TEMPLATE_ATTRIBUTES"/>
     <option name="DEBUGGER_SMART_STEP_INTO_TARGET" baseAttributes="SEARCH_RESULT_ATTRIBUTES"/>
     <option name="DEFAULT_ATTRIBUTE">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="DEFAULT_BLOCK_COMMENT">
       <value>
-        <option name="FOREGROUND" value="{{overlay0}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ overlay0.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="DEFAULT_BRACES">
       <value>
-        <option name="FOREGROUND" value="{{overlay2}}"/>
+        <option name="FOREGROUND" value="{{ overlay2.hex }}"/>
       </value>
     </option>
     <option name="DEFAULT_BRACKETS">
       <value>
-        <option name="FOREGROUND" value="{{overlay2}}"/>
+        <option name="FOREGROUND" value="{{ overlay2.hex }}"/>
       </value>
     </option>
     <option name="DEFAULT_CLASS_NAME">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="DEFAULT_CLASS_REFERENCE">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="DEFAULT_COMMA">
       <value>
-        <option name="FOREGROUND" value="{{overlay2}}"/>
+        <option name="FOREGROUND" value="{{ overlay2.hex }}"/>
       </value>
     </option>
     <option name="DEFAULT_CONSTANT">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="DEFAULT_DOC_COMMENT">
       <value>
-        <option name="FOREGROUND" value="{{overlay0}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ overlay0.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="DEFAULT_DOC_COMMENT_TAG">
       <value>
-        <option name="FOREGROUND" value="{{red}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ red.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="DEFAULT_DOC_COMMENT_TAG_VALUE">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
       </value>
     </option>
     <option name="DEFAULT_DOC_MARKUP">
       <value>
-        <option name="FOREGROUND" value="{{surface2}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ surface2.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="DEFAULT_DOT">
       <value>
-        <option name="FOREGROUND" value="{{overlay2}}"/>
+        <option name="FOREGROUND" value="{{ overlay2.hex }}"/>
       </value>
     </option>
     <option name="DEFAULT_ENTITY">
       <value>
-        <option name="FOREGROUND" value="{{maroon}}"/>
+        <option name="FOREGROUND" value="{{ maroon.hex }}"/>
       </value>
     </option>
     <option name="DEFAULT_FUNCTION_CALL">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="DEFAULT_FUNCTION_DECLARATION">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="DEFAULT_GLOBAL_VARIABLE">
       <value>
-        <option name="FOREGROUND" value="{{maroon}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ maroon.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="DEFAULT_IDENTIFIER">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="DEFAULT_INSTANCE_FIELD">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
       </value>
     </option>
     <option name="DEFAULT_INTERFACE_NAME">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="DEFAULT_INVALID_STRING_ESCAPE">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
-        <option name="EFFECT_COLOR" value="{{red}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
+        <option name="EFFECT_COLOR" value="{{ red.hex }}"/>
         <option name="EFFECT_TYPE" value="2"/>
       </value>
     </option>
     <option name="DEFAULT_KEYWORD">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
+        <option name="FOREGROUND" value="{{ mauve.hex }}"/>
       </value>
     </option>
     <option name="DEFAULT_LABEL">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
       </value>
     </option>
     <option name="DEFAULT_LINE_COMMENT">
       <value>
-        <option name="FOREGROUND" value="{{overlay0}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ overlay0.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="DEFAULT_LOCAL_VARIABLE">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
       </value>
     </option>
     <option name="DEFAULT_METADATA">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="DEFAULT_NUMBER">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="DEFAULT_OPERATION_SIGN">
       <value>
-        <option name="FOREGROUND" value="{{sky}}"/>
+        <option name="FOREGROUND" value="{{ sky.hex }}"/>
       </value>
     </option>
     <option name="DEFAULT_PARAMETER">
       <value>
-        <option name="FOREGROUND" value="{{maroon}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ maroon.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="DEFAULT_PARENTHS">
       <value>
-        <option name="FOREGROUND" value="{{overlay2}}"/>
+        <option name="FOREGROUND" value="{{ overlay2.hex }}"/>
       </value>
     </option>
     <option name="DEFAULT_PREDEFINED_SYMBOL">
       <value>
-        <option name="FOREGROUND" value="{{lavender}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ lavender.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="DEFAULT_REASSIGNED_LOCAL_VARIABLE" baseAttributes="DEFAULT_LOCAL_VARIABLE"/>
     <option name="DEFAULT_REASSIGNED_PARAMETER" baseAttributes="DEFAULT_PARAMETER"/>
     <option name="DEFAULT_SEMICOLON">
       <value>
-        <option name="FOREGROUND" value="{{overlay2}}"/>
+        <option name="FOREGROUND" value="{{ overlay2.hex }}"/>
       </value>
     </option>
     <option name="DEFAULT_STATIC_FIELD">
       <value>
-        <option name="FOREGROUND" value="{{teal}}"/>
+        <option name="FOREGROUND" value="{{ teal.hex }}"/>
       </value>
     </option>
     <option name="DEFAULT_STATIC_METHOD" baseAttributes="DEFAULT_FUNCTION_DECLARATION"/>
     <option name="DEFAULT_STRING">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="DEFAULT_TAG">
       <value>
-        <option name="FOREGROUND" value="{{teal}}"/>
+        <option name="FOREGROUND" value="{{ teal.hex }}"/>
       </value>
     </option>
     <option name="DEFAULT_TEMPLATE_LANGUAGE_COLOR">
       <value>
-        <option name="FOREGROUND" value="{{flamingo}}"/>
+        <option name="FOREGROUND" value="{{ flamingo.hex }}"/>
       </value>
     </option>
     <option name="DEFAULT_VALID_STRING_ESCAPE">
       <value>
-        <option name="FOREGROUND" value="{{pink}}"/>
+        <option name="FOREGROUND" value="{{ pink.hex }}"/>
       </value>
     </option>
     <option name="DELETED_TEXT_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
-        <option name="BACKGROUND" value="{{red}}"/>
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
+        <option name="BACKGROUND" value="{{ red.hex }}"/>
       </value>
     </option>
     <option name="DEPRECATED_ATTRIBUTES">
       <value>
-        <option name="EFFECT_COLOR" value="{{text}}"/>
+        <option name="EFFECT_COLOR" value="{{ text.hex }}"/>
         <option name="EFFECT_TYPE" value="3"/>
       </value>
     </option>
     <option name="DIFF_CONFLICT">
       <value>
-        <option name="BACKGROUND" value="{{opacity red 0.25}}"/>
-        <option name="ERROR_STRIPE_COLOR" value="{{opacity red 0.2}}"/>
+        <option name="BACKGROUND" value="{{ diff_conflict_deleted_background.hex }}"/>
+        <option name="ERROR_STRIPE_COLOR" value="{{ diff_conflict_deleted_error_stripe_color.hex }}"/>
       </value>
     </option>
     <option name="DIFF_DELETED">
       <value>
-        <option name="BACKGROUND" value="{{opacity red 0.25}}"/>
-        <option name="ERROR_STRIPE_COLOR" value="{{opacity red 0.2}}"/>
+        <option name="BACKGROUND" value="{{ diff_conflict_deleted_background.hex }}"/>
+        <option name="ERROR_STRIPE_COLOR" value="{{ diff_conflict_deleted_error_stripe_color.hex }}"/>
       </value>
     </option>
     <option name="DIFF_INSERTED">
       <value>
-        <option name="BACKGROUND" value="{{opacity green 0.25}}"/>
-        <option name="ERROR_STRIPE_COLOR" value="{{opacity green 0.2}}"/>
+        <option name="BACKGROUND" value="{{ diff_inserted_background.hex }}"/>
+        <option name="ERROR_STRIPE_COLOR" value="{{ diff_inserted_error_stripe_color.hex }}"/>
       </value>
     </option>
     <option name="DIFF_MODIFIED">
       <value>
-        <option name="BACKGROUND" value="{{opacity blue 0.25}}"/>
-        <option name="ERROR_STRIPE_COLOR" value="{{opacity blue 0.2}}"/>
+        <option name="BACKGROUND" value="{{ diff_modified_background.hex }}"/>
+        <option name="ERROR_STRIPE_COLOR" value="{{ diff_modified_error_stripe_color.hex }}"/>
       </value>
     </option>
     <option name="DJANGO_STRING_LITERAL">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="DJANGO_TAG_NAME">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="DUPLICATE_FROM_SERVER">
       <value>
-        <option name="BACKGROUND" value="{{surface0}}"/>
+        <option name="BACKGROUND" value="{{ surface0.hex }}"/>
       </value>
     </option>
     <option name="EJS_OPEN">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="EJS_OPEN_EQ">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="EJS_OPEN_EQ_EQ">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="EJS_OPEN_EQ_GENERATOR">
       <value>
-        <option name="FOREGROUND" value="{{sky}}"/>
+        <option name="FOREGROUND" value="{{ sky.hex }}"/>
       </value>
     </option>
     <option name="EJS_OPEN_FILTER">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="EL.BOUNDS">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
+        <option name="FOREGROUND" value="{{ mauve.hex }}"/>
       </value>
     </option>
     <option name="ENUM_CONST">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="ERL_ATOM" baseAttributes="DEFAULT_IDENTIFIER"/>
@@ -1144,8 +1195,8 @@
     <option name="ERL_VARIABLES" baseAttributes="DEFAULT_GLOBAL_VARIABLE"/>
     <option name="ERRORS_ATTRIBUTES">
       <value>
-        <option name="EFFECT_COLOR" value="{{red}}"/>
-        <option name="ERROR_STRIPE_COLOR" value="{{red}}"/>
+        <option name="EFFECT_COLOR" value="{{ red.hex }}"/>
+        <option name="ERROR_STRIPE_COLOR" value="{{ red.hex }}"/>
         <option name="EFFECT_TYPE" value="2"/>
       </value>
     </option>
@@ -1157,88 +1208,88 @@
     </option>
     <option name="EXECUTIONPOINT_ATTRIBUTES">
       <value>
-        <option name="BACKGROUND" value="{{opacity yellow 0.15}}"/>
+        <option name="BACKGROUND" value="{{ executionpoint_attributes.hex }}"/>
       </value>
     </option>
     <option name="FIRST SYMBOL IN LIST">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="FOLDED_TEXT_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="{{overlay0}}"/>
-        <option name="BACKGROUND" value="{{surface0}}"/>
+        <option name="FOREGROUND" value="{{ overlay0.hex }}"/>
+        <option name="BACKGROUND" value="{{ surface0.hex }}"/>
         <option name="EFFECT_TYPE" value="2"/>
       </value>
     </option>
     <option name="FOLLOWED_HYPERLINK_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="{{lavender}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ lavender.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
-        <option name="EFFECT_COLOR" value="{{lavender}}"/>
+        {%- endif %}
+        <option name="EFFECT_COLOR" value="{{ lavender.hex }}"/>
         <option name="EFFECT_TYPE" value="1"/>
       </value>
     </option>
     <option name="First symbol in list">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
         <option name="FONT_TYPE" value="1"/>
       </value>
     </option>
     <option name="GENERIC_SERVER_ERROR_OR_WARNING">
       <value>
-        <option name="EFFECT_COLOR" value="{{peach}}"/>
-        <option name="ERROR_STRIPE_COLOR" value="{{peach}}"/>
+        <option name="EFFECT_COLOR" value="{{ peach.hex }}"/>
+        <option name="ERROR_STRIPE_COLOR" value="{{ peach.hex }}"/>
         <option name="EFFECT_TYPE" value="2"/>
       </value>
     </option>
     <option name="GHERKIN_COMMENT" baseAttributes="DEFAULT_LINE_COMMENT"/>
     <option name="GHERKIN_KEYWORD">
       <value>
-        <option name="FOREGROUND" value="{{red}}"/>
+        <option name="FOREGROUND" value="{{ red.hex }}"/>
       </value>
     </option>
     <option name="GHERKIN_OUTLINE_PARAMETER_SUBSTITUTION">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="GHERKIN_PYSTRING">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="GHERKIN_REGEXP_PARAMETER">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="GHERKIN_TABLE_HEADER_CELL">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="GHERKIN_TABLE_PIPE">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
+        <option name="FOREGROUND" value="{{ mauve.hex }}"/>
         <option name="FONT_TYPE" value="1"/>
       </value>
     </option>
     <option name="GHERKIN_TAG">
       <value>
-        <option name="FOREGROUND" value="{{red}}"/>
+        <option name="FOREGROUND" value="{{ red.hex }}"/>
       </value>
     </option>
     <option name="GO_BUILTIN_CONSTANT" baseAttributes="DEFAULT_CONSTANT"/>
@@ -1247,12 +1298,12 @@
     <option name="GO_BUILTIN_VARIABLE" baseAttributes="DEFAULT_GLOBAL_VARIABLE"/>
     <option name="GO_BUILTIN_TYPE">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
+        <option name="FOREGROUND" value="{{ mauve.hex }}"/>
       </value>
     </option>
     <option name="GO_COMMENT_REFERENCE">
       <value>
-        <option name="FOREGROUND" value="{{overlay2}}"/>
+        <option name="FOREGROUND" value="{{ overlay2.hex }}"/>
         <option name="FONT_TYPE" value="2"/>
       </value>
     </option>
@@ -1261,23 +1312,23 @@
     <option name="GO_COMMENT_REFERENCE" baseAttributes="DEFAULT_LINE_COMMENT"/>
     <option name="GO_LOCAL_CONSTANT">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
       </value>
     </option>
     <option name="GO_PACKAGE">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="GO_PACKAGE_LOCAL_CONSTANT">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
       </value>
     </option>
     <option name="GO_SHADOWING_VARIABLE">
       <value>
-        <option name="FOREGROUND" value="{{subtext1}}"/>
-        <option name="EFFECT_COLOR" value="{{subtext1}}"/>
+        <option name="FOREGROUND" value="{{ subtext1.hex }}"/>
+        <option name="EFFECT_COLOR" value="{{ subtext1.hex }}"/>
         <option name="EFFECT_TYPE" value="1"/>
       </value>
     </option>
@@ -1286,12 +1337,12 @@
     </option>
     <option name="GO_TYPE_REFERENCE">
       <value>
-        <option name="FOREGROUND" value="{{teal}}"/>
+        <option name="FOREGROUND" value="{{ teal.hex }}"/>
       </value>
     </option>
     <option name="HAML_CLASS">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="HAML_COMMENT" baseAttributes="DEFAULT_LINE_COMMENT"/>
@@ -1299,46 +1350,46 @@
     <option name="HAML_FILTER_CONTENT" baseAttributes=""/>
     <option name="HAML_ID">
       <value>
-        <option name="FOREGROUND" value="{{sky}}"/>
+        <option name="FOREGROUND" value="{{ sky.hex }}"/>
       </value>
     </option>
     <option name="HAML_PARENTHS">
       <value>
-        <option name="FOREGROUND" value="{{teal}}"/>
+        <option name="FOREGROUND" value="{{ teal.hex }}"/>
       </value>
     </option>
     <option name="HAML_RUBY_CODE" baseAttributes=""/>
     <option name="HAML_RUBY_START" baseAttributes=""/>
     <option name="HAML_STRING">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="HAML_STRING_INTERPOLATED">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="HAML_TAG">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="HAML_TAG_NAME">
       <value>
-        <option name="FOREGROUND" value="{{maroon}}"/>
+        <option name="FOREGROUND" value="{{ maroon.hex }}"/>
       </value>
     </option>
     <option name="HAML_TEXT" baseAttributes=""/>
     <option name="HAML_WS_REMOVAL">
       <value>
-        <option name="FOREGROUND" value="{{teal}}"/>
+        <option name="FOREGROUND" value="{{ teal.hex }}"/>
       </value>
     </option>
     <option name="HAML_XHTML" baseAttributes=""/>
     <option name="HTML_ATTRIBUTE_NAME">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="HTML_ATTRIBUTE_VALUE" baseAttributes="DEFAULT_STRING"/>
@@ -1347,97 +1398,97 @@
     <option name="HTML_TAG" baseAttributes="DEFAULT_TAG"/>
     <option name="HTML_TAG_NAME">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
       </value>
     </option>
     <option name="HTTP_REQUEST_INPUT_FILE">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="HTTP_REQUEST_MESSAGE_BODY">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
       </value>
     </option>
     <option name="HTTP_REQUEST_PARAMETER_NAME">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="HTTP_REQUEST_PARAMETER_VALUE">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
       </value>
     </option>
     <option name="HTTP_REQUEST_VARIABLE_BRACES">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="HYPERLINK_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
-        <option name="EFFECT_COLOR" value="{{blue}}"/>
+        {%- endif %}
+        <option name="EFFECT_COLOR" value="{{ blue.hex }}"/>
         <option name="EFFECT_TYPE" value="1"/>
       </value>
     </option>
     <option name="IDENTIFIER_UNDER_CARET_ATTRIBUTES">
       <value>
-        <option name="EFFECT_COLOR" value="{{surface2}}"/>
-        <option name="ERROR_STRIPE_COLOR" value="{{teal}}"/>
+        <option name="EFFECT_COLOR" value="{{ surface2.hex }}"/>
+        <option name="ERROR_STRIPE_COLOR" value="{{ teal.hex }}"/>
       </value>
     </option>
     <option name="IMPLICIT_ANONYMOUS_CLASS_PARAMETER_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="{{maroon}}"/>
+        <option name="FOREGROUND" value="{{ maroon.hex }}"/>
       </value>
     </option>
     <option name="INACTIVE_HYPERLINK_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
-        <option name="EFFECT_COLOR" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
+        <option name="EFFECT_COLOR" value="{{ blue.hex }}"/>
         <option name="EFFECT_TYPE" value="1"/>
       </value>
     </option>
     <option name="INDENT_GUIDES_RAINBOW_COLOR0">
       <value>
-        <option name="FOREGROUND" value="{{red}}"/>
+        <option name="FOREGROUND" value="{{ red.hex }}"/>
       </value>
     </option>
     <option name="INDENT_GUIDES_RAINBOW_COLOR1">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="INDENT_GUIDES_RAINBOW_COLOR2">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="INDENT_GUIDES_RAINBOW_COLOR3">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="INDENT_GUIDES_RAINBOW_COLOR4">
       <value>
-        <option name="FOREGROUND" value="{{sapphire}}"/>
+        <option name="FOREGROUND" value="{{ sapphire.hex }}"/>
       </value>
     </option>
     <option name="INFO_ATTRIBUTES">
       <value>
-        <option name="EFFECT_COLOR" value="{{yellow}}"/>
-        <option name="ERROR_STRIPE_COLOR" value="{{yellow}}"/>
+        <option name="EFFECT_COLOR" value="{{ yellow.hex }}"/>
+        <option name="ERROR_STRIPE_COLOR" value="{{ yellow.hex }}"/>
         <option name="EFFECT_TYPE" value="2"/>
       </value>
     </option>
     <option name="INI.SECTION">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
+        <option name="FOREGROUND" value="{{ mauve.hex }}"/>
       </value>
     </option>
     <option name="INJECTED_LANGUAGE_FRAGMENT">
@@ -1445,92 +1496,92 @@
     </option>
     <option name="INLAY_DEFAULT">
       <value>
-        <option name="FOREGROUND" value="{{overlay1}}"/>
-        <option name="BACKGROUND" value="{{base}}"/>
+        <option name="FOREGROUND" value="{{ overlay1.hex }}"/>
+        <option name="BACKGROUND" value="{{ base.hex }}"/>
       </value>
     </option>
     <option name="INLAY_TEXT_WITHOUT_BACKGROUND">
       <value>
-        <option name="FOREGROUND" value="{{surface2}}"/>
+        <option name="FOREGROUND" value="{{ surface2.hex }}"/>
       </value>
     </option>
     <option name="INLINE_PARAMETER_HINT">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
-        <option name="BACKGROUND" value="{{surface0}}"/>
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
+        <option name="BACKGROUND" value="{{ surface0.hex }}"/>
       </value>
     </option>
     <option name="INLINE_PARAMETER_HINT_CURRENT">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
-        <option name="BACKGROUND" value="{{crust}}"/>
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
+        <option name="BACKGROUND" value="{{ crust.hex }}"/>
       </value>
     </option>
     <option name="INLINE_PARAMETER_HINT_HIGHLIGHTED">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
-        <option name="BACKGROUND" value="{{surface2}}"/>
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
+        <option name="BACKGROUND" value="{{ surface2.hex }}"/>
       </value>
     </option>
     <option name="INLINE_STACK_FRAMES">
       <value>
-        <option name="BACKGROUND" value="{{surface1}}"/>
+        <option name="BACKGROUND" value="{{ surface1.hex }}"/>
       </value>
     </option>
     <option name="INSTANCE_FIELD_ATTRIBUTES" baseAttributes="DEFAULT_INSTANCE_FIELD"/>
     <option name="io.github.intellij.dlanguage.sdlang.TAG_IDENTIFIER">
       <value>
-        <option name="FOREGROUND" value="{{blue}}" />
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
       </value>
     </option>
     <option name="IVAR">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="JADE_FILE_PATH">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="JADE_STATEMENTS">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ mauve.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="JADE_TAG_CLASS">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="JADE_TAG_ID">
       <value>
-        <option name="FOREGROUND" value="{{sky}}"/>
+        <option name="FOREGROUND" value="{{ sky.hex }}"/>
       </value>
     </option>
     <option name="JADE_FILTER_NAME">
       <value>
-        <option name="FOREGROUND" value="{{blue}}" />
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
       </value>
     </option>
     <option name="JADE_JS_BLOCK">
       <value>
-        <option name="FOREGROUND" value="{{lavender}}" />
+        <option name="FOREGROUND" value="{{ lavender.hex }}"/>
       </value>
     </option>
     <option name="JS.PARAMETER" baseAttributes="DEFAULT_PARAMETER"/>
     <option name="JS.DECORATOR">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="JS.GLOBAL_FUNCTION" baseAttributes="DEFAULT_FUNCTION_DECLARATION"/>
@@ -1539,23 +1590,23 @@
     <option name="JS.LOCAL_VARIABLE" baseAttributes="DEFAULT_LOCAL_VARIABLE"/>
     <option name="JS.REGEXP">
       <value>
-        <option name="FOREGROUND" value="{{pink}}"/>
+        <option name="FOREGROUND" value="{{ pink.hex }}"/>
       </value>
     </option>
     <option name="JSON.PROPERTY_KEY">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
       </value>
     </option>
     <option name="JSP_DIRECTIVE_NAME">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
+        <option name="FOREGROUND" value="{{ mauve.hex }}"/>
       </value>
     </option>
     <option name="JUPYTER_SELECTED_CELL">
       <value>
-        <option name="FOREGROUND" value="{{sky}}"/>
-        <option name="BACKGROUND" value="{{base}}"/>
+        <option name="FOREGROUND" value="{{ sky.hex }}"/>
+        <option name="BACKGROUND" value="{{ base.hex }}"/>
       </value>
     </option>
     <option name="JavaScript:INJECTED_LANGUAGE_FRAGMENT" baseAttributes="INJECTED_LANGUAGE_FRAGMENT"/>
@@ -1564,62 +1615,62 @@
     </option>
     <option name="KOTLIN_CLOSURE_DEFAULT_PARAMETER">
       <value>
-        <option name="FOREGROUND" value="{{maroon}}"/>
+        <option name="FOREGROUND" value="{{ maroon.hex }}"/>
       </value>
     </option>
     <option name="KOTLIN_CONSTRUCTOR">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="KOTLIN_DYNAMIC_FUNCTION_CALL">
       <value>
-        <option name="FOREGROUND" value="{{sky}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ sky.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="KOTLIN_DYNAMIC_PROPERTY_CALL">
       <value>
-        <option name="FOREGROUND" value="{{maroon}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ maroon.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="KOTLIN_ENUM_ENTRY">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="KOTLIN_EXCLEXCL">
       <value>
-        <option name="FOREGROUND" value="{{sky}}"/>
+        <option name="FOREGROUND" value="{{ sky.hex }}"/>
       </value>
     </option>
     <option name="KOTLIN_FUNCTION_LITERAL_BRACES_AND_ARROW">
       <value>
-        <option name="FOREGROUND" value="{{red}}"/>
+        <option name="FOREGROUND" value="{{ red.hex }}"/>
       </value>
     </option>
     <option name="KOTLIN_LABEL" baseAttributes="DEFAULT_LABEL"/>
     <option name="KOTLIN_MUTABLE_VARIABLE">
       <value>
-        {{#if italics}}
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="KOTLIN_NAMED_ARGUMENT">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="KOTLIN_PACKAGE_FUNCTION_CALL" baseAttributes="DEFAULT_STATIC_METHOD"/>
     <option name="KOTLIN_QUEST">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="KOTLIN_SMART_CAST_RECEIVER">
@@ -1630,506 +1681,506 @@
     </option>
     <option name="KOTLIN_SMART_CONSTANT">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
+        <option name="FOREGROUND" value="{{ mauve.hex }}"/>
       </value>
     </option>
     <option name="KOTLIN_TYPE_PARAMETER" baseAttributes="TYPE_PARAMETER_NAME_ATTRIBUTES"/>
     <option name="KOTLIN_VARIABLE_AS_FUNCTION">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
       </value>
     </option>
     <option name="KOTLIN_VARIABLE_AS_FUNCTION_LIKE">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
       </value>
     </option>
     <option name="LABEL">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
+        <option name="FOREGROUND" value="{{ mauve.hex }}"/>
       </value>
     </option>
     <option name="LESS_VARIABLE">
       <value>
-        <option name="FOREGROUND" value="{{maroon}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ maroon.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="LINE_FULL_COVERAGE">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="LINE_NONE_COVERAGE">
       <value>
-        <option name="FOREGROUND" value="{{red}}"/>
+        <option name="FOREGROUND" value="{{ red.hex }}"/>
       </value>
     </option>
     <option name="LINE_PARTIAL_COVERAGE">
       <value>
-        <option name="FOREGROUND" value="{{sky}}"/>
+        <option name="FOREGROUND" value="{{ sky.hex }}"/>
       </value>
     </option>
     <option name="LIVE_TEMPLATE_ATTRIBUTES">
       <value>
-        <option name="EFFECT_COLOR" value="{{lavender}}"/>
+        <option name="EFFECT_COLOR" value="{{ lavender.hex }}"/>
       </value>
     </option>
     <option name="LIVE_TEMPLATE_INACTIVE_SEGMENT">
       <value>
-        <option name="EFFECT_COLOR" value="{{surface1}}"/>
+        <option name="EFFECT_COLOR" value="{{ surface1.hex }}"/>
       </value>
     </option>
     <option name="LOCALE.MSGCTXT_KEYWORD">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
+        <option name="FOREGROUND" value="{{ mauve.hex }}"/>
       </value>
     </option>
     <option name="LOCALE.MSGID_KEYWORD">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
+        <option name="FOREGROUND" value="{{ mauve.hex }}"/>
       </value>
     </option>
     <option name="LOCALE.MSGID_PLURAL_KEYWORD">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
+        <option name="FOREGROUND" value="{{ mauve.hex }}"/>
       </value>
     </option>
     <option name="LOCALE.MSGSTR_KEYWORD">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
+        <option name="FOREGROUND" value="{{ mauve.hex }}"/>
       </value>
     </option>
     <option name="LOCALE.MSGSTR_PLURAL_KEYWORD">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
+        <option name="FOREGROUND" value="{{ mauve.hex }}"/>
       </value>
     </option>
     <option name="LOGCAT_ASSERT_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="{{maroon}}"/>
-        <option name="EFFECT_COLOR" value="{{maroon}}"/>
+        <option name="FOREGROUND" value="{{ maroon.hex }}"/>
+        <option name="EFFECT_COLOR" value="{{ maroon.hex }}"/>
         <option name="EFFECT_TYPE" value="1"/>
       </value>
     </option>
     <option name="LOGCAT_DEBUG_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
       </value>
     </option>
     <option name="LOGCAT_FILTER_KEY">
       <value>
-        <option name="FOREGROUND" value="{{blue}}" />
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
       </value>
     </option>
     <option name="LOGCAT_FILTER_KVALUE">
       <value>
-        <option name="FOREGROUND" value="{{text}}" />
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
       </value>
     </option>
     <option name="LOGCAT_FILTER_REGEX_KVALUE">
       <value>
-        <option name="FOREGROUND" value="{{pink}}" />
+        <option name="FOREGROUND" value="{{ pink.hex }}"/>
       </value>
     </option>
     <option name="LOGCAT_FILTER_STRING_KVALUE">
       <value>
-        <option name="FOREGROUND" value="{{green}}" />
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="LOGCAT_INFO_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="LOGCAT_VERBOSE_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="{{sky}}"/>
+        <option name="FOREGROUND" value="{{ sky.hex }}"/>
       </value>
     </option>
     <option name="LOGCAT_WARNING_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="LOG_DEBUG_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
       </value>
     </option>
     <option name="LOG_ERROR_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="{{maroon}}"/>
+        <option name="FOREGROUND" value="{{ maroon.hex }}"/>
       </value>
     </option>
     <option name="LOG_EXPIRED_ENTRY">
       <value>
-        <option name="FOREGROUND" value="{{surface1}}"/>
+        <option name="FOREGROUND" value="{{ surface1.hex }}"/>
       </value>
     </option>
     <option name="LOG_INFO_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="LOG_VERBOSE_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="{{sky}}"/>
+        <option name="FOREGROUND" value="{{ sky.hex }}"/>
       </value>
     </option>
     <option name="LOG_WARNING_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="LUA_REGION_DESC">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
+        <option name="FOREGROUND" value="{{ mauve.hex }}"/>
       </value>
     </option>
     <option name="LUA_STD_API">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
+        <option name="FOREGROUND" value="{{ mauve.hex }}"/>
         <option name="EFFECT_TYPE" value="2"/>
       </value>
     </option>
     <option name="LUA_UP_VALUE">
       <value>
         <option name="FONT_TYPE" value="3"/>
-        <option name="EFFECT_COLOR" value="{{yellow}}"/>
+        <option name="EFFECT_COLOR" value="{{ yellow.hex }}"/>
         <option name="EFFECT_TYPE" value="1"/>
       </value>
     </option>
     <option name="List/map to object conversion">
       <value>
-        <option name="FOREGROUND" value="{{sky}}"/>
+        <option name="FOREGROUND" value="{{ sky.hex }}"/>
       </value>
     </option>
     <option name="MACRONAME">
       <value>
-        <option name="FOREGROUND" value="{{sky}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ sky.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="MAGIC_MEMBER_ACCESS">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="MAKO.TAG">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="MARKDOWN_BLOCK_QUOTE_MARKER">
       <value>
-        <option name="FOREGROUND" value="{{teal}}"/>
+        <option name="FOREGROUND" value="{{ teal.hex }}"/>
       </value>
     </option>
     <option name="MARKDOWN_BOLD">
       <value>
-        <option name="FOREGROUND" value="{{red}}"/>
+        <option name="FOREGROUND" value="{{ red.hex }}"/>
         <option name="FONT_TYPE" value="1"/>
       </value>
     </option>
     <option name="MARKDOWN_BOLD_MARKER">
       <value>
-        <option name="FOREGROUND" value="{{overlay2}}"/>
+        <option name="FOREGROUND" value="{{ overlay2.hex }}"/>
         <option name="FONT_TYPE" value="1"/>
       </value>
     </option>
     <option name="MARKDOWN_CODE_FENCE">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="MARKDOWN_CODE_SPAN">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="MARKDOWN_CODE_SPAN_MARKER">
       <value>
-        <option name="FOREGROUND" value="{{maroon}}"/>
+        <option name="FOREGROUND" value="{{ maroon.hex }}"/>
       </value>
     </option>
     <option name="MARKDOWN_HEADER_LEVEL_1">
       <value>
-        <option name="FOREGROUND" value="{{red}}"/>
+        <option name="FOREGROUND" value="{{ red.hex }}"/>
       </value>
     </option>
     <option name="MARKDOWN_HEADER_LEVEL_2">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="MARKDOWN_HEADER_LEVEL_3">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="MARKDOWN_HEADER_LEVEL_4">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="MARKDOWN_HEADER_LEVEL_5">
       <value>
-        <option name="FOREGROUND" value="{{sapphire}}"/>
+        <option name="FOREGROUND" value="{{ sapphire.hex }}"/>
       </value>
     </option>
     <option name="MARKDOWN_HEADER_LEVEL_6">
       <value>
-        <option name="FOREGROUND" value="{{lavender}}"/>
+        <option name="FOREGROUND" value="{{ lavender.hex }}"/>
       </value>
     </option>
     <option name="MARKDOWN_HRULE">
       <value>
-        <option name="FOREGROUND" value="{{teal}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ teal.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="MARKDOWN_HTML_BLOCK">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
       </value>
     </option>
     <option name="MARKDOWN_ITALIC">
       <value>
-        <option name="FOREGROUND" value="{{red}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ red.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="MARKDOWN_ITALIC_MARKER">
       <value>
-        <option name="FOREGROUND" value="{{overlay2}}"/>
+        <option name="FOREGROUND" value="{{ overlay2.hex }}"/>
         <option name="FONT_TYPE" value="1"/>
       </value>
     </option>
     <option name="MARKDOWN_LINK_DESTINATION">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="MARKDOWN_LINK_LABEL">
       <value>
-        <option name="FOREGROUND" value="{{lavender}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ lavender.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="MARKDOWN_LINK_TEXT">
       <value>
-        <option name="FOREGROUND" value="{{lavender}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ lavender.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
         <option name="EFFECT_TYPE" value="1"/>
       </value>
     </option>
     <option name="MARKDOWN_LINK_TITLE">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="MARKDOWN_LIST_ITEM">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
       </value>
     </option>
     <option name="MARKDOWN_LIST_MARKER">
       <value>
-        <option name="FOREGROUND" value="{{teal}}"/>
+        <option name="FOREGROUND" value="{{ teal.hex }}"/>
       </value>
     </option>
     <option name="MARKDOWN_ORDERED_LIST">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
       </value>
     </option>
     <option name="MARKDOWN_TABLE_SEPARATOR">
       <value>
-        <option name="FOREGROUND" value="{{surface2}}"/>
+        <option name="FOREGROUND" value="{{ surface2.hex }}"/>
       </value>
     </option>
     <option name="MARKDOWN_UNORDERED_LIST">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
       </value>
     </option>
     <option name="MARKED_FOR_REMOVAL_ATTRIBUTES">
       <value>
-        <option name="EFFECT_COLOR" value="{{red}}"/>
+        <option name="EFFECT_COLOR" value="{{ red.hex }}"/>
         <option name="EFFECT_TYPE" value="3"/>
       </value>
     </option>
     <option name="MATCHED_BRACE_ATTRIBUTES">
       <value>
         <option name="FONT_TYPE" value="1"/>
-        <option name="EFFECT_COLOR" value="{{overlay0}}"/>
+        <option name="EFFECT_COLOR" value="{{ overlay0.hex }}"/>
       </value>
     </option>
     <option name="MATCHED_TAG_NAME" baseAttributes="MATCHED_BRACE_ATTRIBUTES"/>
     <option name="MESSAGE_ARGUMENT">
       <value>
-        <option name="FOREGROUND" value="{{sky}}"/>
+        <option name="FOREGROUND" value="{{ sky.hex }}"/>
       </value>
     </option>
     <option name="NG.BANANA_BINDING_ATTR_NAME">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="NG.EVENT_BINDING_ATTR_NAME">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="NG.PROPERTY_BINDING_ATTR_NAME">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="NG.TEMPLATE_BINDINGS_ATTR_NAME">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="NIX_BUILTIN">
       <value>
-        <option name="FOREGROUND" value="{{red}}"/>
+        <option name="FOREGROUND" value="{{ red.hex }}"/>
         <option name="FONT_TYPE" value="2"/>
       </value>
     </option>
     <option name="NIX_IDENTIFIER">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
       </value>
     </option>
     <option name="NOT_TOP_FRAME_ATTRIBUTES">
       <value>
-        <option name="BACKGROUND" value="{{surface0}}"/>
+        <option name="BACKGROUND" value="{{ surface0.hex }}"/>
       </value>
     </option>
     <option name="NOT_USED_ELEMENT_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="{{overlay2}}"/>
+        <option name="FOREGROUND" value="{{ overlay2.hex }}"/>
       </value>
     </option>
     <option name="OC.CLASS_REFERENCE">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="OC.CONDITIONALLY_NOT_COMPILED">
       <value>
-        <option name="FOREGROUND" value="{{surface2}}"/>
+        <option name="FOREGROUND" value="{{ surface2.hex }}"/>
       </value>
     </option>
     <option name="OC.CPP_KEYWORD">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
+        <option name="FOREGROUND" value="{{ mauve.hex }}"/>
       </value>
     </option>
     <option name="OC.ENUM_CONST">
       <value>
-        <option name="FOREGROUND" value="{{teal}}"/>
+        <option name="FOREGROUND" value="{{ teal.hex }}"/>
       </value>
     </option>
     <option name="OC.MACRONAME">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="OC.MACRO_PARAMETER">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="OC.MESSAGE_ARGUMENT">
       <value>
-        <option name="FOREGROUND" value="{{sky}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ sky.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="OC.METHOD_DECLARATION">
       <value>
-        <option name="FOREGROUND" value="{{sky}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ sky.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="OC.OVERLOADED_OPERATOR">
       <value>
-        <option name="FOREGROUND" value="{{teal}}"/>
+        <option name="FOREGROUND" value="{{ teal.hex }}"/>
       </value>
     </option>
     <option name="OC.PROPERTY">
       <value>
-        <option name="FOREGROUND" value="{{maroon}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ maroon.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="OC.PROPERTY_ATTRIBUTE">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="OC.PROTOCOL_REFERENCE">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="OC.STRUCT_FIELD">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
       </value>
     </option>
     <option name="OC.STRUCT_LIKE">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="OC.TYPEDEF">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="OC_FORMAT_TOKEN">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="PHP_ALIAS_REFERENCE" baseAttributes="PHP_CLASS"/>
@@ -2137,45 +2188,45 @@
     <option name="PHP_EXEC_COMMAND_ID" baseAttributes="DEFAULT_STRING"/>
     <option name="PHP_HEREDOC_CONTENT">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="PHP_IDENTIFIER">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="PHP_INSTANCE_FIELD">
       <value>
-        <option name="FOREGROUND" value="{{flamingo}}"/>
+        <option name="FOREGROUND" value="{{ flamingo.hex }}"/>
       </value>
     </option>
     <option name="PHP_INTERFACE">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="PHP_NAMED_ARGUMENT">
       <value>
-        <option name="FOREGROUND" value="{{sky}}"/>
+        <option name="FOREGROUND" value="{{ sky.hex }}"/>
       </value>
     </option>
     <option name="PHP_PARAMETER" baseAttributes="DEFAULT_PARAMETER"/>
     <option name="PHP_THIS_VAR">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="PHP_VAR" baseAttributes="DEFAULT_LOCAL_VARIABLE"/>
@@ -2185,262 +2236,262 @@
     <option name="PROPERTIES.VALID_STRING_ESCAPE" baseAttributes="DEFAULT_VALID_STRING_ESCAPE"/>
     <option name="PROTOCOL_REFERENCE">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="PUPPET_BAD_CHARACTER">
       <value>
-        <option name="BACKGROUND" value="{{maroon}}"/>
+        <option name="BACKGROUND" value="{{ maroon.hex }}"/>
       </value>
     </option>
     <option name="PUPPET_BLOCK_COMMENT" baseAttributes="DEFAULT_LINE_COMMENT"/>
     <option name="PUPPET_BRACES">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="PUPPET_BRACKETS">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="PUPPET_CLASS">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="PUPPET_COMMA">
       <value>
-        <option name="FOREGROUND" value="{{teal}}"/>
+        <option name="FOREGROUND" value="{{ teal.hex }}"/>
       </value>
     </option>
     <option name="PUPPET_DOT">
       <value>
-        <option name="FOREGROUND" value="{{teal}}"/>
+        <option name="FOREGROUND" value="{{ teal.hex }}"/>
       </value>
     </option>
     <option name="PUPPET_ESCAPE_SEQUENCE">
       <value>
-        <option name="FOREGROUND" value="{{sky}}"/>
+        <option name="FOREGROUND" value="{{ sky.hex }}"/>
       </value>
     </option>
     <option name="PUPPET_HEREDOC_TAGS">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="PUPPET_KEYWORD">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
+        <option name="FOREGROUND" value="{{ mauve.hex }}"/>
         <option name="FONT_TYPE" value="1"/>
       </value>
     </option>
     <option name="PUPPET_NUMBER">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="PUPPET_OPERATION_SIGN">
       <value>
-        <option name="FOREGROUND" value="{{sky}}"/>
+        <option name="FOREGROUND" value="{{ sky.hex }}"/>
       </value>
     </option>
     <option name="PUPPET_PARENTH">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="PUPPET_REGEX">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
       </value>
     </option>
     <option name="PUPPET_SEMICOLON">
       <value>
-        <option name="FOREGROUND" value="{{teal}}"/>
+        <option name="FOREGROUND" value="{{ teal.hex }}"/>
       </value>
     </option>
     <option name="PUPPET_SQ_STRING">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="PUPPET_STRING">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="PUPPET_VARIABLE">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="PUPPET_VARIABLE_INTERPOLATION">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="PY.ANNOTATION">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="PY.DECORATOR">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="PY.BUILTIN_NAME">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="PY.KEYWORD" baseAttributes="DEFAULT_KEYWORD"/>
     <option name="PY.KEYWORD_ARGUMENT">
       <value>
-        <option name="FOREGROUND" value="{{maroon}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ maroon.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="PY.PREDEFINED_DEFINITION">
       <value>
-        <option name="FOREGROUND" value="{{sapphire}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ sapphire.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="PY.PREDEFINED_USAGE">
       <value>
-        <option name="FOREGROUND" value="{{teal}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ teal.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="PY.SELF_PARAMETER">
       <value>
-        <option name="FOREGROUND" value="{{red}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ red.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="PY.DOC_COMMENT">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="PY.STRING">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="PY.STRING.B" baseAttributes="DEFAULT_STRING"/>
     <option name="RDOC_DIRECTIVE">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
       </value>
     </option>
     <option name="RDOC_EMAIL">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
+        <option name="FOREGROUND" value="{{ mauve.hex }}"/>
       </value>
     </option>
     <option name="RDOC_HEADINGS">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
       </value>
     </option>
     <option name="RDOC_IDENTIFIER">
       <value>
-        <option name="FOREGROUND" value="{{maroon}}"/>
+        <option name="FOREGROUND" value="{{ maroon.hex }}"/>
       </value>
     </option>
     <option name="RDOC_KEYWORD">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
+        <option name="FOREGROUND" value="{{ mauve.hex }}"/>
       </value>
     </option>
     <option name="RDOC_URL">
       <value>
-        <option name="FOREGROUND" value="{{sky}}"/>
+        <option name="FOREGROUND" value="{{ sky.hex }}"/>
       </value>
     </option>
     <option name="REGEXP.BRACES">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="REGEXP.BRACKETS">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="REGEXP.CHARACTER">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
       </value>
     </option>
     <option name="REGEXP.CHAR_CLASS">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
       </value>
     </option>
     <option name="REGEXP.ESC_CHARACTER">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
       </value>
     </option>
     <option name="REGEXP.META">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
+        <option name="FOREGROUND" value="{{ mauve.hex }}"/>
       </value>
     </option>
     <option name="REGEXP.PARENTHS">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
       </value>
     </option>
     <option name="REGEXP.QUANTIFIER">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
       </value>
     </option>
     <option name="REGEXP.QUOTE_CHARACTER">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
       </value>
     </option>
     <option name="REGEXP.REDUNDANT_ESCAPE" baseAttributes="DEFAULT_VALID_STRING_ESCAPE"/>
     <option name="REST.BOLD">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
         <option name="FONT_TYPE" value="1"/>
-        {{#if italics}}
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="REST.EXPLICIT">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ mauve.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="REST.FIELD">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ mauve.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="REST.FIXED" baseAttributes="DEFAULT_IDENTIFIER"/>
@@ -2448,79 +2499,79 @@
     <option name="REST.INTERPRETED" baseAttributes="DEFAULT_IDENTIFIER"/>
     <option name="REST.ITALIC">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
         <option name="FONT_TYPE" value="2"/>
       </value>
     </option>
     <option name="REST.LINE_COMMENT" baseAttributes="DEFAULT_LINE_COMMENT"/>
     <option name="REST.REF.NAME">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="RHTML_COMMENT_ID" baseAttributes="DEFAULT_LINE_COMMENT"/>
     <option name="RHTML_EXPRESSION_END_ID">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="RHTML_EXPRESSION_START_ID">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="RHTML_OMIT_NEW_LINE_ID">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="RHTML_SCRIPTING_BACKGROUND_ID">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="RHTML_SCRIPTLET_END_ID">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="RHTML_SCRIPTLET_START_ID">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="RMARKDOWN_CHUNK">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
-        <option name="BACKGROUND" value="{{mantle}}"/>
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
+        <option name="BACKGROUND" value="{{ mantle.hex }}"/>
       </value>
     </option>
     <option name="ROUND_BRACKETS_RAINBOW_COLOR0">
       <value>
-        <option name="FOREGROUND" value="{{red}}"/>
+        <option name="FOREGROUND" value="{{ red.hex }}"/>
       </value>
     </option>
     <option name="ROUND_BRACKETS_RAINBOW_COLOR1">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="ROUND_BRACKETS_RAINBOW_COLOR2">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="ROUND_BRACKETS_RAINBOW_COLOR3">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="ROUND_BRACKETS_RAINBOW_COLOR4">
       <value>
-        <option name="FOREGROUND" value="{{sapphire}}"/>
+        <option name="FOREGROUND" value="{{ sapphire.hex }}"/>
       </value>
     </option>
     <option name="RUBY_BAD_CHARACTER" baseAttributes="BAD_CHARACTER"/>
@@ -2545,20 +2596,20 @@
     <option name="RUBY_WORDS" baseAttributes="DEFAULT_STRING"/>
     <option name="RUNTIME_ERROR">
       <value>
-        <option name="EFFECT_COLOR" value="{{peach}}"/>
-        <option name="ERROR_STRIPE_COLOR" value="{{red}}"/>
+        <option name="EFFECT_COLOR" value="{{ peach.hex }}"/>
+        <option name="ERROR_STRIPE_COLOR" value="{{ red.hex }}"/>
         <option name="EFFECT_TYPE" value="5"/>
       </value>
     </option>
     <option name="R_FUNCTION_CALL" baseAttributes="DEFAULT_FUNCTION_CALL"/>
     <option name="R_NAMED_ARGUMENT">
       <value>
-        <option name="FOREGROUND" value="{{maroon}}"/>
+        <option name="FOREGROUND" value="{{ maroon.hex }}"/>
       </value>
     </option>
     <option name="ReShaper.ENUM_IDENTIFIER">
       <value>
-        <option name="FOREGROUND" value="{{sky}}"/>
+        <option name="FOREGROUND" value="{{ sky.hex }}"/>
       </value>
     </option>
     <option name="ReSharper.ASP_NET_MVC_ACTION">
@@ -2578,40 +2629,40 @@
     </option>
     <option name="ReSharper.ASP_NET_RUN_AT_ATTRIBUTE">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="ReSharper.BRACE_OUTLINE">
       <value>
-        <option name="EFFECT_COLOR" value="{{text}}"/>
+        <option name="EFFECT_COLOR" value="{{ text.hex }}"/>
       </value>
     </option>
     <option name="ReSharper.FORMAT_STRING_ITEM">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="ReSharper.FORMAT_STRING_ITEM_2">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="ReSharper.HINT">
       <value>
-        <option name="EFFECT_COLOR" value="{{sky}}"/>
+        <option name="EFFECT_COLOR" value="{{ sky.hex }}"/>
         <option name="EFFECT_TYPE" value="5"/>
       </value>
     </option>
     <option name="ReSharper.IL_INSTRUCTION">
       <value>
-        <option name="FOREGROUND" value="{{maroon}}"/>
+        <option name="FOREGROUND" value="{{ maroon.hex }}"/>
       </value>
     </option>
     <option name="ReSharper.IL_TARGET_CODE_LABEL">
       <value>
-        {{#if italics}}
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="ReSharper.IL_VIEWER_SYNCHRONIZATION">
@@ -2619,200 +2670,200 @@
     </option>
     <option name="ReSharper.MATCHED_FORMAT_STRING_ITEM">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="ReSharper.OUTLINED_ENTITY">
       <value>
-        <option name="EFFECT_COLOR" value="{{text}}"/>
+        <option name="EFFECT_COLOR" value="{{ text.hex }}"/>
       </value>
     </option>
     <option name="ReSharper.STRING_ESCAPE_CHARACTER_2">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
       </value>
     </option>
     <option name="ReSharper.XAML_CLASS">
       <value>
-        <option name="FOREGROUND" value="{{blue}}" />
-        {{#if italics}}
-        <option name="FONT_TYPE" value="2" />
-        {{/if}}
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
+        {%- if italics %}
+        <option name="FONT_TYPE" value="2"/>
+        {%- endif %}
       </value>
     </option>
     <option name="ReSharper.XAML_NAMESPACE_ALIAS">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}" />
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="ReSharper.XAML_PROPERTY_IDENTIFIER">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}" />
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="SASS_COMMENT" baseAttributes="CSS.COMMENT"/>
     <option name="SASS_MIXIN">
       <value>
-        <option name="FOREGROUND" value="{{flamingo}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ flamingo.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="SASS_VARIABLE" baseAttributes="DEFAULT_INSTANCE_FIELD"/>
     <option name="SEARCH_RESULT_ATTRIBUTES">
       <value>
-        <option name="BACKGROUND" value="{{opacity blue 0.3}}"/>
+        <option name="BACKGROUND" value="{{ search_result_attributes_background.hex }}"/>
       </value>
     </option>
     <option name="SLIM_BAD_CHARACTER">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
-        <option name="BACKGROUND" value="{{pink}}"/>
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
+        <option name="BACKGROUND" value="{{ pink.hex }}"/>
       </value>
     </option>
     <option name="SLIM_CLASS">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="SLIM_COMMENT" baseAttributes="DEFAULT_LINE_COMMENT"/>
     <option name="SLIM_DOCTYPE_KWD">
       <value>
-        <option name="FOREGROUND" value="{{maroon}}"/>
+        <option name="FOREGROUND" value="{{ maroon.hex }}"/>
       </value>
     </option>
     <option name="SLIM_FILTER">
       <value>
-        <option name="FOREGROUND" value="{{teal}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ teal.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="SLIM_ID">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
       </value>
     </option>
     <option name="SLIM_INTERPOLATION">
       <value>
-        <option name="FOREGROUND" value="{{maroon}}"/>
+        <option name="FOREGROUND" value="{{ maroon.hex }}"/>
       </value>
     </option>
     <option name="SLIM_PARENTHS">
       <value>
-        <option name="FOREGROUND" value="{{teal}}"/>
+        <option name="FOREGROUND" value="{{ teal.hex }}"/>
       </value>
     </option>
     <option name="SLIM_STRING_INTERPOLATED">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="SLIM_TAG">
       <value>
-        <option name="FOREGROUND" value="{{maroon}}"/>
+        <option name="FOREGROUND" value="{{ maroon.hex }}"/>
       </value>
     </option>
     <option name="SLIM_TAG_ATTR_KEY">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="SLIM_TAG_START">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="SPY-JS.EXCEPTION">
       <value>
-        <option name="FOREGROUND" value="{{red}}"/>
+        <option name="FOREGROUND" value="{{ red.hex }}"/>
         <option name="EFFECT_TYPE" value="2"/>
       </value>
     </option>
     <option name="SPY-JS.FUNCTION_SCOPE">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
         <option name="EFFECT_TYPE" value="2"/>
       </value>
     </option>
     <option name="SPY-JS.PATH_LEVEL_ONE">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
         <option name="EFFECT_TYPE" value="2"/>
       </value>
     </option>
     <option name="SPY-JS.PATH_LEVEL_TWO">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
         <option name="EFFECT_TYPE" value="1"/>
       </value>
     </option>
     <option name="SPY-JS.PROGRAM_SCOPE">
       <value>
-        <option name="BACKGROUND" value="{{base}}"/>
-        {{#if italics}}
+        <option name="BACKGROUND" value="{{ base.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="SPY-JS.VALUE_HINT">
       <value>
-        <option name="FOREGROUND" value="{{lavender}}"/>
+        <option name="FOREGROUND" value="{{ lavender.hex }}"/>
       </value>
     </option>
     <option name="SQUARE_BRACKETS_RAINBOW_COLOR0">
       <value>
-        <option name="FOREGROUND" value="{{red}}"/>
+        <option name="FOREGROUND" value="{{ red.hex }}"/>
       </value>
     </option>
     <option name="SQUARE_BRACKETS_RAINBOW_COLOR1">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="SQUARE_BRACKETS_RAINBOW_COLOR2">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="SQUARE_BRACKETS_RAINBOW_COLOR3">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="SQUARE_BRACKETS_RAINBOW_COLOR4">
       <value>
-        <option name="FOREGROUND" value="{{sapphire}}"/>
+        <option name="FOREGROUND" value="{{ sapphire.hex }}"/>
       </value>
     </option>
     <option name="SQUIGGLY_BRACKETS_RAINBOW_COLOR0">
       <value>
-        <option name="FOREGROUND" value="{{red}}"/>
+        <option name="FOREGROUND" value="{{ red.hex }}"/>
       </value>
     </option>
     <option name="SQUIGGLY_BRACKETS_RAINBOW_COLOR1">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="SQUIGGLY_BRACKETS_RAINBOW_COLOR2">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="SQUIGGLY_BRACKETS_RAINBOW_COLOR3">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="SQUIGGLY_BRACKETS_RAINBOW_COLOR4">
       <value>
-        <option name="FOREGROUND" value="{{sapphire}}"/>
+        <option name="FOREGROUND" value="{{ sapphire.hex }}"/>
       </value>
     </option>
     <option name="STATIC_METHOD_ATTRIBUTES" baseAttributes="DEFAULT_STATIC_METHOD"/>
@@ -2823,18 +2874,18 @@
     </option>
     <option name="SUGGESTION">
       <value>
-        <option name="EFFECT_COLOR" value="{{sky}}"/>
+        <option name="EFFECT_COLOR" value="{{ sky.hex }}"/>
         <option name="EFFECT_TYPE" value="2"/>
       </value>
     </option>
     <option name="SWIFT_ATTRIBUTE_ARGUMENT">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="SWIFT_EXTERNAL_PARAMETER">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
       </value>
     </option>
     <option name="SWIFT_SHEBANG_COMMENT" baseAttributes="DEFAULT_LINE_COMMENT"/>
@@ -2842,7 +2893,7 @@
     <option name="Scala Mutable Collection" baseAttributes="DEFAULT_IDENTIFIER"/>
     <option name="Scala Predefined types">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}" />
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="Scala Type Alias" baseAttributes="TYPE_PARAMETER_NAME_ATTRIBUTES"/>
@@ -2850,150 +2901,150 @@
     <option name="Static method access" baseAttributes="STATIC_METHOD_ATTRIBUTES"/>
     <option name="Static property reference ID">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="TAB_SELECTED">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
-        <option name="BACKGROUND" value="{{surface0}}"/>
+        <option name="FOREGROUND" value="{{ mauve.hex }}"/>
+        <option name="BACKGROUND" value="{{ tab_selected_background.hex }}"/>
       </value>
     </option>
     <option name="TAB_SELECTED_INACTIVE">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
-        <option name="BACKGROUND" value="{{surface0}}"/>
+        <option name="FOREGROUND" value="{{ mauve.hex }}"/>
+        <option name="BACKGROUND" value="{{ tab_selected_background.hex }}"/>
       </value>
     </option>
     <option name="TAG_ATTR_KEY">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="TEMPLATE_VARIABLE_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="TERMINAL_COMMAND_TO_RUN_USING_IDE">
       <value>
-        <option name="BACKGROUND" value="{{surface1}}"/>
+        <option name="BACKGROUND" value="{{ surface1.hex }}"/>
       </value>
     </option>
     <option name="TEXT">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
-        <option name="BACKGROUND" value="{{base}}"/>
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
+        <option name="BACKGROUND" value="{{ base.hex }}"/>
       </value>
     </option>
     <option name="TEXT_SEARCH_RESULT_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
-        <option name="BACKGROUND" value="{{opacity blue 0.3}}"/>
-        <option name="ERROR_STRIPE_COLOR" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
+        <option name="BACKGROUND" value="{{ search_result_attributes_background.hex }}"/>
+        <option name="ERROR_STRIPE_COLOR" value="{{ blue.hex }}"/>
       </value>
     </option>
     <option name="TODO_DEFAULT_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
-        <option name="ERROR_STRIPE_COLOR" value="{{peach}}"/>
+        {%- endif %}
+        <option name="ERROR_STRIPE_COLOR" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="TS.MODULE_NAME">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="TS.TYPE_GUARD">
       <value>
-        <option name="FOREGROUND" value="{{flamingo}}"/>
+        <option name="FOREGROUND" value="{{ flamingo.hex }}"/>
       </value>
     </option>
     <option name="TS.TYPE_PARAMETER">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="TYPEDEF">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
+        <option name="FOREGROUND" value="{{ mauve.hex }}"/>
       </value>
     </option>
     <option name="TYPE_PARAMETER_NAME_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
       </value>
     </option>
     <option name="TYPO">
       <value>
-        <option name="EFFECT_COLOR" value="{{green}}"/>
+        <option name="EFFECT_COLOR" value="{{ green.hex }}"/>
         <option name="EFFECT_TYPE" value="2"/>
       </value>
     </option>
     <option name="UNMATCHED_BRACE_ATTRIBUTES">
       <value>
-        <option name="BACKGROUND" value="{{red}}"/>
+        <option name="BACKGROUND" value="{{ red.hex }}"/>
         <option name="FONT_TYPE" value="1"/>
       </value>
     </option>
     <option name="Unresolved reference access">
       <value>
-        <option name="EFFECT_COLOR" value="{{red}}"/>
+        <option name="EFFECT_COLOR" value="{{ red.hex }}"/>
         <option name="EFFECT_TYPE" value="2"/>
       </value>
     </option>
     <option name="VELOCITY_DIRECTIVE">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
         <option name="FONT_TYPE" value="1"/>
       </value>
     </option>
     <option name="VELOCITY_KEYWORD">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ mauve.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="VELOCITY_REFERENCE">
       <value>
-        <option name="FOREGROUND" value="{{sky}}"/>
+        <option name="FOREGROUND" value="{{ sky.hex }}"/>
       </value>
     </option>
     <option name="VELOCITY_SCRIPTING_BACKGROUND">
       <value>
-        <option name="BACKGROUND" value="{{base}}"/>
+        <option name="BACKGROUND" value="{{ base.hex }}"/>
       </value>
     </option>
     <option name="WARNING_ATTRIBUTES">
       <value>
-        <option name="EFFECT_COLOR" value="{{peach}}"/>
-        <option name="ERROR_STRIPE_COLOR" value="{{peach}}"/>
+        <option name="EFFECT_COLOR" value="{{ peach.hex }}"/>
+        <option name="ERROR_STRIPE_COLOR" value="{{ peach.hex }}"/>
         <option name="EFFECT_TYPE" value="2"/>
       </value>
     </option>
     <option name="WRITE_IDENTIFIER_UNDER_CARET_ATTRIBUTES">
       <value>
-        <option name="EFFECT_COLOR" value="{{surface2}}"/>
-        <option name="ERROR_STRIPE_COLOR" value="{{teal}}"/>
+        <option name="EFFECT_COLOR" value="{{ surface2.hex }}"/>
+        <option name="ERROR_STRIPE_COLOR" value="{{ teal.hex }}"/>
       </value>
     </option>
     <option name="WRITE_SEARCH_RESULT_ATTRIBUTES">
       <value>
-        <option name="BACKGROUND" value="{{base}}"/>
+        <option name="BACKGROUND" value="{{ base.hex }}"/>
       </value>
     </option>
     <option name="WRONG_REFERENCES_ATTRIBUTES">
       <value>
-        <option name="EFFECT_COLOR" value="{{red}}"/>
-        <option name="ERROR_STRIPE_COLOR" value="{{red}}"/>
+        <option name="EFFECT_COLOR" value="{{ red.hex }}"/>
+        <option name="ERROR_STRIPE_COLOR" value="{{ red.hex }}"/>
         <option name="EFFECT_TYPE" value="2"/>
       </value>
     </option>
@@ -3002,100 +3053,100 @@
     <option name="XML_ENTITY_REFERENCE" baseAttributes="DEFAULT_ENTITY"/>
     <option name="XML_NS_PREFIX">
       <value>
-        <option name="FOREGROUND" value="{{peach}}"/>
+        <option name="FOREGROUND" value="{{ peach.hex }}"/>
       </value>
     </option>
     <option name="XML_TAG" baseAttributes="DEFAULT_TAG"/>
     <option name="XML_TAG_DATA" baseAttributes="TEXT"/>
     <option name="XML_TAG_NAME">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
       </value>
     </option>
     <option name="XPATH.KEYWORD">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ mauve.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="XPATH.XPATH_NAME">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="XPATH.XPATH_VARIABLE" baseAttributes="DEFAULT_LOCAL_VARIABLE"/>
     <option name="YAML_ANCHOR" baseAttributes="DEFAULT_IDENTIFIER"/>
     <option name="YAML_SCALAR_KEY">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
       </value>
     </option>
     <option name="YAML_SCALAR_LIST">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="YAML_SCALAR_VALUE">
       <value>
-        <option name="FOREGROUND" value="{{green}}"/>
+        <option name="FOREGROUND" value="{{ green.hex }}"/>
       </value>
     </option>
     <option name="com.plan9.IDENTIFIER">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
       </value>
     </option>
     <option name="com.plan9.INSTRUCTION">
       <value>
-        <option name="FOREGROUND" value="{{sky}}"/>
+        <option name="FOREGROUND" value="{{ sky.hex }}"/>
       </value>
     </option>
     <option name="com.plan9.KEYWORD">
       <value>
-        <option name="FOREGROUND" value="{{mauve}}"/>
+        <option name="FOREGROUND" value="{{ mauve.hex }}"/>
       </value>
     </option>
     <option name="com.plan9.LABEL">
       <value>
-        {{#if italics}}
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="com.plan9.PSEUDO_INSTRUCTION">
       <value>
-        <option name="FOREGROUND" value="{{sky}}"/>
+        <option name="FOREGROUND" value="{{ sky.hex }}"/>
       </value>
     </option>
     <option name="com.plan9.REGISTER">
       <value>
-        <option name="FOREGROUND" value="{{maroon}}"/>
+        <option name="FOREGROUND" value="{{ maroon.hex }}"/>
       </value>
     </option>
     <option name="org.rust.CFG_DISABLED_CODE">
       <value>
-        <option name="FOREGROUND" value="{{subtext0}}"/>
+        <option name="FOREGROUND" value="{{ subtext0.hex }}"/>
       </value>
     </option>
     <option name="org.rust.DOC_LINK">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
       </value>
     </option>
     <option name="org.rust.FUNCTION_CALL" baseAttributes="DEFAULT_FUNCTION_CALL"/>
     <option name="org.rust.LIFETIME">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="org.rust.MACRO">
       <value>
-        <option name="FOREGROUND" value="{{sky}}"/>
+        <option name="FOREGROUND" value="{{ sky.hex }}"/>
       </value>
     </option>
     <option name="org.rust.METHOD_CALL" baseAttributes="DEFAULT_FUNCTION_CALL"/>
@@ -3105,10 +3156,10 @@
     </option>
     <option name="org.rust.TYPE_ALIAS">
       <value>
-        <option name="FOREGROUND" value="{{yellow}}"/>
-        {{#if italics}}
+        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
+        {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
-        {{/if}}
+        {%- endif %}
       </value>
     </option>
     <option name="org.rust.TYPE_PARAMETER" baseAttributes="DEFAULT_IDENTIFIER"/>
@@ -3117,48 +3168,48 @@
     </option>
     <option name="org.rust.VARIABLE">
       <value>
-        <option name="FOREGROUND" value="{{text}}"/>
+        <option name="FOREGROUND" value="{{ text.hex }}"/>
       </value>
     </option>
     <option name="org.toml.KEY">
       <value>
-        <option name="FOREGROUND" value="{{blue}}"/>
+        <option name="FOREGROUND" value="{{ blue.hex }}"/>
       </value>
     </option>
     <option name="osmorc.attributeName">
       <value>
-        <option name="FOREGROUND" value="{{maroon}}"/>
+        <option name="FOREGROUND" value="{{ maroon.hex }}"/>
       </value>
     </option>
     <option name="osmorc.directiveName">
       <value>
-        <option name="FOREGROUND" value="{{maroon}}"/>
+        <option name="FOREGROUND" value="{{ maroon.hex }}"/>
       </value>
     </option>
     <!-- Semantic Highlights -->
     <option name="RAINBOW_COLOR0">
       <value>
-        <option name="FOREGROUND" value="{{mix text red 0.6}}"/>
+        <option name="FOREGROUND" value="{{ self::semantic_highlights(c=red) }}"/>
       </value>
     </option>
     <option name="RAINBOW_COLOR1">
       <value>
-        <option name="FOREGROUND" value="{{mix text yellow 0.6}}"/>
+        <option name="FOREGROUND" value="{{ self::semantic_highlights(c=yellow) }}"/>
       </value>
     </option>
     <option name="RAINBOW_COLOR2">
       <value>
-        <option name="FOREGROUND" value="{{mix text green 0.6}}"/>
+        <option name="FOREGROUND" value="{{ self::semantic_highlights(c=green) }}"/>
       </value>
     </option>
     <option name="RAINBOW_COLOR3">
       <value>
-        <option name="FOREGROUND" value="{{mix text blue 0.6}}"/>
+        <option name="FOREGROUND" value="{{ self::semantic_highlights(c=blue) }}"/>
       </value>
     </option>
     <option name="RAINBOW_COLOR4">
       <value>
-        <option name="FOREGROUND" value="{{mix text mauve 0.6}}"/>
+        <option name="FOREGROUND" value="{{ self::semantic_highlights(c=mauve) }}"/>
       </value>
     </option>
   </attributes>

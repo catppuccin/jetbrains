@@ -6,18 +6,15 @@ on:
     branches: [ "main" ]
     paths:
       - 'src/**'
-      - 'generateFlavours/**'
+      - 'templates/**'
       - 'gradle.properties'
       - '**.gradle.kts'
   pull_request:
     paths:
       - 'src/**'
-      - 'generateFlavours/**'
+      - 'templates/**'
       - 'gradle.properties'
       - '**.gradle.kts'
-
-env:
-  DENO_DIR: deno_cache
 
 jobs:
   build:
@@ -34,19 +31,13 @@ jobs:
           java-version: 17
           cache: 'gradle'
 
-      - name: Setup Deno
-        uses: denoland/setup-deno@v1
-        with:
-          deno-version: v1.x
-
-      - name: Cache Deno
-        uses: actions/cache@v4
-        with:
-          key: ${{ hashFiles('generateFlavours/lock.json') }}
-          path: ${{ env.DENO_DIR }}
+      - name: Setup Whiskers
+        uses: catppuccin/setup-whiskers@v2
 
       - name: Generate All Flavours
-        run: ./generateFlavours/main.ts
+        run: |
+          whiskers templates/ui.theme.tera
+          whiskers templates/editor.tera
 
       - name: Build Plugin
         run: ./gradlew buildPlugin

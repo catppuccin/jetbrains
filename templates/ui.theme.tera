@@ -1,76 +1,104 @@
+---
+whiskers:
+  version: "^2.5.1"
+  matrix:
+    - flavor
+  filename: "src/main/resources/themes/{{ flavor.identifier }}.theme.json"
+  hex_format: "#{{r}}{{g}}{{b}}{{z}}"
+accent: "mauve"
+secondary_accent: "yellow"
+---
+
+{%- macro file_color(color) -%}
+  {{ color | mix(color=base, amount=0.05) | get(key='hex') }}
+{%- endmacro file_color -%}
+
+{%- macro banner_background(color) -%}
+  {{ color | mod(opacity=0.1) | get(key="hex") }}
+{%- endmacro banner_background -%}
+
+{%- macro banner_background_border(color) -%}
+  {{ color | mod(opacity=0.15) | get(key="hex") }}
+{%- endmacro banner_background_border -%}
+
 {
-  "name": "{{name}}",
-  "dark": "{{isDark}}",
+  "name": "{{ 'Catppuccin ' ~ flavor.name }}",
+  "dark": {{ flavor.dark }},
   "author": "Catppuccin Org <releases@catppuccin.com>",
-  "editorScheme": "{{editorScheme}}",
+  "editorScheme": "{{ '/themes/' ~ flavor.identifier ~ '.xml' }}",
   "colors": {
-    "rosewater": "{{rosewater}}",
-    "flamingo": "{{flamingo}}",
-    "mauve": "{{mauve}}",
-    "pink": "{{pink}}",
-    "maroon": "{{maroon}}",
-    "red": "{{red}}",
-    "peach": "{{peach}}",
-    "yellow": "{{yellow}}",
-    "green": "{{green}}",
-    "teal": "{{teal}}",
-    "blue": "{{blue}}",
-    "sky": "{{sky}}",
-    "sapphire": "{{sapphire}}",
-    "lavender": "{{lavender}}",
-    "crust": "{{crust}}",
-    "mantle": "{{mantle}}",
-    "base": "{{base}}",
-    "surface0": "{{surface0}}",
-    "surface1": "{{surface1}}",
-    "surface2": "{{surface2}}",
-    "overlay0": "{{overlay0}}",
-    "overlay1": "{{overlay1}}",
-    "overlay2": "{{overlay2}}",
-    "text": "{{text}}",
-    "subtext0": "{{subtext0}}",
-    "subtext1": "{{subtext1}}",
-    "accentColor": "{{accentColor}}",
-    "secondaryAccentColor": "{{secondaryAccentColor}}",
-    "primaryForeground": "{{primaryForeground}}",
-    "primaryBackground": "{{primaryBackground}}",
-    "secondaryBackground": "{{secondaryBackground}}",
-    "panelBackground": "{{panelBackground}}",
-    "hoverBackground": "{{hoverBackground}}",
-    "selectionBackground": "{{selectionBackground}}",
-    "selectionInactiveBackground": "{{selectionInactiveBackground}}",
-    "borderColor": "{{borderColor}}",
-    "separatorColor": "{{separatorColor}}"
+    "rosewater": "{{ rosewater.hex }}",
+    "flamingo": "{{ flamingo.hex }}",
+    "mauve": "{{ mauve.hex }}",
+    "pink": "{{ pink.hex }}",
+    "maroon": "{{ maroon.hex }}",
+    "red": "{{ red.hex }}",
+    "peach": "{{ peach.hex }}",
+    "yellow": "{{ yellow.hex }}",
+    "green": "{{ green.hex }}",
+    "teal": "{{ teal.hex }}",
+    "blue": "{{ blue.hex }}",
+    "sky": "{{ sky.hex }}",
+    "sapphire": "{{ sapphire.hex }}",
+    "lavender": "{{ lavender.hex }}",
+    "crust": "{{ crust.hex }}",
+    "mantle": "{{ mantle.hex }}",
+    "base": "{{ base.hex }}",
+    "surface0": "{{ surface0.hex }}",
+    "surface1": "{{ surface1.hex }}",
+    "surface2": "{{ surface2.hex }}",
+    "overlay0": "{{ overlay0.hex }}",
+    "overlay1": "{{ overlay1.hex }}",
+    "overlay2": "{{ overlay2.hex }}",
+    "text": "{{ text.hex }}",
+    "subtext0": "{{ subtext0.hex }}",
+    "subtext1": "{{ subtext1.hex }}",
+    "accentColor": "{{ flavor.colors[accent].hex }}",
+    "secondaryAccentColor": "{{ flavor.colors[secondary_accent].hex }}",
+    "primaryForeground": "{{ text.hex }}",
+    "primaryBackground": "{{ base.hex }}",
+    "secondaryBackground": "{{ surface0.hex }}",
+    "inactiveBackground": "{{ crust.hex }}",
+    "panelBackground": "{{ mantle.hex }}",
+    "toolbarBackground": "{{ crust.hex }}",
+    "hoverBackground": "{{ overlay2 | mix(color=base, amount=0.3) | get(key='hex') }}",
+    "selectionBackground": "{{ overlay2 | mix(color=base, amount=0.2) | get(key='hex') }}",
+    "selectionInactiveBackground": "{{ base.hex }}",
+    "borderColor": "{{ if(cond = flavor.dark, t = base, f = crust) | get(key='hex') }}",
+    "separatorColor": "{{ surface0.hex }}",
+    "searchMatchBackground": "{{ if(cond = flavor.light, t = flavor.colors[accent] | mod(opacity=0.3), f = flavor.colors[accent]) | get(key = 'hex') }}",
+    "textFieldBackground": "{{ if(cond = flavor.light, t = surface1, f = surface2) | get(key = 'hex') }}",
+    "gitLogBackground": "{{ flavor.colors[accent] | mod(opacity=0.05) | get(key='hex') }}",
+    "dragAndDropBackground": "{{ flavor.colors[accent] | mod(opacity=0.15) | get(key='hex') }}"
   },
   "ui": {
     "*": {
-      "arc": "7",
-      "background": "primaryBackground",
-      "borderColor": "borderColor",
-      "disabledBackground": "primaryBackground",
       "foreground": "primaryForeground",
+      "background": "primaryBackground",
+      "disabledBackground": "primaryBackground",
       "inactiveBackground": "primaryBackground",
       "selectionBackground": "selectionBackground",
       "selectionForeground": "primaryForeground",
       "selectionInactiveBackground": "selectionInactiveBackground",
       "selectionInactiveForeground": "primaryForeground",
-      "separatorColor": "separatorColor"
+      "separatorColor": "separatorColor",
+      "borderColor": "borderColor",
+      "focusColor": "accentColor",
+      "infoForeground": "subtext0"
     },
     "ActionButton": {
       "hoverBackground": "hoverBackground",
-      "hoverBorderColor": "hoverBackground",
-      "pressedBackground": "selectionBackground",
-      "pressedBorderColor": "selectionBackground"
+      "pressedBackground": "hoverBackground"
     },
     "Banner": {
-      "errorBackground": "{{opacityWithHex red 0.1}}",
-      "errorBorderColor": "{{opacityWithHex red 0.15}}",
+      "errorBackground": "{{ self::banner_background(color = red) }}",
+      "errorBorderColor": "{{ self::banner_background_border(color = red) }}",
       "errorForeground": "primaryForeground",
-      "informativeBackground": "{{opacityWithHex blue 0.1}}",
-      "informativeBorderColor": "{{opacityWithHex blue 0.15}}",
+      "informativeBackground": "{{ self::banner_background(color = blue) }}",
+      "informativeBorderColor": "{{ self::banner_background(color = blue) }}",
       "informativeForeground": "primaryForeground",
-      "warningBackground": "{{opacityWithHex peach 0.1}}",
-      "warningBorderColor": "{{opacityWithHex peach 0.15}}",
+      "warningBackground": "{{ self::banner_background(color = peach) }}",
+      "warningBorderColor": "{{ self::banner_background(color = peach) }}",
       "warningForeground": "primaryForeground"
     },
     "Bookmark": {
@@ -118,7 +146,7 @@
     "CheckBox": {
       "background": "panelBackground"
     },
-    "ComboBox": {
+    "ComboBox": { {#- The dropdown selects inside of the "Settings" panels #}
       "ArrowButton": {
         "background": "secondaryBackground",
         "disabledIconColor": "lavender",
@@ -156,7 +184,11 @@
       "underlinedTabBackground": "panelBackground"
     },
     "DragAndDrop": {
-      "borderColor": "selectionBackground"
+      "borderColor": "selectionBackground",
+      "rowBackground": "dragAndDropBackground",
+      "areaForeground": "primaryForeground",
+      "areaBackground": "panelBackground",
+      "areaBorderColor": "accentColor"
     },
     "Editor": {
       "Toolbar": {
@@ -168,25 +200,21 @@
     "EditorPane": {
       "splitBorder": "separatorColor"
     },
-    "EditorTabs": {
+    "EditorTabs": { {#- To change more editor tab highlights, check the editor.tera file and search "TAB" #}
       "background": "primaryBackground",
-      "hoverBackground": "primaryBackground",
-      "inactiveHoverBackground": "red",
-      "inactiveUnderlineColor": "lavender",
+      "hoverBackground": "selectionBackground",
       "underTabsBorderColor": "separatorColor",
-      "underlineArc": 4,
       "underlineColor": "accentColor",
-      "underlineHeight": 1,
       "underlinedTabBackground": "panelBackground",
-      "unselectedBlend": 0.7
+      "unselectedBlend": 0.9 {#- Effectively controls how dimmed the tabs on when unselected/not hovering, therefore providing some contrast when hovering #}
     },
     "FileColor": {
-      "Blue": "{{isLatte (opacityWithHex blue 0.15) (opacityWithHex blue 0.2)}}",
-      "Green": "{{isLatte (opacityWithHex green 0.15) (opacityWithHex green 0.2)}}",
-      "Orange": "{{isLatte (opacityWithHex peach 0.15) (opacityWithHex peach 0.2)}}",
-      "Rose": "{{isLatte (opacityWithHex red 0.15) (opacityWithHex red 0.2)}}",
-      "Violet": "{{isLatte (opacityWithHex lavender 0.15) (opacityWithHex lavender 0.2)}}",
-      "Yellow": "{{isLatte (opacityWithHex yellow 0.15) (opacityWithHex yellow 0.2)}}"
+      "Blue": "{{ self::file_color(color = blue) }}",
+      "Green": "{{ self::file_color(color = green) }}",
+      "Orange": "{{ self::file_color(color = peach) }}",
+      "Rose": "{{ self::file_color(color = red) }}",
+      "Violet": "{{ self::file_color(color = lavender) }}",
+      "Yellow": "{{ self::file_color(color = yellow) }}"
     },
     "Label": {
       "background": "panelBackground",
@@ -198,18 +226,19 @@
       "pressedForeground": "secondaryAccentColor",
       "visitedForeground": "secondaryAccentColor"
     },
-    "List": {
+    "List": { {#- Lists of items, e.g. the "Notifications" settings panel in "Appearance & Behaviour" #}
       "Button": {
         "leftRightInset": 8,
-        "separatorInset": 4
+        "separatorInset": 4,
+        "hoverBackground": "hoverBackground"
       },
       "background": "panelBackground",
       "border": "4,0,4,0",
       "hoverBackground": "hoverBackground",
       "rowHeight": "24",
-      "selectionInactiveBackground": "{{isLatte hoverBackground base}}"
+      "selectionInactiveBackground": "selectionInactiveBackground"
     },
-    "MainToolbar": {
+    "MainToolbar": { {#- The bar at the very top, with the run icons/project switcher #}
       "Dropdown": {
         "hoverBackground": "hoverBackground",
         "maxWidth": 350,
@@ -220,20 +249,18 @@
         "insets": "5,5,5,5",
         "pressedBackground": "hoverBackground"
       },
-      "background": "crust",
+      "background": "toolbarBackground",
       "inactiveBackground": "panelBackground"
     },
     "MainWindow": {
       "Tab": {
-        "background": "panelBackground",
-        "borderColor": "panelBackground",
-        "foreground": "{{opacityWithHex primaryForeground 0.5}}",
-        "hoverBackground": "{{opacityWithHex panelBackground 0.7}}",
-        "hoverForeground": "{{opacityWithHex primaryForeground 0.5}}",
-        "selectedBackground": "primaryBackground",
+        "background": "toolbarBackground",
+        "borderColor": "toolbarBackground",
+        "selectedBackground": "panelBackground",
         "selectedForeground": "primaryForeground",
-        "selectedInactiveBackground": "panelBackground",
-        "separatorColor": "panelBackground"
+        "hoverBackground": "hoverBackground",
+        "selectedInactiveBackground": "primaryBackground",
+        "separatorColor": "separatorColor"
       }
     },
     "MemoryIndicator": {
@@ -356,8 +383,8 @@
       }
     },
     "SearchMatch": {
-      "endBackground": "{{isLatte (opacityWithHex mauve 0.5) mauve}}",
-      "startBackground": "{{isLatte (opacityWithHex mauve 0.5) mauve}}"
+      "endBackground": "searchMatchBackground",
+      "startBackground": "searchMatchBackground"
     },
     "SegmentedButton": {
       "focusedSelectedButtonColor": "secondaryBackground",
@@ -389,7 +416,6 @@
       "hoverColor": "hoverBackground",
       "tabHeight": 40,
       "tabSelectionArc": 4,
-      "tabSelectionHeight": 1,
       "underlineColor": "accentColor"
     },
     "Table": {
@@ -405,7 +431,7 @@
     },
     "TextField": {
       "background": "secondaryBackground",
-      "selectionBackground": "{{isLatte (opacityWithHex surface0 0.4) surface2}}"
+      "selectionBackground": "textFieldBackground"
     },
     "ToggleButton": {
       "buttonColor": "primaryForeground",
@@ -432,8 +458,7 @@
       "HeaderTab": {
         "hoverBackground": "surface0",
         "inactiveUnderlineColor": "text",
-        "underlineColor": "accentColor",
-        "underlineHeight": 1
+        "underlineColor": "accentColor"
       },
       "background": "panelBackground"
     },
@@ -472,7 +497,7 @@
       },
       "Log": {
         "Commit": {
-          "currentBranchBackground": "{{mixWithHex mauve mantle 0.05}}",
+          "currentBranchBackground": "gitLogBackground",
           "hoveredBackground": "hoverBackground",
           "selectionInactiveBackground": "hoverBackground"
         }
@@ -498,37 +523,37 @@
   },
   "icons": {
     "ColorPalette": {
-      "Actions.Blue": "{{blue}}",
-      "Actions.Green": "{{green}}",
-      "Actions.Grey": "{{overlay0}}",
-      "Actions.GreyInline": "{{blue}}",
-      "Actions.GreyInline.Dark": "{{blue}}",
-      "Actions.Red": "{{red}}",
-      "Actions.Yellow": "{{yellow}}",
-      "Objects.BlackText": "{{surface0}}",
-      "Objects.Blue": "{{blue}}",
-      "Objects.Green": "{{green}}",
-      "Objects.Grey": "{{overlay0}}",
-      "Objects.Pink": "{{pink}}",
-      "Objects.Purple": "{{mauve}}",
-      "Objects.Red": "{{red}}",
-      "Objects.RedStatus": "{{red}}",
-      "Objects.Yellow": "{{yellow}}",
-      "Objects.YellowDark": "{{flamingo}}",
-      "Checkbox.Background.Default": "{{surface0}}",
-      "Checkbox.Background.Default.Dark": "{{surface0}}",
-      "Checkbox.Background.Disabled": "{{surface0}}",
-      "Checkbox.Background.Disabled.Dark": "{{surface0}}",
-      "Checkbox.Background.Selected": "{{overlay0}}",
-      "Checkbox.Background.Selected.Dark": "{{surface1}}",
-      "Checkbox.Border.Default": "{{surface0}}",
-      "Checkbox.Border.Disabled": "{{surface0}}",
-      "Checkbox.Border.Selected": "{{surface0}}",
-      "Checkbox.Foreground.Disabled": "{{overlay0}}",
-      "Checkbox.Foreground.Disabled.Dark": "{{overlay0}}",
-      "Checkbox.Foreground.Selected": "{{accentColor}}",
-      "Checkbox.Foreground.Selected.Dark": "{{accentColor}}",
-      "Tree.iconColor": "{{text}}"
+      "Actions.Blue": "{{ blue.hex }}",
+      "Actions.Green": "{{ green.hex }}",
+      "Actions.Grey": "{{ overlay0.hex }}",
+      "Actions.GreyInline": "{{ blue.hex }}",
+      "Actions.GreyInline.Dark": "{{ blue.hex }}",
+      "Actions.Red": "{{ red.hex }}",
+      "Actions.Yellow": "{{ yellow.hex }}",
+      "Objects.BlackText": "{{ surface0.hex }}",
+      "Objects.Blue": "{{ blue.hex }}",
+      "Objects.Green": "{{ green.hex }}",
+      "Objects.Grey": "{{ overlay0.hex }}",
+      "Objects.Pink": "{{ pink.hex }}",
+      "Objects.Purple": "{{ mauve.hex }}",
+      "Objects.Red": "{{ red.hex }}",
+      "Objects.RedStatus": "{{ red.hex }}",
+      "Objects.Yellow": "{{ yellow.hex }}",
+      "Objects.YellowDark": "{{ flamingo.hex }}",
+      "Checkbox.Background.Default": "{{ base.hex }}",
+      "Checkbox.Background.Default.Dark": "{{ surface0.hex }}",
+      "Checkbox.Background.Disabled": "{{ base.hex }}",
+      "Checkbox.Background.Disabled.Dark": "{{ surface0.hex }}",
+      "Checkbox.Background.Selected": "{{ base | mix(color=surface0, amount=0.2) | get(key='hex') }}", {#- Need to be careful when editing this, because JetBrains incorrectly take this value for RadioButtons and doesn't let you change the colour of the radio icon itself #}
+      "Checkbox.Background.Selected.Dark": "{{ surface1.hex }}",
+      "Checkbox.Border.Default": "{{ surface0.hex }}",
+      "Checkbox.Border.Disabled": "{{ surface0.hex }}",
+      "Checkbox.Border.Selected": "{{ surface0.hex }}",
+      "Checkbox.Foreground.Disabled": "{{ overlay0.hex }}",
+      "Checkbox.Foreground.Disabled.Dark": "{{ overlay0.hex }}",
+      "Checkbox.Foreground.Selected": "{{ flavor.colors[accent].hex }}",
+      "Checkbox.Foreground.Selected.Dark": "{{ flavor.colors[accent].hex }}",
+      "Tree.iconColor": "{{ text.hex }}"
     }
   }
 }

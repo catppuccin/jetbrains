@@ -4,13 +4,28 @@
 
 ### Added
 
+- (Editor): Current row line number is now `lavender`, following our style guide.
+- (UI): Set `focusColor` to `mauve` globally, resulting in more consistent border highlights for focused elements.
+
 ### Changed
+
+- (Editor/UI): Moved theme engines from Deno to Whiskers, so some highlights on the UI/Editor may look a little
+  different. Please raise an issue if you are unsure whether a highlight is intended or not.
+- (Editor/UI): Increased contrast for currently selected editor tab when using Latte.
+- (UI): Increased contrast of ignored/suppressed files in the File pane.
+- (UI): File colours have been toned all the way back in an attempt to increase readability by default.
+- (UI): Unified the `List.selectionInactiveBackground` highlight across all flavours.
 
 ### Deprecated
 
 ### Removed
 
 ### Fixed
+
+- (UI): Checkboxes in the Commit pane are now visible when using Latte.
+- (UI): Buttons in the run configuration are highlighted on hover.
+- (UI): The default option when creating a new Java class is now highlighted when using Frappé, Macchiato or Mocha.
+- (UI): The Git Blame panel now uses shades of a single accent colour to imply commit recency.
 
 ### Security
 

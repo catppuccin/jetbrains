@@ -12,25 +12,23 @@ for contributors.
 
 ## File Structure
 
-- `.github/workflows/` - CI/CD workflows for building and distributing `.jar` files
-- `.run/` - Collection of useful Intellij run configuration tasks that ease the development process
-- `generateFlavours/` - Typescript code that generates all 4 Catppuccin flavours into JetBrains format.
-  - `editor.xml` - Highlights for everything contained within the [editor](https://www.jetbrains.com/help/idea/configuring-colors-and-fonts.html)
-  - `ui.theme.json` - Highlights for everything contained within the [user interface](https://www.jetbrains.com/help/idea/user-interface-themes.html)
-  - `main.ts` - Responsible for parsing the `editor.xml` and `ui.theme.json` and generating the themes
-    in `src/main/resources/themes`.
+- `.github/workflows/` - CI/CD workflows for building and distributing `.jar` files.
+- `.run/` - Collection of useful Intellij run configuration tasks that ease the development process.
+- `generateFlavours/` - Whiskers templates to generate all 4 Catppuccin flavours into JetBrains format.
+  - `editor.tera` - Highlights for everything contained within the [editor](https://www.jetbrains.com/help/idea/configuring-colors-and-fonts.html).
+  - `ui.theme.tera` - Highlights for everything contained within the [user interface](https://www.jetbrains.com/help/idea/user-interface-themes.html).
 - `src/main/resources/META-INF` - Contains metadata that is shipped with the built `.jar` including the logo, id, name,
-  and description
-- `build.gradle.kts` - Standard gradle build file defining custom build tasks
+  and description.
+- `build.gradle.kts` - Standard gradle build file defining custom build tasks.
 - `gradle.properties` - Properties that define the theme. E.g. name, supported version(s) and type of IDE to build
-  locally for testing, etc
-- `settings.gradle.kts` - Contains the root project name
+  locally for testing, etc.
+- `settings.gradle.kts` - Contains the root project name.
 
 ## Development Workflow
 
 ### Requirements
 
-- Deno v1.27+ with [Deno plugin](https://plugins.jetbrains.com/plugin/14382-deno)
+- [Whiskers](https://whiskers.catppuccin.com/getting-started/installation/)
 
 ### Debugging Tools
 
@@ -47,36 +45,34 @@ However, these settings are not always imported correctly. I have included my pe
 point if you find that your tasks are not working properly.
 
 > [!NOTE]  
-> The configuration in the screenshots below contain hardcoded paths based on my personal system. Please tweak your
-> configuration to suit your system setup.
->
-> ~ Hammy
+> The configuration in the screenshots below contain hardcoded paths. Please tweak your
+> configuration accordingly.
 
 #### Generate All Flavours
 
 `Generate All Flavours`
-![deno-configuration.png](assets/docs/deno-configuration.png)
+![](assets/docs/generate-all-flavours.png)
 
 #### Build Plugin
 
 `Build Plugin`
-![img.png](assets/docs/build-configuration.png)
+![img.png](assets/docs/build-plugin.png)
 
 #### Run Plugin
 
 `Run Plugin`
-![img.png](assets/docs/run-configuration.png)
+![img.png](assets/docs/run-plugin.png)
 
 ### Example Scenario
 
 Here is an example workflow for changing the background from base to mantle:
 
-1. Change `primaryBackground` from `base` to `mantle`
+1. Change `primaryBackground` from `base` to `mantle`.
 2. Run `Build Plugin` task (this will generate files under `src/main/resources/themes` and the
-   resulting `.jar` file will be in `build/libs`)
-3. Run `Run Plugin` task (this will spawn a new IDE with your changes already applied)
-4. Observe new highlights within the test IDE instance
-5. If you aren't happy with your changes, **start over from step 1**
-6. Once happy, update `CHANGELOG.md` with new updates to the theme under relevant headings
-7. Push changes to a new branch on your fork
-8. Create pull request to the `main` branch on the main repository
+   resulting `.jar` file will be in `build/libs`.)
+3. Run `Run Plugin` task (this will spawn a new IDE with your changes already applied.)
+4. Observe new highlights within the test IDE instance.
+5. If you aren't happy with your changes, **start over from step 1**.
+6. Once happy, update `CHANGELOG.md` with new updates to the theme under relevant headings.
+7. Push changes to a new branch on your fork.
+8. Create pull request to the `main` branch on the main repository.
