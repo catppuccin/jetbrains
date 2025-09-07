@@ -228,7 +228,7 @@ secondary_accent: "yellow"
       "pressedForeground": "secondaryAccentColor",
       "visitedForeground": "secondaryAccentColor"
     },
-    "List": {
+    "List": { {#- Lists of items, e.g. the "Notifications" settings panel in "Appearance & Behaviour" -#}
       "Button": {
         "leftRightInset": 8,
         "separatorInset": 4,
@@ -237,7 +237,8 @@ secondary_accent: "yellow"
       "background": "panelBackground",
       "border": "4,0,4,0",
       "hoverBackground": "hoverBackground",
-      "rowHeight": "24"
+      "rowHeight": "24",
+      "selectionInactiveBackground": "selectionInactiveBackground"
     },
     "MainToolbar": { {#- The bar at the very top, with the run icons/project switcher -#}
       "Dropdown": {
