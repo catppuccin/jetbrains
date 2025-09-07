@@ -80,7 +80,7 @@ jobs:
           draft: true
 
       - name: Commit Release Notes
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v6
         with:
           commit_message: "docs: update changelog"
           branch: main
