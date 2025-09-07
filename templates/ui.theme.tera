@@ -66,7 +66,7 @@ secondary_accent: "yellow"
     "inactiveBackground": "{{ crust.hex }}",
     "panelBackground": "{{ mantle.hex }}",
     "hoverBackground": "{{ overlay2 | mix(color=base, amount=0.3) | get(key='hex') }}",
-    "selectionBackground": "{{ overlay2 | mod(opacity=0.2) | get(key='hex') }}",
+    "selectionBackground": "{{ overlay2 | mix(color=base, amount=0.2) | get(key='hex') }}",
     "selectionInactiveBackground": "{{ base.hex }}",
     "borderColor": "{{ if(cond = flavor.dark, t = base, f = crust) | get(key='hex') }}",
     "separatorColor": "{{ surface0.hex }}"
