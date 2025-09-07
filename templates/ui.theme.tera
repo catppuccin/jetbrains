@@ -146,7 +146,7 @@ secondary_accent: "yellow"
     "CheckBox": {
       "background": "panelBackground"
     },
-    "ComboBox": { {#- The dropdown selects inside of the "Settings" panels -#}
+    "ComboBox": { {#- The dropdown selects inside of the "Settings" panels #}
       "ArrowButton": {
         "background": "secondaryBackground",
         "disabledIconColor": "lavender",
@@ -201,14 +201,12 @@ secondary_accent: "yellow"
       "splitBorder": "separatorColor"
     },
     "EditorTabs": {
-      "background": "primaryBackground",
+      "background": "panelBackground",
       "hoverBackground": "primaryBackground",
-      "inactiveHoverBackground": "red",
-      "inactiveUnderlineColor": "lavender",
       "underTabsBorderColor": "separatorColor",
-      "underlineArc": 4,
       "underlineColor": "accentColor",
-      "underlinedTabBackground": "panelBackground"
+      "underlinedTabBackground": "panelBackground",
+      "unselectedBlend": 0.9 {#- Effectively controls how dimmed the tabs on when unselected/not hovering, therefore providing some contrast when hovering #}
     },
     "FileColor": {
       "Blue": "{{ self::file_color(color = blue) }}",
@@ -228,7 +226,7 @@ secondary_accent: "yellow"
       "pressedForeground": "secondaryAccentColor",
       "visitedForeground": "secondaryAccentColor"
     },
-    "List": { {#- Lists of items, e.g. the "Notifications" settings panel in "Appearance & Behaviour" -#}
+    "List": { {#- Lists of items, e.g. the "Notifications" settings panel in "Appearance & Behaviour" #}
       "Button": {
         "leftRightInset": 8,
         "separatorInset": 4,
@@ -240,7 +238,7 @@ secondary_accent: "yellow"
       "rowHeight": "24",
       "selectionInactiveBackground": "selectionInactiveBackground"
     },
-    "MainToolbar": { {#- The bar at the very top, with the run icons/project switcher -#}
+    "MainToolbar": { {#- The bar at the very top, with the run icons/project switcher #}
       "Dropdown": {
         "hoverBackground": "hoverBackground",
         "maxWidth": 350,
@@ -545,7 +543,7 @@ secondary_accent: "yellow"
       "Checkbox.Background.Default.Dark": "{{ surface0.hex }}",
       "Checkbox.Background.Disabled": "{{ base.hex }}",
       "Checkbox.Background.Disabled.Dark": "{{ surface0.hex }}",
-      "Checkbox.Background.Selected": "{{ base | mix(color=surface0, amount=0.2) | get(key='hex') }}", {#- Need to be careful when editing this, because JetBrains incorrectly take this value for RadioButtons and doesn't let you change the colour of the radio icon itself -#}
+      "Checkbox.Background.Selected": "{{ base | mix(color=surface0, amount=0.2) | get(key='hex') }}", {#- Need to be careful when editing this, because JetBrains incorrectly take this value for RadioButtons and doesn't let you change the colour of the radio icon itself #}
       "Checkbox.Background.Selected.Dark": "{{ surface1.hex }}",
       "Checkbox.Border.Default": "{{ surface0.hex }}",
       "Checkbox.Border.Disabled": "{{ surface0.hex }}",
