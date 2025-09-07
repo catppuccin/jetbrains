@@ -875,7 +875,7 @@ accent: "mauve"
     </option>
     <option name="DEFAULT_BLOCK_COMMENT">
       <value>
-        <option name="FOREGROUND" value="{{ overlay0.hex }}"/>
+        <option name="FOREGROUND" value="{{ overlay2.hex }}"/>
         {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
         {%- endif %}
@@ -916,7 +916,7 @@ accent: "mauve"
     </option>
     <option name="DEFAULT_DOC_COMMENT">
       <value>
-        <option name="FOREGROUND" value="{{ overlay0.hex }}"/>
+        <option name="FOREGROUND" value="{{ overlay2.hex }}"/>
         {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
         {%- endif %}
@@ -1014,7 +1014,7 @@ accent: "mauve"
     </option>
     <option name="DEFAULT_LINE_COMMENT">
       <value>
-        <option name="FOREGROUND" value="{{ overlay0.hex }}"/>
+        <option name="FOREGROUND" value="{{ overlay2.hex }}"/>
         {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
         {%- endif %}
