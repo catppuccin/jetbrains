@@ -4,7 +4,8 @@
 
 ### Added
 
-- (UI): Set `focusColor` to `mauve` globally, which should result in more consistent border highlights for focused elements.
+- (Editor): Current row line number is now `lavender`, following our style guide.
+- (UI): Set `focusColor` to `mauve` globally, resulting in more consistent border highlights for focused elements.
 
 ### Changed
 

@@ -105,7 +105,7 @@ accent: "mauve"
     <option name="INLINE_REFACTORING_SETTINGS_FOCUSED" value="{{ inline_refactoring_settings_focused_hovered.hex }}"/>
     <option name="INLINE_REFACTORING_SETTINGS_HOVERED" value="{{ inline_refactoring_settings_focused_hovered.hex }}"/>
     <option name="LINE_NUMBERS_COLOR" value="{{ overlay0.hex }}"/>
-    <option name="LINE_NUMBER_ON_CARET_ROW_COLOR" value="{{ overlay1.hex }}"/>
+    <option name="LINE_NUMBER_ON_CARET_ROW_COLOR" value="{{ lavender.hex }}"/>
     <option name="LOOKUP_COLOR" value="{{ surface0.hex }}"/>
     <option name="METHOD_SEPARATORS_COLOR" value="{{ surface0.hex }}"/>
     <option name="MODIFIED_LINES_COLOR" value="{{ peach.hex }}"/>
