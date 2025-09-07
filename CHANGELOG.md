@@ -29,6 +29,11 @@
 
 ### Security
 
+- Upgrade gradle to 9.0.0
+- Upgrade `org.jetbrains.kotlin.jvm` to v2.2.10
+- Upgrade `org.jetbrains.intellij.platform` to v2.9.0
+- Upgrade `org.jetbrains.changelog` to v2.4.0
+
 ## 3.4.2 - 2025-05-16
 
 ### Added
