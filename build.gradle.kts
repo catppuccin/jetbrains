@@ -35,6 +35,7 @@ dependencies {
 }
 
 intellijPlatform {
+  buildSearchableOptions = false
   pluginConfiguration {
     id.set(properties("pluginGroup"))
     name.set(properties("pluginName"))
@@ -100,8 +101,4 @@ tasks {
         token.set(System.getenv("PUBLISH_TOKEN"))
         channels.set(listOf("default"))
     }
-}
-
-tasks.buildSearchableOptions {
-    enabled = false
 }
