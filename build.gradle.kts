@@ -4,8 +4,6 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-fun properties(key: String) = project.findProperty(key).toString()
-
 plugins {
     // Java support
     id("java")
@@ -17,8 +15,8 @@ plugins {
     id("org.jetbrains.changelog") version "2.4.0"
 }
 
-group = properties("pluginGroup")
-version = properties("pluginVersion")
+group = providers.gradleProperty("pluginGroup").get()
+version = providers.gradleProperty("pluginVersion").get()
 
 // Configure project's dependencies
 repositories {
@@ -36,13 +34,14 @@ dependencies {
 
 intellijPlatform {
   buildSearchableOptions = false
+
   pluginConfiguration {
-    id.set(properties("pluginGroup"))
-    name.set(properties("pluginName"))
-    version.set(properties("pluginVersion"))
+    id.set(providers.gradleProperty("pluginGroup"))
+    name.set(providers.gradleProperty("pluginName"))
+    version.set(providers.gradleProperty("pluginVersion"))
 
     changelog {
-      version.set(properties("pluginVersion"))
+      version.set(providers.gradleProperty("pluginVersion"))
       path.set(file("CHANGELOG.md").canonicalPath)
       header.set(provider { "${version.get()} - ${date()}" })
       headerParserRegex.set("""(\d\.\d+\.\d+)""".toRegex())
@@ -51,6 +50,21 @@ intellijPlatform {
       unreleasedTerm.set("[Unreleased]")
       groups.set(listOf("Added", "Changed", "Deprecated", "Removed", "Fixed", "Security"))
     }
+
+    ideaVersion {
+      sinceBuild.set(providers.gradleProperty("pluginSinceBuild"))
+    }
+  }
+
+  signing {
+    certificateChain = providers.environmentVariable("CERTIFICATE_CHAIN")
+    privateKey = providers.environmentVariable("PRIVATE_KEY")
+    password = providers.environmentVariable("PRIVATE_KEY_PASSWORD")
+  }
+
+  publishing {
+    token.set(providers.environmentVariable("PUBLISH_TOKEN"))
+    channels.set(listOf("default"))
   }
 
   pluginVerification {
@@ -62,7 +76,7 @@ intellijPlatform {
 
 tasks {
     // Set the JVM compatibility versions
-    properties("javaVersion").let {
+    providers.gradleProperty("javaVersion").get().let {
         withType<JavaCompile> {
             sourceCompatibility = it
             targetCompatibility = it
@@ -70,19 +84,19 @@ tasks {
         withType<KotlinCompile> {
             compilerOptions {
               apiVersion = KotlinVersion.KOTLIN_1_8
-              jvmTarget = JvmTarget.fromTarget(properties("javaVersion"))
+              jvmTarget = JvmTarget.fromTarget(it)
             }
         }
     }
 
     wrapper {
-        gradleVersion = properties("gradleVersion")
+        gradleVersion = providers.gradleProperty("gradleVersion").get()
     }
 
     patchPluginXml {
-        pluginVersion.set(properties("pluginVersion"))
-        sinceBuild.set(properties("pluginSinceBuild"))
-        untilBuild.set(properties("pluginUntilBuild"))
+        pluginVersion.set(providers.gradleProperty("pluginVersion"))
+        sinceBuild.set(providers.gradleProperty("pluginSinceBuild"))
+        untilBuild.set(providers.gradleProperty("pluginUntilBuild"))
 
         // Get the latest available change notes from the changelog file
         changeNotes.set(
@@ -90,15 +104,7 @@ tasks {
         )
     }
 
-    signPlugin {
-        certificateChain.set(System.getenv("CERTIFICATE_CHAIN"))
-        privateKey.set(System.getenv("PRIVATE_KEY"))
-        password.set(System.getenv("PRIVATE_KEY_PASSWORD"))
-    }
-
     publishPlugin {
         dependsOn("patchChangelog")
-        token.set(System.getenv("PUBLISH_TOKEN"))
-        channels.set(listOf("default"))
     }
 }
