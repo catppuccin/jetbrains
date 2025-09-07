@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+- (Editor/UI): Switched theme engines from Deno to Whiskers, our built-in port templating tool. Some highlights on the 
+  UI/Editor may look a little different. Please raise an issue if you are unsure whether a highlight is intended or not.
+
 ### Added
 
 - (Editor): Current row line number is now `lavender`, following our style guide.
@@ -11,8 +14,6 @@
 
 - (Editor): Increase contrast of comments (`overlay0` -> `overlay2`) to align with style guide.
 - (Editor): Increase contrast of markup in comments (`surface2` -> `overlay1`).
-- (Editor/UI): Moved theme engines from Deno to Whiskers, so some highlights on the UI/Editor may look a little
-  different. Please raise an issue if you are unsure whether a highlight is intended or not.
 - (Editor/UI): Increased contrast for currently selected editor tab when using Latte.
 - (UI): Increased contrast of ignored/suppressed files in the File pane.
 - (UI): File colours have been toned all the way back in an attempt to increase readability by default.
