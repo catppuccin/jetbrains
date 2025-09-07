@@ -22,6 +22,7 @@
 
 ### Fixed
 
+- (Editor): Support RustRover 2025.2+ syntax highlighting tokens.
 - (UI): Checkboxes in the Commit pane are now visible when using Latte.
 - (UI): Buttons in the run configuration are highlighted on hover.
 - (UI): The default option when creating a new Java class is now highlighted when using Frappé, Macchiato or Mocha.
