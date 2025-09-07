@@ -14,7 +14,7 @@ accent: "mauve"
 
 {% set caret_row_color = if(cond = flavor.light, t = surface1 | mix(color=base, amount = 0.15), f = surface1 | mix(color = base, amount = 0.2)) -%}
 {% set error_hint = if(cond = flavor.light, t = red.hex, f = "781732") -%}
-{% set filestatus_ignored_suppressed = if(cond = flavor.light, t = overlay2, f = overlay0) -%}
+{% set filestatus_ignored_suppressed = overlay2 -%}
 {% set filestatus_unknown = peach | mix(color = base, amount = 0.9) -%}
 {% set filestatus_changelistconflict = red | mix(color = base, amount = 0.9) -%}
 {% set inline_refactoring_settings_default = surface1 | mix(color = base, amount = 0.65) -%}
