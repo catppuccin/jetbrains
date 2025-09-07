@@ -4,10 +4,13 @@
 
 ### Added
 
+- (UI): Set `focusColor` to `mauve` globally, which should result in more consistent border highlights for focused elements.
+
 ### Changed
 
 - (Editor/UI): Moved theme engines from Deno to Whiskers, so some highlights on the UI/Editor may look a little
   different. Please raise an issue if you are unsure whether a highlight is intended or not.
+- (Editor/UI): Editor Tabs now have a darker background with a lighter hover highlight, to align with our other editor themes.
 - (UI): File colours have been toned all the way back in an attempt to increase readability by default.
 - (UI): Unified the `List.selectionInactiveBackground` highlight across all flavours.
 
