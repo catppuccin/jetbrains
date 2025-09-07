@@ -21,11 +21,6 @@ secondary_accent: "yellow"
   {{ color | mod(opacity=0.15) | get(key="hex") }}
 {%- endmacro banner_background_border -%}
 
-{%- set search_match_bg = if(cond = flavor.light, t = flavor.colors[accent] | mod(opacity=0.3), f = flavor.colors[accent]) | get(key = "hex") -%}
-{%- set text_field_bg = if(cond = flavor.light, t = surface1, f = surface2) | get(key = "hex") -%}
-{%- set git_log_bg = flavor.colors[accent] | mod(opacity=0.05) | get(key="hex") -%}
-{%- set drag_and_drop_bg = flavor.colors[accent] | mod(opacity=0.15) | get(key="hex") -%}
-
 {
   "name": "{{ 'Catppuccin ' ~ flavor.name }}",
   "dark": {{ flavor.dark }},
@@ -69,7 +64,11 @@ secondary_accent: "yellow"
     "selectionBackground": "{{ overlay2 | mix(color=base, amount=0.2) | get(key='hex') }}",
     "selectionInactiveBackground": "{{ base.hex }}",
     "borderColor": "{{ if(cond = flavor.dark, t = base, f = crust) | get(key='hex') }}",
-    "separatorColor": "{{ surface0.hex }}"
+    "separatorColor": "{{ surface0.hex }}",
+    "searchMatchBackground": "{{ if(cond = flavor.light, t = flavor.colors[accent] | mod(opacity=0.3), f = flavor.colors[accent]) | get(key = 'hex') }}",
+    "textFieldBackground": "{{ if(cond = flavor.light, t = surface1, f = surface2) | get(key = 'hex') }}",
+    "gitLogBackground": "{{ flavor.colors[accent] | mod(opacity=0.05) | get(key='hex') }}",
+    "dragAndDropBackground": "{{ flavor.colors[accent] | mod(opacity=0.15) | get(key='hex') }}"
   },
   "ui": {
     "*": {
@@ -185,7 +184,7 @@ secondary_accent: "yellow"
     },
     "DragAndDrop": {
       "borderColor": "selectionBackground",
-      "rowBackground": "{{ drag_and_drop_bg }}",
+      "rowBackground": "dragAndDropBackground",
       "areaForeground": "primaryForeground",
       "areaBackground": "panelBackground",
       "areaBorderColor": "accentColor"
@@ -382,8 +381,8 @@ secondary_accent: "yellow"
       }
     },
     "SearchMatch": {
-      "endBackground": "{{ search_match_bg }}",
-      "startBackground": "{{ search_match_bg }}"
+      "endBackground": "searchMatchBackground",
+      "startBackground": "searchMatchBackground"
     },
     "SegmentedButton": {
       "focusedSelectedButtonColor": "secondaryBackground",
@@ -430,7 +429,7 @@ secondary_accent: "yellow"
     },
     "TextField": {
       "background": "secondaryBackground",
-      "selectionBackground": "{{ text_field_bg }}"
+      "selectionBackground": "textFieldBackground"
     },
     "ToggleButton": {
       "buttonColor": "primaryForeground",
@@ -496,7 +495,7 @@ secondary_accent: "yellow"
       },
       "Log": {
         "Commit": {
-          "currentBranchBackground": "{{ git_log_bg }}",
+          "currentBranchBackground": "gitLogBackground",
           "hoveredBackground": "hoverBackground",
           "selectionInactiveBackground": "hoverBackground"
         }
