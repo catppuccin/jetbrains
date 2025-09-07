@@ -60,6 +60,7 @@ secondary_accent: "yellow"
     "secondaryBackground": "{{ surface0.hex }}",
     "inactiveBackground": "{{ crust.hex }}",
     "panelBackground": "{{ mantle.hex }}",
+    "toolbarBackground": "{{ crust.hex }}",
     "hoverBackground": "{{ overlay2 | mix(color=base, amount=0.3) | get(key='hex') }}",
     "selectionBackground": "{{ overlay2 | mix(color=base, amount=0.2) | get(key='hex') }}",
     "selectionInactiveBackground": "{{ base.hex }}",
@@ -199,9 +200,9 @@ secondary_accent: "yellow"
     "EditorPane": {
       "splitBorder": "separatorColor"
     },
-    "EditorTabs": {
-      "background": "panelBackground",
-      "hoverBackground": "primaryBackground",
+    "EditorTabs": { {#- To change more editor tab highlights, check the editor.tera file and search "TAB" #}
+      "background": "primaryBackground",
+      "hoverBackground": "selectionBackground",
       "underTabsBorderColor": "separatorColor",
       "underlineColor": "accentColor",
       "underlinedTabBackground": "panelBackground",
@@ -248,17 +249,18 @@ secondary_accent: "yellow"
         "insets": "5,5,5,5",
         "pressedBackground": "hoverBackground"
       },
-      "background": "crust",
+      "background": "toolbarBackground",
       "inactiveBackground": "panelBackground"
     },
     "MainWindow": {
       "Tab": {
-        "background": "panelBackground",
-        "borderColor": "panelBackground",
-        "selectedBackground": "primaryBackground",
+        "background": "toolbarBackground",
+        "borderColor": "toolbarBackground",
+        "selectedBackground": "panelBackground",
         "selectedForeground": "primaryForeground",
-        "selectedInactiveBackground": "panelBackground",
-        "separatorColor": "panelBackground"
+        "hoverBackground": "hoverBackground",
+        "selectedInactiveBackground": "primaryBackground",
+        "separatorColor": "separatorColor"
       }
     },
     "MemoryIndicator": {

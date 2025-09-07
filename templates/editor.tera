@@ -35,6 +35,7 @@ accent: "mauve"
 {% set diff_modified_error_stripe_color = blue | mix(color = base, amount = 0.2) -%}
 {% set executionpoint_attributes = yellow | mix(color = base, amount = 0.15) -%}
 {% set search_result_attributes_background = blue | mix(color = base, amount = 0.3) -%}
+{% set tab_selected_background = overlay2 | mix(color=base, amount=0.2) -%}
 
 {%- macro vcs_annotations(a) -%}
   {{ flavor.colors[accent] | mix(color = base, amount = a) | get(key='hex') }}
@@ -2906,13 +2907,13 @@ accent: "mauve"
     <option name="TAB_SELECTED">
       <value>
         <option name="FOREGROUND" value="{{ mauve.hex }}"/>
-        <option name="BACKGROUND" value="{{ surface0.hex }}"/>
+        <option name="BACKGROUND" value="{{ tab_selected_background.hex }}"/>
       </value>
     </option>
     <option name="TAB_SELECTED_INACTIVE">
       <value>
         <option name="FOREGROUND" value="{{ mauve.hex }}"/>
-        <option name="BACKGROUND" value="{{ surface0.hex }}"/>
+        <option name="BACKGROUND" value="{{ tab_selected_background.hex }}"/>
       </value>
     </option>
     <option name="TAG_ATTR_KEY">
