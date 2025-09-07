@@ -3125,16 +3125,24 @@ accent: "mauve"
         <option name="FOREGROUND" value="{{ maroon.hex }}"/>
       </value>
     </option>
+    <option name="org.rust.ASSOC_FUNCTION" baseAttributes="DEFAULT_STATIC_METHOD" />
+    <option name="org.rust.ASSOC_FUNCTION_CALL" baseAttributes="DEFAULT_STATIC_METHOD" />
+    <option name="org.rust.ASSOC_TRAIT_FUNCTION" baseAttributes="org.rust.ASSOC_FUNCTION" />
+    <option name="org.rust.ASSOC_TRAIT_FUNCTION_CALL" baseAttributes="org.rust.ASSOC_FUNCTION_CALL" />
     <option name="org.rust.CFG_DISABLED_CODE">
       <value>
         <option name="FOREGROUND" value="{{ subtext0.hex }}"/>
       </value>
     </option>
+    <option name="org.rust.CRATE" baseAttributes="DEFAULT_IDENTIFIER" />
     <option name="org.rust.DOC_LINK">
       <value>
         <option name="FOREGROUND" value="{{ blue.hex }}"/>
       </value>
     </option>
+    <option name="org.rust.ENUM" baseAttributes="DEFAULT_CLASS_NAME" />
+    <option name="org.rust.ENUM_VARIANT" baseAttributes="DEFAULT_STATIC_FIELD" />
+    <option name="org.rust.FUNCTION" baseAttributes="DEFAULT_FUNCTION_DECLARATION" />
     <option name="org.rust.FUNCTION_CALL" baseAttributes="DEFAULT_FUNCTION_CALL"/>
     <option name="org.rust.LIFETIME">
       <value>
@@ -3149,20 +3157,70 @@ accent: "mauve"
         <option name="FOREGROUND" value="{{ sky.hex }}"/>
       </value>
     </option>
-    <option name="org.rust.METHOD_CALL" baseAttributes="DEFAULT_FUNCTION_CALL"/>
-    <option name="org.rust.MUT_PARAMETER" baseAttributes="DEFAULT_PARAMETER"/>
-    <option name="org.rust.Q_OPERATOR">
-      <value/>
-    </option>
-    <option name="org.rust.TYPE_ALIAS">
+    <option name="org.rust.MACRO_BINDING_IDENTIFIER">
       <value>
-        <option name="FOREGROUND" value="{{ yellow.hex }}"/>
+        <option name="FOREGROUND" value="{{ text.hex }}" />
+      </value>
+    </option>
+    <option name="org.rust.MACRO_DOLLAR">
+      <value>
+        <option name="FOREGROUND" value="{{ pink.hex }}" />
+      </value>
+    </option>
+    <option name="org.rust.MACRO_EXCL">
+      <value>
+        <option name="FOREGROUND" value="{{ mauve.hex }}" />
+      </value>
+    </option>
+    <option name="org.rust.MACRO_IDENTIFIER">
+      <value>
+        <option name="FOREGROUND" value="{{ rosewater.hex }}" />
+      </value>
+    </option>
+    <option name="org.rust.MACRO_META_VAR_IDENTIFIER">
+      <value>
+        <option name="FOREGROUND" value="{{ pink.hex }}" />
         {%- if italics %}
         <option name="FONT_TYPE" value="2"/>
         {%- endif %}
       </value>
     </option>
+    <option name="org.rust.MACRO_RULES">
+      <value>
+        <option name="FOREGROUND" value="{{ mauve.hex }}" />
+      </value>
+    </option>
+    <option name="org.rust.METHOD" baseAttributes="DEFAULT_INSTANCE_METHOD" />
+    <option name="org.rust.METHOD_CALL" baseAttributes="DEFAULT_FUNCTION_CALL"/>
+    <option name="org.rust.MUT_BINDING" baseAttributes="DEFAULT_REASSIGNED_LOCAL_VARIABLE" />
+    <option name="org.rust.MUT_PARAMETER" baseAttributes="DEFAULT_REASSIGNED_PARAMETER" />
+    <option name="org.rust.MUT_SELF_PARAMETER">
+      <value>
+        <option name="FOREGROUND" value="{{ red.hex }}" />
+      </value>
+    </option>
+    <option name="org.rust.PARAMETER" baseAttributes="DEFAULT_PARAMETER" />
+    <option name="org.rust.Q_OPERATOR">
+      <value/>
+    </option>
+    <option name="org.rust.SELF_EXPRESSION">
+      <value>
+        <option name="FOREGROUND" value="{{ red.hex }}" />
+      </value>
+    </option>
+    <option name="org.rust.SELF_PARAMETER">
+      <value>
+        <option name="FOREGROUND" value="{{ red.hex }}" />
+      </value>
+    </option>
+    <option name="org.rust.STATIC" baseAttributes="org.rust.VARIABLE" />
+    <option name="org.rust.STRUCT" baseAttributes="DEFAULT_CLASS_NAME" />
+    <option name="org.rust.TRAIT" baseAttributes="DEFAULT_INTERFACE_NAME" />
+    <option name="org.rust.TRAIT_METHOD" baseAttributes="org.rust.METHOD" />
+    <option name="org.rust.TRAIT_METHOD_CALL" baseAttributes="org.rust.METHOD_CALL" />
+    <option name="org.rust.TYPE_ALIAS" baseAttributes="DEFAULT_CLASS_NAME" />
     <option name="org.rust.TYPE_PARAMETER" baseAttributes="DEFAULT_IDENTIFIER"/>
+    <option name="org.rust.UNION" baseAttributes="DEFAULT_CLASS_NAME" />
     <option name="org.rust.UNSAFE_CODE">
       <value/>
     </option>
