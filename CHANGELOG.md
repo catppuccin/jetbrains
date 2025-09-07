@@ -26,6 +26,7 @@
 - (UI): Buttons in the run configuration are highlighted on hover.
 - (UI): The default option when creating a new Java class is now highlighted when using Frappé, Macchiato or Mocha.
 - (UI): The Git Blame panel now uses shades of a single accent colour to imply commit recency.
+- (UI): Prevent Search and SearchEverywhere icons from using dark mode colours when switching to Latte.
 
 ### Security
 
