@@ -2,6 +2,20 @@
 
 ## [Unreleased]
 
+### Added
+
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## 3.5.0 - 2025-09-07
+
 - (Editor/UI): Switched theme engines from Deno to Whiskers, our built-in port templating tool. Some highlights on the 
   UI/Editor may look a little different. Please raise an issue if you are unsure whether a highlight is intended or not.
 
@@ -18,10 +32,6 @@
 - (UI): Increased contrast of ignored/suppressed files in the File pane.
 - (UI): File colours have been toned all the way back in an attempt to increase readability by default.
 - (UI): Unified the `List.selectionInactiveBackground` highlight across all flavours.
-
-### Deprecated
-
-### Removed
 
 ### Fixed
 
