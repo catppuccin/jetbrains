@@ -12,10 +12,14 @@
 
 ### Fixed
 
+### Security
+
+## 3.5.1 - 2025-09-08
+
+### Fixed
+
 - (UI): ToolWindows on the side should be `mantle` instead of `base`. I wasn't encountering this on 2024.3, so I believe 
   this was a regression that I only found when testing on 2025.
-
-### Security
 
 ## 3.5.0 - 2025-09-07
 
