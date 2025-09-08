@@ -462,6 +462,9 @@ secondary_accent: "yellow"
         "inactiveUnderlineColor": "text",
         "underlineColor": "accentColor"
       },
+      "Stripe": {
+        "background": "panelBackground"
+      },
       "background": "panelBackground"
     },
     "Tree": {
