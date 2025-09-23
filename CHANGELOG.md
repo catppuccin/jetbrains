@@ -4,8 +4,6 @@
 
 ### Added
 
-- Support 2025.3 EAP
-
 ### Changed
 
 ### Deprecated
@@ -15,6 +13,12 @@
 ### Fixed
 
 ### Security
+
+## 3.5.2 - 2025-09-23
+
+### Added
+
+- Support 2025.3 EAP
 
 ## 3.5.1 - 2025-09-08
 
