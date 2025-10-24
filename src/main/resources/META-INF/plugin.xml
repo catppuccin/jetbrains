@@ -64,10 +64,14 @@ For further help, see also:
     <themeProvider id="com.github.catppuccin.frappe.jetbrains" path="/themes/frappe.normal.theme.json"/>
     <themeProvider id="com.github.catppuccin.macchiato.jetbrains" path="/themes/macchiato.normal.theme.json"/>
     <themeProvider id="com.github.catppuccin.mocha.jetbrains" path="/themes/mocha.normal.theme.json"/>
-    <themeProvider id="com.github.catppuccin.latte.islands.jetbrains" path="/themes/latte.islands.theme.json"/>
-    <themeProvider id="com.github.catppuccin.frappe.islands.jetbrains" path="/themes/frappe.islands.theme.json"/>
-    <themeProvider id="com.github.catppuccin.macchiato.islands.jetbrains" path="/themes/macchiato.islands.theme.json"/>
-    <themeProvider id="com.github.catppuccin.mocha.islands.jetbrains" path="/themes/mocha.islands.theme.json"/>
+    <themeProvider id="com.github.catppuccin.latte.islands.jetbrains" path="/themes/latte.islands.theme.json"
+                   targetUi="islands"/>
+    <themeProvider id="com.github.catppuccin.frappe.islands.jetbrains" path="/themes/frappe.islands.theme.json"
+                   targetUi="islands"/>
+    <themeProvider id="com.github.catppuccin.macchiato.islands.jetbrains" path="/themes/macchiato.islands.theme.json"
+                   targetUi="islands"/>
+    <themeProvider id="com.github.catppuccin.mocha.islands.jetbrains" path="/themes/mocha.islands.theme.json"
+                   targetUi="islands"/>
     <bundledColorScheme id="com.github.catppuccin.latte.italics.jetbrains" path="/themes/latte"/>
     <bundledColorScheme id="com.github.catppuccin.frappe.italics.jetbrains" path="/themes/frappe"/>
     <bundledColorScheme id="com.github.catppuccin.macchiato.italics.jetbrains" path="/themes/macchiato"/>
