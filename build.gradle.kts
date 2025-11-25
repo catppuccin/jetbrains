@@ -12,7 +12,7 @@ plugins {
     // Gradle IntelliJ Platform Plugin
     id("org.jetbrains.intellij.platform") version "2.10.3"
     // Gradle Changelog Plugin
-    id("org.jetbrains.changelog") version "2.4.0"
+    id("org.jetbrains.changelog") version "2.5.0"
 }
 
 group = providers.gradleProperty("pluginGroup").get()
