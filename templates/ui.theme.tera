@@ -10,7 +10,8 @@ secondary_accent: "yellow"
 ---
 
 {%- macro file_color(color) -%}
-  {{ color | mix(color=base, amount=0.05) | get(key='hex') }}
+  {%- set mix_amount = if(cond = flavor.light, t = 0.15, f = 0.25) -%}
+  {{ color | mix(color=base, amount=mix_amount) | get(key='hex') }}
 {%- endmacro file_color -%}
 
 {%- macro banner_background(color) -%}
@@ -210,6 +211,7 @@ secondary_accent: "yellow"
       "unselectedBlend": 0.9 {#- Effectively controls how dimmed the tabs on when unselected/not hovering, therefore providing some contrast when hovering #}
     },
     "FileColor": {
+      "Gray": "{{ self::file_color(color = overlay0) }}",
       "Blue": "{{ self::file_color(color = blue) }}",
       "Green": "{{ self::file_color(color = green) }}",
       "Orange": "{{ self::file_color(color = peach) }}",
