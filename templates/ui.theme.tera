@@ -10,7 +10,7 @@ secondary_accent: "yellow"
 ---
 
 {%- macro file_color(color) -%}
-  {{ color | mix(color=base, amount=0.05) | get(key='hex') }}
+  {{ color | mix(color=base, amount=0.15) | get(key='hex') }}
 {%- endmacro file_color -%}
 
 {%- macro banner_background(color) -%}
@@ -207,9 +207,11 @@ secondary_accent: "yellow"
       "underTabsBorderColor": "separatorColor",
       "underlineColor": "accentColor",
       "underlinedTabBackground": "panelBackground",
+      "inactiveColoredFileBackground": "{{ base | mod(opacity=0.5) | get(key='hex') }}",
       "unselectedBlend": 0.9 {#- Effectively controls how dimmed the tabs on when unselected/not hovering, therefore providing some contrast when hovering #}
     },
     "FileColor": {
+      "Gray": "{{ self::file_color(color = overlay0) }}",
       "Blue": "{{ self::file_color(color = blue) }}",
       "Green": "{{ self::file_color(color = green) }}",
       "Orange": "{{ self::file_color(color = peach) }}",
