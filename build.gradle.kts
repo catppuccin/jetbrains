@@ -8,7 +8,7 @@ plugins {
     // Java support
     id("java")
     // Kotlin support
-    id("org.jetbrains.kotlin.jvm") version "2.2.20"
+    id("org.jetbrains.kotlin.jvm") version "2.3.10"
     // Gradle IntelliJ Platform Plugin
     id("org.jetbrains.intellij.platform") version "2.10.3"
     // Gradle Changelog Plugin
