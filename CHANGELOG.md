@@ -4,8 +4,6 @@
 
 ### Added
 
-- Support 2026.1
-
 ### Changed
 
 ### Deprecated
@@ -15,6 +13,12 @@
 ### Fixed
 
 ### Security
+
+## 3.5.3 - 2026-02-05
+
+### Added
+
+- Support 2026.1
 
 ## 3.5.2 - 2025-09-23
 
