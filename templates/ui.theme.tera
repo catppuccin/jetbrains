@@ -88,6 +88,7 @@ secondary_accent: "yellow"
       "focusColor": "accentColor",
       "infoForeground": "subtext0"
     },
+    {% if islands %}"Islands": 1,{% endif %}
     "ActionButton": {
       "hoverBackground": "hoverBackground",
       "pressedBackground": "hoverBackground"
@@ -199,7 +200,10 @@ secondary_accent: "yellow"
     },
     "Editor": {
       "Toolbar": {
+        {% if islands %}
+        {% else %}
         "borderColor": "separatorColor"
+        {% endif %}
       },
       "background": "primaryBackground",
       "shortcutForeground": "accentColor"
@@ -208,7 +212,7 @@ secondary_accent: "yellow"
       "splitBorder": "separatorColor"
     },
     "EditorTabs": { {#- To change more editor tab highlights, check the editor.tera file and search "TAB" #}
-      "background": "primaryBackground",
+      "background": "panelBackground",
       "hoverBackground": "selectionBackground",
       "underTabsBorderColor": "separatorColor",
       "underlineColor": "accentColor",
@@ -256,9 +260,10 @@ secondary_accent: "yellow"
         "hoverBackground": "hoverBackground",
         "insets": "5,5,5,5",
         "pressedBackground": "hoverBackground"
-      },
+      }{% if islands%}{% else %},
       "background": "toolbarBackground",
       "inactiveBackground": "panelBackground"
+      {% endif %}
     },
     "MainWindow": {
       "Tab": {
@@ -300,8 +305,9 @@ secondary_accent: "yellow"
       }
     },
     "Panel": {
-      "foreground": "panelForeground",
+      "foreground": "panelForeground"{% if islands %}{% else %},
       "background": "panelBackground"
+      {% endif %}
     },
     "PasswordField": {
       "background": "secondaryBackground"
@@ -414,7 +420,10 @@ secondary_accent: "yellow"
       "Breadcrumbs": {
         "chevronInset": 0
       },
+      {% if islands %}
+      {% else %}
       "background": "panelBackground",
+      {% endif %}
       "borderColor": "borderColor",
       "hoverBackground": "hoverBackground"
     },
@@ -475,7 +484,12 @@ secondary_accent: "yellow"
         "underlineColor": "accentColor"
       },
       "Stripe": {
+        {% if islands %}
+        "borderColor": "transparent",
+        "separatorColor": "border-transparent"
+        {% else %}
         "background": "panelBackground"
+        {% endif %}
       },
       "background": "panelBackground"
     },
@@ -558,18 +572,13 @@ secondary_accent: "yellow"
       "Objects.Yellow": "{{ yellow.hex }}",
       "Objects.YellowDark": "{{ flamingo.hex }}",
       "Checkbox.Background.Default": "{{ base.hex }}",
-      "Checkbox.Background.Default.Dark": "{{ surface0.hex }}",
       "Checkbox.Background.Disabled": "{{ base.hex }}",
-      "Checkbox.Background.Disabled.Dark": "{{ surface0.hex }}",
       "Checkbox.Background.Selected": "{{ base | mix(color=surface0, amount=0.2) | get(key='hex') }}", {#- Need to be careful when editing this, because JetBrains incorrectly take this value for RadioButtons and doesn't let you change the colour of the radio icon itself #}
-      "Checkbox.Background.Selected.Dark": "{{ surface1.hex }}",
       "Checkbox.Border.Default": "{{ surface0.hex }}",
       "Checkbox.Border.Disabled": "{{ surface0.hex }}",
       "Checkbox.Border.Selected": "{{ surface0.hex }}",
       "Checkbox.Foreground.Disabled": "{{ overlay0.hex }}",
-      "Checkbox.Foreground.Disabled.Dark": "{{ overlay0.hex }}",
       "Checkbox.Foreground.Selected": "{{ flavor.colors[accent].hex }}",
-      "Checkbox.Foreground.Selected.Dark": "{{ flavor.colors[accent].hex }}",
       "Tree.iconColor": "{{ text.hex }}"
     }
   }{% if islands %},

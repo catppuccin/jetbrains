@@ -93,7 +93,7 @@ accent: "mauve"
     <option name="FILESTATUS_changelistConflict" value="{{ filestatus_changelistconflict.hex }}"/>
     <option name="FILESTATUS_modifiedOutside" value="{{ blue.hex }}"/>
     <option name="FOLDED_TEXT_BORDER_COLOR" value=""/>
-    <option name="GUTTER_BACKGROUND" value="{{ base.hex }}"/>
+    <option name="GUTTER_BACKGROUND" value="{{ mantle.hex }}"/>
     <option name="HTML_TAG_TREE_LEVEL0" value="{{ red.hex }}"/>
     <option name="HTML_TAG_TREE_LEVEL1" value="{{ yellow.hex }}"/>
     <option name="HTML_TAG_TREE_LEVEL2" value="{{ green.hex }}"/>
@@ -1497,7 +1497,7 @@ accent: "mauve"
     <option name="INLAY_DEFAULT">
       <value>
         <option name="FOREGROUND" value="{{ overlay1.hex }}"/>
-        <option name="BACKGROUND" value="{{ base.hex }}"/>
+        <option name="BACKGROUND" value="{{ mantle.hex }}"/>
       </value>
     </option>
     <option name="INLAY_TEXT_WITHOUT_BACKGROUND">
@@ -2934,7 +2934,7 @@ accent: "mauve"
     <option name="TEXT">
       <value>
         <option name="FOREGROUND" value="{{ text.hex }}"/>
-        <option name="BACKGROUND" value="{{ base.hex }}"/>
+        <option name="BACKGROUND" value="{{ mantle.hex }}"/>
       </value>
     </option>
     <option name="TEXT_SEARCH_RESULT_ATTRIBUTES">
