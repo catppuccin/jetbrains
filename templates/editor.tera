@@ -55,7 +55,7 @@ accent: "mauve"
     <option name="ANNOTATIONS_COLOR" value="{{ text.hex }}"/>
     <option name="BLOCK_TERMINAL_BLOCK_BACKGROUND_END" value="{{ mantle.hex }}"/>
     <option name="BLOCK_TERMINAL_BLOCK_BACKGROUND_START" value="{{ mantle.hex }}"/>
-    <option name="BLOCK_TERMINAL_DEFAULT_BACKGROUND" value="{{ base.hex }}"/>
+    <option name="BLOCK_TERMINAL_DEFAULT_BACKGROUND" value="{{ mantle.hex }}"/>
     <option name="BLOCK_TERMINAL_DEFAULT_FOREGROUND" value="{{ text.hex }}"/>
     <option name="BLOCK_TERMINAL_ERROR_BLOCK_STROKE_COLOR" value="{{ red.hex }}"/>
     <option name="BLOCK_TERMINAL_INACTIVE_SELECTED_BLOCK_BACKGROUND" value="{{ surface1.hex }}"/>
