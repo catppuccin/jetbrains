@@ -260,7 +260,10 @@ secondary_accent: "yellow"
         "hoverBackground": "hoverBackground",
         "insets": "5,5,5,5",
         "pressedBackground": "hoverBackground"
-      }{% if islands%}{% else %},
+      },
+      {% if islands %}
+      "borderColor": "transparent"
+      {% else %}
       "background": "toolbarBackground",
       "inactiveBackground": "panelBackground"
       {% endif %}
