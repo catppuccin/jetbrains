@@ -3,7 +3,8 @@ whiskers:
   version: "^2.5.1"
   matrix:
     - flavor
-  filename: "src/main/resources/themes/{{ flavor.identifier }}.theme.json"
+    - variant: ["normal", "islands"]
+  filename: "src/main/resources/themes/{{ flavor.identifier }}.{{ variant }}.theme.json"
   hex_format: "#{{r}}{{g}}{{b}}{{z}}"
 accent: "mauve"
 secondary_accent: "yellow"
@@ -20,12 +21,15 @@ secondary_accent: "yellow"
 {%- macro banner_background_border(color) -%}
   {{ color | mod(opacity=0.15) | get(key="hex") }}
 {%- endmacro banner_background_border -%}
-
+{% set islands = variant == "islands" %}
 {
-  "name": "{{ 'Catppuccin ' ~ flavor.name }}",
+  "name": "{{ 'Catppuccin ' ~ flavor.name }}{% if islands %} Islands{% endif %}",
   "dark": {{ flavor.dark }},
   "author": "Catppuccin Org <releases@catppuccin.com>",
   "editorScheme": "{{ '/themes/' ~ flavor.identifier ~ '.xml' }}",
+  {%- if islands %}
+  "parentTheme": "Islands {% if flavor.dark %}Dark{% else %}Light{% endif %}",
+  {%- endif %}
   "colors": {
     "rosewater": "{{ rosewater.hex }}",
     "flamingo": "{{ flamingo.hex }}",
@@ -87,6 +91,12 @@ secondary_accent: "yellow"
       "focusColor": "accentColor",
       "infoForeground": "subtext0"
     },
+    {%- if islands %}
+    "Islands": 1,
+    "Island": {
+      "borderColor": "panelBackground"
+    },
+    {%- endif %}
     "ActionButton": {
       "hoverBackground": "hoverBackground",
       "pressedBackground": "hoverBackground"
@@ -182,7 +192,12 @@ secondary_accent: "yellow"
     "DefaultTabs": {
       "background": "panelBackground",
       "hoverBackground": "primaryBackground",
+      {%- if islands %}
+      "underlinedBorderColor": "separatorColor",
+      "underlinedTabBackground": "selectionBackground"
+      {%- else %}
       "underlinedTabBackground": "panelBackground"
+      {%- endif %}
     },
     "DragAndDrop": {
       "borderColor": "selectionBackground",
@@ -193,7 +208,9 @@ secondary_accent: "yellow"
     },
     "Editor": {
       "Toolbar": {
+        {%- if not islands %}
         "borderColor": "separatorColor"
+        {%- endif %}
       },
       "background": "primaryBackground",
       "shortcutForeground": "accentColor"
@@ -202,11 +219,15 @@ secondary_accent: "yellow"
       "splitBorder": "separatorColor"
     },
     "EditorTabs": { {#- To change more editor tab highlights, check the editor.tera file and search "TAB" #}
-      "background": "primaryBackground",
+      "background": "panelBackground",
       "hoverBackground": "selectionBackground",
       "underTabsBorderColor": "separatorColor",
       "underlineColor": "accentColor",
       "underlinedTabBackground": "panelBackground",
+      "underlinedBorderColor": "accentColor",
+      "inactiveUnderlinedTabBorderColor": "crust",
+      {%- if islands %}
+      {%- endif %}
       "unselectedBlend": 0.9 {#- Effectively controls how dimmed the tabs on when unselected/not hovering, therefore providing some contrast when hovering #}
     },
     "FileColor": {
@@ -250,8 +271,12 @@ secondary_accent: "yellow"
         "insets": "5,5,5,5",
         "pressedBackground": "hoverBackground"
       },
+      {%- if islands %}
+      "borderColor": "transparent"
+      {%- else %}
       "background": "toolbarBackground",
       "inactiveBackground": "panelBackground"
+      {%- endif %}
     },
     "MainWindow": {
       "Tab": {
@@ -293,8 +318,9 @@ secondary_accent: "yellow"
       }
     },
     "Panel": {
-      "foreground": "panelForeground",
+      "foreground": "panelForeground"{%- if not islands %},
       "background": "panelBackground"
+      {%- endif %}
     },
     "PasswordField": {
       "background": "secondaryBackground"
@@ -407,8 +433,12 @@ secondary_accent: "yellow"
       "Breadcrumbs": {
         "chevronInset": 0
       },
+      {%- if islands %}
+      "borderColor": "transparent",
+      {%- else %}
       "background": "panelBackground",
       "borderColor": "borderColor",
+      {%- endif %}
       "hoverBackground": "hoverBackground"
     },
     "TabbedPane": {
@@ -463,7 +493,12 @@ secondary_accent: "yellow"
         "underlineColor": "accentColor"
       },
       "Stripe": {
+        {% if islands %}
+        "borderColor": "transparent",
+        "separatorColor": "border-transparent"
+        {% else %}
         "background": "panelBackground"
+        {% endif %}
       },
       "background": "panelBackground"
     },
@@ -546,18 +581,13 @@ secondary_accent: "yellow"
       "Objects.Yellow": "{{ yellow.hex }}",
       "Objects.YellowDark": "{{ flamingo.hex }}",
       "Checkbox.Background.Default": "{{ base.hex }}",
-      "Checkbox.Background.Default.Dark": "{{ surface0.hex }}",
       "Checkbox.Background.Disabled": "{{ base.hex }}",
-      "Checkbox.Background.Disabled.Dark": "{{ surface0.hex }}",
       "Checkbox.Background.Selected": "{{ base | mix(color=surface0, amount=0.2) | get(key='hex') }}", {#- Need to be careful when editing this, because JetBrains incorrectly take this value for RadioButtons and doesn't let you change the colour of the radio icon itself #}
-      "Checkbox.Background.Selected.Dark": "{{ surface1.hex }}",
       "Checkbox.Border.Default": "{{ surface0.hex }}",
       "Checkbox.Border.Disabled": "{{ surface0.hex }}",
       "Checkbox.Border.Selected": "{{ surface0.hex }}",
       "Checkbox.Foreground.Disabled": "{{ overlay0.hex }}",
-      "Checkbox.Foreground.Disabled.Dark": "{{ overlay0.hex }}",
       "Checkbox.Foreground.Selected": "{{ flavor.colors[accent].hex }}",
-      "Checkbox.Foreground.Selected.Dark": "{{ flavor.colors[accent].hex }}",
       "Tree.iconColor": "{{ text.hex }}"
     }
   }
