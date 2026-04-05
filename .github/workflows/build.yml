@@ -47,7 +47,7 @@ jobs:
         run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
 
       - name: Upload JAR
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: "catppuccin-theme-jetbrains-${{ steps.vars.outputs.sha_short }}"
           path: build/libs/*.jar
