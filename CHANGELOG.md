@@ -6,6 +6,8 @@
 
 ### Changed
 
+- Improve legibility of background colors for file scopes in editor tabs and file explorer.
+
 ### Deprecated
 
 ### Removed
