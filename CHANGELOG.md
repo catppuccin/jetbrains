@@ -4,6 +4,12 @@
 
 ### Added
 
+- (Editor/UI): Add "Islands" variants for each flavour.
+  - "Islands Catppuccin Latte"
+  - "Islands Catppuccin Frappé"
+  - "Islands Catppuccin Macchiato"
+  - "Islands Catppuccin Mocha"
+
 ### Changed
 
 - (Editor/UI): Improve legibility of background colors for file scopes in editor tabs and file explorer.
