@@ -2,12 +2,15 @@
 whiskers:
   version: "^2.5.1"
   matrix:
+    - variant: ["", "-islands"]
     - flavor
-  filename: "src/main/resources/themes/{{ flavor.identifier }}.theme.json"
+  filename: "src/main/resources/themes/{{ flavor.identifier }}{{ variant }}.theme.json"
   hex_format: "#{{r}}{{g}}{{b}}{{z}}"
 accent: "mauve"
 secondary_accent: "yellow"
 ---
+
+{%- set islands = variant == "-islands" -%}
 
 {%- macro file_color(color) -%}
   {{ color | mix(color=base, amount=0.15) | get(key='hex') }}
@@ -22,10 +25,13 @@ secondary_accent: "yellow"
 {%- endmacro banner_background_border -%}
 
 {
-  "name": "{{ 'Catppuccin ' ~ flavor.name }}",
+  "name": "{{ if (cond=islands, t="Islands ", f = "") ~ "Catppuccin " ~ flavor.name }}",
   "dark": {{ flavor.dark }},
   "author": "Catppuccin Org <releases@catppuccin.com>",
   "editorScheme": "{{ '/themes/' ~ flavor.identifier ~ '.xml' }}",
+  {%- if islands %}
+  "parentTheme": "{{ 'Islands ' ~ if(cond=flavor.dark, t="Dark", f="Light") }}",
+  {%- endif %}
   "colors": {
     "rosewater": "{{ rosewater.hex }}",
     "flamingo": "{{ flamingo.hex }}",
@@ -70,7 +76,8 @@ secondary_accent: "yellow"
     "searchMatchBackground": "{{ if(cond = flavor.light, t = flavor.colors[accent] | mod(opacity=0.3), f = flavor.colors[accent]) | get(key = 'hex') }}",
     "textFieldBackground": "{{ if(cond = flavor.light, t = surface1, f = surface2) | get(key = 'hex') }}",
     "gitLogBackground": "{{ flavor.colors[accent] | mod(opacity=0.05) | get(key='hex') }}",
-    "dragAndDropBackground": "{{ flavor.colors[accent] | mod(opacity=0.15) | get(key='hex') }}"
+    "dragAndDropBackground": "{{ flavor.colors[accent] | mod(opacity=0.15) | get(key='hex') }}",
+    "tabBackground": "{{ if(cond=flavor.light, t=flavor.colors[accent] | mix(color=base, amount=0.15), f=flavor.colors[accent] | mix(color=base, amount=0.2)) | get(key = 'hex') }}"
   },
   "ui": {
     "*": {
@@ -87,9 +94,16 @@ secondary_accent: "yellow"
       "focusColor": "accentColor",
       "infoForeground": "subtext0"
     },
+    {%- if islands %}
+    "Islands": 1,
+    "Island": {
+      "borderColor": "toolbarBackground"
+    },
+    {%- endif %}
     "ActionButton": {
       "hoverBackground": "hoverBackground",
-      "pressedBackground": "hoverBackground"
+      "pressedBackground": "hoverBackground",
+      "hoverBorderColor": "borderColor"
     },
     "Banner": {
       "errorBackground": "{{ self::banner_background(color = red) }}",
@@ -206,7 +220,9 @@ secondary_accent: "yellow"
       "hoverBackground": "selectionBackground",
       "underTabsBorderColor": "separatorColor",
       "underlineColor": "accentColor",
-      "underlinedTabBackground": "panelBackground",
+      "underlinedTabBackground": "tabBackground",
+      "inactiveUnderlinedTabBackground": "tabBackground",
+      "underlinedBorderColor": "accentColor",
       "inactiveColoredFileBackground": "{{ base | mod(opacity=0.5) | get(key='hex') }}",
       "unselectedBlend": 0.9 {#- Effectively controls how dimmed the tabs on when unselected/not hovering, therefore providing some contrast when hovering #}
     },
@@ -252,10 +268,16 @@ secondary_accent: "yellow"
         "insets": "5,5,5,5",
         "pressedBackground": "hoverBackground"
       },
+      {%- if islands %}
+      "borderColor": "transparent",
+      {%- endif %}
       "background": "toolbarBackground",
       "inactiveBackground": "panelBackground"
     },
     "MainWindow": {
+      {%- if islands %}
+      "background": "toolbarBackground",
+      {%- endif %}
       "Tab": {
         "background": "toolbarBackground",
         "borderColor": "toolbarBackground",
@@ -405,12 +427,17 @@ secondary_accent: "yellow"
     "Slider": {
       "background": "panelBackground"
     },
-    "StatusBar": {
+    "StatusBar": { {#- The bar at the bottom where line number/columns, file type, file encoding, etc is displayed #}
       "Breadcrumbs": {
         "chevronInset": 0
       },
-      "background": "panelBackground",
+      {%- if islands %}
+      "borderColor": "transparent",
+      "background": "toolbarBackground",
+      {%- else %}
       "borderColor": "borderColor",
+      "background": "panelBackground",
+      {%- endif %}
       "hoverBackground": "hoverBackground"
     },
     "TabbedPane": {
@@ -464,8 +491,13 @@ secondary_accent: "yellow"
         "inactiveUnderlineColor": "text",
         "underlineColor": "accentColor"
       },
-      "Stripe": {
+      "Stripe": { {#- The furthest away bars on the left and right side of the editor #}
+        {%- if islands %}
+        "borderColor": "transparent",
+        "background": "toolbarBackground"
+        {%- else %}
         "background": "panelBackground"
+        {%- endif %}
       },
       "background": "panelBackground"
     },
