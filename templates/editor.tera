@@ -116,6 +116,7 @@ accent: "mauve"
     <option name="QUESTION_HINT" value="{{ surface0.hex }}"/>
     <option name="RECENT_LOCATIONS_SELECTION" value="{{ surface0.hex }}"/>
     <option name="RIGHT_MARGIN_COLOR" value="{{ surface0.hex }}"/>
+    <option name="MATCHED_BRACES_INDENT_GUIDE_COLOR" value="{{ overlay0.hex }}" />
     <option name="SELECTED_INDENT_GUIDE" value="{{ surface1.hex }}"/>
     <option name="SELECTED_TEARLINE_COLOR" value="{{ surface1.hex }}"/>
     <option name="SELECTION_BACKGROUND" value="{{ selection_background.hex }}"/>
@@ -2037,11 +2038,10 @@ accent: "mauve"
     </option>
     <option name="MATCHED_BRACE_ATTRIBUTES">
       <value>
-        <option name="FONT_TYPE" value="1"/>
-        <option name="EFFECT_COLOR" value="{{ overlay0.hex }}"/>
+        <option name="FOREGROUND" value="{{ text.hex }}" />
+        <option name="BACKGROUND" value="{{ if(cond=flavor.light, t=surface0.hex, f=surface2.hex) }}" />
       </value>
     </option>
-    <option name="MATCHED_TAG_NAME" baseAttributes="MATCHED_BRACE_ATTRIBUTES"/>
     <option name="MESSAGE_ARGUMENT">
       <value>
         <option name="FOREGROUND" value="{{ sky.hex }}"/>
