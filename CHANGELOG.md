@@ -4,6 +4,20 @@
 
 ### Added
 
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## 3.6.0 - 2026-04-06
+
+### Added
+
 - (Editor/UI): Add "Islands" variants for each flavour.
   - "Islands Catppuccin Latte"
   - "Islands Catppuccin Frappé"
@@ -13,14 +27,6 @@
 ### Changed
 
 - (Editor/UI): Improve legibility of background colors for file scopes in editor tabs and file explorer.
-
-### Deprecated
-
-### Removed
-
-### Fixed
-
-### Security
 
 ## 3.5.3 - 2026-02-05
 
