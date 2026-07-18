@@ -4,6 +4,8 @@
 
 ### Added
 
+- Support 2026.2
+
 ### Changed
 
 - (Editor): Selected indent guides on matching braces are more visible by default.
