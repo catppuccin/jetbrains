@@ -4,12 +4,7 @@
 
 ### Added
 
-- Support 2026.2
-
 ### Changed
-
-- (Editor): Selected indent guides on matching braces are more visible by default.
-- (Editor): Matching tags (i.e. `()`, `<>`) have their background highlighted.
 
 ### Deprecated
 
@@ -17,9 +12,22 @@
 
 ### Fixed
 
-- (Editor): Overrides to "Matched Brace Guide Color" weren't being respected, now they are.
-
 ### Security
+
+## 3.6.1 - 2026-07-18
+
+### Added
+
+- Support 2026.2
+
+### Changed
+
+- (Editor): Selected indent guides on matching braces are more visible by default.
+- (Editor): Matching tags (i.e. `()`, `<>`) have their background highlighted.
+
+### Fixed
+
+- (Editor): Overrides to "Matched Brace Guide Color" weren't being respected, now they are.
 
 ## 3.6.0 - 2026-04-06
 
