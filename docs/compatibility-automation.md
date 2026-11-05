@@ -67,7 +67,8 @@ approval can still delay availability after upload.
 
 If Marketplace or GitHub publication fails after the source push, the next daily
 run sees the still-unpublished version and retries it without another version bump.
-An existing matching tag and Marketplace update are reused. If `main` changes
+An existing matching tag and byte-identical Marketplace update are reused; a
+version collision with different bytes fails for maintainer review. If `main` changes
 during verification, rerun the workflow against the new revision.
 
 ## Limits and visual regression checks

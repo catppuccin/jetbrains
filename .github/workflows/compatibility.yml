@@ -101,6 +101,7 @@ jobs:
           retention-days: 14
 
   verify:
+    name: Verify ${{ matrix.channel }} / IU-${{ matrix.build }}
     needs: [discover, build]
     runs-on: ubuntu-latest
     timeout-minutes: 45
@@ -199,8 +200,13 @@ jobs:
         run: |
           curl --fail-with-body --silent --show-error --header "Authorization: Bearer $MARKETPLACE_TOKEN" \
             'https://plugins.jetbrains.com/api/plugins/18682/updates?size=100' --output marketplace-updates.json
-          if python -c 'import json,sys; sys.exit(0 if any(u["version"] == sys.argv[1] and not u.get("channel") for u in json.load(open("marketplace-updates.json"))) else 1)' "${RELEASE_TAG#v}"; then
-            echo 'This version is already uploaded; resuming the GitHub release'
+          update_id=$(python -c 'import json,sys; matches=[u for u in json.load(open("marketplace-updates.json")) if u["version"] == sys.argv[1] and not u.get("channel")]; print(int(matches[0]["id"]) if matches else "")' "${RELEASE_TAG#v}")
+          if [ -n "$update_id" ]; then
+            curl --fail-with-body --location --silent --show-error \
+              --header "Authorization: Bearer $MARKETPLACE_TOKEN" \
+              "https://plugins.jetbrains.com/plugin/download?updateId=$update_id" --output marketplace-plugin.zip
+            cmp candidate/plugin.zip marketplace-plugin.zip || { echo 'Existing Marketplace version differs from the verified artifact'; exit 1; }
+            echo 'The same artifact is already uploaded; resuming the GitHub release'
           else
             curl --fail-with-body --silent --show-error \
               --header "Authorization: Bearer $MARKETPLACE_TOKEN" \
