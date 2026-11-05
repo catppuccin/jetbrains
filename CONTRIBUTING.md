@@ -26,6 +26,9 @@ for contributors.
 
 ## Development Workflow
 
+The scheduled compatibility checks and automatic compatibility-release process are
+documented in [compatibility-automation.md](docs/compatibility-automation.md).
+
 ### Requirements
 
 - [Whiskers](https://whiskers.catppuccin.com/getting-started/installation/)

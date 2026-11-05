@@ -69,12 +69,23 @@ intellijPlatform {
 
   pluginVerification {
     ides {
-      create(providers.gradleProperty("platformType"), providers.gradleProperty("platformVersion"))
+      val verificationIdePath = providers.gradleProperty("verificationIdePath")
+      if (verificationIdePath.isPresent) {
+        local(file(verificationIdePath.get()))
+      } else {
+        create(providers.gradleProperty("platformType"), providers.gradleProperty("platformVersion"))
+      }
     }
   }
 }
 
 tasks {
+    verifyPlugin {
+        providers.gradleProperty("verificationArchivePath").orNull?.let {
+            archiveFile.set(file(it))
+        }
+    }
+
     // Set the JVM compatibility versions
     providers.gradleProperty("javaVersion").get().let {
         withType<JavaCompile> {
