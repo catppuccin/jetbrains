@@ -32,6 +32,8 @@ jobs:
       source_sha: ${{ steps.source.outputs.sha }}
     steps:
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
@@ -45,6 +47,10 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           released=$(gh api repos/catppuccin/jetbrains/releases/latest --jq .tag_name)
+          if ! git diff --quiet "$released" -- src templates; then
+            echo 'Theme sources changed since the last release; publish a maintainer release before automatic compatibility updates'
+            exit 1
+          fi
           python scripts/jetbrains_compatibility.py discover --released-version "$released"
       - uses: actions/upload-artifact@v7
         with:

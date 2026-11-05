@@ -42,6 +42,10 @@ before building, so the verified ZIP contains the correct release notes. Unrelat
 unreleased changelog content stops the run for a maintainer release rather than
 being silently included in a compatibility release.
 
+Changes to `src/` or `templates/` since the latest published tag also stop the run.
+Those changes need a maintainer release first; this workflow only publishes
+compatibility updates to an already released theme.
+
 After every verification succeeds, the release job:
 
 1. Checks that `main` is still the exact source revision that was tested.
