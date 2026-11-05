@@ -4,3 +4,4 @@
 build
 src/main/resources/themes
 .intellijPlatform
+__pycache__/

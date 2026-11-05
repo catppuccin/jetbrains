@@ -1,0 +1,227 @@
+name: JetBrains compatibility
+
+on:
+  schedule:
+    - cron: '23 6 * * *'
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: Publish a compatibility release after every check succeeds
+        type: boolean
+        default: false
+  pull_request:
+    paths:
+      - '.github/workflows/compatibility.yml'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'build.gradle.kts'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: compatibility-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.discover.outputs.matrix }}
+      release_needed: ${{ steps.discover.outputs.release_needed }}
+      source_sha: ${{ steps.source.outputs.sha }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -v
+      - name: Record the exact tested source
+        id: source
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Discover latest stable and newer EAP / beta / RC builds
+        id: discover
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          released=$(gh api repos/catppuccin/jetbrains/releases/latest --jq .tag_name)
+          if ! git diff --quiet "$released" -- src templates; then
+            echo 'Theme sources changed since the last release; publish a maintainer release before automatic compatibility updates'
+            exit 1
+          fi
+          python scripts/jetbrains_compatibility.py discover --released-version "$released"
+      - uses: actions/upload-artifact@v7
+        with:
+          name: compatibility-plan
+          path: build/compatibility/plan.json
+
+  build:
+    needs: discover
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ needs.discover.outputs.source_sha }}
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-java@v5
+        with:
+          distribution: zulu
+          java-version: 21
+          cache: gradle
+      - uses: catppuccin/setup-whiskers@v2
+      - uses: actions/download-artifact@v8
+        with:
+          name: compatibility-plan
+          path: build/compatibility
+      - name: Prepare the candidate version and release notes
+        run: python scripts/jetbrains_compatibility.py prepare
+      - name: Generate every flavor
+        run: |
+          whiskers templates/ui.theme.tera
+          whiskers templates/editor.tera
+      - name: Build and validate structure
+        run: ./gradlew buildPlugin check verifyPluginStructure --console=plain
+      - name: Validate the actual distribution
+        run: |
+          version=$(python -c 'import json; print(json.load(open("build/compatibility/plan.json"))["version"])')
+          ceiling=$(python -c 'import json; print(json.load(open("build/compatibility/plan.json"))["until_build"])')
+          python scripts/verify_theme_archive.py "build/distributions/Catppuccin Theme-$version.zip" --version "$version" --until-build "$ceiling"
+          mkdir -p candidate
+          cp "build/distributions/Catppuccin Theme-$version.zip" candidate/plugin.zip
+          cp build/compatibility/plan.json build/compatibility/release-notes.md gradle.properties CHANGELOG.md candidate/
+          sha256sum candidate/plugin.zip > candidate/plugin.sha256
+      - uses: actions/upload-artifact@v7
+        with:
+          name: compatibility-candidate
+          path: candidate/
+          retention-days: 14
+
+  verify:
+    name: Verify ${{ matrix.channel }} / IU-${{ matrix.build }}
+    needs: [discover, build]
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJSON(needs.discover.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ needs.discover.outputs.source_sha }}
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-java@v5
+        with:
+          distribution: zulu
+          java-version: 21
+          cache: gradle
+      - uses: actions/download-artifact@v8
+        with:
+          name: compatibility-candidate
+          path: candidate
+      - uses: actions/cache@v6
+        with:
+          path: ~/.cache/catppuccin-ides
+          key: idea-linux-${{ matrix.build }}
+      - name: Download and check the exact Ultimate IDE build
+        env:
+          IDE_BUILD: ${{ matrix.build }}
+        run: python scripts/jetbrains_compatibility.py download --plan candidate/plan.json --build "$IDE_BUILD" --directory "$HOME/.cache/catppuccin-ides/$IDE_BUILD"
+      - name: Verify the tested candidate ZIP
+        env:
+          IDE_BUILD: ${{ matrix.build }}
+        run: |
+          sha256sum --check candidate/plugin.sha256
+          ./gradlew verifyPlugin --console=plain -PverificationArchivePath="$PWD/candidate/plugin.zip" -PverificationIdePath="$HOME/.cache/catppuccin-ides/$IDE_BUILD/ide"
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: verifier-${{ matrix.channel }}-${{ matrix.build }}
+          path: build/reports/pluginVerifier/
+          if-no-files-found: warn
+
+  release:
+    needs: [discover, build, verify]
+    if: >-
+      needs.discover.outputs.release_needed == 'true' &&
+      github.repository == 'catppuccin/jetbrains' &&
+      github.ref == 'refs/heads/main' &&
+      (github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.publish))
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ needs.discover.outputs.source_sha }}
+          fetch-depth: 0
+      - uses: actions/download-artifact@v8
+        with:
+          name: compatibility-candidate
+          path: candidate
+      - name: Check credentials before changing release state
+        env:
+          MARKETPLACE_TOKEN: ${{ secrets.JETBRAINS_MARKETPLACE_TOKEN }}
+        run: test -n "$MARKETPLACE_TOKEN" || { echo 'JETBRAINS_MARKETPLACE_TOKEN is required'; exit 1; }
+      - name: Commit and tag only the verified candidate
+        id: release
+        env:
+          TESTED_SHA: ${{ needs.discover.outputs.source_sha }}
+        run: |
+          sha256sum --check candidate/plugin.sha256
+          version=$(python -c 'import json; print(json.load(open("candidate/plan.json"))["version"])')
+          tag="v$version"
+          cp candidate/gradle.properties candidate/CHANGELOG.md .
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add gradle.properties CHANGELOG.md
+          if ! git diff --cached --quiet; then git commit -m "chore: release $tag with verified JetBrains compatibility"; fi
+          git fetch origin main --tags
+          if [ "$(git rev-parse origin/main)" != "$TESTED_SHA" ]; then
+            echo 'main changed during verification; rerun against the new source'
+            exit 1
+          fi
+          if git rev-parse "$tag" >/dev/null 2>&1; then
+            test "$(git rev-parse "$tag^{tree}")" = "$(git rev-parse HEAD^{tree})"
+          else
+            git tag "$tag"
+          fi
+          git push --atomic origin HEAD:refs/heads/main "refs/tags/$tag"
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
+      - name: Upload the verified ZIP to Marketplace
+        env:
+          MARKETPLACE_TOKEN: ${{ secrets.JETBRAINS_MARKETPLACE_TOKEN }}
+          RELEASE_TAG: ${{ steps.release.outputs.tag }}
+        run: |
+          curl --fail-with-body --silent --show-error --header "Authorization: Bearer $MARKETPLACE_TOKEN" \
+            'https://plugins.jetbrains.com/api/plugins/18682/updates?size=100' --output marketplace-updates.json
+          update_id=$(python -c 'import json,sys; matches=[u for u in json.load(open("marketplace-updates.json")) if u["version"] == sys.argv[1] and not u.get("channel")]; print(int(matches[0]["id"]) if matches else "")' "${RELEASE_TAG#v}")
+          if [ -n "$update_id" ]; then
+            curl --fail-with-body --location --silent --show-error \
+              --header "Authorization: Bearer $MARKETPLACE_TOKEN" \
+              "https://plugins.jetbrains.com/plugin/download?updateId=$update_id" --output marketplace-plugin.zip
+            python scripts/verify_theme_archive.py candidate/plugin.zip --same-content-as marketplace-plugin.zip
+            cp marketplace-plugin.zip candidate/plugin.zip
+            echo 'Matching content is already uploaded; resuming the GitHub release'
+          else
+            curl --fail-with-body --silent --show-error \
+              --header "Authorization: Bearer $MARKETPLACE_TOKEN" \
+              -F xmlId=com.github.catppuccin.jetbrains \
+              -F file=@candidate/plugin.zip \
+              https://plugins.jetbrains.com/api/updates/upload
+          fi
+      - name: Publish the GitHub release and tested artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ steps.release.outputs.tag }}
+        run: |
+          if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            gh release upload "$RELEASE_TAG" candidate/plugin.zip --clobber
+          else
+            gh release create "$RELEASE_TAG" candidate/plugin.zip --verify-tag --title "$RELEASE_TAG" --notes-file candidate/release-notes.md
+          fi

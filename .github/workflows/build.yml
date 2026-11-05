@@ -9,12 +9,18 @@ on:
       - 'templates/**'
       - 'gradle.properties'
       - '**.gradle.kts'
+      - 'scripts/**'
+      - 'tests/**'
+      - '.github/workflows/build.yml'
   pull_request:
     paths:
       - 'src/**'
       - 'templates/**'
       - 'gradle.properties'
       - '**.gradle.kts'
+      - 'scripts/**'
+      - 'tests/**'
+      - '.github/workflows/build.yml'
 
 jobs:
   build:
@@ -31,6 +37,14 @@ jobs:
           java-version: 21
           cache: 'gradle'
 
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Test compatibility automation
+        run: python -m unittest discover -s tests -v
+
       - name: Setup Whiskers
         uses: catppuccin/setup-whiskers@v2
 
@@ -41,6 +55,9 @@ jobs:
 
       - name: Build Plugin
         run: ./gradlew buildPlugin
+
+      - name: Validate packaged themes
+        run: python scripts/verify_theme_archive.py build/distributions/*.zip
 
       - name: Get Commit SHA
         id: vars
