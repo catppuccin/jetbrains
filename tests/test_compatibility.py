@@ -12,7 +12,7 @@ import zipfile
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from jetbrains_compatibility import download_ide, make_plan, prepare
-from verify_theme_archive import verify
+from verify_theme_archive import compare_archives, verify
 
 
 def release(build, channel="release"):
@@ -136,6 +136,7 @@ def theme_archive(path, mutation=None):
     resources["META-INF/plugin.xml"] = ('<idea-plugin><id>com.github.catppuccin.jetbrains</id>'
         '<version>3.6.2</version><idea-version since-build="231" until-build="263.*"/>'
         '<extensions>' + "".join(extensions) + '</extensions></idea-plugin>')
+    resources["META-INF/MANIFEST.MF"] = 'Manifest-Version: 1.0\r\nVersion: 3.6.2\r\nBuild-OS: Linux 7.0\r\nBuild-JVM: 21\r\n'
     if mutation:
         mutation(resources)
     inner = io.BytesIO()
@@ -178,6 +179,27 @@ class PackagedResourcesTest(unittest.TestCase):
             verify(self.path, "3.6.3")
         with self.assertRaises(ValueError):
             verify(self.path, until_build="271.*")
+
+    def test_publication_retry_allows_runner_metadata_changes(self):
+        other = Path(self.temp.name) / "other.zip"
+        theme_archive(self.path)
+        def change_runner(files):
+            files["META-INF/MANIFEST.MF"] = files["META-INF/MANIFEST.MF"].replace(
+                'Build-OS: Linux 7.0', 'Build-OS: Linux 7.1').replace(
+                'Build-JVM: 21', 'Build-JVM: 21.0.13\r\n  vendor details')
+        theme_archive(other, change_runner)
+        compare_archives(self.path, other)
+
+    def test_publication_retry_rejects_theme_and_version_collisions(self):
+        other = Path(self.temp.name) / "other.zip"
+        theme_archive(self.path)
+        for entry in ("META-INF/MANIFEST.MF", "themes/mocha.theme.json"):
+            with self.subTest(entry=entry):
+                def change_content(files):
+                    files[entry] = files[entry].replace('Version: 3.6.2', 'Version: 3.6.3').replace('#112233', '#223344')
+                theme_archive(other, change_content)
+                with self.assertRaisesRegex(ValueError, "different packaged content"):
+                    compare_archives(self.path, other)
 
 
 class IdeDownloadTest(unittest.TestCase):

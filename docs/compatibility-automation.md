@@ -67,8 +67,11 @@ approval can still delay availability after upload.
 
 If Marketplace or GitHub publication fails after the source push, the next daily
 run sees the still-unpublished version and retries it without another version bump.
-An existing matching tag and byte-identical Marketplace update are reused; a
-version collision with different bytes fails for maintainer review. If `main` changes
+An existing matching tag and Marketplace update with identical packaged content
+are reused. ZIP container metadata and only the manifest's `Build-OS` / `Build-JVM`
+fields are ignored when comparing independent runners; every theme resource,
+descriptor, and other manifest field must match. A content collision fails for
+maintainer review. If `main` changes
 during verification, rerun the workflow against the new revision.
 
 ## Limits and visual regression checks

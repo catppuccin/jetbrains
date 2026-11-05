@@ -9,6 +9,39 @@ import xml.etree.ElementTree as ET
 import zipfile
 
 
+def archive_contents(path):
+    with zipfile.ZipFile(path) as package:
+        jars = [name for name in package.namelist() if name.endswith(".jar")]
+        if len(jars) != 1:
+            raise ValueError("Expected exactly one theme JAR in the distribution")
+        result = {name: package.read(name) for name in package.namelist()
+                  if not name.endswith("/") and name not in jars}
+        with zipfile.ZipFile(io.BytesIO(package.read(jars[0]))) as jar:
+            for name in jar.namelist():
+                if name.endswith("/"):
+                    continue
+                content = jar.read(name)
+                if name == "META-INF/MANIFEST.MF":
+                    # The Gradle plugin embeds runner kernel/JDK versions. These
+                    # change across rebuilds without changing the shipped theme.
+                    lines = []
+                    for line in content.decode("utf-8").splitlines():
+                        if line.startswith(" ") and lines:
+                            lines[-1] += line[1:]
+                        else:
+                            lines.append(line)
+                    content = "\n".join(line for line in lines if not line.startswith(
+                        ("Build-OS: ", "Build-JVM: "))).encode("utf-8")
+                result[jars[0] + "!/" + name] = content
+        return result
+
+
+def compare_archives(candidate, existing):
+    if archive_contents(candidate) != archive_contents(existing):
+        raise ValueError("Existing Marketplace version has different packaged content")
+    return "Packaged content matches (excluding ZIP metadata and build OS/JVM manifest fields)"
+
+
 def verify(path, version=None, until_build=None):
     with zipfile.ZipFile(path) as package:
         jars = [name for name in package.namelist() if name.endswith(".jar")]
@@ -59,5 +92,8 @@ if __name__ == "__main__":
     parser.add_argument("archive", type=Path)
     parser.add_argument("--version")
     parser.add_argument("--until-build")
+    parser.add_argument("--same-content-as", type=Path)
     args = parser.parse_args()
     print(verify(args.archive, args.version, args.until_build))
+    if args.same_content_as:
+        print(compare_archives(args.archive, args.same_content_as))
