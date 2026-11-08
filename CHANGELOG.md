@@ -4,6 +4,9 @@
 
 ### Added
 
+- Support 2026.3.
+- All future releases will be automatically supported.
+
 ### Changed
 
 ### Deprecated
