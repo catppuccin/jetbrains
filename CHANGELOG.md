@@ -4,8 +4,7 @@
 
 ### Added
 
-- Support 2026.3.
-- All future releases will be automatically supported.
+- Support 2026.3 (All future releases will be automatically supported from now on.)
 
 ### Changed
 
@@ -14,6 +13,8 @@
 ### Removed
 
 ### Fixed
+
+- Increased contrast for list selections (specifically inactive items)
 
 ### Security
 
