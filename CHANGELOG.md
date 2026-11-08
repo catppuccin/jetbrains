@@ -4,8 +4,6 @@
 
 ### Added
 
-- Support 2026.3 (All future releases will be automatically supported from now on.)
-
 ### Changed
 
 ### Deprecated
@@ -14,9 +12,17 @@
 
 ### Fixed
 
-- Increased contrast for list selections (specifically inactive items)
-
 ### Security
+
+## 3.6.2 - 2026-11-08
+
+### Added
+
+- Support 2026.3 (All future releases will be automatically supported from now on.)
+
+### Fixed
+
+- Increased contrast for list selections (specifically inactive items)
 
 ## 3.6.1 - 2026-07-18
 
